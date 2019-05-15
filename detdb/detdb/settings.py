@@ -119,5 +119,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+# Use 'public' as the default static file directory name
+STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "public"),
+]
+# On the front end, show the static directory as 'public'
+STATIC_URL = '/public/'
+# STATIC_ROOT = ''
