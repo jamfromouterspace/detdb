@@ -1,0 +1,13 @@
+#search-page{
+    text-align: center;
+    padding-top: 30vh;
+    padding-bottom: 10%;
+}
+
+#search-bar{
+    padding: 0 25% 0 25%;
+}
+
+input[type="text"], textarea, .submit-btn{
+    background-color:#F4F4F4;
+}

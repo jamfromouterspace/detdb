@@ -1,0 +1,9 @@
+- To enter the mysql shell:
+
+sudo mysql -u root -p
+
+- Password is what you'd expect
+
+- Note that mysql-ctl doesn't exist here. 
+  That's some proprietary c9 stuff for when you 
+  use their virtual machines with mysql preinstalled.
