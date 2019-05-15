@@ -121,9 +121,9 @@ USE_TZ = True
 
 # Use 'public' as the default static file directory name
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "public"),
 ]
 # On the front end, show the static directory as 'public'
-STATIC_URL = '/public/'
+STATIC_URL = '/static/'
 # STATIC_ROOT = ''
