@@ -10,12 +10,18 @@ CREATE TABLE authors (
 	field_of_research VARCHAR(100)
 );
 
+CREATE TABLE journals (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	abbreviation NVARCHAR(50),
+	name NVARCHAR(150) NOT NULL,
+);
+
 CREATE TABLE citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	preformatted NVARCHAR(550) NOT NULL DEFAULT '',
 	title NVARCHAR(150) NOT NULL,
-	journal NVARCHAR(100),
 	vol SMALLINT,
+	issue SMALLINT,
 	ed SMALLINT,
 	institution NVARCHAR(100),
 	isbn VARCHAR(20),
@@ -33,6 +39,13 @@ CREATE TABLE author_citations (
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
 
+CREATE TABLE journal_citations (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	journal_id INT NOT NULL,
+	citation_id INT NOT NULL,
+	FOREIGN KEY(journal_id) REFERENCES journals(id),
+	FOREIGN KEY(citation_id) REFERENCES citations(id)
+);
 
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
