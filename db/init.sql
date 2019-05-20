@@ -4,10 +4,9 @@ USE detdb;
 CREATE TABLE authors (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	first_name NVARCHAR(80),
-	first_initial CHAR NOT NULL,
-	middle_initial CHAR,
+	initials NVARCHAR(8) NOT NULL,
 	last_name NVARCHAR(80) NOT NULL,
-	field_of_research VARCHAR(100)
+	notes VARCHAR(150)
 );
 
 CREATE TABLE journals (
@@ -27,7 +26,7 @@ CREATE TABLE citations (
 	isbn VARCHAR(20),
 	doi VARCHAR(30),
 	year VARCHAR(4) NOT NULL DEFAULT 'n.d.',
-	page_range VARCHAR(25),
+	page_range VARCHAR(20),
 	notes VARCHAR(150)
 );
 
