@@ -1,5 +1,5 @@
-import re
-
+import regex as re # PyPi regex supports \p{}
+from colorama import Fore, Style
 def getLines(s) :
     # Split at newlines and return list
     # without any empty strings
@@ -18,3 +18,21 @@ def getLines(s) :
             if not only_spaces :
                 res.append(x)
     return res
+
+def printGreen(s) :
+    if type(s) != type('') :
+        s = str(s)
+    print(Fore.GREEN + s)
+    print(Style.RESET_ALL)
+def printBlue(s) :
+    if type(s) != type('') :
+        s = str(s)
+    print(Fore.BLUE + s)
+    print(Style.RESET_ALL)
+def printRed(s) :
+    if type(s) != type('') :
+        s = str(s)
+    print(Fore.RED + s)
+    print(Style.RESET_ALL)
+def resetColor() :
+    print(Style.RESET_ALL)

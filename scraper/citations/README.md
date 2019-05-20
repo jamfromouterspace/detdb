@@ -19,6 +19,6 @@ The `seed.py` script parses each citation into the useful information for the da
 ## Regular expressions
 ### Find authors (except special cases)
 `(((\p{Lu}\.|(\p{Lu}\p{Ll})\.))+ ([A-Za-z\-']+))`
-
+`((?:\p{Lu}\.|\p{Lu}\p{Ll}\.)+)(?: |\xa0)([A-Za-z\-']+)`
 ### Find years
 `((18|19|20)\d\d)`

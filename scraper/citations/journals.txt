@@ -1,0 +1,57 @@
+[1]
+Acta Astron.
+Acta Astronomica
+[2]
+AIAA J.
+AIAA Journal
+[3]
+Annu. Rev. Fluid Mech.
+Annual Review of Fluid Mechanics
+[4]
+Annu. Rev. Phys. Chem.
+Annual Review of Physical Chemistry
+[5]
+Astronaut. Acta
+Astronautica Acta
+[6]
+Ber. Bunsenges. Phys. Chem.
+Berichte der Bunsengesellschaft für Physikalische Chemie (International Journal of Physical Chemistry)
+[7]
+Combust. Explos. Shock Waves (USSR)
+Combustion, Explosion and Shock Waves (USSR); Fizika Gorniya i Vzryva
+[8]
+Combust. Flame
+Combustion and Flame
+[9]
+Combust. Sci. Technol.
+Combustion Science and Technology
+[10]
+Dokl. Akad. Nauk SSSR
+Doklady Akademii Nauk SSSR (Proceedings of the Academy of Sciences of the USSR, Physical Chemistry Section)
+[11]
+J. Hazard M.
+Journal of Hazardous Materials*
+[12]
+J. Phys. D.
+Journal of Physics D: Applied Physics
+[13]
+Phys. Fluids
+Physics of Fluids
+[14]
+Prog. Astronaut. Aeronaut.
+Progress in Astronautics and Aeronautics
+[15]
+Sov. Phys. Tech. Phys.
+Soviet Physics - Technical Physics
+[16]
+Symp. Int. Combust. Proc.
+Symposium (International) on Combustion, Proceedings
+[17]
+Symp. Mil. App. Blast Sim.
+Symposium on Military Applications of Blast Simulation*
+[18]
+Trans. Inst. Chem. Eng.
+Transactions of the Institution of Chemical Engineers
+[19]
+Z. Phys. Chem. Neue Folge
+Zeitschrift fur Physikalische Chemie - Neue Folge; International Journal of Research in Physical Chemistry and Chemical Physics
