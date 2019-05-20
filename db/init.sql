@@ -10,12 +10,18 @@ CREATE TABLE authors (
 	field_of_research VARCHAR(100)
 );
 
+CREATE TABLE journals (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	abbreviation NVARCHAR(50),
+	name NVARCHAR(150) NOT NULL,
+);
+
 CREATE TABLE citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	preformatted NVARCHAR(550) NOT NULL DEFAULT '',
 	title NVARCHAR(150) NOT NULL,
-	journal NVARCHAR(100),
 	vol SMALLINT,
+	issue SMALLINT,
 	ed SMALLINT,
 	institution NVARCHAR(100),
 	isbn VARCHAR(20),
@@ -33,6 +39,13 @@ CREATE TABLE author_citations (
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
 
+CREATE TABLE journal_citations (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	journal_id INT NOT NULL,
+	citation_id INT NOT NULL,
+	FOREIGN KEY(journal_id) REFERENCES journals(id),
+	FOREIGN KEY(citation_id) REFERENCES citations(id)
+);
 
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -61,7 +74,7 @@ CREATE TABLE data_points (
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id) ON DELETE CASCADE
 );
 
-/* 
+/*
 	Hardcoding common types (fuel, diulent, etc) leads to
 	lots of code duplication, and confines the possible types
 	of data entries. This was a tough choice, but it seems to be
@@ -83,24 +96,23 @@ CREATE TABLE detonation_details (
 	FOREIGN KEY(detail_id) REFERENCES details(id)
 );
 
-/* 
+/*
 	Examples (why I think this approach is better):
 
-	1. Equivalence ratio ranges can be searchable if 
+	1. Equivalence ratio ranges can be searchable if
 	   equivalence_ratio_min and _max details are created.
 
-	2. Multiple-diluent data won't be mangled together. Both can be 
+	2. Multiple-diluent data won't be mangled together. Both can be
 	   saved as 'diluent' details and each will be attached to the
 	   same detonation id.
 
 	3. All detonations with, say, H2 as fuel will be associated with
 	   ONE detail row. I'm not sure if this will make searching faster,
 	   but it certainly cleaner.
-	
+
 	4. There is no code duplication with labels. The same possible labels
 	   (temperature, equivalence ratio, and ranges) are available for both
 	   'details' and 'data points'. Conceptually, this creates a meaningful
-	   single set of 'properties' with units that might appear in various 
+	   single set of 'properties' with units that might appear in various
 	   places.
 */
-
