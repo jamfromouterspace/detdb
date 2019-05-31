@@ -1,3 +1,10 @@
+###################################
+## SCRAPER/PARSER UTILIIES       ##
+## Detonation Database 2.0       ##
+## Jamiel Rahi                   ##
+## GNU Public License 2019       ##
+###################################
+
 import regex as re # PyPi regex supports \p{}
 from colorama import Fore, Style
 def getLines(s) :
@@ -36,3 +43,29 @@ def printRed(s) :
     print(Style.RESET_ALL)
 def resetColor() :
     print(Style.RESET_ALL)
+
+def isIterable(arg) :
+    try :
+        iter(arg)
+        return True
+    except :
+        return False
+
+def recursiveStr(strings,return_none=False) :
+    # This function converts each base element in an iterable to a string
+    # instead of converting the entire type to a string
+    if not strings :
+        if return_none :
+            return None
+        else :
+            return ''
+    elif type(strings) == type('') :
+        return strings
+    elif isIterable(strings) :
+        return list(recursiveStr(s,return_none=return_none) for s in strings)
+    else :
+        try :
+            s = str(strings)
+            return s
+        except :
+            return recursiveStr(None,return_none=return_none)

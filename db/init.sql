@@ -19,6 +19,7 @@ CREATE TABLE citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	preformatted NVARCHAR(550) NOT NULL DEFAULT '',
 	title NVARCHAR(150) NOT NULL,
+	journal_id INT,
 	vol SMALLINT,
 	issue SMALLINT,
 	ed SMALLINT,
@@ -26,8 +27,9 @@ CREATE TABLE citations (
 	isbn VARCHAR(20),
 	doi VARCHAR(30),
 	year VARCHAR(4) NOT NULL DEFAULT 'n.d.',
-	page_range VARCHAR(20),
+	pages VARCHAR(20),
 	notes VARCHAR(150)
+	FOREIGN KEY(journal_id) REFERENCES journals(id),
 );
 
 CREATE TABLE author_citations (
@@ -35,14 +37,6 @@ CREATE TABLE author_citations (
 	author_id INT NOT NULL,
 	citation_id INT NOT NULL,
 	FOREIGN KEY(author_id) REFERENCES authors(id),
-	FOREIGN KEY(citation_id) REFERENCES citations(id)
-);
-
-CREATE TABLE journal_citations (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	journal_id INT NOT NULL,
-	citation_id INT NOT NULL,
-	FOREIGN KEY(journal_id) REFERENCES journals(id),
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
 

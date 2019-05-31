@@ -16,6 +16,7 @@ f = open("citations.txt", "w")
 # The HTML isn't written properly (no closing 'dd' tags)
 # The closing tags are appended to the end, which messes with the parser.
 # This works:
+f.write('[1]\n')
 f.write(citations[0].get_text())
 # But this duplicates the list 130 times:
 # for citation in citations:

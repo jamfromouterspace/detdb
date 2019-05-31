@@ -11,13 +11,15 @@ sys.path.append('../') # Include scraper folder
 import regex as re # PyPi regex supports \p{}
 from tools import *
 from edge_cases import *
+from generate_sql import *
+from parser_functions import *
 
 ################
 ## INITIALIZE ##
 ################
 
 # Store authors and journals as maps for quick lookup
-authors = {} # last name : (first name, index)
+authors = {} # last name : (first name, initials, index)
 journals = {} # abbreviation : (full name, index)
 # List of raw citation strings (preformatted)
 citations = []
@@ -34,12 +36,20 @@ indices = re.compile("[\x5B]\d+[\x5D]") # [1] ... [2] ...
 f = open("journals.txt", "r")
 s = f.read()
 ls = indices.split(s)
-i = 1
+
 for x in ls :
     if x :
         lines = getLines(x) # from tools
-        journals[lines[0]] = (lines[1],i)
-        i += 1
+        # [ abbreviation : [full_name, index]]
+        # full_name is empty if there is no abbreviation
+        # in which case abbrevation is entered full name.
+        # This is only the case for journals that weren't scraped
+        # from the abbrevations part of the original site
+        journals[lines[0]] = [lines[1], None]
+        # We will assign journal_index when we actually print the SQL.
+        # Since dictionaries aren't guaranteed to be ordered, we wanna
+        # make sure that the indices match that which is auto-incremented
+        # by MySQL.
 s = f.close()
 
 # Retrieve list of formatted citations
@@ -60,84 +70,6 @@ s = f.close()
 ## PARSE ##
 ###########
 
-def parseYear(str) :
-    # Get year
-    year = None
-    year_pattern = re.compile("((?:19|20)\d\d)\.")
-    res = re.findall(year_pattern,str)
-    if res :
-        # They always appear at the end
-        year = int(res[len(res)-1])
-    return year
-
-def parseAuthors(str) :
-    # Get author names : (initials, last)
-    author_pattern = re.compile("(((?:\p{Lu}\.|\p{Lu}\p{Ll}\.)+) ([A-Za-z\-']+))")
-    names = []
-    last_author = None
-    for name in re.finditer(author_pattern,str) :
-        g = name.groups()
-        # Make sure it doesn't pick up false positives
-        # by enforcing a distance between each capture group
-        # max distance = 8 characters (arbitrary)
-        distance = 0
-        if last_author :
-            distance = name.span()[0] - last_author.span()[1]
-        if distance < 8 :
-            names.append(g[1:])
-            last_author = name
-        # Index of the end of the last author
-    last_author = last_author.span()[1]
-    return names, last_author
-
-def parseTitle(str) :
-    # Get title : String
-    # (start from end of authors to work properly)
-    title_pattern = re.compile("([^.]*)?\.")
-    title = re.search(title_pattern, str) # Returns None if not found
-    title_end = 0
-    if title :
-        title_end = title.span()[1]
-        title = title.groups()[0]
-    return title, title_end
-
-def parseJournal(str) :
-    # Get journal or type of paper : String
-    journal_pattern = re.compile("(?:In )?((?:\p{Lu}|'|\d)[^,]+)?,")
-    journal = re.search(journal_pattern, str) # Returns None if not found
-    journal_end = journal.span()[1]
-    journal = journal.groups()[0]
-    return journal, journal_end
-
-def parseDetails(str) :
-    # Get remaining details
-    vol = issue = pages = institution = None
-    journal_details_pattern = re.compile("(\d+)\((\d+)\):(\d+(:?-\d+))")
-    institution_pattern = re.compile("[ |\xa0|, ]?(\p{Lu}(?:[^,]+)),")
-    volume_pattern = re.compile("(?:vol|volume).(\d+)")
-    pages_pattern = re.compile("(?:p|pp|pages|page).(\d+(?:-\d+)?)")
-    # Get institution (if any) : String
-    institution = re.findall(institution_pattern, str)
-    institution = ', '.join(institution) # Sometimes comma-separated
-    if not institution :
-        institution = None # Standardize empty string as None
-    # Get journal details (if any)
-    # vol(issue):pages
-    journal_details = re.search(journal_details_pattern, str)
-    if journal_details :
-        vol = int(journal_details.groups()[0])
-        issue = int(journal_details.groups()[1])
-        pages = journal_details.groups()[2]
-    else :
-        # Get explicitly-written volume and/or pages
-        vol = re.search(volume_pattern, str)
-        if vol :
-            vol = vol.groups()[0] # Blindly match the first one
-        pages = re.search(pages_pattern, str)
-        if pages :
-            pages = pages.groups()[0]
-    return vol, issue, pages, institution
-
 # Validation mode:
 # - Check each parsed citation
 # - If not valid, add to list of indices of bad parses
@@ -149,9 +81,31 @@ incorrect = []
 if input().lower() == 'n' :
     validating = False
 
+# Initialize MySQL Generators
+# These objects create 'INSERT INTO' statements
+ins_authors = InsertGen('authors', ('first_name', 'initials', 'last_name'))
+ins_journals = InsertGen('journals', ('abbreviation', 'name'))
+ins_citations = InsertGen('citations', ('preformatted',
+                                        'title','year',
+                                        'journal_id',
+                                        'vol','issue',
+                                        'pages',
+                                        'institution'))
+ins_auth_cit = InsertGen('author_citations', ('author_id', 'citation_id'))
+
 # Begin parsing and outputing to citations_seed.sql
-f = open("citation_seed.txt", "w")
+f = open("citation_seed.sql", "w")
+# Insert all existing journals (scraped from database)
+journal_index = 1
+for j in journals :
+    ins_journals.add((j,journals[j][0])) # abbreviation, full_name
+    journals[j][1] = journal_index
+    journal_index += 1
+f.write(ins_journals.getSQL())
+f.write('\n')
+ins_journals.clear()
 i = 1
+author_index = 1
 for c in citations:
     if c:
         names = []
@@ -167,8 +121,8 @@ for c in citations:
                 issue = edge_cases[i]['issue']
                 pages = edge_cases[i]['pages']
         else:
-            year = parseYear(c)
             names,last_author = parseAuthors(c)
+            year = parseYear(c)
             # Parse title from end of author list
             title,title_end = parseTitle(c[last_author+2:])
             title_end += last_author
@@ -177,28 +131,86 @@ for c in citations:
             journal_end += title_end
             # Parse vol, issue, pages, institution with the rest
             vol,issue,pages,institution = parseDetails(c[journal_end+1:])
+        info = printInfo(i,c,names,title,journal,vol,issue,
+                         pages,institution,year,validating)
+        if info :
+            incorrect.append(info)
+        # Keep track of which author entries to point to for citation c
+        # (many-many relationship)
+        author_ids = []
+        # Add to list of authors
+        # Order of data must match ins_citations
+        citation_data = (c,title,year,vol,issue,pages,institution)
+        for name in names :
+            # We have to search the dictionary with the full name
+            # since initials or last names by themselves may not be unique
+            full_name = ''
+            if name[0] :
+                full_name = name[0] + ' ' + name[1]
+            else :
+                full_name = name[1]
+            # Look for author in the dictionary
+            # (we may have already added it)
+            if full_name not in authors :
+                # New entry
+                # Check if we're given a full first name or just initials
+                if name[0] and '.' not in name[0] :
+                    authors[full_name] = (name[0],
+                                          name[0][0]+'.',
+                                          name[1],
+                                          author_index)
+                else :
+                    authors[full_name] = (None,
+                                          name[0],
+                                          name[1],
+                                          author_index)
+                ins_authors.add(authors[full_name][:-1])
+                author_ids.append(author_index)
+                author_index += 1
+            else :
+                author_ids.append(authors[full_name][3])
+        # Generate SQL for any new authors
+        if ins_authors.values :
+            f.write(ins_authors.getSQL())
+            f.write('\n')
+        ins_authors.clear()
 
-        # Color printing from tools
-        printRed("[" + str(i) + "]")
-        printBlue(c)
-        printGreen("AUTHORS: " + str(names))
-        printGreen("TITLE: " + str(title))
-        printGreen("JOURNAL: " + str(journal))
-        printGreen("VOL: " + str(vol))
-        printGreen("ISSUE: " + str(issue))
-        printGreen("PAGES: " + str(pages))
-        printGreen("INSTITUTION: " + str(institution))
-        printGreen("YEAR: " + str(year))
-        if validating :
-            print("Correct? (y/n)")
-            if input().lower() == 'n' :
-                incorrect.append(i)
-        printRed('----------------------------')
-        
+        # Keep track of which journal entry to point to for citation c
+        # (many-one relationship)
+        journal_id = None
 
+        # Add to list of journals
+        if journal and journal not in journals:
+            journals[journal] = [None, journal_index]
+            journal_id = journal_index
+            journal_index += 1
+            ins_journals.add((None,journal))
+            f.write(ins_journals.getSQL())
+            f.write('\n')
+            ins_journals.clear()
+        elif journal :
+            journal_id = journals[journal][1] # Get index of found journal
+
+        # Insert full citation
+        # Note that I did c[1:] to brute-force fix a bug that each citation
+        # string had an empty space in front of it... I'm sorry
+        ins_citations.add(recursiveStr((c[1:],title,year,journal_id,vol,
+                                        issue,pages,institution)))
+        f.write(ins_citations.getSQL())
+        f.write('\n')
+        ins_citations.clear()
+
+        # Insert many-many relationship table author-citations
+        # Note that 'i' is the citation index
+        if author_ids :
+            for id in author_ids :
+                ins_auth_cit.add((str(id),str(i)))
+            f.write(ins_auth_cit.getSQL())
+            f.write('\n')
+            ins_auth_cit.clear()
         i += 1
 
 if validating :
-    printRed("INCORRECT:")
+    printRed("TO FIX:")
     printRed(str(incorrect))
 f.close()
