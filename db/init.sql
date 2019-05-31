@@ -13,7 +13,7 @@ CREATE TABLE journals (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	abbreviation NVARCHAR(50),
 	name NVARCHAR(150) NOT NULL,
-); 
+);
 
 CREATE TABLE citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -90,7 +90,7 @@ CREATE TABLE detonation_details (
 );
 
 /*
-	Examples (why I think this approach is better):
+	Examples (why I think this approach is good):
 
 	1. Equivalence ratio ranges can be searchable if
 	   equivalence_ratio_min and _max details are created.
