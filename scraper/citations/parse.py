@@ -194,7 +194,7 @@ for c in citations:
         # Insert full citation
         # Note that I did c[1:] to brute-force fix a bug that each citation
         # string had an empty space in front of it... I'm sorry
-        ins_citations.add(recursiveStr((c[1:],title,year,journal_id,vol,
+        ins_citations.add(strRecursive((c[1:],title,year,journal_id,vol,
                                         issue,pages,institution)))
         f.write(ins_citations.getSQL())
         f.write('\n')

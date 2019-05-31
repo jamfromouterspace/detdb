@@ -51,9 +51,10 @@ def isIterable(arg) :
     except :
         return False
 
-def recursiveStr(strings,return_none=False) :
+def strRecursive(strings,return_none=False) :
     # This function converts each base element in an iterable to a string
     # instead of converting the entire type to a string
+    # e.g. [1,2,3] => ['1','2','3']
     if not strings :
         if return_none :
             return None
