@@ -63,10 +63,10 @@ def strRecursive(strings,return_none=False) :
     elif type(strings) == type('') :
         return strings
     elif isIterable(strings) :
-        return list(recursiveStr(s,return_none=return_none) for s in strings)
+        return list(strRecursive(s,return_none=return_none) for s in strings)
     else :
         try :
             s = str(strings)
             return s
         except :
-            return recursiveStr(None,return_none=return_none)
+            return strRecursive(None,return_none=return_none)

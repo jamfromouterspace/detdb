@@ -204,7 +204,7 @@ for c in citations:
         # Note that 'i' is the citation index
         if author_ids :
             for id in author_ids :
-                ins_auth_cit.add((str(id),str(i)))
+                ins_auth_cit.add((id,i))
             f.write(ins_auth_cit.getSQL())
             f.write('\n')
             ins_auth_cit.clear()

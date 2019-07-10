@@ -47,7 +47,7 @@ CREATE TABLE detonations (
 	subcategory VARCHAR(30),
 	file_name VARCHAR(20) NOT NULL,
 	notes NVARCHAR(200),
-	added_by NVARCHAR(164) NOT NULL,
+	added_by NVARCHAR(164),
 	citation_id INT NOT NULL,
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
@@ -74,6 +74,7 @@ CREATE TABLE data_points (
 	closer to database design best-practices to have a generalized
 	'details' table that can hold any technical details.
 */
+
 CREATE TABLE details (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	property_id INT NOT NULL,

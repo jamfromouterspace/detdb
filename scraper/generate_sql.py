@@ -13,6 +13,8 @@ def sanitize(string) :
     # Escape special characters
     if not string :
         return None
+    if type(string) == type(0) or type(string) == type(0.0) :
+        return string
     if type(string) == type("") :
         safe_string = ''
         for char in string :
@@ -74,7 +76,7 @@ class InsertGen :
 
     def add(self, val : Tuple[str]) :
         # Convert arguments to strings
-        val = recursiveStr(val)
+        #val = strRecursive(val)
         # Note that order of values must match order of value_names
         # e.g. ('first_name', 'last_name') <=> ('John', 'Smith')
         if self.values :
