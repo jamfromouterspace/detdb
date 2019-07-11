@@ -6,13 +6,17 @@ CREATE TABLE authors (
 	first_name NVARCHAR(80),
 	initials NVARCHAR(8) NOT NULL,
 	last_name NVARCHAR(80) NOT NULL,
-	notes VARCHAR(150)
+	notes VARCHAR(150),
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 );
 
 CREATE TABLE journals (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	abbreviation NVARCHAR(50),
 	name NVARCHAR(150) NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 );
 
 CREATE TABLE citations (
@@ -28,7 +32,9 @@ CREATE TABLE citations (
 	doi VARCHAR(30),
 	year VARCHAR(4) NOT NULL DEFAULT 'n.d.',
 	pages VARCHAR(20),
-	notes VARCHAR(150)
+	notes VARCHAR(150),
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 	FOREIGN KEY(journal_id) REFERENCES journals(id),
 );
 
@@ -36,26 +42,34 @@ CREATE TABLE author_citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	author_id INT NOT NULL,
 	citation_id INT NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 	FOREIGN KEY(author_id) REFERENCES authors(id),
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
 
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	title NVARCHAR(100) NOT NULL,
+	name NVARCHAR(100) NOT NULL,
 	category VARCHAR(30) NOT NULL,
 	subcategory VARCHAR(30),
 	file_name VARCHAR(20) NOT NULL,
 	notes NVARCHAR(200),
-	added_by NVARCHAR(164),
+	added_by NVARCHAR(164) NOT NULL,
 	citation_id INT NOT NULL,
+	legacy BIT NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
+	ip_address NVARCHAR(15),
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
 
 CREATE TABLE properties (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,
-	units NVARCHAR(15) NOT NULL DEFAULT 'dimensionless'
+	units NVARCHAR(15) NOT NULL DEFAULT 'dimensionless',
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 );
 
 CREATE TABLE data_points (
@@ -63,6 +77,8 @@ CREATE TABLE data_points (
 	column_data JSON NOT NULL,
 	property_id INT NOT NULL,
 	detonation_id INT NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 	FOREIGN KEY(property_id) REFERENCES properties(id),
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id) ON DELETE CASCADE
 );
@@ -79,6 +95,8 @@ CREATE TABLE details (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	property_id INT NOT NULL,
 	value VARCHAR(30) NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 	FOREIGN KEY(property_id) REFERENCES properties(id)
 );
 
@@ -86,10 +104,11 @@ CREATE TABLE detonation_details (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	detonation_id INT NOT NULL,
 	detail_id INT NOT NULL,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP,
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
 	FOREIGN KEY(detail_id) REFERENCES details(id)
 );
-
 /*
 	Examples (why I think this approach is good):
 

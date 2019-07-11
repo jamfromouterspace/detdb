@@ -109,6 +109,11 @@ class InsertGen :
         for i in range(0,len(self.active)) :
             self.active[i] = False
 
+    def isEmpty(self) :
+        if self.values :
+            return False
+        return True
+
     def __str__(self) :
         if self.values :
             return getSQL(self)
