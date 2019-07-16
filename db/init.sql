@@ -66,8 +66,8 @@ CREATE TABLE detonations (
 
 CREATE TABLE properties (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(50) NOT NULL,
-	units NVARCHAR(15) NOT NULL DEFAULT 'dimensionless',
+	name VARCHAR(50),
+	units NVARCHAR(15),
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP,
 );
@@ -75,7 +75,7 @@ CREATE TABLE properties (
 CREATE TABLE data_points (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	column_data JSON NOT NULL,
-	property_id INT NOT NULL,
+	property_id INT NOT NULL, --- There exists a (NULL, NULL) property
 	detonation_id INT NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP,
@@ -86,15 +86,14 @@ CREATE TABLE data_points (
 /*
 	Hardcoding common types (fuel, diulent, etc) leads to
 	lots of code duplication, and confines the possible types
-	of data entries. This was a tough choice, but it seems to be
-	closer to database design best-practices to have a generalized
-	'details' table that can hold any technical details.
+	of data entries. This was a tough choice, but it seems better
+	to have a generalized 'details' table that can hold any technical details.
 */
 
 CREATE TABLE details (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	property_id INT NOT NULL,
-	value VARCHAR(30) NOT NULL,
+	value JSON,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP,
 	FOREIGN KEY(property_id) REFERENCES properties(id)

@@ -37,7 +37,8 @@ def sanitize(string) :
 # for one-time batch of data
 def insert(table : str,
            value_names : Tuple[str],
-           values : List[Tuple[str]]) -> str :
+           values : List[Tuple[str]],
+           starting_index = None,) -> str :
     res = 'INSERT INTO ' + table + '('
     value_names = sanitize(value_names)
     values = sanitize(values)
@@ -58,7 +59,11 @@ def insert(table : str,
             else :
                 res += 'NULL'
             res += ')' if j == len(values[i])-1 else ', '
-        res += ';\n' if i == len(values)-1 else ', \n'
+        if starting_index :
+            index = str(i+starting_index)
+            res += '; -- '+index+'\n' if i == len(values)-1 else ', -- '+index+'\n'
+        else :
+            res += ';\n' if i == len(values)-1 else ', \n'
     return res
 
 # Cummulative MySQL 'INSERT' generator
@@ -67,6 +72,7 @@ def insert(table : str,
 # - Will only generate non-NULL inserts
 class InsertGen :
     def __init__(self, table_name, value_names) :
+        self.index = 1
         self.table = table_name
         self.properties = value_names # table property names
         # if a value is active, then we write it in the SQL query
@@ -102,7 +108,9 @@ class InsertGen :
         vals = []
         for v in self.values :
             vals.append(tuple(v[i] for i in range(0,len(v)) if self.active[i]))
-        return insert(self.table, props, vals)
+        res = insert(self.table, props, vals, starting_index=self.index)
+        self.index += len(vals)
+        return res
 
     def clear(self) :
         self.values = []

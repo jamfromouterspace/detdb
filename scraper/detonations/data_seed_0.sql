@@ -1,15 +1,16 @@
 INSERT INTO properties(name, units)
 VALUES 
-('Initial Pressure', 'kPa'), 
-('Min Initial Pressure', 'kPa'), 
-('Max Initial Pressure', 'kPa'), 
-('Initial Temperature', 'K'), 
-('Min Initial Temperature', 'K'), 
-('Max Initial Temperature', 'K'), 
-('Fuel', 'chemical'), 
-('Oxidizer', 'chemical'), 
-('Diluent', 'chemical'), 
-('Equivalence Ratio', 'dimensionless'), 
-('Min Equivalence Ratio', 'dimensionless'), 
-('Max Equivalence Ratio', 'dimensionless');
+('Initial Pressure', 'kPa'), -- 1
+('Min Initial Pressure', 'kPa'), -- 2
+('Max Initial Pressure', 'kPa'), -- 3
+('Initial Temperature', 'K'), -- 4
+('Min Initial Temperature', 'K'), -- 5
+('Max Initial Temperature', 'K'), -- 6
+('Fuel', 'chemical'), -- 7
+('Oxidizer', 'chemical'), -- 8
+('Diluent', 'chemical'), -- 9
+('Equivalence Ratio', NULL), -- 10
+('Min Equivalence Ratio', NULL), -- 11
+('Max Equivalence Ratio', NULL), -- 12
+(NULL, NULL); -- 13
 

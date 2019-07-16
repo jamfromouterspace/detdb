@@ -48,10 +48,11 @@ total_props[('Max Initial Temperature', 'K')] = 6
 total_props[('Fuel', 'chemical')] = 7
 total_props[('Oxidizer', 'chemical')] = 8
 total_props[('Diluent', 'chemical')] = 9
-total_props[('Equivalence Ratio', 'dimensionless')] = 10
-total_props[('Min Equivalence Ratio', 'dimensionless')] = 11
-total_props[('Max Equivalence Ratio', 'dimensionless')] = 12
-props_index = 13
+total_props[('Equivalence Ratio', None)] = 10
+total_props[('Min Equivalence Ratio', None)] = 11
+total_props[('Max Equivalence Ratio', None)] = 12
+total_props[(None, None)] = 13 # Special null-property for when dimensions aren't given
+props_index = 14
 
 for p in total_props :
     ins_props.add(p)
@@ -81,7 +82,7 @@ def scrape(url, output_file, debug=False) :
         # Get data from first blockquote
         top = dets[i].center.get_text().split('\xa0')
         id = top[0][:-4]
-        cit = re.search('\[(\d+)\]', top[2]).groups()[0]
+        cit = int(re.search('\[(\d+)\]', top[2]).groups()[0])
         if debug :
             printBlue('ID: ' + id)
             printBlue('AUTHOR: ' + top[1])
@@ -89,13 +90,15 @@ def scrape(url, output_file, debug=False) :
         # Get data from second blockquote
         bottom = dets[i+1].find_all('td') # Traverse table from left to right
         cat = bottom[1].string.strip()
-        fuel = bottom[3].string.strip()
         subcat = bottom[5].string.strip()
-        oxidizer = bottom[7].string.strip()
-        pressure = tuple(float(x.strip()) for x in re.split(',|-',bottom[9].string.strip().split('kPa')[0]))
+        # Chemical compounds are sometimes mixtures such as '18.46CO+H2'
+        fuel = list(x.strip() for x in re.split('\+|and',bottom[3].string.strip()))
+        oxidizer = list(x.strip() for x in re.split('\+|and',bottom[7].string.strip()))
+        pressure = tuple(safeFloat(x.strip()) for x in re.split(',|-',bottom[9].string.strip().split('kPa')[0]))
         diluent = list(x.strip() for x in re.split('\+|and',bottom[11].string.strip()))
-        temp = tuple(float(x.strip()) for x in re.split(',|-',bottom[13].string.strip().split('K')[0]))
-        eq_ratio = tuple(float(x.strip()) for x in re.split(',|-',bottom[15].string.strip()))
+        temp = tuple(safeFloat(x.strip()) for x in re.split(',|-',bottom[13].string.strip().split('K')[0]))
+        eq_ratio = bottom[15].string.strip()
+        eq_ratio = tuple(safeFloat(x.strip()) for x in re.split(',|-',eq_ratio) if eq_ratio)
 
         # Clean up special cases
         if not diluent or not diluent[0] :
@@ -112,8 +115,8 @@ def scrape(url, output_file, debug=False) :
             printGreen('SUB-CATEGORY: ' + subcat)
             printGreen('INITIAL P: ' + str(pressure))
             printGreen('INITIAL T: ' + str(temp))
-            printGreen('FUEL: ' + fuel)
-            printGreen('OXIDIZER: ' + oxidizer)
+            printGreen('FUEL: ' + str(fuel))
+            printGreen('OXIDIZER: ' + str(oxidizer))
             printGreen('DILUENT: ' + str(diluent))
             printGreen('EQUIVALENCE RATIO: ' + str(eq_ratio))
 
@@ -127,26 +130,58 @@ def scrape(url, output_file, debug=False) :
         # details table entries
         detail_indices = []
         details = []
-        details.append((total_props[('Fuel','chemical')], fuel)) # (property_id, value)
-        details.append((total_props[('Oxidizer','chemical')], oxidizer))
+        # add compounds and mixtures
         if diluent :
             for d in diluent :
-                details.append((total_props[('Diluent','chemical')], d))
+                # If it's a mixture, add each compound in the mixture separately
+                details.append((total_props[('Diluent','chemical')], '\"' + d + '\"'))
+            if len(diluent) > 1 :
+                # Also add the complete mixture as one entity for more specific searches
+                details.append((total_props[('Diluent','chemical')], '\"' + '+'.join(diluent) + '\"'))
+        else :
+            details.append((total_props[('Diluent','chemical')], None))
+
+        if fuel :
+            for ff in fuel :
+                details.append((total_props[('Fuel','chemical')], '\"' + ff + '\"'))
+            if len(fuel) > 1 :
+                # Also add the complete mixture to the database
+                details.append((total_props[('Fuel','chemical')], '\"' + '+'.join(fuel) + '\"'))
+        else :
+            details.append((total_props[('Fuel','chemical')], None))
+
+        if oxidizer :
+            for o in oxidizer :
+                details.append((total_props[('Oxidizer','chemical')], '\"' + o + '\"'))
+            if len(oxidizer) > 1 :
+                # Also add the complete mixture to the database
+                details.append((total_props[('Oxidizer','chemical')], '\"' + '+'.join(oxidizer) + '\"'))
+        else :
+            details.append((total_props[('Oxidizer','chemical')], None))
+
+        # I know, not very DRY
+
         if pressure and len(pressure) > 1 :
-            details.append((total_props[('Min Initial Pressure','kPa')], min(pressure)))
-            details.append((total_props[('Max Initial Pressure','kPa')], max(pressure)))
+            details.append((total_props[('Min Initial Pressure','kPa')], str(min(pressure))))
+            details.append((total_props[('Max Initial Pressure','kPa')], str(max(pressure))))
+        elif pressure :
+            details.append((total_props[('Initial Pressure','kPa')], str(pressure[0])))
         else :
-            details.append((total_props[('Initial Pressure','kPa')], pressure[0]))
+            details.append((total_props[('Initial Pressure','kPa')], None))
         if temp and len(temp) > 1 :
-            details.append((total_props[('Min Initial Temperature','K')], min(temp)))
-            details.append((total_props[('Max Initial Temperature','K')], max(temp)))
+            details.append((total_props[('Min Initial Temperature','K')], str(min(temp))))
+            details.append((total_props[('Max Initial Temperature','K')], str(max(temp))))
+        elif temp :
+            details.append((total_props[('Initial Temperature','K')], str(temp[0])))
         else :
-            details.append((total_props[('Initial Temperature','K')], temp[0]))
+            details.append((total_props[('Initial Temperature','K')], None))
         if eq_ratio and len(eq_ratio) > 1 :
-            details.append((total_props[('Min Equivalence Ratio','dimensionless')], min(eq_ratio)))
-            details.append((total_props[('Max Equivalence Ratio','dimensionless')], max(eq_ratio)))
+            details.append((total_props[('Min Equivalence Ratio', None)], str(min(eq_ratio))))
+            details.append((total_props[('Max Equivalence Ratio', None)], str(max(eq_ratio))))
+        elif eq_ratio :
+            details.append((total_props[('Equivalence Ratio', None)], str(eq_ratio[0])))
         else :
-            details.append((total_props[('Equivalence Ratio','dimensionless')], eq_ratio[0]))
+            details.append((total_props[('Equivalence Ratio', None)], None))
 
         for d in details :
             if d in total_details :
@@ -191,7 +226,7 @@ def scrape(url, output_file, debug=False) :
                 props_index += 1
             ins_data.add((json.dumps(d['data']),i,dets_index))
         f.write(ins_data.getSQL())
-        f.write('\n')
+        f.write('\n------------------------\n\n')
         ins_data.clear()
 
         dets_index += 1
@@ -207,6 +242,7 @@ def scrape(url, output_file, debug=False) :
 
 base_url = "http://shepherd.caltech.edu/detn_db/html/db_"
 pages = list(range(121,128)) + list(range(130,135)) + list(range(136,142))
+#pages = [127]
 debug = False
 print('Debug mode? (y/n)')
 if input() == 'y' :

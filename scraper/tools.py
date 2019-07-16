@@ -70,3 +70,13 @@ def strRecursive(strings,return_none=False) :
             return s
         except :
             return strRecursive(None,return_none=return_none)
+
+def safeFloat(str) :
+    # Convert string to float without throwing a ValueError
+    try :
+        return float(str)
+    except :
+        return None
+
+def isFloat(str) :
+    return safeFloat(str) != None
