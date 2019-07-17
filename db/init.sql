@@ -8,7 +8,7 @@ CREATE TABLE authors (
 	last_name NVARCHAR(80) NOT NULL,
 	notes VARCHAR(150),
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 );
 
 CREATE TABLE journals (
@@ -16,7 +16,7 @@ CREATE TABLE journals (
 	abbreviation NVARCHAR(50),
 	name NVARCHAR(150) NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 );
 
 CREATE TABLE citations (
@@ -33,8 +33,9 @@ CREATE TABLE citations (
 	year VARCHAR(4) NOT NULL DEFAULT 'n.d.',
 	pages VARCHAR(20),
 	notes VARCHAR(150),
+	archived BIT NOT NULL DEFAULT 0,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 	FOREIGN KEY(journal_id) REFERENCES journals(id),
 );
 
@@ -42,8 +43,6 @@ CREATE TABLE author_citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	author_id INT NOT NULL,
 	citation_id INT NOT NULL,
-	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
 	FOREIGN KEY(author_id) REFERENCES authors(id),
 	FOREIGN KEY(citation_id) REFERENCES citations(id)
 );
@@ -51,17 +50,18 @@ CREATE TABLE author_citations (
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL,
-	category VARCHAR(30) NOT NULL,
-	subcategory VARCHAR(30),
+	category_id INT NOT NULL,
 	file_name VARCHAR(20) NOT NULL,
-	notes NVARCHAR(200),
+	issues NVARCHAR(250) DEFAULT NULL, -- Problems with the data
+	notes NVARCHAR(200) DEFAULT NULL, -- Scientific notes
 	added_by NVARCHAR(164) NOT NULL,
 	citation_id INT NOT NULL,
-	legacy BIT NOT NULL,
+	legacy BIT NOT NULL DEFAULT 0,
+	archived BIT NOT NULL DEFAULT 0,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
-	ip_address NVARCHAR(15),
-	FOREIGN KEY(citation_id) REFERENCES citations(id)
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	FOREIGN KEY(citation_id) REFERENCES citations(id),
+	FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 
 CREATE TABLE properties (
@@ -69,23 +69,31 @@ CREATE TABLE properties (
 	name VARCHAR(50),
 	units NVARCHAR(15),
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 );
 
 CREATE TABLE categories (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 );
 
 CREATE TABLE subcategories (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	parent_id INT NOT NULL,
+	category_id INT NOT NULL,
 	name VARCHAR(50) NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
-	FOREIGN KEY(parent_id) REFERENCES categories(id),
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	FOREIGN KEY(category_id) REFERENCES categories(id),
+);
+
+CREATE TABLE detonation_subcategories (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	subcategory_id INT NOT NULL,
+	detonation_id INT NOT NULL,
+	FOREIGN KEY(subcategory_id) REFERENCES subcategories(id),
+	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
 );
 
 CREATE TABLE data_points (
@@ -94,9 +102,9 @@ CREATE TABLE data_points (
 	property_id INT NOT NULL, --- There exists a (NULL, NULL) property
 	detonation_id INT NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,,
 	FOREIGN KEY(property_id) REFERENCES properties(id),
-	FOREIGN KEY(detonation_id) REFERENCES detonations(id) ON DELETE CASCADE
+	FOREIGN KEY(detonation_id) REFERENCES detonations(id)
 );
 
 /*
@@ -111,7 +119,7 @@ CREATE TABLE details (
 	property_id INT NOT NULL,
 	value JSON,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 	FOREIGN KEY(property_id) REFERENCES properties(id)
 );
 
@@ -119,24 +127,21 @@ CREATE TABLE detonation_details (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	detonation_id INT NOT NULL,
 	detail_id INT NOT NULL,
-	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP,
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
 	FOREIGN KEY(detail_id) REFERENCES details(id)
 );
 /*
-	Examples (why I think this approach is good):
+	Some justifications :
 
 	1. Equivalence ratio ranges can be searchable if
 	   equivalence_ratio_min and _max details are created.
 
-	2. Multiple-diluent data won't be mangled together. Both can be
+	2. Multiple diluent or fuel data won't be mangled together. Both can be
 	   saved as 'diluent' details and each will be attached to the
 	   same detonation id.
 
 	3. All detonations with, say, H2 as fuel will be associated with
-	   ONE detail row. I'm not sure if this will make searching faster,
-	   but it certainly cleaner.
+	   ONE detail row.
 
 	4. There is no code duplication with labels. The same possible labels
 	   (temperature, equivalence ratio, and ranges) are available for both

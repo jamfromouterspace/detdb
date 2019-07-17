@@ -9,8 +9,8 @@ VALUES
 ('Fuel', 'chemical'), -- 7
 ('Oxidizer', 'chemical'), -- 8
 ('Diluent', 'chemical'), -- 9
-('Equivalence Ratio', NULL), -- 10
-('Min Equivalence Ratio', NULL), -- 11
-('Max Equivalence Ratio', NULL), -- 12
+('Equivalence Ratio', 'unitless'), -- 10
+('Min Equivalence Ratio', 'unitless'), -- 11
+('Max Equivalence Ratio', 'unitless'), -- 12
 (NULL, NULL); -- 13
 

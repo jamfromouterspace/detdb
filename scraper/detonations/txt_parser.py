@@ -8,6 +8,8 @@
 import sys
 sys.path.append('../') # Include scraper folder
 from tools import *
+from units import getUnits
+from edge_cases import edge_cases
 import regex as re
 
 # This function parses the raw plotdata from text files
@@ -17,38 +19,61 @@ import regex as re
 # Return type: [{ 'name': String,
 #                 'units': String,
 #                 'data': [Float] }]
-def txtParser(raw : str) :
+def txtParser(raw : str, id : str) :
     res = []
     raw = raw.split('\n')
     csv = raw[0].split(',')
     names = []
+    notes = '' # For storing edge case information
     # Unfortunately, some of the txt files have extra commas
     # e.g. Initial Pressure (kPa), , Cell Width
     for i in range(0,len(csv)) :
         v = csv[i].strip()
         if v :
             names.append(v)
+    if len(csv) != len(names) :
+        notes += 'Extraneous comma. '
     units = [None]*len(names)
     # Sometimes data is unlabelled (i.e. the numbers are meaningless)
     # in which case float data entries are mistakenly scraped as names
     if not isFloat(names[0]):
         raw = raw[1:]
         # Remove '#' character at the beginning
-        if '#' in names[0]:
-            names[0] = names[0].split('#')[1].strip()
-        for i in range(0,len(names)) :
-            names[i] = names[i].strip()
-            if '%' in names[i] or 'Percent' in names[i] :
-                units[i] = '%'
-            elif '(' in names[i] :
-                pattern = '(?:# )?(.+?)(?: )?\((.+?)\)'
-                names[i],units[i] = re.search(pattern,names[i]).groups()
-            res.append({'name' : names[i], 'units' : units[i], 'data' : [] })
-    # When there are no units or column labels, it gets saved as a NULL property
+        if id in edge_cases :
+            names = edge_cases[id]["names"]
+            units = edge_cases[id]["units"]
+            notes +=  edge_cases[id]["notes"]
+            for i in range(0,len(names)) :
+                res.append({'name' : names[i], 'units' : units[i],'data' : []})
+        else :
+            if '#' in names[0]:
+                names[0] = names[0].split('#')[1].strip()
+            for i in range(0,len(names)) :
+                names[i] = names[i].strip()
+                if '%' in names[i] or 'Percent' in names[i] :
+                    units[i] = '%'
+                elif '(' in names[i] :
+                    pattern = '(?:# )?(.+?)(?: )?\((.+?)\)'
+                    names[i],units[i] = re.search(pattern,names[i]).groups()
+                else :
+                    # Try to get units
+                    units[i] = getUnits(names[i])
+                    if units[i] :
+                        notes += 'Assumed units of \'' + units[i] + '\' for \'' + names[i].title() + '\'. '
+                if not units[i] :
+                    notes += 'Missing units for \'' + names[i] + '\'. '
+                res.append({'name' : names[i].title(), 'units' : units[i], 'data' : []})
+    # When there are no units or column labels, it gets linked to a special NULL-property
     else :
-        names = units
+        notes += 'Missing labels'
+        names = edge_cases[id]["names"]
+        units = edge_cases[id]["units"]
+        if names :
+            notes += ' (deduced from plots). '
+        else :
+            notes += ' (unsolved). '
         for i in range(0,len(names)) :
-            res.append({'name' : names[i], 'units' : units[i], 'data' : [] })
+            res.append({'name' : names[i], 'units' : units[i],'data' : []})
     for csv in raw :
         if csv :
             vals = list(x.strip() for x in csv.strip().split(','))
@@ -57,11 +82,15 @@ def txtParser(raw : str) :
                 if ' ' in vals[i] :
                     v1,_,v2 = re.split('( |\xa0)+',vals[i])
                     vals = vals[:i] + [float(v1),float(v2)] + vals[i+1:]
+                    notes += 'Missing comma. '
                 else :
                     vals[i] = float(vals[i])
             for i in range(0, len(vals)) :
                 res[i]['data'].append(vals[i])
-    return res
+    # if notes :
+    #     printRed('SPECIAL CASE: ' + notes)
+    #     printRed(res)
+    return (res,notes)
 
 # Quick Test
 #data = '#Initial Pressure (atm), Initial Pressure (kPa), Cell Width\n0.2684, 27.18892, 6.4531\n0.3714, 37.62282, 4.3233\n0.4697, 47.58061, 3.1982\n0.5765, 58.39945, 2.4519\n'

@@ -117,10 +117,15 @@ class InsertGen :
         for i in range(0,len(self.active)) :
             self.active[i] = False
 
-    def isEmpty(self) :
+    def flush(self) :
+        s = self.getSQL()
+        self.clear()
+        return s
+
+    def flushable(self) :
         if self.values :
-            return False
-        return True
+            return True
+        return False
 
     def __str__(self) :
         if self.values :

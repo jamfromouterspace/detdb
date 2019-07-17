@@ -19,9 +19,18 @@ import regex as re # PyPi regex supports \p{}
 ## INIT ##
 ##########
 
+# Text file to save edge cases for further inspection
+special = open('notes.txt','w')
+index_file = open('id_index.txt','w')
+max_notes_length = 0
+
 # Global variables to keep track of entries
 total_props = {} # {(name,units): index, ...}
 total_details = {} # {(property_id, value): index, ...}
+total_cats = {} # total_categories, {name: index}
+total_subcats = {} # total_subcategories, {(name, parent): index}
+cats_index = 1
+subcats_index = 1
 props_index = 1
 details_index = 1
 dets_index = 1
@@ -31,10 +40,13 @@ dets_index = 1
 
 # SQL Generation objects
 ins_props = InsertGen('properties', ('name','units'))
+ins_cats = InsertGen('categories', ('name',))
+ins_subcats = InsertGen('subcategories', ('name','category_id'))
+ins_dets_subcats = InsertGen('detonation_subcategories', ('detonation_id','category_id'))
 ins_details = InsertGen('details', ('property_id','value'))
-ins_dets = InsertGen('detonations', ('name','category','subcategory',
+ins_dets = InsertGen('detonations', ('name','category_id',
                                      'file_name','added_by',
-                                     'citation_id','legacy'))
+                                     'citation_id','legacy', 'issues'))
 ins_det_details = InsertGen('detonation_details', ('detonation_id','detail_id'))
 ins_data = InsertGen('data_points', ('column_data','property_id','detonation_id'))
 
@@ -48,26 +60,27 @@ total_props[('Max Initial Temperature', 'K')] = 6
 total_props[('Fuel', 'chemical')] = 7
 total_props[('Oxidizer', 'chemical')] = 8
 total_props[('Diluent', 'chemical')] = 9
-total_props[('Equivalence Ratio', None)] = 10
-total_props[('Min Equivalence Ratio', None)] = 11
-total_props[('Max Equivalence Ratio', None)] = 12
+total_props[('Equivalence Ratio', 'unitless')] = 10
+total_props[('Min Equivalence Ratio', 'unitless')] = 11
+total_props[('Max Equivalence Ratio', 'unitless')] = 12
 total_props[(None, None)] = 13 # Special null-property for when dimensions aren't given
 props_index = 14
 
 for p in total_props :
     ins_props.add(p)
 f = open('data_seed_0.sql', "w")
-f.write(ins_props.getSQL())
+f.write(ins_props.flush())
 f.write('\n')
 f.close()
-ins_props.clear()
 
 #############################
 ## SCRAPE AND GENERATE SQL ##
 #############################
 
 def scrape(url, output_file, debug=False) :
-    global total_props,total_details,props_index,details_index,dets_index
+    global props_index,cats_index,subcats_index,details_index,dets_index
+    global total_props,total_details,total_cats,total_subcats
+    global max_notes_length
     data_url = "http://shepherd.caltech.edu/detn_db/data/plotdata/"
     res = requests.get(url)
     soup = BeautifulSoup(res.text, "html.parser")
@@ -90,7 +103,7 @@ def scrape(url, output_file, debug=False) :
         # Get data from second blockquote
         bottom = dets[i+1].find_all('td') # Traverse table from left to right
         cat = bottom[1].string.strip()
-        subcat = bottom[5].string.strip()
+        subcats = list(x.strip() for x in bottom[5].string.strip().split(','))
         # Chemical compounds are sometimes mixtures such as '18.46CO+H2'
         fuel = list(x.strip() for x in re.split('\+|and',bottom[3].string.strip()))
         oxidizer = list(x.strip() for x in re.split('\+|and',bottom[7].string.strip()))
@@ -109,10 +122,12 @@ def scrape(url, output_file, debug=False) :
             pressure = None
         if not eq_ratio or not eq_ratio[0]:
             eq_ratio = None
+        if not subcats :
+            subcats = None
 
         if debug :
             printGreen('CATEGORY: ' + cat)
-            printGreen('SUB-CATEGORY: ' + subcat)
+            printGreen('SUB-CATEGORIES: ' + str(subcats))
             printGreen('INITIAL P: ' + str(pressure))
             printGreen('INITIAL T: ' + str(temp))
             printGreen('FUEL: ' + str(fuel))
@@ -121,12 +136,51 @@ def scrape(url, output_file, debug=False) :
             printGreen('EQUIVALENCE RATIO: ' + str(eq_ratio))
 
         data = requests.get(data_url + id + '.txt').text
-        data = txtParser(data)
+        data,notes = txtParser(data,id)
+
         if debug :
             printRed('DATA:')
             print(data)
 
         ######### GENERATE SQL ##########
+        # category
+        if cat in total_cats :
+            # Already exists, so replace with index
+            cat = total_cats[cat]
+        elif cat :
+            # Add to database and then replace cat variable with index
+            total_cats[cat] = cats_index
+            ins_cats.add((cat,))
+            f.write(ins_cats.flush())
+            f.write('\n')
+            cat = cats_index
+            cats_index += 1
+        else :
+            cat = None
+
+        # subcategories (i.e. tags/labels related to categories)
+        subcat_indices = []
+        if subcats and (not cat) :
+            notes += 'Subcategory with no parent category. '
+        elif subcats :
+            for sc in subcats :
+                if (sc,cat) in total_subcats :
+                    subcat_indices.append(total_subcats[(sc,cat)])
+                else :
+                    total_subcats[(sc,cat)] = subcats_index
+                    subcat_indices.append(subcats_index)
+                    ins_subcats.add((sc,cat))
+                    subcats_index += 1
+            if ins_subcats.flushable() :
+                f.write(ins_subcats.flush())
+                f.write('\n')
+            # detonation_subcategories join table
+            for si in subcat_indices :
+                ins_dets_subcats.add((dets_index,si))
+            if ins_dets_subcats.flushable() :
+                f.write(ins_dets_subcats.flush())
+                f.write('\n')
+
         # details table entries
         detail_indices = []
         details = []
@@ -167,6 +221,7 @@ def scrape(url, output_file, debug=False) :
         elif pressure :
             details.append((total_props[('Initial Pressure','kPa')], str(pressure[0])))
         else :
+            notes += 'No initial pressure data. '
             details.append((total_props[('Initial Pressure','kPa')], None))
         if temp and len(temp) > 1 :
             details.append((total_props[('Min Initial Temperature','K')], str(min(temp))))
@@ -174,14 +229,16 @@ def scrape(url, output_file, debug=False) :
         elif temp :
             details.append((total_props[('Initial Temperature','K')], str(temp[0])))
         else :
+            notes += 'No initial temperature data. '
             details.append((total_props[('Initial Temperature','K')], None))
         if eq_ratio and len(eq_ratio) > 1 :
-            details.append((total_props[('Min Equivalence Ratio', None)], str(min(eq_ratio))))
-            details.append((total_props[('Max Equivalence Ratio', None)], str(max(eq_ratio))))
+            details.append((total_props[('Min Equivalence Ratio', 'unitless')], str(min(eq_ratio))))
+            details.append((total_props[('Max Equivalence Ratio', 'unitless')], str(max(eq_ratio))))
         elif eq_ratio :
-            details.append((total_props[('Equivalence Ratio', None)], str(eq_ratio[0])))
+            details.append((total_props[('Equivalence Ratio', 'unitless')], str(eq_ratio[0])))
         else :
-            details.append((total_props[('Equivalence Ratio', None)], None))
+            notes += 'No equivalence ratio data. '
+            details.append((total_props[('Equivalence Ratio', 'unitless')], None))
 
         for d in details :
             if d in total_details :
@@ -191,24 +248,21 @@ def scrape(url, output_file, debug=False) :
                 ins_details.add(d)
                 detail_indices.append(details_index)
                 details_index += 1
-        if not ins_details.isEmpty() :
-            f.write(ins_details.getSQL())
+        if ins_details.flushable() :
+            f.write(ins_details.flush())
             f.write('\n')
-            ins_details.clear()
 
         # detonations table entry
-        ins_dets.add((id,cat,subcat,id+'.txt','Joe Shepherd',cit, 1))
+        ins_dets.add((id,cat,id+'.txt','Joe Shepherd',cit, 1, notes))
         # 1 -> True -> Legacy entry
-        f.write(ins_dets.getSQL())
+        f.write(ins_dets.flush())
         f.write('\n')
-        ins_dets.clear()
 
         # detonation_details table entries
         for i in detail_indices :
             ins_det_details.add((dets_index,i))
-        f.write(ins_det_details.getSQL())
+        f.write(ins_det_details.flush())
         f.write('\n')
-        ins_det_details.clear()
 
         # data_points table entries (raw plot data)
         for d in data :
@@ -220,15 +274,20 @@ def scrape(url, output_file, debug=False) :
                 total_props[prop] = props_index
                 i = props_index
                 ins_props.add(prop)
-                f.write(ins_props.getSQL())
+                f.write(ins_props.flush())
                 f.write('\n')
-                ins_props.clear()
                 props_index += 1
             ins_data.add((json.dumps(d['data']),i,dets_index))
-        f.write(ins_data.getSQL())
+        f.write(ins_data.flush())
         f.write('\n------------------------\n\n')
-        ins_data.clear()
 
+        if notes :
+            spaces = ' '*(7-len(id))
+            special.write(id + spaces + ' – ' + notes + '\n')
+        if len(notes) > max_notes_length :
+            max_notes_length = len(notes)
+
+        index_file.
         dets_index += 1
 
         time.sleep(0.1)
@@ -253,3 +312,6 @@ for i in range(0,len(pages)) :
     printRed("PAGE " + str(pages[i]))
     scrape(url, 'data_seed_' + str(i+1) + '.sql', debug=debug)
     time.sleep(0.1)
+printBlue("Max notes length: " + str(max_notes_length))
+special.close()
+index_file.close()

@@ -1,3 +1,15 @@
+INSERT INTO categories(name)
+VALUES 
+('cell size'); -- 1
+
+INSERT INTO subcategories(name, category_id)
+VALUES 
+('width', 1); -- 1
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(1, 1); -- 1
+
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"N2"'), -- 1
@@ -7,9 +19,9 @@ VALUES
 (4, '293.0'), -- 5
 (10, '1.0'); -- 6
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja5d', 'cell size', 'width', 'ja5d.txt', 'Joe Shepherd', 3, 1); -- 1
+('ja5d', 1, 'ja5d.txt', 'Joe Shepherd', 3, 1); -- 1
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -35,6 +47,10 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(2, 1); -- 2
+
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"Air"'), -- 7
@@ -43,9 +59,9 @@ VALUES
 (11, '0.07'), -- 10
 (12, '0.39'); -- 11
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja5e', 'cell size', 'width', 'ja5e.txt', 'Joe Shepherd', 3, 1); -- 2
+('ja5e', 1, 'ja5e.txt', 'Joe Shepherd', 3, 1); -- 2
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -62,16 +78,16 @@ INSERT INTO properties(name, units)
 VALUES 
 ('Percent Air', '%'); -- 16
 
-INSERT INTO properties(name)
-VALUES 
-('Cell Width'); -- 17
-
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[10.0, 15.0, 20.0, 50.0, 54.0, 60.0, 65.0, 70.0, 72.0, 74.0, 76.0]', 16, 2), -- 3
-('[2.5, 4.0, 3.5, 8.0, 10.0, 14.5, 26.0, 57.0, 89.5, 143.5, 107.0]', 17, 2); -- 4
+('[2.5, 4.0, 3.5, 8.0, 10.0, 14.5, 26.0, 57.0, 89.5, 143.5, 107.0]', 15, 2); -- 4
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(3, 1); -- 3
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -80,9 +96,9 @@ VALUES
 (2, '26.3'), -- 14
 (3, '56.7'); -- 15
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at33a', 'cell size', 'width', 'at33a.txt', 'Joe Shepherd', 5, 1); -- 3
+('at33a', 1, 'at33a.txt', 'Joe Shepherd', 5, 1); -- 3
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -96,19 +112,23 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Initial Pressure', 'atm'); -- 18
+('Initial Pressure', 'atm'); -- 17
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.2684, 0.3714, 0.4697, 0.5765]', 18, 3), -- 5
+('[0.2684, 0.3714, 0.4697, 0.5765]', 17, 3), -- 5
 ('[27.18892, 37.62282, 47.58061, 58.39945]', 1, 3), -- 6
-('[6.4531, 4.3233, 3.1982, 2.4519]', 17, 3); -- 7
+('[6.4531, 4.3233, 3.1982, 2.4519]', 15, 3); -- 7
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at33b', 'cell size', 'width', 'at33b.txt', 'Joe Shepherd', 5, 1); -- 4
+(4, 1); -- 4
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at33b', 1, 'at33b.txt', 'Joe Shepherd', 5, 1); -- 4
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -122,19 +142,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.5541, 0.7183, 0.8216]', 18, 4), -- 8
+('[0.5541, 0.7183, 0.8216]', 17, 4), -- 8
 ('[56.13033, 72.76379, 83.22808]', 1, 4), -- 9
-('[2.4516, 1.8428, 1.73]', 17, 4); -- 10
+('[2.4516, 1.8428, 1.73]', 15, 4); -- 10
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(5, 1); -- 5
 
 INSERT INTO details(property_id, value)
 VALUES 
 (10, '0.75'); -- 16
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at33c', 'cell size', 'width', 'at33c.txt', 'Joe Shepherd', 5, 1); -- 5
+('at33c', 1, 'at33c.txt', 'Joe Shepherd', 5, 1); -- 5
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -148,11 +172,15 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.6529]', 18, 5), -- 11
+('[0.6529]', 17, 5), -- 11
 ('[66.155]', 1, 5), -- 12
-('[2.3294]', 17, 5); -- 13
+('[2.3294]', 15, 5); -- 13
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(6, 1); -- 6
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -161,9 +189,9 @@ VALUES
 (3, '53.3'), -- 19
 (4, '298.0'); -- 20
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at58a', 'cell size', 'width', 'at58a.txt', 'Joe Shepherd', 9, 1); -- 6
+('at58a', 1, 'at58a.txt', 'Joe Shepherd', 9, 1); -- 6
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -177,23 +205,27 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Pressure', 'atm'); -- 19
+('Pressure', 'atm'); -- 18
 
 INSERT INTO properties(name, units)
 VALUES 
-('Pressure', 'kPa'); -- 20
+('Pressure', 'kPa'); -- 19
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.0699, 0.0775, 0.0951, 0.1041, 0.1141, 0.1282, 0.1268, 0.1469, 0.1593, 0.1744, 0.1955, 0.2602, 0.2605, 0.2886, 0.3124, 0.3235, 0.3202, 0.3585, 0.3583, 0.3969, 0.4249, 0.3972, 0.3843, 0.4208, 0.435, 0.4655, 0.4935, 0.4562, 0.483, 0.5172]', 19, 6), -- 14
-('[7.08087, 7.85075, 9.63363, 10.54533, 11.55833, 12.98666, 12.84484, 14.88097, 16.13709, 17.66672, 19.80415, 26.35826, 26.38865, 29.23518, 31.64612, 32.77055, 32.43626, 36.31605, 36.29579, 40.20597, 43.04237, 40.23636, 38.92959, 42.62704, 44.0655, 47.15515, 49.99155, 46.21306, 48.9279, 52.39236]', 20, 6), -- 15
-('[18.9704, 16.3393, 15.814, 15.6462, 13.4746, 9.4261, 9.2096, 9.117, 7.4959, 7.0811, 6.3884, 4.5812, 4.0341, 3.7675, 3.7704, 3.3989, 3.0983, 3.1017, 3.3246, 3.141, 3.0359, 2.8968, 2.6399, 2.5522, 2.7365, 2.8024, 2.3036, 2.1475, 2.028, 1.9154]', 17, 6); -- 16
+('[0.0699, 0.0775, 0.0951, 0.1041, 0.1141, 0.1282, 0.1268, 0.1469, 0.1593, 0.1744, 0.1955, 0.2602, 0.2605, 0.2886, 0.3124, 0.3235, 0.3202, 0.3585, 0.3583, 0.3969, 0.4249, 0.3972, 0.3843, 0.4208, 0.435, 0.4655, 0.4935, 0.4562, 0.483, 0.5172]', 18, 6), -- 14
+('[7.08087, 7.85075, 9.63363, 10.54533, 11.55833, 12.98666, 12.84484, 14.88097, 16.13709, 17.66672, 19.80415, 26.35826, 26.38865, 29.23518, 31.64612, 32.77055, 32.43626, 36.31605, 36.29579, 40.20597, 43.04237, 40.23636, 38.92959, 42.62704, 44.0655, 47.15515, 49.99155, 46.21306, 48.9279, 52.39236]', 19, 6), -- 15
+('[18.9704, 16.3393, 15.814, 15.6462, 13.4746, 9.4261, 9.2096, 9.117, 7.4959, 7.0811, 6.3884, 4.5812, 4.0341, 3.7675, 3.7704, 3.3989, 3.0983, 3.1017, 3.3246, 3.141, 3.0359, 2.8968, 2.6399, 2.5522, 2.7365, 2.8024, 2.3036, 2.1475, 2.028, 1.9154]', 15, 6); -- 16
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at58b', 'cell size', 'width', 'at58b.txt', 'Joe Shepherd', 9, 1); -- 7
+(7, 1); -- 7
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at58b', 1, 'at58b.txt', 'Joe Shepherd', 9, 1); -- 7
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -207,15 +239,19 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.0598, 0.0608, 0.0602, 0.0724, 0.0787, 0.0925, 0.1029, 0.1157, 0.1212, 0.153, 0.1868, 0.2176, 0.2504, 0.2812, 0.3431, 0.3808, 0.4086, 0.4479, 0.4794, 0.521]', 18, 7), -- 17
+('[0.0598, 0.0608, 0.0602, 0.0724, 0.0787, 0.0925, 0.1029, 0.1157, 0.1212, 0.153, 0.1868, 0.2176, 0.2504, 0.2812, 0.3431, 0.3808, 0.4086, 0.4479, 0.4794, 0.521]', 17, 7), -- 17
 ('[6.05774, 6.15904, 6.09826, 7.33412, 7.97231, 9.37025, 10.42377, 11.72041, 12.27756, 15.4989, 18.92284, 22.04288, 25.36552, 28.48556, 34.75603, 38.57504, 41.39118, 45.37227, 48.56322, 52.7773]', 1, 7), -- 18
-('[42.5743, 33.8308, 31.5656, 27.6094, 23.8167, 20.8208, 16.9654, 14.1493, 13.6835, 10.3163, 7.7717, 6.1241, 5.0517, 4.5144, 3.48, 3.145, 2.8401, 2.718, 2.7222, 2.2948]', 17, 7); -- 19
+('[42.5743, 33.8308, 31.5656, 27.6094, 23.8167, 20.8208, 16.9654, 14.1493, 13.6835, 10.3163, 7.7717, 6.1241, 5.0517, 4.5144, 3.48, 3.145, 2.8401, 2.718, 2.7222, 2.2948]', 15, 7); -- 19
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at58c', 'cell size', 'width', 'at58c.txt', 'Joe Shepherd', 9, 1); -- 8
+(8, 1); -- 8
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at58c', 1, 'at58c.txt', 'Joe Shepherd', 9, 1); -- 8
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -229,11 +265,15 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.0927, 0.1063, 0.0938, 0.1125, 0.0993, 0.129, 0.1638, 0.1965, 0.2279, 0.2613, 0.2928, 0.3281, 0.3635, 0.3936, 0.4263, 0.4564, 0.4999, 0.5353]', 18, 8), -- 20
+('[0.0927, 0.1063, 0.0938, 0.1125, 0.0993, 0.129, 0.1638, 0.1965, 0.2279, 0.2613, 0.2928, 0.3281, 0.3635, 0.3936, 0.4263, 0.4564, 0.4999, 0.5353]', 17, 8), -- 20
 ('[9.39051, 10.76819, 9.50194, 11.39625, 10.05909, 13.0677, 16.59294, 19.90545, 23.08627, 26.46969, 29.66064, 33.23653, 36.82255, 39.87168, 43.18419, 46.23332, 50.63987, 54.22589]', 1, 8), -- 21
-('[83.1857, 56.2537, 52.5012, 51.9006, 42.68, 28.2055, 17.8014, 14.9796, 12.7509, 10.7297, 9.8994, 7.7745, 7.2559, 6.3201, 6.1764, 4.9635, 4.6324, 4.3734]', 17, 8); -- 22
+('[83.1857, 56.2537, 52.5012, 51.9006, 42.68, 28.2055, 17.8014, 14.9796, 12.7509, 10.7297, 9.8994, 7.7745, 7.2559, 6.3201, 6.1764, 4.9635, 4.6324, 4.3734]', 15, 8); -- 22
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(9, 1); -- 9
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -242,9 +282,9 @@ VALUES
 (11, '0.5'), -- 23
 (12, '0.7'); -- 24
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at19', 'cell size', 'width', 'at19.txt', 'Joe Shepherd', 16, 1); -- 9
+('at19', 1, 'at19.txt', 'Joe Shepherd', 16, 1); -- 9
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -256,25 +296,29 @@ VALUES
 (9, 23), -- 62
 (9, 24); -- 63
 
-INSERT INTO properties(name)
+INSERT INTO properties(name, units)
 VALUES 
-('Cell Size'); -- 21
+('Cell Size', 'mm'); -- 20
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.5038, 0.532, 0.5563, 0.5765, 0.5745, 0.5953, 0.5932, 0.6121, 0.6121, 0.6484, 0.688, 0.7715]', 10, 9), -- 23
-('[139.374, 81.9227, 72.0284, 76.9438, 71.6286, 65.8946, 61.3426, 60.607, 57.912, 47.1225, 36.642, 22.4464]', 21, 9); -- 24
+('[139.374, 81.9227, 72.0284, 76.9438, 71.6286, 65.8946, 61.3426, 60.607, 57.912, 47.1225, 36.642, 22.4464]', 20, 9); -- 24
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(10, 1); -- 10
 
 INSERT INTO details(property_id, value)
 VALUES 
 (4, '300.0'), -- 25
 (12, '3.3'); -- 26
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at14', 'cell size', 'width', 'at14.txt', 'Joe Shepherd', 29, 1); -- 10
+('at14', 1, 'at14.txt', 'Joe Shepherd', 29, 1); -- 10
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -289,9 +333,13 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.5124, 0.599, 0.591, 0.79, 1.0233, 1.5828, 2.383, 2.373, 2.8458, 3.292]', 10, 10), -- 25
-('[95.8677, 41.48, 34.3659, 11.0414, 8.1875, 8.7261, 24.3905, 31.5158, 46.4882, 75.7374]', 21, 10); -- 26
+('[95.8677, 41.48, 34.3659, 11.0414, 8.1875, 8.7261, 24.3905, 31.5158, 46.4882, 75.7374]', 20, 10); -- 26
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(11, 1); -- 11
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -299,9 +347,9 @@ VALUES
 (11, '0.35'), -- 28
 (12, '2.4'); -- 29
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at15', 'cell size', 'width', 'at15.txt', 'Joe Shepherd', 29, 1); -- 11
+('at15', 1, 'at15.txt', 'Joe Shepherd', 29, 1); -- 11
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -316,18 +364,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.3571, 0.386, 0.384, 0.45, 0.4536, 0.505, 0.504, 0.6654, 1.027, 1.02, 2.368, 2.366]', 10, 11), -- 27
-('[104.587, 78.4426, 62.9149, 29.3264, 24.0291, 20.4558, 15.1623, 7.975, 8.7901, 5.6176, 17.386, 10.3279]', 21, 11); -- 28
+('[104.587, 78.4426, 62.9149, 29.3264, 24.0291, 20.4558, 15.1623, 7.975, 8.7901, 5.6176, 17.386, 10.3279]', 20, 11); -- 28
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(12, 1); -- 12
 
 INSERT INTO details(property_id, value)
 VALUES 
 (4, '650.0'), -- 30
 (11, '0.26'); -- 31
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at16', 'cell size', 'width', 'at16.txt', 'Joe Shepherd', 29, 1); -- 12
+('at16', 1, 'at16.txt', 'Joe Shepherd', 29, 1); -- 12
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -342,18 +394,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.263, 0.263, 0.2657, 0.2923, 0.2925, 0.3269, 0.327, 0.3271, 0.3274, 0.4207, 0.501, 0.502, 1.025, 1.023, 2.397, 2.397]', 10, 12), -- 29
-('[80.0289, 78.5497, 46.8941, 41.286, 37.1442, 37.1609, 35.3858, 33.9066, 31.244, 15.9027, 16.2338, 12.3878, 3.9958, 5.1792, 11.0973, 9.6181]', 21, 12); -- 30
+('[80.0289, 78.5497, 46.8941, 41.286, 37.1442, 37.1609, 35.3858, 33.9066, 31.244, 15.9027, 16.2338, 12.3878, 3.9958, 5.1792, 11.0973, 9.6181]', 20, 12); -- 30
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(13, 1); -- 13
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.37'), -- 32
 (12, '2.51'); -- 33
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja20a', 'cell size', 'width', 'ja20a.txt', 'Joe Shepherd', 30, 1); -- 13
+('ja20a', 1, 'ja20a.txt', 'Joe Shepherd', 30, 1); -- 13
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -365,24 +421,24 @@ VALUES
 (13, 32), -- 90
 (13, 33); -- 91
 
-INSERT INTO properties(name, units)
-VALUES 
-('Cell Size', 'mm'); -- 22
-
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[2.51, 1.0, 0.76, 0.59, 0.5, 0.42, 0.42]', 10, 13), -- 31
-('[18.0, 8.0, 11.0, 27.0, 93.0, 187.0, 248.0]', 22, 13); -- 32
+('[18.0, 8.0, 11.0, 27.0, 93.0, 187.0, 248.0]', 20, 13); -- 32
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(14, 1); -- 14
 
 INSERT INTO details(property_id, value)
 VALUES 
 (12, '1.0'); -- 34
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja20b', 'cell size', 'width', 'ja20b.txt', 'Joe Shepherd', 30, 1); -- 14
+('ja20b', 1, 'ja20b.txt', 'Joe Shepherd', 30, 1); -- 14
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -397,18 +453,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[1.0, 0.41, 0.34, 0.3, 0.29]', 10, 14), -- 33
-('[6.0, 52.0, 98.0, 196.0, 429.0]', 22, 14); -- 34
+('[6.0, 52.0, 98.0, 196.0, 429.0]', 20, 14); -- 34
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(15, 1); -- 15
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.12'), -- 35
 (12, '0.4'); -- 36
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja20c', 'cell size', 'width', 'ja20c.txt', 'Joe Shepherd', 30, 1); -- 15
+('ja20c', 1, 'ja20c.txt', 'Joe Shepherd', 30, 1); -- 15
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -423,9 +483,13 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.4, 0.31, 0.25, 0.23, 0.23, 0.2, 0.19]', 10, 15), -- 35
-('[17.0, 30.0, 46.0, 74.0, 94.0, 213.0, 230.0]', 22, 15); -- 36
+('[17.0, 30.0, 46.0, 74.0, 94.0, 213.0, 230.0]', 20, 15); -- 36
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(16, 1); -- 16
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -434,9 +498,9 @@ VALUES
 (3, '200.0'), -- 39
 (10, '0.5'); -- 40
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja21a', 'cell size', 'width', 'ja21a.txt', 'Joe Shepherd', 30, 1); -- 16
+('ja21a', 1, 'ja21a.txt', 'Joe Shepherd', 30, 1); -- 16
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -451,17 +515,21 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[150.0, 200.0]', 1, 16), -- 37
-('[103.0, 107.0]', 22, 16); -- 38
+('[103.0, 107.0]', 20, 16); -- 38
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(17, 1); -- 17
 
 INSERT INTO details(property_id, value)
 VALUES 
 (10, '0.4'); -- 41
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja21b', 'cell size', 'width', 'ja21b.txt', 'Joe Shepherd', 30, 1); -- 17
+('ja21b', 1, 'ja21b.txt', 'Joe Shepherd', 30, 1); -- 17
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -476,9 +544,13 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[150.0, 200.0]', 1, 17), -- 39
-('[45.0, 37.0]', 22, 17); -- 40
+('[45.0, 37.0]', 20, 17); -- 40
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(18, 1); -- 18
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -486,9 +558,9 @@ VALUES
 (3, '240.0'), -- 43
 (10, '0.2'); -- 44
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja21c', 'cell size', 'width', 'ja21c.txt', 'Joe Shepherd', 30, 1); -- 18
+('ja21c', 1, 'ja21c.txt', 'Joe Shepherd', 30, 1); -- 18
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -503,13 +575,17 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[170.0, 240.0]', 1, 18), -- 41
-('[2.0, 85.0]', 22, 18); -- 42
+('[2.0, 85.0]', 20, 18); -- 42
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja22a', 'cell size', 'width', 'ja22a.txt', 'Joe Shepherd', 30, 1); -- 19
+(19, 1); -- 19
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja22a', 1, 'ja22a.txt', 'Joe Shepherd', 30, 1); -- 19
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -522,22 +598,26 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Percent Steam', '%'); -- 23
+('Percent Steam', '%'); -- 21
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[30.0, 35.0, 40.0]', 23, 19), -- 43
-('[75.0, 175.0, 503.0]', 22, 19); -- 44
+('[30.0, 35.0, 40.0]', 21, 19), -- 43
+('[75.0, 175.0, 503.0]', 20, 19); -- 44
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(20, 1); -- 20
 
 INSERT INTO details(property_id, value)
 VALUES 
 (4, '400.0'); -- 45
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja22b', 'cell size', 'width', 'ja22b.txt', 'Joe Shepherd', 30, 1); -- 20
+('ja22b', 1, 'ja22b.txt', 'Joe Shepherd', 30, 1); -- 20
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -550,14 +630,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[25.0, 25.0]', 23, 20), -- 45
-('[214.0, 162.0]', 22, 20); -- 46
+('[25.0, 25.0]', 21, 20), -- 45
+('[214.0, 162.0]', 20, 20); -- 46
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja22c', 'cell size', 'width', 'ja22c.txt', 'Joe Shepherd', 30, 1); -- 21
+(21, 1); -- 21
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja22c', 1, 'ja22c.txt', 'Joe Shepherd', 30, 1); -- 21
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -570,14 +654,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[10.0, 20.0, 25.0]', 23, 21), -- 47
-('[33.0, 91.0, 275.0]', 22, 21); -- 48
+('[10.0, 20.0, 25.0]', 21, 21), -- 47
+('[33.0, 91.0, 275.0]', 20, 21); -- 48
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja22d', 'cell size', 'width', 'ja22d.txt', 'Joe Shepherd', 30, 1); -- 22
+(22, 1); -- 22
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja22d', 1, 'ja22d.txt', 'Joe Shepherd', 30, 1); -- 22
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -590,18 +678,22 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[10.0]', 23, 22), -- 49
-('[305.0]', 22, 22); -- 50
+('[10.0]', 21, 22), -- 49
+('[305.0]', 20, 22); -- 50
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(23, 1); -- 23
 
 INSERT INTO details(property_id, value)
 VALUES 
 (10, '0.3'); -- 46
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja22e', 'cell size', 'width', 'ja22e.txt', 'Joe Shepherd', 30, 1); -- 23
+('ja22e', 1, 'ja22e.txt', 'Joe Shepherd', 30, 1); -- 23
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -614,19 +706,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[7.5]', 23, 23), -- 51
-('[429.0]', 22, 23); -- 52
+('[7.5]', 21, 23), -- 51
+('[429.0]', 20, 23); -- 52
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(24, 1); -- 24
 
 INSERT INTO details(property_id, value)
 VALUES 
 (5, '500.0'), -- 47
 (6, '650.0'); -- 48
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja22f', 'cell size', 'width', 'ja22f.txt', 'Joe Shepherd', 30, 1); -- 24
+('ja22f', 1, 'ja22f.txt', 'Joe Shepherd', 30, 1); -- 24
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -641,18 +737,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[650.0, 500.0]', 4, 24), -- 53
-('[75.0, 286.0]', 22, 24); -- 54
+('[75.0, 286.0]', 20, 24); -- 54
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(25, 1); -- 25
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '4.0'), -- 49
 (3, '120.0'); -- 50
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('mk9b', 'cell size', 'width', 'mk9b.txt', 'Joe Shepherd', 32, 1); -- 25
+('mk9b', 1, 'mk9b.txt', 'Joe Shepherd', 32, 1); -- 25
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -666,24 +766,28 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Initial Pressure', 'torr'); -- 24
+('Initial Pressure', 'torr'); -- 22
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[33.3649, 52.248, 84.9503, 124.562, 199.905, 295.835, 296.498, 390.961, 394.463, 502.982, 762.281, 885.376]', 24, 25), -- 55
+('[33.3649, 52.248, 84.9503, 124.562, 199.905, 295.835, 296.498, 390.961, 394.463, 502.982, 762.281, 885.376]', 22, 25), -- 55
 ('[4.44828749, 6.965827105, 11.32577519, 16.60690086, 26.65180806, 39.44142286, 39.52981559, 52.12384648, 52.59074141, 67.05875151, 101.6291083, 118.0404253]', 1, 25), -- 56
 ('[49.5256, 48.4234, 43.3694, 20.2503, 8.29202, 6.86623, 5.13397, 7.54391, 6.43222, 4.27165, 2.08062, 2.03303]', 15, 25); -- 57
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(26, 1); -- 26
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '50.7'), -- 51
 (3, '101.3'); -- 52
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at21a', 'cell size', 'width', 'at21a.txt', 'Joe Shepherd', 36, 1); -- 26
+('at21a', 1, 'at21a.txt', 'Joe Shepherd', 36, 1); -- 26
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -697,19 +801,23 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Pressure', 'bar'); -- 25
+('Pressure', 'bar'); -- 23
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.2842, 0.2845, 0.8032, 0.8042, 0.4748, 0.4755, 0.9887, 0.99]', 25, 26), -- 58
-('[28.42, 28.45, 80.32, 80.42, 47.48, 47.55, 98.87, 99.0]', 20, 26), -- 59
-('[7.0013, 6.0322, 2.0323, 1.7749, 3.4775, 2.9961, 1.5955, 1.3934]', 17, 26); -- 60
+('[0.2842, 0.2845, 0.8032, 0.8042, 0.4748, 0.4755, 0.9887, 0.99]', 23, 26), -- 58
+('[28.42, 28.45, 80.32, 80.42, 47.48, 47.55, 98.87, 99.0]', 19, 26), -- 59
+('[7.0013, 6.0322, 2.0323, 1.7749, 3.4775, 2.9961, 1.5955, 1.3934]', 15, 26); -- 60
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja2', 'cell size', 'width', 'ja2.txt', 'Joe Shepherd', 39, 1); -- 27
+(27, 1); -- 27
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja2', 1, 'ja2.txt', 'Joe Shepherd', 39, 1); -- 27
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -722,22 +830,26 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Percent Ar', '%'); -- 26
+('Percent Ar', '%'); -- 24
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[57.0, 72.3, 87.0]', 26, 27), -- 61
+('[57.0, 72.3, 87.0]', 24, 27), -- 61
 ('[2.0, 4.0, 20.5]', 15, 27); -- 62
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(28, 1); -- 28
 
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"He"'); -- 53
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja3', 'cell size', 'width', 'ja3.txt', 'Joe Shepherd', 39, 1); -- 28
+('ja3', 1, 'ja3.txt', 'Joe Shepherd', 39, 1); -- 28
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -750,22 +862,26 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Percent He', '%'); -- 27
+('Percent He', '%'); -- 25
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[20.0, 50.0, 70.0, 80.0, 85.0, 87.5, 90.0]', 27, 28), -- 63
+('[20.0, 50.0, 70.0, 80.0, 85.0, 87.5, 90.0]', 25, 28), -- 63
 ('[1.0, 2.0, 4.5, 10.0, 28.0, 56.0, 138.5]', 15, 28); -- 64
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(29, 1); -- 29
 
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"CO2"'); -- 54
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja4', 'cell size', 'width', 'ja4.txt', 'Joe Shepherd', 39, 1); -- 29
+('ja4', 1, 'ja4.txt', 'Joe Shepherd', 39, 1); -- 29
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -778,14 +894,18 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Percent CO2', '%'); -- 28
+('Percent Co2', '%'); -- 26
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[10.0, 20.0, 30.0, 32.5, 35.0, 40.0]', 28, 29), -- 65
+('[10.0, 20.0, 30.0, 32.5, 35.0, 40.0]', 26, 29), -- 65
 ('[2.0, 6.0, 26.5, 28.5, 57.0, 130.5]', 15, 29); -- 66
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(30, 1); -- 30
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -793,9 +913,9 @@ VALUES
 (11, '0.54'), -- 56
 (12, '2.03'); -- 57
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('H2-Air1', 'cell size', 'width', 'H2-Air1.txt', 'Joe Shepherd', 48, 1); -- 30
+('H2-Air1', 1, 'H2-Air1.txt', 'Joe Shepherd', 48, 1); -- 30
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -810,18 +930,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.453, 0.4703, 0.4875, 0.5048, 0.5224, 0.5438, 0.5583, 0.5655, 0.595, 0.6327, 0.6713, 0.7109, 0.7516, 0.7933, 0.8362, 0.8803, 0.9256, 0.9721, 1.0, 1.02, 1.12, 1.2261, 1.3388, 1.4587, 1.5867, 1.7234, 1.87, 2.0274, 2.1969, 2.38, 2.5783, 2.7939, 2.9089, 3.0291, 3.2867, 3.57]', 10, 30), -- 67
-('[245.0, 183.0, 162.3, 123.8, 110.8, 88.9, 80.0, 76.2, 55.4, 44.0, 30.7, 25.6, 21.4, 18.1, 17.0, 15.7, 15.5, 15.0, 15.1, 15.1, 16.2, 17.2, 19.0, 21.8, 22.9, 26.7, 30.5, 37.0, 41.8, 50.0, 55.0, 79.0, 95.0, 100.0, 141.5, 189.2]', 21, 30); -- 68
+('[245.0, 183.0, 162.3, 123.8, 110.8, 88.9, 80.0, 76.2, 55.4, 44.0, 30.7, 25.6, 21.4, 18.1, 17.0, 15.7, 15.5, 15.0, 15.1, 15.1, 16.2, 17.2, 19.0, 21.8, 22.9, 26.7, 30.5, 37.0, 41.8, 50.0, 55.0, 79.0, 95.0, 100.0, 141.5, 189.2]', 20, 30); -- 68
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(31, 1); -- 31
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.52'), -- 58
 (12, '2.68'); -- 59
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja26b', 'cell size', 'width', 'ja26b.txt', 'Joe Shepherd', 49, 1); -- 31
+('ja26b', 1, 'ja26b.txt', 'Joe Shepherd', 49, 1); -- 31
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -840,14 +964,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(32, 1); -- 32
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.65'), -- 60
 (12, '1.87'); -- 61
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja26d', 'cell size', 'width', 'ja26d.txt', 'Joe Shepherd', 49, 1); -- 32
+('ja26d', 1, 'ja26d.txt', 'Joe Shepherd', 49, 1); -- 32
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -866,14 +994,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(33, 1); -- 33
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.8'), -- 62
 (12, '1.22'); -- 63
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja26f', 'cell size', 'width', 'ja26f.txt', 'Joe Shepherd', 49, 1); -- 33
+('ja26f', 1, 'ja26f.txt', 'Joe Shepherd', 49, 1); -- 33
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -892,9 +1024,13 @@ VALUES
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja1a', 'cell size', 'width', 'ja1a.txt', 'Joe Shepherd', 53, 1); -- 34
+(34, 1); -- 34
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja1a', 1, 'ja1a.txt', 'Joe Shepherd', 53, 1); -- 34
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -912,14 +1048,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(35, 1); -- 35
+
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '10.0'), -- 64
 (3, '101.5'); -- 65
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja1c', 'cell size', 'width', 'ja1c.txt', 'Joe Shepherd', 53, 1); -- 35
+('ja1c', 1, 'ja1c.txt', 'Joe Shepherd', 53, 1); -- 35
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -938,13 +1078,17 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(36, 1); -- 36
+
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '26.5'); -- 66
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja1d', 'cell size', 'width', 'ja1d.txt', 'Joe Shepherd', 53, 1); -- 36
+('ja1d', 1, 'ja1d.txt', 'Joe Shepherd', 53, 1); -- 36
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -959,14 +1103,18 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[26.5, 49.4, 50.9, 57.2, 101.5]', 1, 36), -- 79
-('[11.8, 6.5, 5.8, 6.5, 4.3]', 18, 36), -- 80
-('[]', 17, 36); -- 81
+('[11.8, 6.5, 5.8, 6.5, 4.3]', 17, 36), -- 80
+('[]', 15, 36); -- 81
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja1e', 'cell size', 'width', 'ja1e.txt', 'Joe Shepherd', 53, 1); -- 37
+(37, 1); -- 37
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja1e', 1, 'ja1e.txt', 'Joe Shepherd', 53, 1); -- 37
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -985,6 +1133,10 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(38, 1); -- 38
+
 INSERT INTO details(property_id, value)
 VALUES 
 (8, '"Cl2"'), -- 67
@@ -992,9 +1144,9 @@ VALUES
 (3, '24.0'), -- 69
 (10, '0.56'); -- 70
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at182a', 'cell size', 'width', 'at182a.txt', 'Joe Shepherd', 55, 1); -- 38
+('at182a', 1, 'at182a.txt', 'Joe Shepherd', 55, 1); -- 38
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1006,24 +1158,24 @@ VALUES
 (38, 5), -- 256
 (38, 70); -- 257
 
-INSERT INTO properties(name)
-VALUES 
-('Initial Pressure'); -- 29
-
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[20.17896, 20.07766, 14.49603, 8.0027, 8.0027, 7.38477, 7.28347, 5.01435, 4.99409]', 29, 38), -- 84
-('[4.1807, 5.6554, 6.6674, 13.4885, 14.9541, 20.2411, 22.9446, 20.4521, 30.0022]', 17, 38); -- 85
+('[20.17896, 20.07766, 14.49603, 8.0027, 8.0027, 7.38477, 7.28347, 5.01435, 4.99409]', 1, 38), -- 84
+('[4.1807, 5.6554, 6.6674, 13.4885, 14.9541, 20.2411, 22.9446, 20.4521, 30.0022]', 15, 38); -- 85
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(39, 1); -- 39
 
 INSERT INTO details(property_id, value)
 VALUES 
 (10, '0.67'); -- 71
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at182b', 'cell size', 'width', 'at182b.txt', 'Joe Shepherd', 55, 1); -- 39
+('at182b', 1, 'at182b.txt', 'Joe Shepherd', 55, 1); -- 39
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1037,18 +1189,22 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[24.23096, 23.33952, 20.20935, 17.37295, 10.7378, 7.20243, 7.38477, 5.1663, 4.80162, 4.81175]', 29, 39), -- 86
-('[1.7891, 1.9407, 1.9863, 2.2706, 4.0195, 6.2275, 7.999, 7.9623, 10.9366, 13.4424]', 17, 39); -- 87
+('[24.23096, 23.33952, 20.20935, 17.37295, 10.7378, 7.20243, 7.38477, 5.1663, 4.80162, 4.81175]', 1, 39), -- 86
+('[1.7891, 1.9407, 1.9863, 2.2706, 4.0195, 6.2275, 7.999, 7.9623, 10.9366, 13.4424]', 15, 39); -- 87
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(40, 1); -- 40
 
 INSERT INTO details(property_id, value)
 VALUES 
 (10, '1.5'); -- 72
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at182c', 'cell size', 'width', 'at182c.txt', 'Joe Shepherd', 55, 1); -- 40
+('at182c', 1, 'at182c.txt', 'Joe Shepherd', 55, 1); -- 40
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1062,14 +1218,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[19.3483, 15.3976, 9.43103, 9.37025, 5.13591, 4.91305, 2.27925, 2.66419]', 29, 40), -- 88
-('[2.5339, 2.5197, 3.994, 4.5607, 9.0252, 12.4854, 35.4965, 41.6936]', 17, 40); -- 89
+('[19.3483, 15.3976, 9.43103, 9.37025, 5.13591, 4.91305, 2.27925, 2.66419]', 1, 40), -- 88
+('[2.5339, 2.5197, 3.994, 4.5607, 9.0252, 12.4854, 35.4965, 41.6936]', 15, 40); -- 89
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at182d', 'cell size', 'width', 'at182d.txt', 'Joe Shepherd', 55, 1); -- 41
+(41, 1); -- 41
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at182d', 1, 'at182d.txt', 'Joe Shepherd', 55, 1); -- 41
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1083,14 +1243,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.99, 2.1, 2.69, 2.71, 2.68, 4.0, 4.03, 4.48, 5.37, 5.36, 5.92, 6.1, 6.09, 6.04, 6.52, 6.63, 6.78, 7.37, 7.47, 7.64, 8.24, 7.51, 7.57, 8.11, 9.95, 13.34, 14.77, 20.16]', 29, 41), -- 90
-('[20.97, 20.81, 16.42, 14.38, 12.98, 8.64, 9.3, 8.82, 6.06, 5.59, 5.62, 6.1, 4.64, 4.01, 4.01, 5.03, 4.57, 4.64, 4.0, 3.61, 3.64, 2.79, 3.03, 3.03, 3.02, 2.0, 1.01, 1.03]', 17, 41); -- 91
+('[1.99, 2.1, 2.69, 2.71, 2.68, 4.0, 4.03, 4.48, 5.37, 5.36, 5.92, 6.1, 6.09, 6.04, 6.52, 6.63, 6.78, 7.37, 7.47, 7.64, 8.24, 7.51, 7.57, 8.11, 9.95, 13.34, 14.77, 20.16]', 1, 41), -- 90
+('[20.97, 20.81, 16.42, 14.38, 12.98, 8.64, 9.3, 8.82, 6.06, 5.59, 5.62, 6.1, 4.64, 4.01, 4.01, 5.03, 4.57, 4.64, 4.0, 3.61, 3.64, 2.79, 3.03, 3.03, 3.02, 2.0, 1.01, 1.03]', 15, 41); -- 91
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('mk7b', 'cell size', 'width', 'mk7b.txt', 'Joe Shepherd', 56, 1); -- 42
+(42, 1); -- 42
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('mk7b', 1, 'mk7b.txt', 'Joe Shepherd', 56, 1); -- 42
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1103,27 +1267,27 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('% N2', '%'); -- 30
-
-INSERT INTO properties(name)
-VALUES 
-('cell size'); -- 31
+('% N2', '%'); -- 27
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[31.43, 44.19, 52.94, 55.62]', 30, 42), -- 92
-('[4.0, 7.5, 11.4, 15.5]', 31, 42); -- 93
+('[31.43, 44.19, 52.94, 55.62]', 27, 42), -- 92
+('[4.0, 7.5, 11.4, 15.5]', 20, 42); -- 93
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(43, 1); -- 43
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '5.3'), -- 73
 (3, '20.0'); -- 74
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at74', 'cell size', 'width', 'at74.txt', 'Joe Shepherd', 56, 1); -- 43
+('at74', 1, 'at74.txt', 'Joe Shepherd', 56, 1); -- 43
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1137,19 +1301,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.1985, 0.1854, 0.1717, 0.1577, 0.1448, 0.1296, 0.115, 0.0905, 0.0777, 0.0638, 0.0516]', 19, 43), -- 94
-('[20.10805, 18.78102, 17.39321, 15.97501, 14.66824, 13.12848, 11.6495, 9.16765, 7.87101, 6.46294, 5.22708]', 20, 43), -- 95
-('[7.6828, 9.2731, 10.2757, 11.0986, 12.194, 13.629, 14.9749, 20.5514, 26.1135, 37.722, 46.3235]', 17, 43); -- 96
+('[0.1985, 0.1854, 0.1717, 0.1577, 0.1448, 0.1296, 0.115, 0.0905, 0.0777, 0.0638, 0.0516]', 18, 43), -- 94
+('[20.10805, 18.78102, 17.39321, 15.97501, 14.66824, 13.12848, 11.6495, 9.16765, 7.87101, 6.46294, 5.22708]', 19, 43), -- 95
+('[7.6828, 9.2731, 10.2757, 11.0986, 12.194, 13.629, 14.9749, 20.5514, 26.1135, 37.722, 46.3235]', 15, 43); -- 96
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(44, 1); -- 44
 
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '106.6'); -- 75
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at35a', 'cell size', 'width', 'at35a.txt', 'Joe Shepherd', 61, 1); -- 44
+('at35a', 1, 'at35a.txt', 'Joe Shepherd', 61, 1); -- 44
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1162,18 +1330,22 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Percent Diluent', '%'); -- 32
+('Percent Diluent', '%'); -- 28
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[24.9443, 40.0891, 54.6993, 54.5212, 62.0045, 61.6481, 69.3096, 78.2183, 82.3163]', 32, 44), -- 97
-('[1.4486, 1.6897, 2.5041, 2.7122, 2.9883, 3.4657, 4.3535, 9.1357, 22.234]', 17, 44); -- 98
+('[24.9443, 40.0891, 54.6993, 54.5212, 62.0045, 61.6481, 69.3096, 78.2183, 82.3163]', 28, 44), -- 97
+('[1.4486, 1.6897, 2.5041, 2.7122, 2.9883, 3.4657, 4.3535, 9.1357, 22.234]', 15, 44); -- 98
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at35b', 'cell size', 'width', 'at35b.txt', 'Joe Shepherd', 61, 1); -- 45
+(45, 1); -- 45
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at35b', 1, 'at35b.txt', 'Joe Shepherd', 61, 1); -- 45
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1186,19 +1358,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[24.7661, 39.7327, 54.8775, 69.6659, 84.2762]', 32, 45), -- 99
-('[1.249, 1.3451, 1.6993, 2.6511, 10.4753]', 17, 45); -- 100
+('[24.7661, 39.7327, 54.8775, 69.6659, 84.2762]', 28, 45), -- 99
+('[1.249, 1.3451, 1.6993, 2.6511, 10.4753]', 15, 45); -- 100
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(46, 1); -- 46
 
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"He+CO2"'), -- 76
 (4, '295.0'); -- 77
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at38a', 'cell size', 'width', 'at38a.txt', 'Joe Shepherd', 61, 1); -- 46
+('at38a', 1, 'at38a.txt', 'Joe Shepherd', 61, 1); -- 46
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1213,14 +1389,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[3.1238, 10.2496, 15.4554, 16.0031, 19.5535, 22.923, 26.836, 25.3675, 26.8905]', 32, 46), -- 101
-('[20.2936, 29.9798, 29.2436, 27.2033, 30.3004, 34.9924, 36.477, 41.903, 53.2992]', 17, 46); -- 102
+('[3.1238, 10.2496, 15.4554, 16.0031, 19.5535, 22.923, 26.836, 25.3675, 26.8905]', 28, 46), -- 101
+('[20.2936, 29.9798, 29.2436, 27.2033, 30.3004, 34.9924, 36.477, 41.903, 53.2992]', 15, 46); -- 102
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at38b', 'cell size', 'width', 'at38b.txt', 'Joe Shepherd', 61, 1); -- 47
+(47, 1); -- 47
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at38b', 1, 'at38b.txt', 'Joe Shepherd', 61, 1); -- 47
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1235,14 +1415,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[20.1073, 35.2486, 38.4321, 41.0522, 44.7696, 50.2367, 50.4357]', 32, 47), -- 103
-('[8.0584, 13.2512, 15.3035, 17.0482, 16.6333, 27.3914, 29.9789]', 17, 47); -- 104
+('[20.1073, 35.2486, 38.4321, 41.0522, 44.7696, 50.2367, 50.4357]', 28, 47), -- 103
+('[8.0584, 13.2512, 15.3035, 17.0482, 16.6333, 27.3914, 29.9789]', 15, 47); -- 104
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at38c', 'cell size', 'width', 'at38c.txt', 'Joe Shepherd', 61, 1); -- 48
+(48, 1); -- 48
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at38c', 1, 'at38c.txt', 'Joe Shepherd', 61, 1); -- 48
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1257,19 +1441,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[29.8248, 30.1692, 44.7523, 44.9686, 59.91, 60.1099, 60.3098, 63.3038, 65.4472, 69.9485]', 32, 48), -- 105
-('[2.9802, 2.4579, 4.042, 4.9899, 7.4521, 8.2053, 9.0346, 10.186, 19.9835, 25.7147]', 17, 48); -- 106
+('[29.8248, 30.1692, 44.7523, 44.9686, 59.91, 60.1099, 60.3098, 63.3038, 65.4472, 69.9485]', 28, 48), -- 105
+('[2.9802, 2.4579, 4.042, 4.9899, 7.4521, 8.2053, 9.0346, 10.186, 19.9835, 25.7147]', 15, 48); -- 106
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(49, 1); -- 49
 
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"He+H2O"'), -- 78
 (4, '353.0'); -- 79
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at39a', 'cell size', 'width', 'at39a.txt', 'Joe Shepherd', 61, 1); -- 49
+('at39a', 1, 'at39a.txt', 'Joe Shepherd', 61, 1); -- 49
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1284,14 +1472,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.925, 5.5935, 15.1226, 14.7575]', 32, 49), -- 107
-('[24.3351, 26.6434, 34.5574, 38.5448]', 17, 49); -- 108
+('[0.925, 5.5935, 15.1226, 14.7575]', 28, 49), -- 107
+('[24.3351, 26.6434, 34.5574, 38.5448]', 15, 49); -- 108
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at39b', 'cell size', 'width', 'at39b.txt', 'Joe Shepherd', 61, 1); -- 50
+(50, 1); -- 50
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at39b', 1, 'at39b.txt', 'Joe Shepherd', 61, 1); -- 50
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1306,14 +1498,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[39.9504, 40.123, 32.0731, 24.9647, 17.1091]', 32, 50), -- 109
-('[49.6326, 40.8763, 26.4292, 19.408, 13.9959]', 17, 50); -- 110
+('[39.9504, 40.123, 32.0731, 24.9647, 17.1091]', 28, 50), -- 109
+('[49.6326, 40.8763, 26.4292, 19.408, 13.9959]', 15, 50); -- 110
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at39c', 'cell size', 'width', 'at39c.txt', 'Joe Shepherd', 61, 1); -- 51
+(51, 1); -- 51
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at39c', 1, 'at39c.txt', 'Joe Shepherd', 61, 1); -- 51
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1328,14 +1524,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[51.8234, 49.7495, 34.7842, 34.5743, 19.805, 4.4998]', 32, 51), -- 111
-('[20.9575, 15.291, 7.9515, 5.7308, 3.4055, 2.8079]', 17, 51); -- 112
+('[51.8234, 49.7495, 34.7842, 34.5743, 19.805, 4.4998]', 28, 51), -- 111
+('[20.9575, 15.291, 7.9515, 5.7308, 3.4055, 2.8079]', 15, 51); -- 112
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at39d', 'cell size', 'width', 'at39d.txt', 'Joe Shepherd', 61, 1); -- 52
+(52, 1); -- 52
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at39d', 1, 'at39d.txt', 'Joe Shepherd', 61, 1); -- 52
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1350,19 +1550,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[14.7419, 29.6802, 44.6194, 51.9129, 59.9554, 59.9637, 67.8536, 67.8584, 70.6617, 71.7906]', 32, 52), -- 113
-('[2.2968, 3.0325, 4.0527, 5.4193, 7.5605, 8.4839, 18.9962, 20.3068, 22.1017, 25.4081]', 17, 52); -- 114
+('[14.7419, 29.6802, 44.6194, 51.9129, 59.9554, 59.9637, 67.8536, 67.8584, 70.6617, 71.7906]', 28, 52), -- 113
+('[2.2968, 3.0325, 4.0527, 5.4193, 7.5605, 8.4839, 18.9962, 20.3068, 22.1017, 25.4081]', 15, 52); -- 114
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(53, 1); -- 53
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '20.0'), -- 80
 (3, '150.0'); -- 81
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at42a', 'cell size', 'width', 'at42a.txt', 'Joe Shepherd', 61, 1); -- 53
+('at42a', 1, 'at42a.txt', 'Joe Shepherd', 61, 1); -- 53
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1376,14 +1580,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[27.46243, 27.47256, 40.26675, 40.57065, 54.08407, 80.95896, 81.5465, 107.8541, 130.7074, 161.5431]', 29, 53), -- 115
-('[12.968, 10.9936, 9.9925, 7.4842, 5.0243, 3.5403, 3.043, 3.2844, 1.9882, 1.7333]', 17, 53); -- 116
+('[27.46243, 27.47256, 40.26675, 40.57065, 54.08407, 80.95896, 81.5465, 107.8541, 130.7074, 161.5431]', 1, 53), -- 115
+('[12.968, 10.9936, 9.9925, 7.4842, 5.0243, 3.5403, 3.043, 3.2844, 1.9882, 1.7333]', 15, 53); -- 116
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at42b', 'cell size', 'width', 'at42b.txt', 'Joe Shepherd', 61, 1); -- 54
+(54, 1); -- 54
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at42b', 1, 'at42b.txt', 'Joe Shepherd', 61, 1); -- 54
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1397,19 +1605,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[159.2233, 161.3506, 131.4266, 130.4947, 104.1871, 106.3144, 80.80701, 53.27367, 39.68934, 20.30052]', 29, 54), -- 117
-('[2.4962, 2.9855, 3.52, 4.0116, 4.0096, 4.385, 8.0856, 9.9989, 13.9997, 30.0068]', 17, 54); -- 118
+('[159.2233, 161.3506, 131.4266, 130.4947, 104.1871, 106.3144, 80.80701, 53.27367, 39.68934, 20.30052]', 1, 54), -- 117
+('[2.4962, 2.9855, 3.52, 4.0116, 4.0096, 4.385, 8.0856, 9.9989, 13.9997, 30.0068]', 15, 54); -- 118
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(55, 1); -- 55
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '5.1'), -- 82
 (3, '30.4'); -- 83
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at47a', 'cell size', 'width', 'at47a.txt', 'Joe Shepherd', 68, 1); -- 55
+('at47a', 1, 'at47a.txt', 'Joe Shepherd', 68, 1); -- 55
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1423,20 +1635,24 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.0986, 0.1507, 0.1957, 0.2858]', 19, 55), -- 119
-('[9.99, 15.27, 19.829, 28.959]', 20, 55), -- 120
-('[27.557, 14.5329, 10.3292, 6.0532]', 17, 55); -- 121
+('[0.0986, 0.1507, 0.1957, 0.2858]', 18, 55), -- 119
+('[9.99, 15.27, 19.829, 28.959]', 19, 55), -- 120
+('[27.557, 14.5329, 10.3292, 6.0532]', 15, 55); -- 121
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(56, 1); -- 56
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '20.3'), -- 84
 (3, '40.5'); -- 85
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at47b', 'cell size', 'width', 'at47b.txt', 'Joe Shepherd', 68, 1); -- 56
+('at47b', 1, 'at47b.txt', 'Joe Shepherd', 68, 1); -- 56
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1450,20 +1666,24 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.19, 0.23, 0.26, 0.29, 0.32, 0.37, 0.41, 0.39, 0.45]', 18, 56), -- 122
+('[0.19, 0.23, 0.26, 0.29, 0.32, 0.37, 0.41, 0.39, 0.45]', 17, 56), -- 122
 ('[18.83, 22.88, 26.5, 29.8, 32.04, 37.35, 41.59, 39.14, 45.91]', 1, 56), -- 123
-('[90.61, 95.76, 61.63, 50.8, 45.32, 36.07, 32.48, 29.19, 29.24]', 17, 56); -- 124
+('[90.61, 95.76, 61.63, 50.8, 45.32, 36.07, 32.48, 29.19, 29.24]', 15, 56); -- 124
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(57, 1); -- 57
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '10.1'), -- 86
 (3, '1013.0'); -- 87
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at57a', 'cell size', 'width', 'at57a.txt', 'Joe Shepherd', 79, 1); -- 57
+('at57a', 1, 'at57a.txt', 'Joe Shepherd', 79, 1); -- 57
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1477,11 +1697,15 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.201, 0.243, 0.3, 0.345, 0.397, 0.496, 0.595, 0.684, 0.856, 0.984, 1.23, 1.46, 1.7, 1.65, 1.9, 2.25, 2.93, 3.14, 3.61, 3.82, 4.28, 4.4, 4.85, 5.13, 5.05, 6.06, 6.06, 7.17, 7.06, 7.47, 7.36, 8.01, 8.84, 9.08, 10.0, 12.2]', 19, 57), -- 125
-('[20.3, 24.6, 30.4, 35.0, 40.2, 50.3, 60.3, 69.3, 86.7, 99.7, 125.0, 147.0, 172.0, 167.0, 192.0, 228.0, 297.0, 318.0, 366.0, 387.0, 433.0, 446.0, 491.0, 519.0, 512.0, 613.0, 614.0, 726.0, 716.0, 757.0, 746.0, 811.0, 895.0, 920.0, 1020.0, 1230.0]', 20, 57), -- 126
-('[11.8, 5.8, 6.38, 5.33, 4.45, 2.94, 2.38, 1.99, 1.71, 1.39, 1.22, 0.98, 0.876, 0.796, 0.742, 0.645, 0.438, 0.438, 0.402, 0.375, 0.402, 0.449, 0.296, 0.3, 0.288, 0.212, 0.225, 0.209, 0.187, 0.185, 0.17, 0.159, 0.161, 0.142, 0.144, 0.109]', 17, 57); -- 127
+('[0.201, 0.243, 0.3, 0.345, 0.397, 0.496, 0.595, 0.684, 0.856, 0.984, 1.23, 1.46, 1.7, 1.65, 1.9, 2.25, 2.93, 3.14, 3.61, 3.82, 4.28, 4.4, 4.85, 5.13, 5.05, 6.06, 6.06, 7.17, 7.06, 7.47, 7.36, 8.01, 8.84, 9.08, 10.0, 12.2]', 18, 57), -- 125
+('[20.3, 24.6, 30.4, 35.0, 40.2, 50.3, 60.3, 69.3, 86.7, 99.7, 125.0, 147.0, 172.0, 167.0, 192.0, 228.0, 297.0, 318.0, 366.0, 387.0, 433.0, 446.0, 491.0, 519.0, 512.0, 613.0, 614.0, 726.0, 716.0, 757.0, 746.0, 811.0, 895.0, 920.0, 1020.0, 1230.0]', 19, 57), -- 126
+('[11.8, 5.8, 6.38, 5.33, 4.45, 2.94, 2.38, 1.99, 1.71, 1.39, 1.22, 0.98, 0.876, 0.796, 0.742, 0.645, 0.438, 0.438, 0.402, 0.375, 0.402, 0.449, 0.296, 0.3, 0.288, 0.212, 0.225, 0.209, 0.187, 0.185, 0.17, 0.159, 0.161, 0.142, 0.144, 0.109]', 15, 57); -- 127
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(58, 1); -- 58
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -1489,9 +1713,9 @@ VALUES
 (11, '0.06'), -- 89
 (12, '5.7'); -- 90
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja5a', 'cell size', 'width', 'ja5a.txt', 'Joe Shepherd', 98, 1); -- 58
+('ja5a', 1, 'ja5a.txt', 'Joe Shepherd', 98, 1); -- 58
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1503,25 +1727,25 @@ VALUES
 (58, 89), -- 400
 (58, 90); -- 401
 
-INSERT INTO properties(name)
-VALUES 
-('Equivalence ratio'); -- 33
-
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.06, 0.07, 0.08, 0.1, 0.124, 0.149, 0.25, 0.667, 1.5, 2.33, 4.0, 5.667]', 33, 58), -- 128
+('[0.06, 0.07, 0.08, 0.1, 0.124, 0.149, 0.25, 0.667, 1.5, 2.33, 4.0, 5.667]', 10, 58), -- 128
 ('[128.0, 91.0, 71.0, 48.0, 25.0, 13.0, 6.5, 2.8, 2.8, 8.0, 34.0, 110.0]', 15, 58); -- 129
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(59, 1); -- 59
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.11'), -- 91
 (12, '4.0'); -- 92
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja5b', 'cell size', 'width', 'ja5b.txt', 'Joe Shepherd', 98, 1); -- 59
+('ja5b', 1, 'ja5b.txt', 'Joe Shepherd', 98, 1); -- 59
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1535,10 +1759,14 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.11, 0.25, 0.667, 1.5, 2.33, 4.0]', 33, 59), -- 130
+('[0.11, 0.25, 0.667, 1.5, 2.33, 4.0]', 10, 59), -- 130
 ('[210.0, 35.0, 7.5, 9.0, 21.0, 165.0]', 15, 59); -- 131
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(60, 1); -- 60
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -1546,9 +1774,9 @@ VALUES
 (11, '0.231'), -- 94
 (12, '1.667'); -- 95
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja5c', 'cell size', 'width', 'ja5c.txt', 'Joe Shepherd', 98, 1); -- 60
+('ja5c', 1, 'ja5c.txt', 'Joe Shepherd', 98, 1); -- 60
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1564,19 +1792,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.231, 0.333, 0.6, 0.778, 1.0, 1.286, 1.667]', 33, 60), -- 132
+('[0.231, 0.333, 0.6, 0.778, 1.0, 1.286, 1.667]', 10, 60), -- 132
 ('[250.0, 60.0, 17.0, 14.5, 16.0, 21.0, 28.0]', 15, 60); -- 133
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(61, 1); -- 61
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '25.3'), -- 96
 (3, '152.0'); -- 97
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at5a', 'cell size', 'width', 'at5a.txt', 'Joe Shepherd', 106, 1); -- 61
+('at5a', 1, 'at5a.txt', 'Joe Shepherd', 106, 1); -- 61
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1595,14 +1827,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(62, 1); -- 62
+
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '20.2'), -- 98
 (3, '253.3'); -- 99
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at5b', 'cell size', 'width', 'at5b.txt', 'Joe Shepherd', 106, 1); -- 62
+('at5b', 1, 'at5b.txt', 'Joe Shepherd', 106, 1); -- 62
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1617,9 +1853,13 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[23.94, 50.09, 100.52, 252.19]', 1, 62), -- 136
-('[261.53, 156.24, 77.62, 99.46]', 17, 62); -- 137
+('[261.53, 156.24, 77.62, 99.46]', 15, 62); -- 137
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(63, 1); -- 63
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -1627,9 +1867,9 @@ VALUES
 (3, '266.0'), -- 101
 (4, '373.0'); -- 102
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja23a', 'cell size', 'width', 'ja23a.txt', 'Joe Shepherd', 106, 1); -- 63
+('ja23a', 1, 'ja23a.txt', 'Joe Shepherd', 106, 1); -- 63
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1643,14 +1883,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.0, 2.63]', 18, 63), -- 138
+('[1.0, 2.63]', 17, 63), -- 138
 ('[653.0, 252.0]', 15, 63); -- 139
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja23c', 'cell size', 'width', 'ja23c.txt', 'Joe Shepherd', 106, 1); -- 64
+(64, 1); -- 64
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja23c', 1, 'ja23c.txt', 'Joe Shepherd', 106, 1); -- 64
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1663,14 +1907,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.0]', 18, 64), -- 140
+('[1.0]', 17, 64), -- 140
 ('[166.0]', 15, 64); -- 141
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja23e', 'cell size', 'width', 'ja23e.txt', 'Joe Shepherd', 106, 1); -- 65
+(65, 1); -- 65
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja23e', 1, 'ja23e.txt', 'Joe Shepherd', 106, 1); -- 65
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1683,14 +1931,18 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.0]', 18, 65), -- 142
+('[1.0]', 17, 65), -- 142
 ('[27.8]', 15, 65); -- 143
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja23g', 'cell size', 'width', 'ja23g.txt', 'Joe Shepherd', 106, 1); -- 66
+(66, 1); -- 66
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja23g', 1, 'ja23g.txt', 'Joe Shepherd', 106, 1); -- 66
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1703,10 +1955,14 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.0]', 18, 66), -- 144
+('[1.0]', 17, 66), -- 144
 ('[6.8]', 15, 66); -- 145
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(67, 1); -- 67
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -1714,9 +1970,9 @@ VALUES
 (11, '0.95'), -- 104
 (12, '1.54'); -- 105
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja25a', 'cell size', 'width', 'ja25a.txt', 'Joe Shepherd', 105, 1); -- 67
+('ja25a', 1, 'ja25a.txt', 'Joe Shepherd', 105, 1); -- 67
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1735,14 +1991,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(68, 1); -- 68
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.7'), -- 106
 (12, '2.02'); -- 107
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja25b', 'cell size', 'width', 'ja25b.txt', 'Joe Shepherd', 105, 1); -- 68
+('ja25b', 1, 'ja25b.txt', 'Joe Shepherd', 105, 1); -- 68
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1761,14 +2021,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(69, 1); -- 69
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.53'), -- 108
 (12, '4.25'); -- 109
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja25c', 'cell size', 'width', 'ja25c.txt', 'Joe Shepherd', 105, 1); -- 69
+('ja25c', 1, 'ja25c.txt', 'Joe Shepherd', 105, 1); -- 69
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1787,14 +2051,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(70, 1); -- 70
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.88'), -- 110
 (12, '1.04'); -- 111
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja25d', 'cell size', 'width', 'ja25d.txt', 'Joe Shepherd', 105, 1); -- 70
+('ja25d', 1, 'ja25d.txt', 'Joe Shepherd', 105, 1); -- 70
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1813,13 +2081,17 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(71, 1); -- 71
+
 INSERT INTO details(property_id, value)
 VALUES 
 (12, '2.0'); -- 112
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja25e', 'cell size', 'width', 'ja25e.txt', 'Joe Shepherd', 105, 1); -- 71
+('ja25e', 1, 'ja25e.txt', 'Joe Shepherd', 105, 1); -- 71
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1838,13 +2110,17 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(72, 1); -- 72
+
 INSERT INTO details(property_id, value)
 VALUES 
 (12, '3.03'); -- 113
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja25f', 'cell size', 'width', 'ja25f.txt', 'Joe Shepherd', 105, 1); -- 72
+('ja25f', 1, 'ja25f.txt', 'Joe Shepherd', 105, 1); -- 72
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1863,15 +2139,19 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(73, 1); -- 73
+
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '13.2'), -- 114
 (3, '32.4'), -- 115
 (10, '0.36'); -- 116
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at64c', 'cell size', 'width', 'at64c.txt', 'Joe Shepherd', 111, 1); -- 73
+('at64c', 1, 'at64c.txt', 'Joe Shepherd', 111, 1); -- 73
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1885,19 +2165,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.118105, 0.131713, 0.145215, 0.198233, 0.257828, 0.330215]', 18, 73), -- 158
+('[0.118105, 0.131713, 0.145215, 0.198233, 0.257828, 0.330215]', 17, 73), -- 158
 ('[11.966989, 13.34582, 14.71391, 20.085959, 26.124422, 33.459035]', 1, 73), -- 159
 ('[33.54, 26.9904, 23.3833, 16.1549, 10.6448, 8.01297]', 15, 73); -- 160
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(74, 1); -- 74
+
 INSERT INTO details(property_id, value)
 VALUES 
 (10, '2.12'); -- 117
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at64b', 'cell size', 'width', 'at64b.txt', 'Joe Shepherd', 111, 1); -- 74
+('at64b', 1, 'at64b.txt', 'Joe Shepherd', 111, 1); -- 74
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1911,20 +2195,24 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.130922, 0.146022, 0.197873, 0.258363]', 18, 74), -- 161
+('[0.130922, 0.146022, 0.197873, 0.258363]', 17, 74), -- 161
 ('[13.265672, 14.795679, 20.049482, 26.178631]', 1, 74), -- 162
 ('[51.9453, 40.5754, 27.199, 17.143]', 15, 74); -- 163
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(75, 1); -- 75
 
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"3.75Ar"'), -- 118
 (9, '"3.75Ar+N2"'); -- 119
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at64a', 'cell size', 'width', 'at64a.txt', 'Joe Shepherd', 111, 1); -- 75
+('at64a', 1, 'at64a.txt', 'Joe Shepherd', 111, 1); -- 75
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1940,19 +2228,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.118171, 0.1312, 0.183969, 0.258992, 0.331619]', 18, 75), -- 164
+('[0.118171, 0.1312, 0.183969, 0.258992, 0.331619]', 17, 75), -- 164
 ('[11.973677, 13.29384, 18.640659, 26.242364, 33.601295]', 1, 75), -- 165
 ('[83.1712, 82.4192, 46.9917, 24.8761, 20.1724]', 15, 75); -- 166
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(76, 1); -- 76
+
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '5.6'); -- 120
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at62a', 'cell size', 'width', 'at62a.txt', 'Joe Shepherd', 108, 1); -- 76
+('at62a', 1, 'at62a.txt', 'Joe Shepherd', 108, 1); -- 76
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1966,19 +2258,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.0534, 0.0657, 0.0724, 0.0783, 0.0923, 0.0981, 0.1042, 0.1177, 0.1306, 0.1306, 0.152, 0.1615, 0.227, 0.227, 0.3038, 0.2948, 0.327]', 19, 76), -- 167
-('[5.40942, 6.65541, 7.33412, 7.93179, 9.34999, 9.93753, 10.55546, 11.92301, 13.22978, 13.22978, 15.3976, 16.35995, 22.9951, 22.9951, 30.77494, 29.86324, 33.1251]', 20, 76), -- 168
-('[26.6191, 25.1949, 24.436, 24.5909, 16.8974, 13.8776, 13.2938, 12.3502, 9.3062, 8.6434, 7.3672, 7.2333, 4.7623, 4.396, 3.7712, 3.3341, 2.8241]', 17, 76); -- 169
+('[0.0534, 0.0657, 0.0724, 0.0783, 0.0923, 0.0981, 0.1042, 0.1177, 0.1306, 0.1306, 0.152, 0.1615, 0.227, 0.227, 0.3038, 0.2948, 0.327]', 18, 76), -- 167
+('[5.40942, 6.65541, 7.33412, 7.93179, 9.34999, 9.93753, 10.55546, 11.92301, 13.22978, 13.22978, 15.3976, 16.35995, 22.9951, 22.9951, 30.77494, 29.86324, 33.1251]', 19, 76), -- 168
+('[26.6191, 25.1949, 24.436, 24.5909, 16.8974, 13.8776, 13.2938, 12.3502, 9.3062, 8.6434, 7.3672, 7.2333, 4.7623, 4.396, 3.7712, 3.3341, 2.8241]', 15, 76); -- 169
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(77, 1); -- 77
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '9.1'); -- 121
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at62b', 'cell size', 'width', 'at62b.txt', 'Joe Shepherd', 108, 1); -- 77
+('at62b', 1, 'at62b.txt', 'Joe Shepherd', 108, 1); -- 77
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1992,20 +2288,24 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.0945, 0.1313, 0.1997, 0.2611, 0.3269, 0.3269, 0.3923]', 18, 77), -- 170
+('[0.0945, 0.1313, 0.1997, 0.2611, 0.3269, 0.3269, 0.3923]', 17, 77), -- 170
 ('[9.57285, 13.30069, 20.22961, 26.44943, 33.11497, 33.11497, 39.73999]', 1, 77), -- 171
-('[18.6476, 11.5441, 6.4376, 4.1347, 3.3348, 3.1164, 2.6078]', 17, 77); -- 172
+('[18.6476, 11.5441, 6.4376, 4.1347, 3.3348, 3.1164, 2.6078]', 15, 77); -- 172
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(78, 1); -- 78
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '14.0'), -- 122
 (3, '47.0'); -- 123
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at69f', 'cell size', 'width', 'at69f.txt', 'Joe Shepherd', 110, 1); -- 78
+('at69f', 1, 'at69f.txt', 'Joe Shepherd', 110, 1); -- 78
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2019,19 +2319,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.144273, 0.16977, 0.183654, 0.193649, 0.209576, 0.229894, 0.25888, 0.322525, 0.355182, 0.355384, 0.386382, 0.462681]', 18, 78), -- 173
+('[0.144273, 0.16977, 0.183654, 0.193649, 0.209576, 0.229894, 0.25888, 0.322525, 0.355182, 0.355384, 0.386382, 0.462681]', 17, 78), -- 173
 ('[14.618462, 17.201945, 18.608742, 19.621485, 21.235288, 23.29401, 26.231016, 32.679846, 35.988816, 36.009284, 39.150156, 46.881152]', 1, 78), -- 174
 ('[56.9032, 44.5369, 53.3775, 43.9274, 41.7376, 33.1835, 27.8576, 21.0756, 21.5198, 15.8841, 13.5603, 11.0053]', 15, 78); -- 175
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(79, 1); -- 79
+
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '8.0'); -- 124
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at69c', 'cell size', 'width', 'at69c.txt', 'Joe Shepherd', 110, 1); -- 79
+('at69c', 1, 'at69c.txt', 'Joe Shepherd', 110, 1); -- 79
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2045,19 +2349,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.08724, 0.092786, 0.099557, 0.105851, 0.117171, 0.129594, 0.143381, 0.160065, 0.170269, 0.194245, 0.22557, 0.254019, 0.291138, 0.32066, 0.38402, 0.470063]', 18, 79), -- 176
+('[0.08724, 0.092786, 0.099557, 0.105851, 0.117171, 0.129594, 0.143381, 0.160065, 0.170269, 0.194245, 0.22557, 0.254019, 0.291138, 0.32066, 0.38402, 0.470063]', 17, 79), -- 176
 ('[8.839593, 9.401531, 10.087633, 10.725353, 11.872352, 13.131112, 14.52808, 16.218586, 17.252506, 19.681875, 22.85588, 25.738475, 29.499558, 32.490875, 38.910827, 47.629133]', 1, 79), -- 177
 ('[27.9126, 24.679, 21.4394, 22.6628, 15.3465, 16.2421, 14.378, 11.4375, 9.24844, 8.49287, 6.88613, 5.67858, 4.52091, 4.29787, 3.3061, 2.63748]', 15, 79); -- 178
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(80, 1); -- 80
+
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '40.0'); -- 125
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at69d', 'cell size', 'width', 'at69d.txt', 'Joe Shepherd', 110, 1); -- 80
+('at69d', 1, 'at69d.txt', 'Joe Shepherd', 110, 1); -- 80
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2071,15 +2379,19 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.099878, 0.131183, 0.135309, 0.141958, 0.176894, 0.195759, 0.211839, 0.227314, 0.264016, 0.277056, 0.333158, 0.390346]', 18, 80), -- 179
+('[0.099878, 0.131183, 0.135309, 0.141958, 0.176894, 0.195759, 0.211839, 0.227314, 0.264016, 0.277056, 0.333158, 0.390346]', 17, 80), -- 179
 ('[10.120128, 13.292117, 13.710184, 14.383894, 17.923785, 19.835281, 21.464587, 23.032591, 26.751421, 28.072699, 33.757234, 39.551808]', 1, 80), -- 180
 ('[40.0665, 27.2761, 23.6667, 27.343, 18.584, 14.5176, 14.5532, 12.1992, 9.04616, 9.22299, 8.33316, 6.29244]', 15, 80); -- 181
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at69e', 'cell size', 'width', 'at69e.txt', 'Joe Shepherd', 110, 1); -- 81
+(81, 1); -- 81
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at69e', 1, 'at69e.txt', 'Joe Shepherd', 110, 1); -- 81
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2093,20 +2405,24 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.087045, 0.117294, 0.131043, 0.15346, 0.163292, 0.185525, 0.196404, 0.2261, 0.201863, 0.313035, 0.321414, 0.346374, 0.361951, 0.391695]', 18, 81), -- 182
+('[0.087045, 0.117294, 0.131043, 0.15346, 0.163292, 0.185525, 0.196404, 0.2261, 0.201863, 0.313035, 0.321414, 0.346374, 0.361951, 0.391695]', 17, 81), -- 182
 ('[8.819855, 11.884815, 13.277932, 15.549335, 16.545562, 18.798321, 19.900635, 22.909583, 20.453768, 31.718271, 32.567274, 35.096346, 36.674685, 39.688496]', 1, 81), -- 183
 ('[92.3734, 91.5817, 48.3081, 47.6859, 32.8331, 25.6698, 26.1787, 20.4756, 14.5314, 13.472, 12.7795, 11.3036, 10.5385, 10.3773]', 15, 81); -- 184
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(82, 1); -- 82
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '24.0'), -- 126
 (3, '46.0'); -- 127
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at69g', 'cell size', 'width', 'at69g.txt', 'Joe Shepherd', 110, 1); -- 82
+('at69g', 1, 'at69g.txt', 'Joe Shepherd', 110, 1); -- 82
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2120,11 +2436,15 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.231532, 0.259714, 0.304143, 0.306935, 0.329246, 0.369185, 0.406594, 0.455947]', 18, 82), -- 185
+('[0.231532, 0.259714, 0.304143, 0.306935, 0.329246, 0.369185, 0.406594, 0.455947]', 17, 82), -- 185
 ('[23.45998, 26.315521, 30.817289, 31.100189, 33.360851, 37.40767, 41.198137, 46.19883]', 1, 82), -- 186
 ('[81.0794, 52.061, 51.3905, 42.2347, 42.3268, 33.0787, 32.5905, 24.5759]', 15, 82); -- 187
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(83, 1); -- 83
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -2133,9 +2453,9 @@ VALUES
 (5, '600.0'), -- 130
 (6, '800.0'); -- 131
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at65', 'cell size', 'width', 'at65.txt', 'Joe Shepherd', 111, 1); -- 83
+('at65', 1, 'at65.txt', 'Joe Shepherd', 111, 1); -- 83
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2150,20 +2470,24 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.01, 0.01, 0.02, 0.02, 0.06, 0.06, 0.07, 0.06, 0.07]', 18, 83), -- 188
+('[0.01, 0.01, 0.02, 0.02, 0.06, 0.06, 0.07, 0.06, 0.07]', 17, 83), -- 188
 ('[1.37, 1.37, 2.02, 2.01, 5.62, 6.13, 6.67, 5.63, 7.48]', 1, 83), -- 189
-('[19.88, 11.82, 17.67, 7.93, 6.68, 6.02, 5.85, 4.34, 4.98]', 17, 83); -- 190
+('[19.88, 11.82, 17.67, 7.93, 6.68, 6.02, 5.85, 4.34, 4.98]', 15, 83); -- 190
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(84, 1); -- 84
 
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '300.0'), -- 132
 (12, '3.0'); -- 133
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at3a', 'cell size', 'width', 'at3a.txt', 'Joe Shepherd', 113, 1); -- 84
+('at3a', 1, 'at3a.txt', 'Joe Shepherd', 113, 1); -- 84
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2183,14 +2507,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(85, 1); -- 85
+
 INSERT INTO details(property_id, value)
 VALUES 
 (9, '"steam"'), -- 134
 (3, '304.0'); -- 135
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at3b', 'cell size', 'width', 'at3b.txt', 'Joe Shepherd', 113, 1); -- 85
+('at3b', 1, 'at3b.txt', 'Joe Shepherd', 113, 1); -- 85
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2206,13 +2534,17 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.5172, 0.6209, 0.6211, 0.6419, 0.8373, 1.0209, 1.9919]', 10, 85), -- 193
-('[541.573, 228.527, 210.65, 194.193, 54.5451, 28.9146, 40.147]', 17, 85); -- 194
+('[541.573, 228.527, 210.65, 194.193, 54.5451, 28.9146, 40.147]', 15, 85); -- 194
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at3c', 'cell size', 'width', 'at3c.txt', 'Joe Shepherd', 113, 1); -- 86
+(86, 1); -- 86
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at3c', 1, 'at3c.txt', 'Joe Shepherd', 113, 1); -- 86
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2228,17 +2560,21 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.847, 1.0504, 2.0496]', 10, 86), -- 195
-('[217.865, 93.4533, 127.66]', 17, 86); -- 196
+('[217.865, 93.4533, 127.66]', 15, 86); -- 196
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(87, 1); -- 87
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.93'); -- 136
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at3d', 'cell size', 'width', 'at3d.txt', 'Joe Shepherd', 113, 1); -- 87
+('at3d', 1, 'at3d.txt', 'Joe Shepherd', 113, 1); -- 87
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2254,18 +2590,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.9325, 1.0458, 1.0462]', 10, 87), -- 197
-('[361.14, 322.347, 287.605]', 17, 87); -- 198
+('[361.14, 322.347, 287.605]', 15, 87); -- 198
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(88, 1); -- 88
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.4'), -- 137
 (12, '5.0'); -- 138
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at4', 'cell size', 'width', 'at4.txt', 'Joe Shepherd', 113, 1); -- 88
+('at4', 1, 'at4.txt', 'Joe Shepherd', 113, 1); -- 88
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2280,17 +2620,21 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.3687, 0.3808, 0.3975, 0.4222, 0.477, 0.4878, 0.5009, 3.6817, 4.4392, 5.5079]', 10, 88), -- 199
-('[1218.8899, 647.675, 426.971, 270.413, 193.534, 151.938, 101.491, 190.08, 482.915, 1423.48]', 21, 88); -- 200
+('[1218.8899, 647.675, 426.971, 270.413, 193.534, 151.938, 101.491, 190.08, 482.915, 1423.48]', 20, 88); -- 200
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(89, 1); -- 89
 
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '260.0'); -- 139
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja23b', 'cell size', 'width', 'ja23b.txt', 'Joe Shepherd', 113, 1); -- 89
+('ja23b', 1, 'ja23b.txt', 'Joe Shepherd', 113, 1); -- 89
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2303,18 +2647,22 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[2.56, 2.55]', 18, 89), -- 201
+('[2.56, 2.55]', 17, 89), -- 201
 ('[294.0, 332.0]', 15, 89); -- 202
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(90, 1); -- 90
 
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '227.0'); -- 140
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja23d', 'cell size', 'width', 'ja23d.txt', 'Joe Shepherd', 113, 1); -- 90
+('ja23d', 1, 'ja23d.txt', 'Joe Shepherd', 113, 1); -- 90
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2327,18 +2675,22 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[2.24]', 18, 90), -- 203
+('[2.24]', 17, 90), -- 203
 ('[96.0]', 15, 90); -- 204
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(91, 1); -- 91
 
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '200.0'); -- 141
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja23f', 'cell size', 'width', 'ja23f.txt', 'Joe Shepherd', 113, 1); -- 91
+('ja23f', 1, 'ja23f.txt', 'Joe Shepherd', 113, 1); -- 91
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2351,18 +2703,22 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.99]', 18, 91), -- 205
+('[1.99]', 17, 91), -- 205
 ('[29.1]', 15, 91); -- 206
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(92, 1); -- 92
 
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '180.0'); -- 142
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja23h', 'cell size', 'width', 'ja23h.txt', 'Joe Shepherd', 113, 1); -- 92
+('ja23h', 1, 'ja23h.txt', 'Joe Shepherd', 113, 1); -- 92
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2375,19 +2731,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.808]', 18, 92), -- 207
+('[1.808]', 17, 92), -- 207
 ('[4.9]', 15, 92); -- 208
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(93, 1); -- 93
 
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.47'), -- 143
 (12, '0.64'); -- 144
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja26a', 'cell size', 'width', 'ja26a.txt', 'Joe Shepherd', 112, 1); -- 93
+('ja26a', 1, 'ja26a.txt', 'Joe Shepherd', 112, 1); -- 93
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2406,14 +2766,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(94, 1); -- 94
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.68'), -- 145
 (12, '0.8'); -- 146
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja26c', 'cell size', 'width', 'ja26c.txt', 'Joe Shepherd', 112, 1); -- 94
+('ja26c', 1, 'ja26c.txt', 'Joe Shepherd', 112, 1); -- 94
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2432,14 +2796,18 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(95, 1); -- 95
+
 INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.72'), -- 147
 (12, '0.98'); -- 148
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja26e', 'cell size', 'width', 'ja26e.txt', 'Joe Shepherd', 112, 1); -- 95
+('ja26e', 1, 'ja26e.txt', 'Joe Shepherd', 112, 1); -- 95
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2458,6 +2826,10 @@ VALUES
 
 ------------------------
 
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(96, 1); -- 96
+
 INSERT INTO details(property_id, value)
 VALUES 
 (5, '288.0'), -- 149
@@ -2465,9 +2837,9 @@ VALUES
 (11, '0.448'), -- 151
 (12, '0.51'); -- 152
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja27a', 'cell size', 'width', 'ja27a.txt', 'Joe Shepherd', 112, 1); -- 96
+('ja27a', 1, 'ja27a.txt', 'Joe Shepherd', 112, 1); -- 96
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2483,9 +2855,13 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[288.0, 323.0, 373.0, 372.0]', 4, 96), -- 215
-('[210.0, 134.0, 105.0, 63.9]', 22, 96); -- 216
+('[210.0, 134.0, 105.0, 63.9]', 20, 96); -- 216
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(97, 1); -- 97
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -2495,9 +2871,9 @@ VALUES
 (11, '0.446'), -- 156
 (12, '0.511'); -- 157
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('ja27b', 'cell size', 'width', 'ja27b.txt', 'Joe Shepherd', 112, 1); -- 97
+('ja27b', 1, 'ja27b.txt', 'Joe Shepherd', 112, 1); -- 97
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2514,18 +2890,22 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[278.0, 324.0, 370.0]', 4, 97), -- 217
-('[190.0, 139.0, 129.0]', 22, 97); -- 218
+('[190.0, 139.0, 129.0]', 20, 97); -- 218
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(98, 1); -- 98
 
 INSERT INTO details(property_id, value)
 VALUES 
 (2, '13.0'), -- 158
 (3, '85.0'); -- 159
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('mk8a', 'cell size', 'width', 'mk8a.txt', 'Joe Shepherd', 125, 1); -- 98
+('mk8a', 1, 'mk8a.txt', 'Joe Shepherd', 125, 1); -- 98
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2539,15 +2919,19 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[105.289, 101.732, 148.469, 148.469, 285.246, 402.23, 477.641, 587.023, 567.191, 673.53]', 24, 98), -- 219
+('[105.289, 101.732, 148.469, 148.469, 285.246, 402.23, 477.641, 587.023, 567.191, 673.53]', 22, 98), -- 219
 ('[14.03737885, 13.56315118, 19.79423872, 19.79423872, 38.0296723, 53.62625625, 63.68022938, 78.26329668, 75.61924747, 89.7966148]', 1, 98), -- 220
 ('[23.3572, 12.524, 8.55718, 6.95193, 3.47819, 2.06914, 3.99488, 3.02833, 1.31917, 2.29563]', 15, 98); -- 221
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('at21b', 'cell size', 'width', 'at21b.txt', 'Joe Shepherd', 130, 1); -- 99
+(99, 1); -- 99
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('at21b', 1, 'at21b.txt', 'Joe Shepherd', 130, 1); -- 99
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2561,19 +2945,23 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.7011]', 25, 99), -- 222
-('[70.11]', 20, 99), -- 223
-('[1.7969]', 17, 99); -- 224
+('[0.7011]', 23, 99), -- 222
+('[70.11]', 19, 99), -- 223
+('[1.7969]', 15, 99); -- 224
 
 ------------------------
+
+INSERT INTO detonation_subcategories(detonation_id, category_id)
+VALUES 
+(100, 1); -- 100
 
 INSERT INTO details(property_id, value)
 VALUES 
 (4, '123.0'); -- 160
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
-('at21c', 'cell size', 'width', 'at21c.txt', 'Joe Shepherd', 130, 1); -- 100
+('at21c', 1, 'at21c.txt', 'Joe Shepherd', 130, 1); -- 100
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2587,15 +2975,19 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.4918, 0.6953, 0.9827]', 25, 100), -- 225
-('[49.18, 69.53, 98.27]', 20, 100), -- 226
-('[1.4819, 0.9901, 0.6889]', 17, 100); -- 227
+('[0.4918, 0.6953, 0.9827]', 23, 100), -- 225
+('[49.18, 69.53, 98.27]', 19, 100), -- 226
+('[1.4819, 0.9901, 0.6889]', 15, 100); -- 227
 
 ------------------------
 
-INSERT INTO detonations(name, category, subcategory, file_name, added_by, citation_id, legacy)
+INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
-('ja1b', 'cell size', 'width', 'ja1b.txt', 'Joe Shepherd', 39, 1); -- 101
+(101, 1); -- 101
+
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+VALUES 
+('ja1b', 1, 'ja1b.txt', 'Joe Shepherd', 39, 1); -- 101
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
