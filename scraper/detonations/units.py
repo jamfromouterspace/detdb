@@ -15,16 +15,18 @@ def getUnits(prop) :
     prop = prop.lower()
     if 'leng' in prop or 'diam' in prop or 'widt' in prop or 'size' in prop:
         return 'mm'
+    if 'ratio' in prop or 'fraction' in prop:
+        return 'unitless'
     if 'initial press' in prop :
         return 'kPa'
     if prop == 'spherical critical energy' :
         return 'J'
     if prop == 'critical energy' :
         return 'J'
-    if prop == 'critial charge' :
+    if prop == 'critical charge' :
         return 'g tetryl'
-    if 'ratio' in prop or 'fraction' in prop:
-        return 'unitless'
     if prop == 'cylindrical critical energy' :
         return 'J/cm'
     return None
+
+standard_units = {'mm', 'kPa', 'J', 'J/cm', ''}

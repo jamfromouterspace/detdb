@@ -6,6 +6,21 @@ edge_cases = {
            'units': ['unitless', 'mm']},
 'at93b' : {'names': ['Equivalence Ratio', 'Cell Length'],
            'units': ['unitless', 'mm']},
+'mk82a' : {'names': ['Initial Pressure', 'Initial Pressure', 'Cylindrical Critical Energy'],
+           'units': ['atm', 'kPa', 'mm'],
+           'notes': 'Hidden units of J/cm. '},
+'at195c' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'units': ['unitless', 'mm'],
+           'notes': 'Hidden units of J/cm. '},
+'at195d' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'units': ['unitless', 'mm'],
+           'notes': 'Hidden units of J/cm. '},
+'at195e' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'units': ['unitless', 'mm'],
+           'notes': 'Hidden units of J/cm. '},
+'at209a' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'units': ['unitless', 'mm'],
+           'notes': 'Hidden units of J/cm. '},
 # Can't get any information about this last one
 'at184b' : {'names': [None,None], 'units': [None, None]}
 }

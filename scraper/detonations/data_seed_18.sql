@@ -16,9 +16,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (12, '3.7'); -- 410
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at26', 4, 'at26.txt', 'Joe Shepherd', 2, 1); -- 379
+('at26', 4, 'at26.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _unitless_ for _equivalence ratio_. Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 379
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -30,11 +30,15 @@ VALUES
 (379, 137), -- 2567
 (379, 410); -- 2568
 
+INSERT INTO properties(name, units)
+VALUES 
+('minimum tube diameter', 'mm'); -- 53
+
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[15.036, 16.8016, 20.4748, 25.4118, 52.3832, 56.7796, 58.917, 60.8867]', 33, 379), -- 915
+('[15.036, 16.8016, 20.4748, 25.4118, 52.3832, 56.7796, 58.917, 60.8867]', 32, 379), -- 915
 ('[0.421, 0.48, 0.6127, 0.8107, 2.618, 3.127, 3.4133, 3.705]', 10, 379), -- 916
-('[25.8623, 15.9155, 9.9262, 5.7886, 5.8274, 9.6964, 15.8445, 25.8693]', 42, 379); -- 917
+('[25.8623, 15.9155, 9.9262, 5.7886, 5.8274, 9.6964, 15.8445, 25.8693]', 53, 379); -- 917
 
 ------------------------
 
@@ -48,9 +52,9 @@ VALUES
 (11, '0.1'), -- 411
 (12, '4.5'); -- 412
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at27a', 4, 'at27a.txt', 'Joe Shepherd', 2, 1); -- 380
+('at27a', 4, 'at27a.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _unitless_ for _equivalence ratio_. Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 380
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -65,7 +69,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.097, 0.1139, 0.1218, 0.1485, 3.572, 4.029, 4.1168, 4.303]', 10, 380), -- 918
-('[25.9259, 15.9933, 10.0168, 6.0606, 6.229, 10.1852, 16.2458, 26.2626]', 42, 380); -- 919
+('[25.9259, 15.9933, 10.0168, 6.0606, 6.229, 10.1852, 16.2458, 26.2626]', 53, 380); -- 919
 
 ------------------------
 
@@ -78,9 +82,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (4, '135.0'); -- 413
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at27b', 4, 'at27b.txt', 'Joe Shepherd', 2, 1); -- 381
+('at27b', 4, 'at27b.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _unitless_ for _equivalence ratio_. Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 381
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -95,7 +99,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.117, 0.1298, 0.1416, 0.1702, 2.7916, 3.437, 3.572, 3.6425]', 10, 381), -- 920
-('[26.0101, 15.9933, 10.101, 5.9764, 6.1448, 10.2694, 16.2458, 26.2626]', 42, 381); -- 921
+('[26.0101, 15.9933, 10.101, 5.9764, 6.1448, 10.2694, 16.2458, 26.2626]', 53, 381); -- 921
 
 ------------------------
 
@@ -104,9 +108,9 @@ VALUES
 (382, 10), -- 423
 (382, 11); -- 424
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at28a', 4, 'at28a.txt', 'Joe Shepherd', 2, 1); -- 382
+('at28a', 4, 'at28a.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 382
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -119,8 +123,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[3.6178, 5.7452, 9.8726, 15.5869]', 42, 382), -- 922
-('[81.4921, 85.0231, 87.8222, 89.652]', 28, 382); -- 923
+('[3.6178, 5.7452, 9.8726, 15.5869]', 53, 382), -- 922
+('[81.4921, 85.0231, 87.8222, 89.652]', 27, 382); -- 923
 
 ------------------------
 
@@ -129,9 +133,9 @@ VALUES
 (383, 10), -- 425
 (383, 11); -- 426
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at28b', 4, 'at28b.txt', 'Joe Shepherd', 2, 1); -- 383
+('at28b', 4, 'at28b.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 383
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -144,8 +148,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[3.8031, 5.834, 9.8591, 15.7297]', 42, 383), -- 924
-('[70.2266, 75.2412, 80.1618, 83.0648]', 28, 383); -- 925
+('[3.8031, 5.834, 9.8591, 15.7297]', 53, 383), -- 924
+('[70.2266, 75.2412, 80.1618, 83.0648]', 27, 383); -- 925
 
 ------------------------
 
@@ -154,9 +158,9 @@ VALUES
 (384, 10), -- 427
 (384, 11); -- 428
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at28c', 4, 'at28c.txt', 'Joe Shepherd', 2, 1); -- 384
+('at28c', 4, 'at28c.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 384
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -169,8 +173,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[3.861, 5.8417, 9.9073, 15.9402]', 42, 384), -- 926
-('[54.6981, 65.2416, 74.8455, 78.1837]', 28, 384); -- 927
+('[3.861, 5.8417, 9.9073, 15.9402]', 53, 384), -- 926
+('[54.6981, 65.2416, 74.8455, 78.1837]', 27, 384); -- 927
 
 ------------------------
 
@@ -179,9 +183,9 @@ VALUES
 (385, 10), -- 429
 (385, 11); -- 430
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at28d', 4, 'at28d.txt', 'Joe Shepherd', 2, 1); -- 385
+('at28d', 4, 'at28d.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 385
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -194,8 +198,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[20.056]', 42, 385), -- 928
-('[91.4076]', 28, 385); -- 929
+('[20.056]', 53, 385), -- 928
+('[91.4076]', 27, 385); -- 929
 
 ------------------------
 
@@ -204,9 +208,9 @@ VALUES
 (386, 10), -- 431
 (386, 11); -- 432
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at28e', 4, 'at28e.txt', 'Joe Shepherd', 2, 1); -- 386
+('at28e', 4, 'at28e.txt', 'Joe Shepherd', 2, 1, 'Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 386
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -219,8 +223,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[20.0019]', 42, 386), -- 930
-('[88.2129]', 28, 386); -- 931
+('[20.0019]', 53, 386), -- 930
+('[88.2129]', 27, 386); -- 931
 
 ------------------------
 
@@ -236,9 +240,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.3'); -- 414
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at133', 4, 'at133.txt', 'Joe Shepherd', 100, 1); -- 387
+('at133', 4, 'at133.txt', 'Joe Shepherd', 100, 1, 'Assumed units of _unitless_ for _equivalence ratio_. Assumed units of _mm_ for _tube diameter_. Standardized _tube diameter_ to _minimum tube diameter_. '); -- 387
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -253,7 +257,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.3236, 0.3462, 0.397, 0.6108, 1.1895, 1.3899, 1.4809]', 10, 387), -- 932
-('[9.4977, 6.5216, 4.538, 1.9896, 1.9657, 4.5038, 10.0011]', 42, 387); -- 933
+('[9.4977, 6.5216, 4.538, 1.9896, 1.9657, 4.5038, 10.0011]', 53, 387); -- 933
 
 ------------------------
 

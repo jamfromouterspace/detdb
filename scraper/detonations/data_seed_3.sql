@@ -6,9 +6,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (7, '"C2H2"'); -- 185
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at157l', 1, 'at157l.txt', 'Joe Shepherd', 27, 1); -- 120
+('at157l', 1, 'at157l.txt', 'Joe Shepherd', 27, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 120
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -50,7 +50,7 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[96.6676, 494.705, 904.25]', 22, 121), -- 278
+('[96.6676, 494.705, 904.25]', 21, 121), -- 278
 ('[12.88795338, 65.95524227, 120.5567516]', 1, 121), -- 279
 ('[3.90842, 1.48122, 0.795235]', 15, 121); -- 280
 
@@ -438,9 +438,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (135, 1); -- 135
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('js13c', 1, 'js13c.txt', 'Joe Shepherd', 54, 1); -- 135
+('js13c', 1, 'js13c.txt', 'Joe Shepherd', 54, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 135
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -463,9 +463,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (136, 1); -- 136
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('mk7a', 1, 'mk7a.txt', 'Joe Shepherd', 56, 1); -- 136
+('mk7a', 1, 'mk7a.txt', 'Joe Shepherd', 56, 1, 'Assumed units of _unitless_ for _dilution ratio_. '); -- 136
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -478,12 +478,12 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Dilution Ratio', 'unitless'); -- 30
+('dilution ratio', 'unitless'); -- 29
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[2.5, 3.375, 3.76, 4.125]', 30, 136), -- 322
-('[64.1, 70.7, 72.9, 74.7]', 28, 136), -- 323
+('[2.5, 3.375, 3.76, 4.125]', 29, 136), -- 322
+('[64.1, 70.7, 72.9, 74.7]', 27, 136), -- 323
 ('[3.9, 7.6, 10.0, 11.4]', 15, 136); -- 324
 
 ------------------------
@@ -657,9 +657,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (143, 1); -- 143
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at86a', 1, 'at86a.txt', 'Joe Shepherd', 70, 1); -- 143
+('at86a', 1, 'at86a.txt', 'Joe Shepherd', 70, 1, 'Assumed units of _unitless_ for _dilution ratio_. '); -- 143
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -672,8 +672,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[2.329, 3.13882, 3.87163]', 30, 143), -- 343
-('[62.456423, 69.154979, 73.442749]', 28, 143), -- 344
+('[2.329, 3.13882, 3.87163]', 29, 143), -- 343
+('[62.456423, 69.154979, 73.442749]', 27, 143), -- 344
 ('[3.943892, 7.211815, 12.228]', 15, 143); -- 345
 
 ------------------------
@@ -742,9 +742,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (12, '0.61'); -- 205
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('mk157n', 1, 'mk157n.txt', 'Joe Shepherd', 84, 1); -- 146
+('mk157n', 1, 'mk157n.txt', 'Joe Shepherd', 84, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 146
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -767,9 +767,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (147, 1); -- 147
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('mk6', 1, 'mk6.txt', 'Joe Shepherd', 91, 1); -- 147
+('mk6', 1, 'mk6.txt', 'Joe Shepherd', 91, 1, 'Assumed units of _unitless_ for _dilution ratio_. '); -- 147
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -782,8 +782,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[3.508, 3.4876, 4.0016, 3.9693, 4.2446, 4.2428, 4.2707, 4.2532, 4.4825, 4.4955, 4.4911, 4.7052, 4.7014, 4.8674, 4.8653, 4.9755, 4.988, 4.985, 5.3651, 5.3622, 5.4959, 5.4932, 5.693, 5.6916, 5.9776, 5.9898, 5.9868, 6.1284, 6.2286, 6.3536, 6.4887, 6.4846, 6.225, 6.2372, 6.3759, 6.359, 6.4801, 6.4775, 6.4739]', 30, 147), -- 354
-('[71.4753, 71.3559, 74.0819, 73.9257, 75.1973, 75.1895, 75.3117, 75.2353, 76.2004, 76.2532, 76.2354, 77.0688, 77.0544, 77.6622, 77.6548, 78.0409, 78.0838, 78.0737, 79.3057, 79.2966, 79.6979, 79.6901, 80.2623, 80.2582, 81.0235, 81.0549, 81.0473, 81.4038, 81.6479, 81.9438, 82.2531, 82.2438, 81.6394, 81.6687, 81.9956, 81.9563, 82.2338, 82.2278, 82.2198]', 28, 147), -- 355
+('[3.508, 3.4876, 4.0016, 3.9693, 4.2446, 4.2428, 4.2707, 4.2532, 4.4825, 4.4955, 4.4911, 4.7052, 4.7014, 4.8674, 4.8653, 4.9755, 4.988, 4.985, 5.3651, 5.3622, 5.4959, 5.4932, 5.693, 5.6916, 5.9776, 5.9898, 5.9868, 6.1284, 6.2286, 6.3536, 6.4887, 6.4846, 6.225, 6.2372, 6.3759, 6.359, 6.4801, 6.4775, 6.4739]', 29, 147), -- 354
+('[71.4753, 71.3559, 74.0819, 73.9257, 75.1973, 75.1895, 75.3117, 75.2353, 76.2004, 76.2532, 76.2354, 77.0688, 77.0544, 77.6622, 77.6548, 78.0409, 78.0838, 78.0737, 79.3057, 79.2966, 79.6979, 79.6901, 80.2623, 80.2582, 81.0235, 81.0549, 81.0473, 81.4038, 81.6479, 81.9438, 82.2531, 82.2438, 81.6394, 81.6687, 81.9956, 81.9563, 82.2338, 82.2278, 82.2198]', 27, 147), -- 355
 ('[8.7794, 10.828, 11.3005, 12.2564, 11.0802, 11.8834, 13.0516, 14.3248, 13.2468, 14.377, 17.1259, 15.8335, 18.4259, 18.908, 20.5166, 17.4533, 19.3895, 21.7883, 20.671, 23.2283, 25.8522, 28.7136, 25.628, 27.1671, 29.2625, 32.8902, 36.9593, 30.0213, 37.9694, 32.6866, 34.3178, 40.4054, 43.6738, 49.0881, 44.8063, 48.0435, 48.1309, 53.4582, 61.4897]', 15, 147); -- 356
 
 ------------------------
@@ -792,9 +792,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (148, 1); -- 148
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at184b', 1, 'at184b.txt', 'Joe Shepherd', 97, 1); -- 148
+('at184b', 1, 'at184b.txt', 'Joe Shepherd', 97, 1, 'Missing labels (deduced from plots). '); -- 148
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1005,7 +1005,7 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[19.0034, 38.8245, 49.3782, 97.4235, 137.348, 245.317, 236.426, 422.883, 681.249, 727.787]', 22, 155), -- 376
+('[19.0034, 38.8245, 49.3782, 97.4235, 137.348, 245.317, 236.426, 422.883, 681.249, 727.787]', 21, 155), -- 376
 ('[2.533578296, 5.176174293, 6.583218572, 12.98873176, 18.31156066, 32.70624345, 31.52087428, 56.37976313, 90.82573016, 97.03028655]', 1, 155), -- 377
 ('[7.29432, 3.05618, 3.38581, 1.2789, 1.46585, 0.9641, 0.614794, 0.515256, 0.31641, 0.20875]', 15, 155); -- 378
 

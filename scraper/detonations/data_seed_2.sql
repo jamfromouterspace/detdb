@@ -8,9 +8,9 @@ VALUES
 (2, '6.5'), -- 162
 (3, '12.0'); -- 163
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at192a', 1, 'at192a.txt', 'Joe Shepherd', 1, 1); -- 102
+('at192a', 1, 'at192a.txt', 'Joe Shepherd', 1, 1, 'Assumed units of _mm_ for _cell width_. '); -- 102
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -208,9 +208,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (2, '86.0'); -- 171
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('ja7e', 1, 'ja7e.txt', 'Joe Shepherd', 3, 1); -- 109
+('ja7e', 1, 'ja7e.txt', 'Joe Shepherd', 3, 1, 'Assumed units of _mm_ for _cell width_. '); -- 109
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -239,9 +239,9 @@ VALUES
 (1, '120.0'), -- 172
 (12, '1.3'); -- 173
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at193b', 1, 'at193b.txt', 'Joe Shepherd', 4, 1); -- 110
+('at193b', 1, 'at193b.txt', 'Joe Shepherd', 4, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 110
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -264,9 +264,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (111, 1); -- 111
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at176a', 1, 'at176a.txt', 'Joe Shepherd', 13, 1); -- 111
+('at176a', 1, 'at176a.txt', 'Joe Shepherd', 13, 1, 'Assumed units of _mm_ for _cell width_. '); -- 111
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -289,9 +289,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (112, 1); -- 112
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at13a', 1, 'at13a.txt', 'Joe Shepherd', 54, 1); -- 112
+('at13a', 1, 'at13a.txt', 'Joe Shepherd', 54, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 112
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -336,7 +336,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[35.3332, 39.4867, 45.2748, 55.1129, 73.7041]', 15, 113), -- 256
-('[100.009, 88.7144, 78.6958, 68.6237, 59.3307]', 22, 113), -- 257
+('[100.009, 88.7144, 78.6958, 68.6237, 59.3307]', 21, 113), -- 257
 ('[13.33015, 11.8247, 10.48932, 9.146817, 7.908158]', 1, 113); -- 258
 
 ------------------------
@@ -349,9 +349,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (3, '26.7'); -- 175
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at199a', 1, 'at199a.txt', 'Joe Shepherd', 62, 1); -- 114
+('at199a', 1, 'at199a.txt', 'Joe Shepherd', 62, 1, 'Assumed units of _mm_ for _cell width_. '); -- 114
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -380,9 +380,9 @@ VALUES
 (2, '30.4'), -- 176
 (3, '912.0'); -- 177
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at57d', 1, 'at57d.txt', 'Joe Shepherd', 79, 1); -- 115
+('at57d', 1, 'at57d.txt', 'Joe Shepherd', 79, 1, 'Assumed units of _mm_ for _cell width_. '); -- 115
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -410,9 +410,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '92.5'); -- 178
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at157a', 1, 'at157a.txt', 'Joe Shepherd', 84, 1); -- 116
+('at157a', 1, 'at157a.txt', 'Joe Shepherd', 84, 1, 'Assumed units of _mm_ for _cell width_. '); -- 116
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -425,12 +425,12 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Intial Pressure', 'kPa'); -- 29
+('intial pressure', 'kPa'); -- 28
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[1.0, 1.0]', 17, 116), -- 265
-('[101.3, 101.3]', 29, 116), -- 266
+('[101.3, 101.3]', 28, 116), -- 266
 ('[291.71, 279.555]', 15, 116); -- 267
 
 ------------------------
@@ -444,9 +444,9 @@ VALUES
 (2, '7.0'), -- 179
 (3, '13.0'); -- 180
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at184a', 1, 'at184a.txt', 'Joe Shepherd', 97, 1); -- 117
+('at184a', 1, 'at184a.txt', 'Joe Shepherd', 97, 1, 'Assumed units of _mm_ for _cell width_. '); -- 117
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -475,9 +475,9 @@ VALUES
 (2, '15.2'), -- 181
 (3, '50.7'); -- 182
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at128a', 1, 'at128a.txt', 'Joe Shepherd', 108, 1); -- 118
+('at128a', 1, 'at128a.txt', 'Joe Shepherd', 108, 1, 'Assumed units of _mm_ for _cell width_. '); -- 118
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -506,9 +506,9 @@ VALUES
 (5, '298.0'), -- 183
 (6, '373.0'); -- 184
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at171a', 1, 'at171a.txt', 'Joe Shepherd', 114, 1); -- 119
+('at171a', 1, 'at171a.txt', 'Joe Shepherd', 114, 1, 'Assumed units of _mm_ for _cell width_. '); -- 119
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 

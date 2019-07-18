@@ -9,6 +9,7 @@ sys.path.append('../') # Include scraper folder
 from tools import *
 from generate_sql import *
 from txt_parser import txtParser
+from synonyms import synonyms
 from bs4 import BeautifulSoup
 import requests
 import time
@@ -21,7 +22,6 @@ import regex as re # PyPi regex supports \p{}
 
 # Text file to save edge cases for further inspection
 special = open('notes.txt','w')
-index_file = open('id_index.txt','w')
 max_notes_length = 0
 
 # Global variables to keep track of entries
@@ -34,6 +34,7 @@ subcats_index = 1
 props_index = 1
 details_index = 1
 dets_index = 1
+datapoint_index = 1
 # Note that the use of index is precautionary since Python sets are not
 # necessarily ordered
 # (although dicts are supposed to preserve order as of Python 3.7)
@@ -51,18 +52,18 @@ ins_det_details = InsertGen('detonation_details', ('detonation_id','detail_id'))
 ins_data = InsertGen('data_points', ('column_data','property_id','detonation_id'))
 
 # Create SQL for known/standard properties
-total_props[('Initial Pressure', 'kPa')] = 1
-total_props[('Min Initial Pressure', 'kPa')] = 2
-total_props[('Max Initial Pressure', 'kPa')] = 3
-total_props[('Initial Temperature', 'K')] = 4
-total_props[('Min Initial Temperature', 'K')] = 5
-total_props[('Max Initial Temperature', 'K')] = 6
-total_props[('Fuel', 'chemical')] = 7
-total_props[('Oxidizer', 'chemical')] = 8
-total_props[('Diluent', 'chemical')] = 9
-total_props[('Equivalence Ratio', 'unitless')] = 10
-total_props[('Min Equivalence Ratio', 'unitless')] = 11
-total_props[('Max Equivalence Ratio', 'unitless')] = 12
+total_props[('initial pressure', 'kPa')] = 1
+total_props[('min initial pressure', 'kPa')] = 2
+total_props[('max initial pressure', 'kPa')] = 3
+total_props[('initial temperature', 'K')] = 4
+total_props[('min initial temperature', 'K')] = 5
+total_props[('max initial temperature', 'K')] = 6
+total_props[('fuel', 'chemical')] = 7
+total_props[('oxidizer', 'chemical')] = 8
+total_props[('diluent', 'chemical')] = 9
+total_props[('equivalence ratio', 'unitless')] = 10
+total_props[('min equivalence ratio', 'unitless')] = 11
+total_props[('max equivalence ratio', 'unitless')] = 12
 total_props[(None, None)] = 13 # Special null-property for when dimensions aren't given
 props_index = 14
 
@@ -137,6 +138,32 @@ def scrape(url, output_file, debug=False) :
 
         data = requests.get(data_url + id + '.txt').text
         data,notes = txtParser(data,id)
+        # Standardize naming conventions so it's easier later to
+        # link plots to datasets. We want the x/y labels to match exactly
+        # the labels that are in the text files (they don't).
+        # This is really inefficient, but it's worth it in the long run.
+        for i in range(0,len(data)) :
+            n = data[i]['name']
+            if n == 'cell size' :
+                if 'width' in subcats :
+                    notes += 'Standardized \'cell size\' to \'cell width\'. '
+                    data[i]['name'] = 'cell width'
+                elif 'length' in subcats :
+                    notes += 'Standardized \'cell size\' to \'cell length\'. '
+                    data[i]['name'] = 'cell length'
+            elif n == 'critical diameter' :
+                notes += 'Standardized \'critical diameter\' to \'critical tube diameter\'. '
+                data[i]['name'] = 'critical tube diameter'
+            elif n == 'tube diameter' :
+                if cat == 'critical tube' :
+                    notes += 'Standardized \'tube diameter\' to \'critical tube diameter\'. '
+                    data[i]['name'] = 'critical tube diameter'
+                else :
+                    notes += 'Standardized \'tube diameter\' to \'minimum tube diameter\'. '
+                    data[i]['name'] = 'minimum tube diameter'
+            elif n == 'critical energy' and data[i]['units'] == 'J/cm' :
+                notes += 'Standardized \'critical energy (J/cm)\' to \'cylindrical critical energy\'. '
+                data[i]['name'] = 'cylindrical critical energy'
 
         if debug :
             printRed('DATA:')
@@ -187,58 +214,63 @@ def scrape(url, output_file, debug=False) :
         # add compounds and mixtures
         if diluent :
             for d in diluent :
+                # Standardize 'steam' as 'Steam'
+                if d in synonyms :
+                    d = synonyms[d]
                 # If it's a mixture, add each compound in the mixture separately
-                details.append((total_props[('Diluent','chemical')], '\"' + d + '\"'))
+                details.append((total_props[('diluent','chemical')], '\"' + d + '\"'))
             if len(diluent) > 1 :
                 # Also add the complete mixture as one entity for more specific searches
-                details.append((total_props[('Diluent','chemical')], '\"' + '+'.join(diluent) + '\"'))
+                details.append((total_props[('diluent','chemical')], '\"' + '+'.join(diluent) + '\"'))
         else :
-            details.append((total_props[('Diluent','chemical')], None))
+            details.append((total_props[('diluent','chemical')], None))
 
         if fuel :
             for ff in fuel :
-                details.append((total_props[('Fuel','chemical')], '\"' + ff + '\"'))
+                details.append((total_props[('fuel','chemical')], '\"' + ff + '\"'))
             if len(fuel) > 1 :
                 # Also add the complete mixture to the database
-                details.append((total_props[('Fuel','chemical')], '\"' + '+'.join(fuel) + '\"'))
+                details.append((total_props[('fuel','chemical')], '\"' + '+'.join(fuel) + '\"'))
         else :
-            details.append((total_props[('Fuel','chemical')], None))
+            details.append((total_props[('fuel','chemical')], None))
 
         if oxidizer :
             for o in oxidizer :
-                details.append((total_props[('Oxidizer','chemical')], '\"' + o + '\"'))
+                if o in synonyms :
+                    o = synonyms[o]
+                details.append((total_props[('oxidizer','chemical')], '\"' + o + '\"'))
             if len(oxidizer) > 1 :
                 # Also add the complete mixture to the database
-                details.append((total_props[('Oxidizer','chemical')], '\"' + '+'.join(oxidizer) + '\"'))
+                details.append((total_props[('oxidizer','chemical')], '\"' + '+'.join(oxidizer) + '\"'))
         else :
-            details.append((total_props[('Oxidizer','chemical')], None))
+            details.append((total_props[('oxidizer','chemical')], None))
 
         # I know, not very DRY
 
         if pressure and len(pressure) > 1 :
-            details.append((total_props[('Min Initial Pressure','kPa')], str(min(pressure))))
-            details.append((total_props[('Max Initial Pressure','kPa')], str(max(pressure))))
+            details.append((total_props[('min initial pressure','kPa')], str(min(pressure))))
+            details.append((total_props[('max initial pressure','kPa')], str(max(pressure))))
         elif pressure :
-            details.append((total_props[('Initial Pressure','kPa')], str(pressure[0])))
+            details.append((total_props[('initial pressure','kPa')], str(pressure[0])))
         else :
             notes += 'No initial pressure data. '
-            details.append((total_props[('Initial Pressure','kPa')], None))
+            details.append((total_props[('initial pressure','kPa')], None))
         if temp and len(temp) > 1 :
-            details.append((total_props[('Min Initial Temperature','K')], str(min(temp))))
-            details.append((total_props[('Max Initial Temperature','K')], str(max(temp))))
+            details.append((total_props[('min initial temperature','K')], str(min(temp))))
+            details.append((total_props[('max initial temperature','K')], str(max(temp))))
         elif temp :
-            details.append((total_props[('Initial Temperature','K')], str(temp[0])))
+            details.append((total_props[('initial temperature','K')], str(temp[0])))
         else :
             notes += 'No initial temperature data. '
-            details.append((total_props[('Initial Temperature','K')], None))
+            details.append((total_props[('initial temperature','K')], None))
         if eq_ratio and len(eq_ratio) > 1 :
-            details.append((total_props[('Min Equivalence Ratio', 'unitless')], str(min(eq_ratio))))
-            details.append((total_props[('Max Equivalence Ratio', 'unitless')], str(max(eq_ratio))))
+            details.append((total_props[('min equivalence ratio', 'unitless')], str(min(eq_ratio))))
+            details.append((total_props[('max equivalence ratio', 'unitless')], str(max(eq_ratio))))
         elif eq_ratio :
-            details.append((total_props[('Equivalence Ratio', 'unitless')], str(eq_ratio[0])))
+            details.append((total_props[('equivalence ratio', 'unitless')], str(eq_ratio[0])))
         else :
             notes += 'No equivalence ratio data. '
-            details.append((total_props[('Equivalence Ratio', 'unitless')], None))
+            details.append((total_props[('equivalence ratio', 'unitless')], None))
 
         for d in details :
             if d in total_details :
@@ -287,11 +319,10 @@ def scrape(url, output_file, debug=False) :
         if len(notes) > max_notes_length :
             max_notes_length = len(notes)
 
-        index_file.
         dets_index += 1
 
         time.sleep(0.1)
-
+        
     f.close()
 
 
@@ -314,4 +345,3 @@ for i in range(0,len(pages)) :
     time.sleep(0.1)
 printBlue("Max notes length: " + str(max_notes_length))
 special.close()
-index_file.close()

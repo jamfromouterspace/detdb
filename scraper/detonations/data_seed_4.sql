@@ -34,9 +34,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (157, 1); -- 157
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at157e', 1, 'at157e.txt', 'Joe Shepherd', 27, 1); -- 157
+('at157e', 1, 'at157e.txt', 'Joe Shepherd', 27, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 157
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -229,9 +229,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (164, 1); -- 164
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('ja12', 1, 'ja12.txt', 'Joe Shepherd', 39, 1); -- 164
+('ja12', 1, 'ja12.txt', 'Joe Shepherd', 39, 1, 'Assumed units of _mm_ for _cell width_. '); -- 164
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -244,11 +244,11 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('% Ar', '%'); -- 31
+('% ar', '%'); -- 30
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[50.0, 75.0, 83.3, 88.2]', 31, 164), -- 396
+('[50.0, 75.0, 83.3, 88.2]', 30, 164), -- 396
 ('[1.5, 2.5, 4.5, 11.0]', 15, 164); -- 397
 
 ------------------------
@@ -291,9 +291,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (12, '2.2'); -- 223
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at13b', 1, 'at13b.txt', 'Joe Shepherd', 54, 1); -- 166
+('at13b', 1, 'at13b.txt', 'Joe Shepherd', 54, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 166
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -316,9 +316,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (167, 1); -- 167
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('mk7c', 1, 'mk7c.txt', 'Joe Shepherd', 56, 1); -- 167
+('mk7c', 1, 'mk7c.txt', 'Joe Shepherd', 56, 1, 'Assumed units of _mm_ for _cell size_. Standardized _cell size_ to _cell width_. '); -- 167
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -332,7 +332,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[50.77, 56.76, 65.22, 73.82]', 14, 167), -- 402
-('[3.6, 7.0, 12.0, 29.0]', 20, 167); -- 403
+('[3.6, 7.0, 12.0, 29.0]', 15, 167); -- 403
 
 ------------------------
 
@@ -371,9 +371,9 @@ VALUES
 (11, '0.55'), -- 224
 (12, '1.1'); -- 225
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at157c', 1, 'at157c.txt', 'Joe Shepherd', 84, 1); -- 169
+('at157c', 1, 'at157c.txt', 'Joe Shepherd', 84, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 169
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -396,9 +396,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (170, 1); -- 170
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at157f', 1, 'at157f.txt', 'Joe Shepherd', 84, 1); -- 170
+('at157f', 1, 'at157f.txt', 'Joe Shepherd', 84, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 170
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -420,9 +420,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (171, 1); -- 171
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('mk157g', 1, 'mk157g.txt', 'Joe Shepherd', 84, 1); -- 171
+('mk157g', 1, 'mk157g.txt', 'Joe Shepherd', 84, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 171
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -449,9 +449,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (11, '0.6'); -- 226
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at203', 1, 'at203.txt', 'Joe Shepherd', 85, 1); -- 172
+('at203', 1, 'at203.txt', 'Joe Shepherd', 85, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 172
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -465,11 +465,11 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Percent C2H4', '%'); -- 32
+('percent c2h4', '%'); -- 31
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[7.28958, 6.90493, 6.48505, 6.55949, 6.27906, 6.56985, 6.13018, 6.02621, 6.254, 5.68782, 5.07886, 4.96876, 3.94881]', 32, 172), -- 413
+('[7.28958, 6.90493, 6.48505, 6.55949, 6.27906, 6.56985, 6.13018, 6.02621, 6.254, 5.68782, 5.07886, 4.96876, 3.94881]', 31, 172), -- 413
 ('[1.122799, 1.059158, 0.990286, 1.002451, 0.956723, 1.004145, 0.932557, 0.915726, 0.95265, 0.861204, 0.764067, 0.746638, 0.587072]', 10, 172), -- 414
 ('[23.8759, 29.563, 22.708, 21.2377, 23.9438, 26.8728, 27.3741, 29.6621, 42.3962, 32.3291, 51.6366, 78.3061, 131.774]', 15, 172); -- 415
 
@@ -479,9 +479,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (173, 1); -- 173
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at158', 1, 'at158.txt', 'Joe Shepherd', 90, 1); -- 173
+('at158', 1, 'at158.txt', 'Joe Shepherd', 90, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 173
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -495,7 +495,7 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[6.97455, 6.54167, 5.98574, 4.98113, 4.5296, 4.0071, 3.7643]', 32, 173), -- 416
+('[6.97455, 6.54167, 5.98574, 4.98113, 4.5296, 4.0071, 3.7643]', 31, 173), -- 416
 ('[1.070638, 0.999537, 0.909185, 0.748594, 0.677516, 0.5961, 0.558568]', 10, 173), -- 417
 ('[20.9372, 25.8889, 37.0527, 61.5348, 81.7136, 121.702, 209.355]', 15, 173); -- 418
 

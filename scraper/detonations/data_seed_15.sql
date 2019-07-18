@@ -6,9 +6,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (12, '4.1'); -- 402
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at108a', 3, 'at108a.txt', 'Joe Shepherd', 45, 1); -- 361
+('at108a', 3, 'at108a.txt', 'Joe Shepherd', 45, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 361
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -24,7 +24,7 @@ INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.78157, 1.0871, 2.7421, 4.1]', 10, 361), -- 864
 ('[9.94, 0.9584, 0.9584, 9.94]', 49, 361), -- 865
-('[44932.0, 4332.0, 4332.0, 44932.0]', 45, 361); -- 866
+('[44932.0, 4332.0, 4332.0, 44932.0]', 44, 361); -- 866
 
 ------------------------
 
@@ -33,9 +33,9 @@ VALUES
 (362, 4), -- 390
 (362, 5); -- 391
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at108b', 3, 'at108b.txt', 'Joe Shepherd', 60, 1); -- 362
+('at108b', 3, 'at108b.txt', 'Joe Shepherd', 60, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 362
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -50,7 +50,7 @@ INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[1.0]', 10, 362), -- 867
 ('[1.5]', 49, 362), -- 868
-('[6780.0]', 45, 362); -- 869
+('[6780.0]', 44, 362); -- 869
 
 ------------------------
 
@@ -76,7 +76,7 @@ INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.03989, 0.064718, 0.090914, 0.10571, 0.12869]', 17, 363), -- 870
 ('[4.04185, 6.55755, 9.21186, 10.7111, 13.0395]', 1, 363), -- 871
-('[0.76808, 0.49423, 0.38556, 0.35883, 0.29634]', 45, 363); -- 872
+('[0.76808, 0.49423, 0.38556, 0.35883, 0.29634]', 44, 363); -- 872
 
 ------------------------
 
@@ -84,9 +84,9 @@ INSERT INTO detonation_subcategories(detonation_id, category_id)
 VALUES 
 (364, 7); -- 393
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at82b', 3, 'at82b.txt', 'Joe Shepherd', 68, 1); -- 364
+('at82b', 3, 'at82b.txt', 'Joe Shepherd', 68, 1, 'Standardized _critical energy (J/cm)_ to _cylindrical critical energy_. '); -- 364
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -100,13 +100,13 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('Critical Energy', 'J/cm'); -- 51
+('cylindrical critical energy', 'J/cm'); -- 52
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.06502, 0.13338, 0.19762, 0.26344, 0.38726]', 17, 364), -- 873
 ('[6.588, 13.515, 20.024, 26.693, 39.239]', 1, 364), -- 874
-('[0.22233, 0.11133, 0.078252, 0.058275, 0.043498]', 51, 364); -- 875
+('[0.22233, 0.11133, 0.078252, 0.058275, 0.043498]', 52, 364); -- 875
 
 ------------------------
 
@@ -118,9 +118,9 @@ INSERT INTO details(property_id)
 VALUES 
 (1); -- 403
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at44a', 3, 'at44a.txt', 'Joe Shepherd', 80, 1); -- 365
+('at44a', 3, 'at44a.txt', 'Joe Shepherd', 80, 1, 'Assumed units of _unitless_ for _equivalence ratio_. No initial pressure data. No initial temperature data. '); -- 365
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -135,7 +135,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.62078, 1.0656, 1.668, 2.4988]', 10, 365), -- 876
-('[0.017344, 0.0015163, 0.00033697, 0.00046671]', 45, 365); -- 877
+('[0.017344, 0.0015163, 0.00033697, 0.00046671]', 44, 365); -- 877
 
 ------------------------
 
@@ -147,9 +147,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (3, '5.3'); -- 404
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at54a', 3, 'at54a.txt', 'Joe Shepherd', 121, 1); -- 366
+('at54a', 3, 'at54a.txt', 'Joe Shepherd', 121, 1, 'Standardized _critical energy (J/cm)_ to _cylindrical critical energy_. '); -- 366
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -165,7 +165,7 @@ INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.025255, 0.052386]', 17, 366), -- 878
 ('[2.55896, 5.30901]', 1, 366), -- 879
-('[2.4821, 0.96049]', 51, 366); -- 880
+('[2.4821, 0.96049]', 52, 366); -- 880
 
 ------------------------
 
@@ -174,9 +174,9 @@ VALUES
 (367, 7), -- 396
 (367, 5); -- 397
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at105a', 3, 'at105a.txt', 'Joe Shepherd', 123, 1); -- 367
+('at105a', 3, 'at105a.txt', 'Joe Shepherd', 123, 1, 'Standardized _critical energy (J/cm)_ to _cylindrical critical energy_. '); -- 367
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -192,7 +192,7 @@ INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.2, 0.25, 0.4, 0.5, 0.73, 0.82, 1.0]', 17, 367), -- 881
 ('[20.18, 25.64, 40.52, 50.45, 74.13, 83.13, 101.34]', 1, 367), -- 882
-('[1045.392, 810.26, 628.662, 467.6714, 370.2198, 334.3758, 264.4858]', 51, 367); -- 883
+('[1045.392, 810.26, 628.662, 467.6714, 370.2198, 334.3758, 264.4858]', 52, 367); -- 883
 
 ------------------------
 
