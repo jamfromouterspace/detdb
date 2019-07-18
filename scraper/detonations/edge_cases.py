@@ -1,26 +1,37 @@
 edge_cases = {
-'mk137k' : {'names': ['Initial Pressure', 'Tube Diameter'],
+'mk137k' : {'names': ['initial pressure', 'critical tube diameter'],
             'units': ['kPa', 'mm'],
             'notes': 'Fixed typo. '},
-'at93a' : {'names': ['Equivalence Ratio', 'Cell Length'],
+
+'at157a' : {'names': ['initial pressure', 'initial pressure', 'cell width'],
+            'units': ['atm', 'kPa', 'mm'],
+            'notes': 'Fixed typo. '},
+
+'at93a' : {'names': ['equivalence ratio', 'cell length'],
            'units': ['unitless', 'mm']},
-'at93b' : {'names': ['Equivalence Ratio', 'Cell Length'],
+
+'at93b' : {'names': ['equivalence ratio', 'cell length'],
            'units': ['unitless', 'mm']},
-'mk82a' : {'names': ['Initial Pressure', 'Initial Pressure', 'Cylindrical Critical Energy'],
+
+'mk82a' : {'names': ['initial pressure', 'initial pressure', 'cylindrical critical energy'],
            'units': ['atm', 'kPa', 'mm'],
-           'notes': 'Hidden units of J/cm. '},
-'at195c' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'notes': 'Hidden units of J/cm deduced from plot. '},
+
+'at195c' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
            'units': ['unitless', 'mm'],
-           'notes': 'Hidden units of J/cm. '},
-'at195d' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'notes': 'Hidden units of J/cm deduced from plot. '},
+
+'at195d' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
            'units': ['unitless', 'mm'],
-           'notes': 'Hidden units of J/cm. '},
-'at195e' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'notes': 'Hidden units of J/cm deduced from plot. '},
+
+'at195e' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
            'units': ['unitless', 'mm'],
-           'notes': 'Hidden units of J/cm. '},
-'at209a' : {'names': ['Equivalence Ratio', 'Cylindrical Critical Energy'],
+           'notes': 'Hidden units of J/cm deduced from plot. '},
+
+'at209a' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
            'units': ['unitless', 'mm'],
-           'notes': 'Hidden units of J/cm. '},
+           'notes': 'Hidden units of J/cm deduced from plot. '},
 # Can't get any information about this last one
 'at184b' : {'names': [None,None], 'units': [None, None]}
 }

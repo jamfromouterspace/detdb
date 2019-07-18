@@ -412,7 +412,7 @@ VALUES
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at157a', 1, 'at157a.txt', 'Joe Shepherd', 84, 1, 'Assumed units of _mm_ for _cell width_. '); -- 116
+('at157a', 1, 'at157a.txt', 'Joe Shepherd', 84, 1, 'Fixed typo. '); -- 116
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -423,14 +423,10 @@ VALUES
 (116, 5), -- 806
 (116, 6); -- 807
 
-INSERT INTO properties(name, units)
-VALUES 
-('intial pressure', 'kPa'); -- 28
-
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[1.0, 1.0]', 17, 116), -- 265
-('[101.3, 101.3]', 28, 116), -- 266
+('[101.3, 101.3]', 1, 116), -- 266
 ('[291.71, 279.555]', 15, 116); -- 267
 
 ------------------------

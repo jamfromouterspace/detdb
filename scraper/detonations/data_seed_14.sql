@@ -5,7 +5,7 @@ VALUES
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at195d', 3, 'at195d.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm. '); -- 352
+('at195d', 3, 'at195d.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. '); -- 352
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -17,14 +17,10 @@ VALUES
 (352, 106), -- 2390
 (352, 173); -- 2391
 
-INSERT INTO properties(name, units)
-VALUES 
-('Equivalence Ratio', 'unitless'); -- 50
-
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.7733, 1.0, 1.108, 1.2034, 1.3351]', 50, 352), -- 842
-('[101.065, 53.7913, 48.2483, 54.7121, 91.1051]', 47, 352); -- 843
+('[0.7733, 1.0, 1.108, 1.2034, 1.3351]', 10, 352), -- 842
+('[101.065, 53.7913, 48.2483, 54.7121, 91.1051]', 41, 352); -- 843
 
 ------------------------
 
@@ -35,7 +31,7 @@ VALUES
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at195e', 3, 'at195e.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm. '); -- 353
+('at195e', 3, 'at195e.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. '); -- 353
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -49,8 +45,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[0.7586, 0.8673, 1.0, 1.1203, 1.1994, 1.3293]', 50, 353), -- 844
-('[76.6475, 43.822, 42.5474, 38.3386, 43.0755, 64.6979]', 47, 353); -- 845
+('[0.7586, 0.8673, 1.0, 1.1203, 1.1994, 1.3293]', 10, 353), -- 844
+('[76.6475, 43.822, 42.5474, 38.3386, 43.0755, 64.6979]', 41, 353); -- 845
 
 ------------------------
 
@@ -74,7 +70,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[1.0]', 10, 354), -- 846
-('[88658800.0]', 44, 354); -- 847
+('[88658800.0]', 39, 354); -- 847
 
 ------------------------
 
@@ -98,10 +94,10 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[5.3669, 4.4533, 4.3787, 3.5435, 2.3793, 1.4126]', 29, 355), -- 848
-('[64.1444, 59.7494, 59.3424, 54.153, 44.2307, 32.0129]', 27, 355), -- 849
-('[522.671, 153.132, 71.499, 20.3381, 2.7766, 0.2558]', 49, 355), -- 850
-('[2362473.0, 692156.6, 323175.5, 91928.21, 12550.23, 1156.216]', 44, 355); -- 851
+('[5.3669, 4.4533, 4.3787, 3.5435, 2.3793, 1.4126]', 27, 355), -- 848
+('[64.1444, 59.7494, 59.3424, 54.153, 44.2307, 32.0129]', 26, 355), -- 849
+('[522.671, 153.132, 71.499, 20.3381, 2.7766, 0.2558]', 43, 355), -- 850
+('[2362473.0, 692156.6, 323175.5, 91928.21, 12550.23, 1156.216]', 39, 355); -- 851
 
 ------------------------
 
@@ -111,7 +107,7 @@ VALUES
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at209a', 3, 'at209a.txt', 'Joe Shepherd', 33, 1, 'Hidden units of J/cm. '); -- 356
+('at209a', 3, 'at209a.txt', 'Joe Shepherd', 33, 1, 'Hidden units of J/cm deduced from plot. '); -- 356
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -124,8 +120,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.0]', 50, 356), -- 852
-('[52.5336]', 47, 356); -- 853
+('[1.0]', 10, 356), -- 852
+('[52.5336]', 41, 356); -- 853
 
 ------------------------
 
@@ -149,14 +145,14 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('critical charge', 'g TNT'); -- 51
+('critical charge', 'g TNT'); -- 44
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[7.52]', 29, 357), -- 854
-('[71.48]', 27, 357), -- 855
-('[1078.0699]', 51, 357), -- 856
-('[4872880.0]', 44, 357); -- 857
+('[7.52]', 27, 357), -- 854
+('[71.48]', 26, 357), -- 855
+('[1078.0699]', 44, 357), -- 856
+('[4872880.0]', 39, 357); -- 857
 
 ------------------------
 
@@ -181,7 +177,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.686, 0.962, 1.2712, 1.658]', 10, 358), -- 858
-('[157.402, 60.7512, 51.5746, 138.471]', 44, 358); -- 859
+('[157.402, 60.7512, 51.5746, 138.471]', 39, 358); -- 859
 
 ------------------------
 
@@ -192,7 +188,7 @@ VALUES
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
-('at195c', 3, 'at195c.txt', 'Joe Shepherd', 92, 1, 'Hidden units of J/cm. '); -- 359
+('at195c', 3, 'at195c.txt', 'Joe Shepherd', 92, 1, 'Hidden units of J/cm deduced from plot. '); -- 359
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -205,8 +201,8 @@ VALUES
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
-('[1.0]', 50, 359), -- 860
-('[62.7944]', 47, 359); -- 861
+('[1.0]', 10, 359), -- 860
+('[62.7944]', 41, 359); -- 861
 
 ------------------------
 
@@ -239,7 +235,7 @@ VALUES
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
 ('[0.822, 1.0, 1.18, 1.3, 1.42, 1.61]', 10, 360), -- 862
-('[14208100.0, 9420700.0, 8974500.0, 9250200.0, 9419300.0, 14215500.0]', 44, 360); -- 863
+('[14208100.0, 9420700.0, 8974500.0, 9250200.0, 9419300.0, 14215500.0]', 39, 360); -- 863
 
 ------------------------
 

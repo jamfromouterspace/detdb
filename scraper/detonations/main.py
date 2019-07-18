@@ -22,21 +22,27 @@ import regex as re # PyPi regex supports \p{}
 
 # Text file to save edge cases for further inspection
 special = open('notes.txt','w')
+save_dets = open('../plots/detonation_data/detonations.json', 'w')
+save_props = open('../plots/detonation_data/properties.json', 'w')
+save_details = open('../plots/detonation_data/details.json', 'w')
+save_cats = open('../plots/detonation_data/categories.json', 'w')
 max_notes_length = 0
 
 # Global variables to keep track of entries
-total_props = {} # {(name,units): index, ...}
-total_details = {} # {(property_id, value): index, ...}
+total_props = {} # {(name,units): index}
+total_details = {} # {(property_id, value): index}
 total_cats = {} # total_categories, {name: index}
 total_subcats = {} # total_subcategories, {(name, parent): index}
+total_dets = {} # {id : {'index' : 0, 'data' : {datapoint_index:(property_id, value)}}}
 cats_index = 1
 subcats_index = 1
 props_index = 1
 details_index = 1
 dets_index = 1
 datapoint_index = 1
-# Note that the use of index is precautionary since Python sets are not
-# necessarily ordered
+
+# Note that the use of indices is precautionary since Python sets
+# are not necessarily ordered
 # (although dicts are supposed to preserve order as of Python 3.7)
 
 # SQL Generation objects
@@ -81,7 +87,7 @@ f.close()
 def scrape(url, output_file, debug=False) :
     global props_index,cats_index,subcats_index,details_index,dets_index
     global total_props,total_details,total_cats,total_subcats
-    global max_notes_length
+    global max_notes_length,datapoint_index
     data_url = "http://shepherd.caltech.edu/detn_db/data/plotdata/"
     res = requests.get(url)
     soup = BeautifulSoup(res.text, "html.parser")
@@ -113,6 +119,9 @@ def scrape(url, output_file, debug=False) :
         temp = tuple(safeFloat(x.strip()) for x in re.split(',|-',bottom[13].string.strip().split('K')[0]))
         eq_ratio = bottom[15].string.strip()
         eq_ratio = tuple(safeFloat(x.strip()) for x in re.split(',|-',eq_ratio) if eq_ratio)
+
+        # Save relevant information for later (see end of script)
+        total_dets[id] = {'index' : dets_index, 'data': {}}
 
         # Clean up special cases
         if not diluent or not diluent[0] :
@@ -164,6 +173,13 @@ def scrape(url, output_file, debug=False) :
             elif n == 'critical energy' and data[i]['units'] == 'J/cm' :
                 notes += 'Standardized \'critical energy (J/cm)\' to \'cylindrical critical energy\'. '
                 data[i]['name'] = 'cylindrical critical energy'
+            elif n and n[0] == '%' :
+                data[i]['name'] = 'percent' + n[1:]
+
+        # Save some information about the datapoints and increment index
+        for i in range(0,len(data)) :
+            total_dets[id]['data'][i] = (data[i]['name'],data[i]['units'])
+            datapoint_index += 1
 
         if debug :
             printRed('DATA:')
@@ -218,19 +234,19 @@ def scrape(url, output_file, debug=False) :
                 if d in synonyms :
                     d = synonyms[d]
                 # If it's a mixture, add each compound in the mixture separately
-                details.append((total_props[('diluent','chemical')], '\"' + d + '\"'))
+                details.append((total_props[('diluent','chemical')], '"' + d + '"'))
             if len(diluent) > 1 :
                 # Also add the complete mixture as one entity for more specific searches
-                details.append((total_props[('diluent','chemical')], '\"' + '+'.join(diluent) + '\"'))
+                details.append((total_props[('diluent','chemical')], '"' + '+'.join(diluent) + '"'))
         else :
             details.append((total_props[('diluent','chemical')], None))
 
         if fuel :
             for ff in fuel :
-                details.append((total_props[('fuel','chemical')], '\"' + ff + '\"'))
+                details.append((total_props[('fuel','chemical')], '"' + ff + '"'))
             if len(fuel) > 1 :
                 # Also add the complete mixture to the database
-                details.append((total_props[('fuel','chemical')], '\"' + '+'.join(fuel) + '\"'))
+                details.append((total_props[('fuel','chemical')], '"' + '+'.join(fuel) + '"'))
         else :
             details.append((total_props[('fuel','chemical')], None))
 
@@ -238,10 +254,10 @@ def scrape(url, output_file, debug=False) :
             for o in oxidizer :
                 if o in synonyms :
                     o = synonyms[o]
-                details.append((total_props[('oxidizer','chemical')], '\"' + o + '\"'))
+                details.append((total_props[('oxidizer','chemical')], '"' + o + '"'))
             if len(oxidizer) > 1 :
                 # Also add the complete mixture to the database
-                details.append((total_props[('oxidizer','chemical')], '\"' + '+'.join(oxidizer) + '\"'))
+                details.append((total_props[('oxidizer','chemical')], '"' + '+'.join(oxidizer) + '"'))
         else :
             details.append((total_props[('oxidizer','chemical')], None))
 
@@ -322,7 +338,7 @@ def scrape(url, output_file, debug=False) :
         dets_index += 1
 
         time.sleep(0.1)
-        
+
     f.close()
 
 
@@ -332,7 +348,7 @@ def scrape(url, output_file, debug=False) :
 
 base_url = "http://shepherd.caltech.edu/detn_db/html/db_"
 pages = list(range(121,128)) + list(range(130,135)) + list(range(136,142))
-#pages = [127]
+# pages = [127]
 debug = False
 print('Debug mode? (y/n)')
 if input() == 'y' :
@@ -344,4 +360,43 @@ for i in range(0,len(pages)) :
     scrape(url, 'data_seed_' + str(i+1) + '.sql', debug=debug)
     time.sleep(0.1)
 printBlue("Max notes length: " + str(max_notes_length))
+
+######### SAVE STATE ##########
+# Save some data to files for later use in plot data scraping.
+
+# This script takes about a minute to run, so it'll be easier
+# to debug the plot-scraping script when I can start where this
+# one left off. Of course, the plot data is heavily interrelated
+# to the detonation data, and in fact CONTAINS NEW INFORMATION about
+# the detonations.
+
+printBlue("Saving detonations as JSON...")
+save_dets.write(str(dets_index-1) + '\n')
+save_dets.write(json.dumps(total_dets))
+
+# For properties and details, we have to reverse the index
+# because lists can't be used as keys in JSON.
+# Upon loading the data, we'll reverse it back.
+printBlue("Saving properties as JSON...")
+save_props.write(str(props_index-1) + '\n')
+temp = {}
+for p in total_props :
+    temp[total_props[p]] = p
+save_props.write(json.dumps(temp))
+
+printBlue("Saving details as JSON...")
+save_details.write(str(details_index-1) + '\n')
+temp = {}
+for d in total_details :
+    temp[total_details[d]] = d
+save_details.write(json.dumps(temp))
+
+printBlue("Saving categories as JSON...")
+save_cats.write(json.dumps(total_cats))
+
+printGreen("Done!")
 special.close()
+save_dets.close()
+save_props.close()
+save_details.close()
+save_cats.close()
