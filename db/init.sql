@@ -50,7 +50,7 @@ CREATE TABLE author_citations (
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL,
-	category_id INT NOT NULL,
+	category_id INT,
 	file_name VARCHAR(20) NOT NULL,
 	issues NVARCHAR(250) DEFAULT NULL, -- Problems with the data
 	notes NVARCHAR(200) DEFAULT NULL, -- Scientific notes
@@ -149,3 +149,50 @@ CREATE TABLE detonation_details (
 	   single set of 'properties' with units that might appear in various
 	   places.
 */
+
+CREATE TABLE plots (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	x_label INT NOT NULL,
+	y_label INT NOT NULL,
+	category_id INT,
+	title VARCHAR(100) NOT NULL,
+	num_datasets SMALLINT NOT NULL,
+	notes VARCHAR(100) DEFAULT NULL,
+	image_file VARCHAR(15) DEFAULT NULL,
+	legacy BIT NOT NULL DEFAULT 0,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	FOREIGN KEY(x_property) REFERENCES properties(id),
+	FOREIGN KEY(y_property) REFERENCES properties(id),
+	FOREIGN KEY(category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE plot_detonations (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	plot_id INT NOT NULL,
+	detonation_id INT NOT NULL,
+	x_data INT NOT NULL,
+	y_data INT NOT NULL,
+	notes VARCHAR(100) DEFAULT NULL,
+	FOREIGN KEY(plot_id) REFERENCES plots(id),
+	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
+	FOREIGN KEY(x_data) REFERENCES data_points(id),
+	FOREIGN KEY(y_data) REFERENCES data_points(id),
+);
+
+CREATE TABLE plot_details (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	plot_id INT NOT NULL,
+	detail_id INT NOT NULL,
+	FOREIGN KEY(plot_id) REFERENCES plots(id),
+	FOREIGN KEY(detail_id) REFERENCES details(id),
+)
+
+CREATE TABLE related_plots (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	plot1 INT NOT NULL,
+	plot2 INT NOT NULL,
+	relatedness FLOAT NOT NULL,
+	FOREIGN KEY(plot1) REFERENCES plots(id),
+	FOREIGN KEY(plot2) REFERENCES plots(id),
+)

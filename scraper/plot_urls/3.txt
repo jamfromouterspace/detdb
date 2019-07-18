@@ -1,0 +1,5 @@
+minimum tube diameter
+http://shepherd.caltech.edu/detn_db/html/H2-Air12.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox15.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox16.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Ox11.html
