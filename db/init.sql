@@ -152,10 +152,12 @@ CREATE TABLE detonation_details (
 
 CREATE TABLE plots (
 	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(100) NOT NULL,
 	x_label INT NOT NULL,
 	y_label INT NOT NULL,
+	x_scale VARCHAR(100) NOT NULL,
+	y_scale VARCHAR(100) NOT NULL,
 	category_id INT,
-	title VARCHAR(100) NOT NULL,
 	num_datasets SMALLINT NOT NULL,
 	notes VARCHAR(100) DEFAULT NULL,
 	image_file VARCHAR(15) DEFAULT NULL,

@@ -178,7 +178,7 @@ def scrape(url, output_file, debug=False) :
 
         # Save some information about the datapoints and increment index
         for i in range(0,len(data)) :
-            total_dets[id]['data'][i] = (data[i]['name'],data[i]['units'])
+            total_dets[id]['data'][datapoint_index] = (data[i]['name'],data[i]['units'])
             datapoint_index += 1
 
         if debug :

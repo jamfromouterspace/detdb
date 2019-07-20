@@ -8,13 +8,15 @@ import sys
 sys.path.append('../') # Include scraper folder
 from tools import *
 from generate_sql import *
-from txt_parser import txtParser
 from bs4 import BeautifulSoup as bs
+from PIL import Image
+from vision import gif2png
 import requests as req
 import time
 import json
 import regex as re # PyPi regex supports \p{}
 import urllib.request
+
 
 def scrapePlotData(url,save_img=False,debug=False) :
     base_url = 'http://shepherd.caltech.edu/detn_db/'
@@ -27,8 +29,8 @@ def scrapePlotData(url,save_img=False,debug=False) :
     pattern = re.compile('(.+) vs\\.? (.+); ?(.+)')
     y_label,x_label,mixtures = re.match(pattern,title).groups()
     y_label = y_label.lower()
-    x_label = x_label.lower()
-    mixtures = mixtures.lower()
+    x_label = re.split('-|\(',x_label.lower())[0].strip()
+    mixtures = mixtures
     mixtures = mixtures.split(',')
     fuels = []
     oxidizers = []
@@ -53,7 +55,7 @@ def scrapePlotData(url,save_img=False,debug=False) :
     counter = 0
     for d in dets :
         if d[-3:] == 'txt' :
-            ids.append(d)
+            ids.append(d[:-4])
             if counter == 2 :
                 notes.append('')
             counter = 0
@@ -66,7 +68,7 @@ def scrapePlotData(url,save_img=False,debug=False) :
         a = soup.find_all('img')[2]['src'][3:]
         img_name = a.split('/')[2]
         a = base_url + a
-        urllib.request.urlretrieve(a, "../plot_images/" + img_name)
+        urllib.request.urlretrieve(a, "images/" + img_name)
 
     if debug :
         printGreen('TITLE: ' + title)
@@ -79,27 +81,41 @@ def scrapePlotData(url,save_img=False,debug=False) :
         printGreen('DETONATIONS: ' + str(ids))
         printGreen('NOTES: ' + str(notes))
 
-    res = {'title': title,
+    res = {
+           'title': title,
+           'x_label': x_label,
+           'y_label': y_label,
            'mixtures': mixtures,
            'fuels': fuels,
-           'diluents': diluents}
+           'oxidizers': oxidizers,
+           'diluents': diluents,
+           'detonations': ids,
+           'notes': notes
+          }
     return res
 
+def scrapePlotImage(url,convert_to_png=False) :
+    base_url = 'http://shepherd.caltech.edu/detn_db/'
+    res = req.get(url)
+    soup = bs(res.text, "html.parser")
+    a = soup.find_all('img')[2]['src'][3:]
+    img_name = a.split('/')[2]
+    a = base_url + a
+    urllib.request.urlretrieve(a, "images/gif/" + img_name)
+    if convert_to_png :
+        gif2png("images/gif/"+img_name,"images/png/"+img_name[:-3]+'png')
+
 def getPlotUrls() :
+    # urls = {category: [urls]}
     urls = {}
     for i in range(0,4) :
-        f = open('../plot_urls/' + str(i) + '.txt', 'r')
+        f = open('urls/' + str(i) + '.txt', 'r')
         s = f.read()
         s = s.split('\n')
         urls[s[0]] = s[1:]
         f.close()
     return urls
 
-url = 'http://shepherd.caltech.edu/detn_db/html/H2-Air1.html'
-# url = 'http://shepherd.caltech.edu/detn_db/html/H2-Ox1.html'
-# url = 'http://shepherd.caltech.edu/detn_db/html/C3H8-Air.html'
-# url = 'http://shepherd.caltech.edu/detn_db/html/C2H4-Air4.html'
-res = scrapePlotData(url,debug=True)
 
 def savePlotUrls(debug=False) :
     base_url = 'http://shepherd.caltech.edu/detn_db/html/'
@@ -109,7 +125,7 @@ def savePlotUrls(debug=False) :
               'minimum tube diameter' : 'db_112.html' }
     counter = 0
     for category in index :
-        f = open('../plot_urls/' + str(counter) + '.txt', 'w')
+        f = open('urls/' + str(counter) + '.txt', 'w')
         f.write(category + '\n')
         soup = bs(req.get(base_url + index[category]).text,'html.parser')
         plot_urls = soup.find_all('a')
@@ -128,3 +144,45 @@ def savePlotUrls(debug=False) :
         counter += 1
         if debug :
             print(plot_urls, len(plot_urls))
+
+def loadDetonationData() :
+    # Read categories
+    f = open('detonation_data/categories.json', 'r')
+    cats = json.loads(f.read())
+    f.close()
+    # Read detonations
+    temp = {}
+    dets = {}
+    f = open('detonation_data/detonations.json', 'r')
+    s = f.read().split('\n')
+    dets_index = int(s[0]) + 1
+    temp = json.loads(s[1])
+    for i in temp :
+        dets[i] = {}
+        dets[i]['index'] = temp[i]['index']
+        dets[i]['data'] = {}
+        for j in temp[i]['data'] :
+            dets[i]['data'][tuple(temp[i]['data'][j])] = int(j)
+    f.close()
+    # Read properties
+    temp = {}
+    props = {}
+    f = open('detonation_data/properties.json', 'r')
+    s = f.read().split('\n')
+    props_index = int(s[0]) + 1
+    temp = json.loads(s[1])
+    for i in temp :
+        props[tuple(temp[i])] = int(i)
+    f.close()
+    # Read details
+    temp = {}
+    deets = {}
+    f = open('detonation_data/details.json', 'r')
+    s = f.read().split('\n')
+    deets_index = int(s[0]) + 1
+    temp = json.loads(s[1])
+    for i in temp :
+        deets[tuple(temp[i])] = int(i)
+    f.close()
+
+    return cats,dets,dets_index,props,props_index,deets,deets_index
