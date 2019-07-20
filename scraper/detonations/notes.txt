@@ -1,260 +1,260 @@
-ja5e    – Assumed units of 'mm' for 'cell width'.
-at33a   – Assumed units of 'mm' for 'cell width'.
-at33b   – Assumed units of 'mm' for 'cell width'.
-at33c   – Assumed units of 'mm' for 'cell width'.
-at58a   – Assumed units of 'mm' for 'cell width'.
-at58b   – Assumed units of 'mm' for 'cell width'.
-at58c   – Assumed units of 'mm' for 'cell width'.
-at19    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-at14    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-at15    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-at16    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-ja20a   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'cell size' to 'cell width'.
-ja20b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'cell size' to 'cell width'.
-ja20c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'cell size' to 'cell width'.
-ja21a   – Standardized 'cell size' to 'cell width'.
-ja21b   – Standardized 'cell size' to 'cell width'.
-ja21c   – Standardized 'cell size' to 'cell width'.
-ja22a   – Standardized 'cell size' to 'cell width'.
-ja22b   – Standardized 'cell size' to 'cell width'.
-ja22c   – Standardized 'cell size' to 'cell width'.
-ja22d   – Standardized 'cell size' to 'cell width'.
-ja22e   – Standardized 'cell size' to 'cell width'.
-ja22f   – Standardized 'cell size' to 'cell width'.
-at21a   – Assumed units of 'mm' for 'cell width'.
-H2-Air1 – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-ja26b   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja26d   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja26f   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja1c    – Missing comma.
-ja1d    – Assumed units of 'mm' for 'cell width'.
-at182a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'.
-at182b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'.
-at182c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'.
-at182d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'.
-mk7b    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-at74    – Assumed units of 'mm' for 'cell width'.
-at35a   – Assumed units of 'mm' for 'cell width'.
-at35b   – Assumed units of 'mm' for 'cell width'.
-at38a   – Assumed units of 'mm' for 'cell width'.
-at38b   – Assumed units of 'mm' for 'cell width'.
-at38c   – Assumed units of 'mm' for 'cell width'.
-at39a   – Assumed units of 'mm' for 'cell width'.
-at39b   – Assumed units of 'mm' for 'cell width'.
-at39c   – Assumed units of 'mm' for 'cell width'.
-at39d   – Assumed units of 'mm' for 'cell width'.
-at42a   – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'.
-at42b   – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'.
-at47a   – Assumed units of 'mm' for 'cell width'.
-at47b   – Assumed units of 'mm' for 'cell width'.
-at57a   – Assumed units of 'mm' for 'cell width'.
-ja5a    – Assumed units of 'unitless' for 'equivalence ratio'.
-ja5b    – Assumed units of 'unitless' for 'equivalence ratio'.
-ja5c    – Assumed units of 'unitless' for 'equivalence ratio'.
-at5b    – Assumed units of 'mm' for 'cell width'.
-ja25a   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja25b   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja25c   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja25d   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja25e   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja25f   – Assumed units of 'unitless' for 'equivalence ratio'.
-at62a   – Assumed units of 'mm' for 'cell width'.
-at62b   – Assumed units of 'mm' for 'cell width'.
-at65    – Assumed units of 'mm' for 'cell width'.
-at3a    – Assumed units of 'unitless' for 'equivalence ratio'.
-at3b    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell width'.
-at3c    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell width'.
-at3d    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell width'.
-at4     – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-ja26a   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja26c   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja26e   – Assumed units of 'unitless' for 'equivalence ratio'.
-ja27a   – Standardized 'cell size' to 'cell width'.
-ja27b   – Standardized 'cell size' to 'cell width'.
-at21b   – Assumed units of 'mm' for 'cell width'.
-at21c   – Assumed units of 'mm' for 'cell width'.
-at192a  – Assumed units of 'mm' for 'cell width'.
-ja7e    – Assumed units of 'mm' for 'cell width'.
-at193b  – Assumed units of 'unitless' for 'equivalence ratio'.
-at176a  – Assumed units of 'mm' for 'cell width'.
-at13a   – Assumed units of 'unitless' for 'equivalence ratio'.
-at199a  – Assumed units of 'mm' for 'cell width'.
-at57d   – Assumed units of 'mm' for 'cell width'.
-at157a  – Assumed units of 'mm' for 'cell width'.
-at184a  – Assumed units of 'mm' for 'cell width'.
-at128a  – Assumed units of 'mm' for 'cell width'.
-at171a  – Assumed units of 'mm' for 'cell width'.
-at157l  – Assumed units of 'unitless' for 'equivalence ratio'.
-js13c   – Assumed units of 'unitless' for 'equivalence ratio'.
-mk7a    – Assumed units of 'unitless' for 'dilution ratio'.
-at86a   – Assumed units of 'unitless' for 'dilution ratio'.
-mk157n  – Assumed units of 'unitless' for 'equivalence ratio'.
-mk6     – Assumed units of 'unitless' for 'dilution ratio'.
-at184b  – Missing labels (deduced from plots).
-at157e  – Assumed units of 'unitless' for 'equivalence ratio'.
-ja12    – Assumed units of 'mm' for 'cell width'.
-at13b   – Assumed units of 'unitless' for 'equivalence ratio'.
-mk7c    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-at157c  – Assumed units of 'unitless' for 'equivalence ratio'.
-at157f  – Assumed units of 'unitless' for 'equivalence ratio'.
-mk157g  – Assumed units of 'unitless' for 'equivalence ratio'.
-at203   – Assumed units of 'unitless' for 'equivalence ratio'.
-at158   – Assumed units of 'unitless' for 'equivalence ratio'.
-at157j  – Assumed units of 'unitless' for 'equivalence ratio'.
-at157m  – Assumed units of 'unitless' for 'equivalence ratio'.
-ja8c    – Extraneous comma. Assumed units of 'mm' for 'cell width'.
-ja8d    – Assumed units of 'mm' for 'cell width'.
-at13f   – Assumed units of 'unitless' for 'equivalence ratio'.
-at13e   – Assumed units of 'unitless' for 'equivalence ratio'.
-at13d   – Assumed units of 'unitless' for 'equivalence ratio'.
-mk7d    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'.
-at154b  – Assumed units of 'mm' for 'cell width'.
-at37    – Assumed units of 'mm' for 'cell width'.
-at157h  – Assumed units of 'unitless' for 'equivalence ratio'.
-at157k  – Assumed units of 'unitless' for 'equivalence ratio'.
-mk184d  – No equivalence ratio data.
-mk168a  – Assumed units of 'unitless' for 'h2s mole fraction'.
-mk168b  – Assumed units of 'unitless' for 'h2s mole fraction'.
-at170a  – Assumed units of 'unitless' for 'equivalence ratio'.
-at170b  – Assumed units of 'unitless' for 'equivalence ratio'.
-at170c  – Assumed units of 'unitless' for 'equivalence ratio'.
-at189   – Assumed units of 'mm' for 'cell length'.
-at70a   – Assumed units of 'mm' for 'cell length'.
-at70b   – Assumed units of 'mm' for 'cell length'.
-at70c   – Assumed units of 'mm' for 'cell length'.
-at193a  – Assumed units of 'unitless' for 'equivalence ratio'.
-at194a  – Assumed units of 'mm' for 'cell length'.
-mk1a    – No initial temperature data.
-mk1b    – No initial temperature data.
-mk1c    – No initial temperature data.
-mk1d    – No initial temperature data.
-mk3a    – No initial temperature data.
-mk3b    – No initial temperature data.
-mk3c    – No initial temperature data.
-mk3d    – No initial temperature data.
-mk4a    – No initial temperature data.
-mk4b    – No initial temperature data.
-mk4c    – No initial temperature data.
-mk4d    – No initial temperature data.
-at194b  – Assumed units of 'mm' for 'cell length'.
-at93a   – Missing labels (deduced from plots).
-at93b   – Missing labels (deduced from plots).
-at169e  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'.
-at169a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'.
-at169d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'.
-at169c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'.
-at169b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'.
-mk23a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'critical diameter'. Standardized 'critical diameter' to 'critical tube diameter'.
-mk23b   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'critical diameter'. Standardized 'critical diameter' to 'critical tube diameter'.
-at72a   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at56a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at75a   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at72c   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at75b   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at75d   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at75c   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at43    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at161a  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'.
-at161b  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'.
-at161c  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'.
-at161d  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'.
-at147a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at147b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at147c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at147d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-mk137k  – Fixed typo.
-att2    – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at71a   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at22a4  – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at66b   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at66a   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'.
-at22a1  – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at20a   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-mk127   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at162a  – Standardized 'tube diameter' to 'critical tube diameter'.
-at162b  – Standardized 'tube diameter' to 'critical tube diameter'.
-at162c  – Standardized 'tube diameter' to 'critical tube diameter'.
-at163a  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-mk142a  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at56c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. No initial temperature data.
-at137g  – Standardized 'tube diameter' to 'critical tube diameter'.
-at56d   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at80b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at80c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at66c   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at22b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at22c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at77a   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at77b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at77c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at77d   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at200c  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at31c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at143a  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at137h  – Standardized 'tube diameter' to 'critical tube diameter'.
-at137i  – Standardized 'tube diameter' to 'critical tube diameter'.
-at137j  – Standardized 'tube diameter' to 'critical tube diameter'.
-at66d   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at66e   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-at66f   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'.
-mk22e   – Assumed units of 'unitless' for 'equivalence ratio'.
-mk30    – Assumed units of 'unitless' for 'equivalence ratio'.
-at34b   – Assumed units of 'unitless' for 'equivalence ratio'.
-at34c   – Assumed units of 'unitless' for 'equivalence ratio'.
-at24    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at181a  – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at181b  – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-mk82a   – Hidden units of J/cm deduced from plot.
-at55a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at55b   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at123a  – Assumed units of 'J' for 'critical energy'.
-at123b  – Assumed units of 'J' for 'critical energy'.
-at123d  – Assumed units of 'J' for 'critical energy'.
-at123e  – Assumed units of 'J' for 'critical energy'.
-at123f  – Assumed units of 'J' for 'critical energy'.
-at124b  – Assumed units of 'J' for 'critical energy'.
-at124c  – Assumed units of 'J' for 'critical energy'.
-at124d  – Assumed units of 'J' for 'critical energy'.
-at124e  – Assumed units of 'J' for 'critical energy'.
-at126a  – Assumed units of 'J' for 'critical energy'.
-at126b  – Assumed units of 'J' for 'critical energy'.
-at126c  – Assumed units of 'J' for 'critical energy'.
-at126d  – Assumed units of 'J' for 'critical energy'.
-at126e  – Assumed units of 'J' for 'critical energy'.
-at53    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'g tetryl' for 'critical charge'. Assumed units of 'J' for 'critical energy'.
-at67a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at195d  – Hidden units of J/cm deduced from plot.
-at195e  – Hidden units of J/cm deduced from plot.
-at177a  – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at210a  – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'J' for 'critical energy'.
-at209a  – Hidden units of J/cm deduced from plot.
-at210b  – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'J' for 'critical energy'. No initial temperature data.
-at79a   – Assumed units of 'unitless' for 'equivalence ratio'.
-at195c  – Hidden units of J/cm deduced from plot.
-at115   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'.
-at108a  – Assumed units of 'unitless' for 'equivalence ratio'.
-at108b  – Assumed units of 'unitless' for 'equivalence ratio'.
-at82b   – Standardized 'critical energy (J/cm)' to 'cylindrical critical energy'.
-at44a   – Assumed units of 'unitless' for 'equivalence ratio'. No initial pressure data. No initial temperature data.
-at54a   – Standardized 'critical energy (J/cm)' to 'cylindrical critical energy'.
-at105a  – Standardized 'critical energy (J/cm)' to 'cylindrical critical energy'.
-at84a   – Assumed units of 'unitless' for 'equivalence ratio'.
-at109a  – Assumed units of 'unitless' for 'equivalence ratio'.
-at109b  – Assumed units of 'unitless' for 'equivalence ratio'.
-at109c  – Assumed units of 'unitless' for 'equivalence ratio'.
-at79b   – Assumed units of 'unitless' for 'equivalence ratio'.
-at32b   – Assumed units of 'unitless' for 'equivalence ratio'.
-at92    – Assumed units of 'unitless' for 'equivalence ratio'.
-at32f   – Assumed units of 'unitless' for 'equivalence ratio'.
-at32g   – Assumed units of 'unitless' for 'equivalence ratio'.
-at32e   – Assumed units of 'unitless' for 'equivalence ratio'.
-at44c   – Assumed units of 'unitless' for 'equivalence ratio'.
-at26    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at27a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at27b   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at28a   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at28b   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at28c   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at28d   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at28e   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
-at133   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'.
+ja5e    – Assumed units of 'mm' for 'cell width'. 
+at33a   – Assumed units of 'mm' for 'cell width'. 
+at33b   – Assumed units of 'mm' for 'cell width'. 
+at33c   – Assumed units of 'mm' for 'cell width'. 
+at58a   – Assumed units of 'mm' for 'cell width'. 
+at58b   – Assumed units of 'mm' for 'cell width'. 
+at58c   – Assumed units of 'mm' for 'cell width'. 
+at19    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+at14    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+at15    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+at16    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+ja20a   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'cell size' to 'cell width'. 
+ja20b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'cell size' to 'cell width'. 
+ja20c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'cell size' to 'cell width'. 
+ja21a   – Standardized 'cell size' to 'cell width'. 
+ja21b   – Standardized 'cell size' to 'cell width'. 
+ja21c   – Standardized 'cell size' to 'cell width'. 
+ja22a   – Standardized 'cell size' to 'cell width'. 
+ja22b   – Standardized 'cell size' to 'cell width'. 
+ja22c   – Standardized 'cell size' to 'cell width'. 
+ja22d   – Standardized 'cell size' to 'cell width'. 
+ja22e   – Standardized 'cell size' to 'cell width'. 
+ja22f   – Standardized 'cell size' to 'cell width'. 
+at21a   – Assumed units of 'mm' for 'cell width'. 
+H2-Air1 – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+ja26b   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja26d   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja26f   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja1c    – Missing comma. 
+ja1d    – Assumed units of 'mm' for 'cell width'. 
+at182a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
+at182b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
+at182c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
+at182d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
+mk7b    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+at74    – Assumed units of 'mm' for 'cell width'. 
+at35a   – Assumed units of 'mm' for 'cell width'. 
+at35b   – Assumed units of 'mm' for 'cell width'. 
+at38a   – Assumed units of 'mm' for 'cell width'. 
+at38b   – Assumed units of 'mm' for 'cell width'. 
+at38c   – Assumed units of 'mm' for 'cell width'. 
+at39a   – Assumed units of 'mm' for 'cell width'. 
+at39b   – Assumed units of 'mm' for 'cell width'. 
+at39c   – Assumed units of 'mm' for 'cell width'. 
+at39d   – Assumed units of 'mm' for 'cell width'. 
+at42a   – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
+at42b   – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
+at47a   – Assumed units of 'mm' for 'cell width'. 
+at47b   – Assumed units of 'mm' for 'cell width'. 
+at57a   – Assumed units of 'mm' for 'cell width'. 
+ja5a    – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja5b    – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja5c    – Assumed units of 'unitless' for 'equivalence ratio'. 
+at5b    – Assumed units of 'mm' for 'cell width'. 
+ja25a   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja25b   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja25c   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja25d   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja25e   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja25f   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at62a   – Assumed units of 'mm' for 'cell width'. 
+at62b   – Assumed units of 'mm' for 'cell width'. 
+at65    – Assumed units of 'mm' for 'cell width'. 
+at3a    – Assumed units of 'unitless' for 'equivalence ratio'. 
+at3b    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell width'. 
+at3c    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell width'. 
+at3d    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell width'. 
+at4     – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+ja26a   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja26c   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja26e   – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja27a   – Standardized 'cell size' to 'cell width'. 
+ja27b   – Standardized 'cell size' to 'cell width'. 
+at21b   – Assumed units of 'mm' for 'cell width'. 
+at21c   – Assumed units of 'mm' for 'cell width'. 
+at192a  – Assumed units of 'mm' for 'cell width'. 
+ja7e    – Assumed units of 'mm' for 'cell width'. 
+at193b  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at176a  – Assumed units of 'mm' for 'cell width'. 
+at13a   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at199a  – Assumed units of 'mm' for 'cell width'. 
+at57d   – Assumed units of 'mm' for 'cell width'. 
+at157a  – Fixed typo. 
+at184a  – Assumed units of 'mm' for 'cell width'. 
+at128a  – Assumed units of 'mm' for 'cell width'. 
+at171a  – Assumed units of 'mm' for 'cell width'. 
+at157l  – Assumed units of 'unitless' for 'equivalence ratio'. 
+js13c   – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk7a    – Assumed units of 'unitless' for 'dilution ratio'. 
+at86a   – Assumed units of 'unitless' for 'dilution ratio'. 
+mk157n  – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk6     – Assumed units of 'unitless' for 'dilution ratio'. 
+at184b  – Missing labels (deduced from plots). 
+at157e  – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja12    – Assumed units of 'mm' for 'cell width'. 
+at13b   – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk7c    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+at157c  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at157f  – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk157g  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at203   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at158   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at157j  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at157m  – Assumed units of 'unitless' for 'equivalence ratio'. 
+ja8c    – Extraneous comma. Assumed units of 'mm' for 'cell width'. 
+ja8d    – Assumed units of 'mm' for 'cell width'. 
+at13f   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at13e   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at13d   – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk7d    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+at154b  – Assumed units of 'mm' for 'cell width'. 
+at37    – Assumed units of 'mm' for 'cell width'. 
+at157h  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at157k  – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk184d  – No equivalence ratio data. 
+mk168a  – Assumed units of 'unitless' for 'h2s mole fraction'. 
+mk168b  – Assumed units of 'unitless' for 'h2s mole fraction'. 
+at170a  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at170b  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at170c  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at189   – Assumed units of 'mm' for 'cell length'. 
+at70a   – Assumed units of 'mm' for 'cell length'. 
+at70b   – Assumed units of 'mm' for 'cell length'. 
+at70c   – Assumed units of 'mm' for 'cell length'. 
+at193a  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at194a  – Assumed units of 'mm' for 'cell length'. 
+mk1a    – No initial temperature data. 
+mk1b    – No initial temperature data. 
+mk1c    – No initial temperature data. 
+mk1d    – No initial temperature data. 
+mk3a    – No initial temperature data. 
+mk3b    – No initial temperature data. 
+mk3c    – No initial temperature data. 
+mk3d    – No initial temperature data. 
+mk4a    – No initial temperature data. 
+mk4b    – No initial temperature data. 
+mk4c    – No initial temperature data. 
+mk4d    – No initial temperature data. 
+at194b  – Assumed units of 'mm' for 'cell length'. 
+at93a   – Missing labels (deduced from plots). 
+at93b   – Missing labels (deduced from plots). 
+at169e  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'. 
+at169a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'. 
+at169d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'. 
+at169c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'. 
+at169b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell length'. 
+mk23a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'critical diameter'. Standardized 'critical diameter' to 'critical tube diameter'. 
+mk23b   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'critical diameter'. Standardized 'critical diameter' to 'critical tube diameter'. 
+at72a   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at56a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at75a   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at72c   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at75b   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at75d   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at75c   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at43    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at161a  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at161b  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at161c  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at161d  – Assumed units of 'mm' for 'tube diameter'. Assumed units of 'kPa' for 'initial pressure'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at147a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at147b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at147c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at147d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+mk137k  – Fixed typo. 
+att2    – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at71a   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at22a4  – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at66b   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at66a   – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at22a1  – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at20a   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+mk127   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at162a  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at162b  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at162c  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at163a  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+mk142a  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at56c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. No initial temperature data. 
+at137g  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at56d   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at80b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at80c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at66c   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at22b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at22c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at77a   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at77b   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at77c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at77d   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at200c  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at31c   – Assumed units of 'unitless' for 'equivalence ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at143a  – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at137h  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at137i  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at137j  – Standardized 'tube diameter' to 'critical tube diameter'. 
+at66d   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at66e   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+at66f   – Assumed units of 'unitless' for 'dilution ratio'. Standardized 'tube diameter' to 'critical tube diameter'. 
+mk22e   – Assumed units of 'unitless' for 'equivalence ratio'. 
+mk30    – Assumed units of 'unitless' for 'equivalence ratio'. 
+at34b   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at34c   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at24    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at181a  – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at181b  – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+mk82a   – Hidden units of J/cm deduced from plot. 
+at55a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at55b   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at123a  – Assumed units of 'J' for 'critical energy'. 
+at123b  – Assumed units of 'J' for 'critical energy'. 
+at123d  – Assumed units of 'J' for 'critical energy'. 
+at123e  – Assumed units of 'J' for 'critical energy'. 
+at123f  – Assumed units of 'J' for 'critical energy'. 
+at124b  – Assumed units of 'J' for 'critical energy'. 
+at124c  – Assumed units of 'J' for 'critical energy'. 
+at124d  – Assumed units of 'J' for 'critical energy'. 
+at124e  – Assumed units of 'J' for 'critical energy'. 
+at126a  – Assumed units of 'J' for 'critical energy'. 
+at126b  – Assumed units of 'J' for 'critical energy'. 
+at126c  – Assumed units of 'J' for 'critical energy'. 
+at126d  – Assumed units of 'J' for 'critical energy'. 
+at126e  – Assumed units of 'J' for 'critical energy'. 
+at53    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'g tetryl' for 'critical charge'. Assumed units of 'J' for 'critical energy'. 
+at67a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at195d  – Hidden units of J/cm deduced from plot. 
+at195e  – Hidden units of J/cm deduced from plot. 
+at177a  – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at210a  – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'J' for 'critical energy'. 
+at209a  – Hidden units of J/cm deduced from plot. 
+at210b  – Assumed units of 'unitless' for 'dilution ratio'. Assumed units of 'J' for 'critical energy'. No initial temperature data. 
+at79a   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at195c  – Hidden units of J/cm deduced from plot. 
+at115   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'J' for 'critical energy'. 
+at108a  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at108b  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at82b   – Standardized 'critical energy (J/cm)' to 'cylindrical critical energy'. 
+at44a   – Assumed units of 'unitless' for 'equivalence ratio'. No initial pressure data. No initial temperature data. 
+at54a   – Standardized 'critical energy (J/cm)' to 'cylindrical critical energy'. 
+at105a  – Standardized 'critical energy (J/cm)' to 'cylindrical critical energy'. 
+at84a   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at109a  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at109b  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at109c  – Assumed units of 'unitless' for 'equivalence ratio'. 
+at79b   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at32b   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at92    – Assumed units of 'unitless' for 'equivalence ratio'. 
+at32f   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at32g   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at32e   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at44c   – Assumed units of 'unitless' for 'equivalence ratio'. 
+at26    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at27a   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at27b   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at28a   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at28b   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at28c   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at28d   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at28e   – Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 
+at133   – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'tube diameter'. Standardized 'tube diameter' to 'minimum tube diameter'. 

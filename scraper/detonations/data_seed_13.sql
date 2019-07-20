@@ -222,7 +222,7 @@ VALUES
 
 INSERT INTO properties(name, units)
 VALUES 
-('cylindrical critical energy', 'mm'); -- 41
+('cylindrical critical energy', 'J/cm'); -- 41
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 

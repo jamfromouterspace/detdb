@@ -14,23 +14,23 @@ edge_cases = {
            'units': ['unitless', 'mm']},
 
 'mk82a' : {'names': ['initial pressure', 'initial pressure', 'cylindrical critical energy'],
-           'units': ['atm', 'kPa', 'mm'],
+           'units': ['atm', 'kPa', 'J/cm'],
            'notes': 'Hidden units of J/cm deduced from plot. '},
 
 'at195c' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
-           'units': ['unitless', 'mm'],
+           'units': ['unitless', 'J/cm'],
            'notes': 'Hidden units of J/cm deduced from plot. '},
 
 'at195d' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
-           'units': ['unitless', 'mm'],
+           'units': ['unitless', 'J/cm'],
            'notes': 'Hidden units of J/cm deduced from plot. '},
 
 'at195e' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
-           'units': ['unitless', 'mm'],
+           'units': ['unitless', 'J/cm'],
            'notes': 'Hidden units of J/cm deduced from plot. '},
 
 'at209a' : {'names': ['equivalence ratio', 'cylindrical critical energy'],
-           'units': ['unitless', 'mm'],
+           'units': ['unitless', 'J/cm'],
            'notes': 'Hidden units of J/cm deduced from plot. '},
 # Can't get any information about this last one
 'at184b' : {'names': [None,None], 'units': [None, None]}
