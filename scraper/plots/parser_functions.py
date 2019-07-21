@@ -10,37 +10,52 @@ from tools import *
 from generate_sql import *
 from bs4 import BeautifulSoup as bs
 from PIL import Image
-from vision import gif2png
+from vision import gif2png,getPlotScale
+from edge_cases import *
 import requests as req
 import time
+import traceback
 import json
 import regex as re # PyPi regex supports \p{}
 import urllib.request
 
-
-def scrapePlotData(url,save_img=False,debug=False) :
+def scrapePlotData(url,plot_index,save_img=False,debug=False) :
+    debug_notes = open('edge_case_notes.txt','a')
     base_url = 'http://shepherd.caltech.edu/detn_db/'
     res = req.get(url)
     soup = bs(res.text, "html.parser")
     # Extract information from title
     # H2-Air
     # C2H4-Air-Inhibitor
-    title = soup.h3.string
+    if plot_index in edge_cases :
+        title = edge_cases[plot_index]['title']
+    else :
+        title = soup.h3.string
     pattern = re.compile('(.+) vs\\.? (.+); ?(.+)')
     y_label,x_label,mixtures = re.match(pattern,title).groups()
     y_label = y_label.lower()
     x_label = re.split('-|\(',x_label.lower())[0].strip()
-    mixtures = mixtures
-    mixtures = mixtures.split(',')
+    mixtures = mixtures.strip().split(',')
     fuels = []
     oxidizers = []
     diluents = []
     for m in mixtures :
-        m = re.split('(?:\+|-)',m)
+        mixture = m.strip()
+        m = [ x.strip() for x in re.split('(?:\+|-)',m) ]
+        if len(m) > 3 :
+            if mixture in edge_cases :
+                fuels += edge_cases[mixture]['fuels']
+                oxidizers += edge_cases[mixture]['oxidizers']
+                diluents += edge_cases[mixture]['diluents']
+            else :
+                debug_notes.write(mixture + ' -- ' + url + '\n')
+                printRed('Edge case unaccounted for.')
+            continue
+        elif len(m) > 2 :
+            if m[2].lower() != 'diluent' :
+                diluents.append(m[2])
         fuels.append(m[0])
         oxidizers.append(m[1])
-        if len(m) > 2 :
-            diluents.append(m[2])
     # Get list of datasets used in the plot
     text = soup.find('p').text
     dets = []
@@ -57,16 +72,18 @@ def scrapePlotData(url,save_img=False,debug=False) :
         if d[-3:] == 'txt' :
             ids.append(d[:-4])
             if counter == 2 :
-                notes.append('')
+                notes.append(None)
             counter = 0
         elif counter == 2 :
             notes.append(d)
         counter += 1
+    if counter == 2 :
+        notes.append(None)
 
+    a = soup.find_all('img')[2]['src'][3:]
+    img_name = a.split('/')[2]
     if save_img :
         # Get image
-        a = soup.find_all('img')[2]['src'][3:]
-        img_name = a.split('/')[2]
         a = base_url + a
         urllib.request.urlretrieve(a, "images/" + img_name)
 
@@ -90,9 +107,62 @@ def scrapePlotData(url,save_img=False,debug=False) :
            'oxidizers': oxidizers,
            'diluents': diluents,
            'detonations': ids,
-           'notes': notes
+           'notes': notes,
+           'image_name': img_name[:-4]
           }
+    if plot_index == 208 :
+        printBlue('SPECIAL CASE:' + res['detonations'])
+    debug_notes.close()
     return res
+
+def getPercentDiluent(text,detonation_id) :
+    # Sometimes the notes under the plot indicate the percent diluent.
+    # This is some nice extra information about the detonation data.
+    # This function gets extracts the percent diluent (if it exists) for
+    # a single detonation note.
+    text = text.strip()
+    if not text :
+        return None
+    text = text.split(',')
+    found = False
+    for t in text :
+        if '%' in t :
+            text = t
+            found = True
+            break
+    if not found :
+        return None
+    text = [x.strip() for x in text.split('%')]
+    if len(text) > 2 :
+        error = 'Malformed percentage (multiple % symbols). ID: ' + detonation_id
+        open('debug_notes.txt','a').write(error)
+        printRed(error)
+        return None
+    chemical = text[1]
+    amount = text[0]
+    # Account for a missing comma
+    amount = amount.split(' ')[-1]
+    # Sometime there are empty percentages such as "% H2"
+    if not amount :
+        return None
+    # Account for ranges
+    amount = amount.split('-')
+    if len(amount) > 2 :
+        error = 'Malformed range (multiple - symbols). ID: ' + detonation_id
+        open('debug_notes.txt','a').write(error)
+        printRed(error)
+        return None
+    res = {'chemical' : chemical, 'amount': []}
+    for a in amount :
+        try :
+            res['amount'].append(float(a))
+        except Exception :
+            error = 'Could not parse float. ID: ' + detonation_id
+            open('debug_notes.txt','a').write(error)
+            printRed(error)
+            traceback.print_exc()
+    return res
+
 
 def scrapePlotImage(url,convert_to_png=False) :
     base_url = 'http://shepherd.caltech.edu/detn_db/'
@@ -115,7 +185,6 @@ def getPlotUrls() :
         urls[s[0]] = s[1:]
         f.close()
     return urls
-
 
 def savePlotUrls(debug=False) :
     base_url = 'http://shepherd.caltech.edu/detn_db/html/'
@@ -186,3 +255,18 @@ def loadDetonationData() :
     f.close()
 
     return cats,dets,dets_index,props,props_index,deets,deets_index
+
+def percentSomething(dataset) :
+    # This is for a common case where the axis label
+    # is 'percent additive' but the datasets specify
+    # the chemical name (e.g. 'percent h2') so we can't
+    # use the axis labels to find the datapoint ids
+
+    # This function simply returns the id of the column
+    # containing the word 'percent'
+
+    # dataset = {(label,units) : index}
+    for i in dataset :
+        if i[0][:7] == 'percent' :
+            return dataset[i]
+    return None

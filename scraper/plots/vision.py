@@ -19,8 +19,12 @@ def black(px) :
         res &= (color == 0)
     return res
 
-def getPlotScale(filepath) :
-    im = cv2.imread(filepath)
+def getPlotScale(filename,location=None) :
+    if not location :
+        location = 'images/png/'
+    if filename[-4:] != '.png' :
+        filename += '.png'
+    im = cv2.imread(location + filename)
     return {'x': measureAxis(im,'x'),
             'y': measureAxis(im,'y')}
 
