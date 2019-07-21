@@ -71,8 +71,8 @@ def insert(table : str,
 # - Generates MySQL code with getSQL()
 # - Will only generate non-NULL inserts
 class InsertGen :
-    def __init__(self, table_name, value_names) :
-        self.index = 1
+    def __init__(self, table_name, value_names, starting_index=1) :
+        self.index = starting_index
         self.table = table_name
         self.properties = value_names # table property names
         # if a value is active, then we write it in the SQL query
