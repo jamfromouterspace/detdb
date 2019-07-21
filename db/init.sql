@@ -155,8 +155,8 @@ CREATE TABLE plots (
 	title VARCHAR(100) NOT NULL,
 	x_label INT NOT NULL,
 	y_label INT NOT NULL,
-	x_scale VARCHAR(100) NOT NULL,
-	y_scale VARCHAR(100) NOT NULL,
+	x_scale VARCHAR(10) NOT NULL, -- e.g. 'linear','log'
+	y_scale VARCHAR(10) NOT NULL,
 	category_id INT,
 	num_datasets SMALLINT NOT NULL,
 	notes VARCHAR(100) DEFAULT NULL,

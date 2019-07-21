@@ -59,19 +59,13 @@ ins_data = InsertGen('data_points', ('column_data','property_id','detonation_id'
 
 # Create SQL for known/standard properties
 total_props[('initial pressure', 'kPa')] = 1
-total_props[('min initial pressure', 'kPa')] = 2
-total_props[('max initial pressure', 'kPa')] = 3
-total_props[('initial temperature', 'K')] = 4
-total_props[('min initial temperature', 'K')] = 5
-total_props[('max initial temperature', 'K')] = 6
-total_props[('fuel', 'chemical')] = 7
-total_props[('oxidizer', 'chemical')] = 8
-total_props[('diluent', 'chemical')] = 9
-total_props[('equivalence ratio', 'unitless')] = 10
-total_props[('min equivalence ratio', 'unitless')] = 11
-total_props[('max equivalence ratio', 'unitless')] = 12
-total_props[(None, None)] = 13 # Special null-property for when dimensions aren't given
-props_index = 14
+total_props[('initial temperature', 'K')] = 2
+total_props[('fuel', 'chemical')] = 3
+total_props[('oxidizer', 'chemical')] = 4
+total_props[('diluent', 'chemical')] = 5
+total_props[('equivalence ratio', 'unitless')] = 6
+total_props[(None, None)] = 7 # Special null-property for when dimensions aren't given
+props_index = 8
 
 for p in total_props :
     ins_props.add(p)
@@ -174,7 +168,11 @@ def scrape(url, output_file, debug=False) :
                 notes += 'Standardized \'critical energy (J/cm)\' to \'cylindrical critical energy\'. '
                 data[i]['name'] = 'cylindrical critical energy'
             elif n and n[0] == '%' :
+                notes += 'Standardized \'%\' to \'percent\'. '
                 data[i]['name'] = 'percent' + n[1:]
+            elif n == 'pressure' :
+                notes += 'Standardized \'pressure\' to \'initial pressure\'. '
+                data[i]['name'] = 'initial pressure'
 
         # Save some information about the datapoints and increment index
         for i in range(0,len(data)) :
@@ -187,6 +185,8 @@ def scrape(url, output_file, debug=False) :
 
         ######### GENERATE SQL ##########
         # category
+        if cat in synonyms :
+            cat = synonyms[cat]
         if cat in total_cats :
             # Already exists, so replace with index
             cat = total_cats[cat]
@@ -234,19 +234,19 @@ def scrape(url, output_file, debug=False) :
                 if d in synonyms :
                     d = synonyms[d]
                 # If it's a mixture, add each compound in the mixture separately
-                details.append((total_props[('diluent','chemical')], '"' + d + '"'))
+                details.append((total_props[('diluent','chemical')], json.dumps(d)))
             if len(diluent) > 1 :
                 # Also add the complete mixture as one entity for more specific searches
-                details.append((total_props[('diluent','chemical')], '"' + '+'.join(diluent) + '"'))
+                details.append((total_props[('diluent','chemical')], json.dumps('+'.join(diluent))))
         else :
             details.append((total_props[('diluent','chemical')], None))
 
         if fuel :
             for ff in fuel :
-                details.append((total_props[('fuel','chemical')], '"' + ff + '"'))
+                details.append((total_props[('fuel','chemical')], json.dumps(ff)))
             if len(fuel) > 1 :
                 # Also add the complete mixture to the database
-                details.append((total_props[('fuel','chemical')], '"' + '+'.join(fuel) + '"'))
+                details.append((total_props[('fuel','chemical')], json.dumps('+'.join(fuel))))
         else :
             details.append((total_props[('fuel','chemical')], None))
 
@@ -254,36 +254,31 @@ def scrape(url, output_file, debug=False) :
             for o in oxidizer :
                 if o in synonyms :
                     o = synonyms[o]
-                details.append((total_props[('oxidizer','chemical')], '"' + o + '"'))
+                details.append((total_props[('oxidizer','chemical')], json.dumps(o)))
             if len(oxidizer) > 1 :
                 # Also add the complete mixture to the database
-                details.append((total_props[('oxidizer','chemical')], '"' + '+'.join(oxidizer) + '"'))
+                details.append((total_props[('oxidizer','chemical')], json.dumps('+'.join(oxidizer))))
         else :
             details.append((total_props[('oxidizer','chemical')], None))
 
         # I know, not very DRY
 
-        if pressure and len(pressure) > 1 :
-            details.append((total_props[('min initial pressure','kPa')], str(min(pressure))))
-            details.append((total_props[('max initial pressure','kPa')], str(max(pressure))))
-        elif pressure :
-            details.append((total_props[('initial pressure','kPa')], str(pressure[0])))
+        if pressure :
+            # Save ranges as json arrays
+            val = [min(pressure),max(pressure)] if len(pressure) > 1 else pressure[0]
+            details.append((total_props[('initial pressure','kPa')], json.dumps(val)))
         else :
             notes += 'No initial pressure data. '
             details.append((total_props[('initial pressure','kPa')], None))
-        if temp and len(temp) > 1 :
-            details.append((total_props[('min initial temperature','K')], str(min(temp))))
-            details.append((total_props[('max initial temperature','K')], str(max(temp))))
-        elif temp :
-            details.append((total_props[('initial temperature','K')], str(temp[0])))
+        if temp :
+            val = [min(temp),max(temp)] if len(temp) > 1 else temp[0]
+            details.append((total_props[('initial temperature','K')], json.dumps(val)))
         else :
             notes += 'No initial temperature data. '
             details.append((total_props[('initial temperature','K')], None))
-        if eq_ratio and len(eq_ratio) > 1 :
-            details.append((total_props[('min equivalence ratio', 'unitless')], str(min(eq_ratio))))
-            details.append((total_props[('max equivalence ratio', 'unitless')], str(max(eq_ratio))))
-        elif eq_ratio :
-            details.append((total_props[('equivalence ratio', 'unitless')], str(eq_ratio[0])))
+        if eq_ratio :
+            val = [min(eq_ratio),max(eq_ratio)] if len(eq_ratio) > 1 else eq_ratio[0]
+            details.append((total_props[('equivalence ratio', 'unitless')], json.dumps(val)))
         else :
             notes += 'No equivalence ratio data. '
             details.append((total_props[('equivalence ratio', 'unitless')], None))

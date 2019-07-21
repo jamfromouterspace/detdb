@@ -2,7 +2,7 @@ ja5e    – Assumed units of 'mm' for 'cell width'.
 at33a   – Assumed units of 'mm' for 'cell width'. 
 at33b   – Assumed units of 'mm' for 'cell width'. 
 at33c   – Assumed units of 'mm' for 'cell width'. 
-at58a   – Assumed units of 'mm' for 'cell width'. 
+at58a   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 at58b   – Assumed units of 'mm' for 'cell width'. 
 at58c   – Assumed units of 'mm' for 'cell width'. 
 at19    – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
@@ -21,7 +21,7 @@ ja22c   – Standardized 'cell size' to 'cell width'.
 ja22d   – Standardized 'cell size' to 'cell width'. 
 ja22e   – Standardized 'cell size' to 'cell width'. 
 ja22f   – Standardized 'cell size' to 'cell width'. 
-at21a   – Assumed units of 'mm' for 'cell width'. 
+at21a   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 H2-Air1 – Assumed units of 'unitless' for 'equivalence ratio'. Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
 ja26b   – Assumed units of 'unitless' for 'equivalence ratio'. 
 ja26d   – Assumed units of 'unitless' for 'equivalence ratio'. 
@@ -32,8 +32,8 @@ at182a  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm'
 at182b  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
 at182c  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
 at182d  – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
-mk7b    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
-at74    – Assumed units of 'mm' for 'cell width'. 
+mk7b    – Assumed units of 'mm' for 'cell size'. Standardized '%' to 'percent'. Standardized 'cell size' to 'cell width'. 
+at74    – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 at35a   – Assumed units of 'mm' for 'cell width'. 
 at35b   – Assumed units of 'mm' for 'cell width'. 
 at38a   – Assumed units of 'mm' for 'cell width'. 
@@ -45,9 +45,9 @@ at39c   – Assumed units of 'mm' for 'cell width'.
 at39d   – Assumed units of 'mm' for 'cell width'. 
 at42a   – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
 at42b   – Assumed units of 'kPa' for 'initial pressure'. Assumed units of 'mm' for 'cell width'. 
-at47a   – Assumed units of 'mm' for 'cell width'. 
+at47a   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 at47b   – Assumed units of 'mm' for 'cell width'. 
-at57a   – Assumed units of 'mm' for 'cell width'. 
+at57a   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 ja5a    – Assumed units of 'unitless' for 'equivalence ratio'. 
 ja5b    – Assumed units of 'unitless' for 'equivalence ratio'. 
 ja5c    – Assumed units of 'unitless' for 'equivalence ratio'. 
@@ -58,7 +58,7 @@ ja25c   – Assumed units of 'unitless' for 'equivalence ratio'.
 ja25d   – Assumed units of 'unitless' for 'equivalence ratio'. 
 ja25e   – Assumed units of 'unitless' for 'equivalence ratio'. 
 ja25f   – Assumed units of 'unitless' for 'equivalence ratio'. 
-at62a   – Assumed units of 'mm' for 'cell width'. 
+at62a   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 at62b   – Assumed units of 'mm' for 'cell width'. 
 at65    – Assumed units of 'mm' for 'cell width'. 
 at3a    – Assumed units of 'unitless' for 'equivalence ratio'. 
@@ -71,8 +71,8 @@ ja26c   – Assumed units of 'unitless' for 'equivalence ratio'.
 ja26e   – Assumed units of 'unitless' for 'equivalence ratio'. 
 ja27a   – Standardized 'cell size' to 'cell width'. 
 ja27b   – Standardized 'cell size' to 'cell width'. 
-at21b   – Assumed units of 'mm' for 'cell width'. 
-at21c   – Assumed units of 'mm' for 'cell width'. 
+at21b   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
+at21c   – Assumed units of 'mm' for 'cell width'. Standardized 'pressure' to 'initial pressure'. Standardized 'pressure' to 'initial pressure'. 
 at192a  – Assumed units of 'mm' for 'cell width'. 
 ja7e    – Assumed units of 'mm' for 'cell width'. 
 at193b  – Assumed units of 'unitless' for 'equivalence ratio'. 
@@ -92,7 +92,7 @@ mk157n  – Assumed units of 'unitless' for 'equivalence ratio'.
 mk6     – Assumed units of 'unitless' for 'dilution ratio'. 
 at184b  – Missing labels (deduced from plots). 
 at157e  – Assumed units of 'unitless' for 'equivalence ratio'. 
-ja12    – Assumed units of 'mm' for 'cell width'. 
+ja12    – Assumed units of 'mm' for 'cell width'. Standardized '%' to 'percent'. 
 at13b   – Assumed units of 'unitless' for 'equivalence ratio'. 
 mk7c    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
 at157c  – Assumed units of 'unitless' for 'equivalence ratio'. 
@@ -107,7 +107,7 @@ ja8d    – Assumed units of 'mm' for 'cell width'.
 at13f   – Assumed units of 'unitless' for 'equivalence ratio'. 
 at13e   – Assumed units of 'unitless' for 'equivalence ratio'. 
 at13d   – Assumed units of 'unitless' for 'equivalence ratio'. 
-mk7d    – Assumed units of 'mm' for 'cell size'. Standardized 'cell size' to 'cell width'. 
+mk7d    – Assumed units of 'mm' for 'cell size'. Standardized '%' to 'percent'. Standardized 'cell size' to 'cell width'. 
 at154b  – Assumed units of 'mm' for 'cell width'. 
 at37    – Assumed units of 'mm' for 'cell width'. 
 at157h  – Assumed units of 'unitless' for 'equivalence ratio'. 
