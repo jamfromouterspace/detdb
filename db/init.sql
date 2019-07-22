@@ -192,9 +192,13 @@ CREATE TABLE plot_details (
 
 CREATE TABLE related_plots (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	plot1 INT NOT NULL,
-	plot2 INT NOT NULL,
-	relatedness FLOAT NOT NULL,
-	FOREIGN KEY(plot1) REFERENCES plots(id),
-	FOREIGN KEY(plot2) REFERENCES plots(id),
+	plot_id INT NOT NULL,
+	related_plot_id INT NOT NULL,
+	x_similarity FLOAT NOT NULL,
+	y_similarity FLOAT NOT NULL,
+	extra_similarity FLOAT NOT NULL,
+	chemical_similarity FLOAT NOT NULL,
+	total_similarity FLOAT,
+	FOREIGN KEY(plot_id) REFERENCES plots(id),
+	FOREIGN KEY(related_plot_id) REFERENCES plots(id),
 )

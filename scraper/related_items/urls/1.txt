@@ -1,0 +1,16 @@
+critical tube diameter
+http://shepherd.caltech.edu/detn_db/html/H2-Air11.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox23.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox24.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox25.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Ox6.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Ox7.html
+http://shepherd.caltech.edu/detn_db/html/C2H2-Ox7.html
+http://shepherd.caltech.edu/detn_db/html/C2H2-Air4.html
+http://shepherd.caltech.edu/detn_db/html/C2H4-Air4.html
+http://shepherd.caltech.edu/detn_db/html/C2H4-Ox4.html
+http://shepherd.caltech.edu/detn_db/html/C2H4-Ox5.html
+http://shepherd.caltech.edu/detn_db/html/C2H4-Ox6.html
+http://shepherd.caltech.edu/detn_db/html/C2H6-Air2.html
+http://shepherd.caltech.edu/detn_db/html/HC-Ox1.html
+http://shepherd.caltech.edu/detn_db/html/HC-Ox2.html
