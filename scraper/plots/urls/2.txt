@@ -1,0 +1,20 @@
+critical energy
+http://shepherd.caltech.edu/detn_db/html/H2-Air10.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox17.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox18.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox19.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox20.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox21.html
+http://shepherd.caltech.edu/detn_db/html/H2-Ox22.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Air2.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Air3.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Ox8.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Ox9.html
+http://shepherd.caltech.edu/detn_db/html/CH4-Ox10.html
+http://shepherd.caltech.edu/detn_db/html/C2H2-Ox8.html
+http://shepherd.caltech.edu/detn_db/html/C2H2-Ox9.html
+http://shepherd.caltech.edu/detn_db/html/C2H2-Air5.html
+http://shepherd.caltech.edu/detn_db/html/C2H2-Air6.html
+http://shepherd.caltech.edu/detn_db/html/C2H4-Air5.html
+http://shepherd.caltech.edu/detn_db/html/HC-Ox3.html
+http://shepherd.caltech.edu/detn_db/html/HC-Air8.html
