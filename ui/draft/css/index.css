@@ -1,20 +1,13 @@
 #home-page {
   text-align: center;
   padding-top: 30vh;
-  padding-bottom: 10%;
-}
+  padding-bottom: 10%; }
 
 #search-bar {
-  padding: 0 25% 0 25%;
-}
-
-#search-btn > img {
-  height: 24px !important;
-}
+  padding: 0 25% 0 25%; }
 
 input[type="text"],
-textarea,
-.submit-btn {
+textarea {
   /* background-color: #f4f4f4; */
-  background-color: white;
-}
+  background-color: white; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvaW5kZXguc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsbUJBQW1CLEVBQUE7O0FBR3JCO0VBQ0Usb0JBQW9CLEVBQUE7O0FBR3RCOztFQUVFLCtCQUFBO0VBQ0EsdUJBQXVCLEVBQUEiLCJmaWxlIjoiaW5kZXguY3NzIn0= */

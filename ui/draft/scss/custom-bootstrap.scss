@@ -1,0 +1,12 @@
+// Bootstrap v4.3.1 with some simple customizations
+
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "variables";
+
+$theme-colors: (
+  primary: $detdb-red,
+  light: $detdb-light
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";

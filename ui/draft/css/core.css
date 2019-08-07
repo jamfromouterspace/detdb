@@ -1,20 +1,16 @@
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
-
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4;
-}
+  line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -25,131 +21,105 @@ html {
  *
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none;
-}
+  text-shadow: none; }
 
 /*
  * A better looking default horizontal rule
  */
-
 hr {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-
 audio,
 canvas,
 iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
  */
-
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*
  * Allow only vertical resizing of textareas.
  */
-
 textarea {
-  resize: vertical;
-}
+  resize: vertical; }
 
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0;
-}
+  padding: 0.2em 0; }
 
 /* ==========================================================================
-   Author's custom styles
+   DETDB CUSTOM STYLES
    ========================================================================== */
-
 button:focus {
-  outline: 0 !important;
-}
+  outline: 0 !important; }
 
 body {
   /* background-color: #141424; */
-  background-color: #f4f4f4;
-}
+  background-color: #f4f4f4; }
 
 a {
-  color: #993800 !important;
-}
+  color: #993800 !important; }
 
 .navbar-custom {
   border: none;
   border-radius: 0;
   background-color: #f4f4f4;
-  padding: 5px 15px 5px 15px;
-}
+  padding: 5px 15px 5px 15px; }
 
 .active-pink-4 input[type="text"]:focus:not([readonly]) {
   border: 1px solid #993800;
-  box-shadow: 0 0 0 1px #9938008c;
-}
+  box-shadow: 0 0 0 1px white; }
 
 .light-text {
-  color: silver;
-}
+  color: silver; }
 
 .centered {
   text-align: center;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 #logo-detonation {
-  color: #141424;
-}
+  color: #141424; }
 
 #logo-db {
-  font-family: "Tahoma";
-}
+  font-family: "Tahoma"; }
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
 /*
  * Hide visually and from screen readers
  */
-
 .hidden {
-  display: none !important;
-}
+  display: none !important; }
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -159,7 +129,6 @@ a {
  *    causes content to wrap 1 word per line:
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
-
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -169,15 +138,14 @@ a {
   padding: 0;
   position: absolute;
   width: 1px;
-  white-space: nowrap; /* 1 */
-}
+  white-space: nowrap;
+  /* 1 */ }
 
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -186,16 +154,13 @@ a {
   overflow: visible;
   position: static;
   width: auto;
-  white-space: inherit;
-}
+  white-space: inherit; }
 
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-
 .invisible {
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Clearfix: contain floats
@@ -208,106 +173,76 @@ a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-
 .clearfix:before,
 .clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
 .clearfix:after {
-  clear: both;
-}
+  clear: both; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
+  /* Style adjustments for viewports that meet the condition */ }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
 
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
-
 @media print {
   *,
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important; /* Black prints faster */
-    -webkit-box-shadow: none !important;
+    color: #000 !important;
+    /* Black prints faster */
     box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
+    text-shadow: none !important; }
   a,
   a:visited {
-    text-decoration: underline;
-  }
-
+    text-decoration: underline; }
   a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
+    content: " (" attr(href) ")"; }
   abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
+    content: " (" attr(title) ")"; }
   /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: "";
-  }
-
+    content: ""; }
   pre {
-    white-space: pre-wrap !important;
-  }
+    white-space: pre-wrap !important; }
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
   thead {
-    display: table-header-group;
-  }
-
+    display: table-header-group; }
   tr,
   img {
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3;
-  }
-
+    widows: 3; }
   h2,
   h3 {
-    page-break-after: avoid;
-  }
-}
+    page-break-after: avoid; } }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvY29yZS5zY3NzIiwiY29yZS5jc3MiLCIuLi9zY3NzL3ZhcmlhYmxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBLDRFQUFBO0FBQ0E7Ozs7RUNFRTtBREdGOzsrRUNBK0U7QURHL0U7RUFDRSxXQUFXO0VBQ1gsY0FBYztFQUNkLGdCQUFnQixFQUFBOztBQUdsQjs7Ozs7Ozs7RUNLRTtBREtGO0VBQ0UsbUJBQW1CO0VBQ25CLGlCQUFpQixFQUFBOztBQUduQjtFQUNFLG1CQUFtQjtFQUNuQixpQkFBaUIsRUFBQTs7QUFHbkI7O0VDSkU7QURRRjtFQUNFLGNBQWM7RUFDZCxXQUFXO0VBQ1gsU0FBUztFQUNULDBCQUEwQjtFQUMxQixhQUFhO0VBQ2IsVUFBVSxFQUFBOztBQUdaOzs7O0VDSkU7QURVRjs7Ozs7O0VBTUUsc0JBQXNCLEVBQUE7O0FBR3hCOztFQ1JFO0FEWUY7RUFDRSxTQUFTO0VBQ1QsU0FBUztFQUNULFVBQVUsRUFBQTs7QUFHWjs7RUNWRTtBRGNGO0VBQ0UsZ0JBQWdCLEVBQUE7O0FBR2xCOzsrRUNaK0U7QURnQi9FO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsZ0JBQWdCLEVBQUE7O0FBR2xCOzsrRUNkK0U7QURrQi9FO0VBQ0UscUJBQXFCLEVBQUE7O0FBR3ZCO0VBQ0UsK0JBQUE7RUFDQSx5QkV4R21CLEVBQUE7O0FGMkdyQjtFQUNFLHlCQUE0QixFQUFBOztBQUc5QjtFQUNFLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIseUJFbEhtQjtFRm1IbkIsMEJBQTBCLEVBQUE7O0FBRzVCO0VBQ0UseUJFdEhpQjtFRnVIakIsMkJBQWdELEVBQUE7O0FBR2xEO0VBQ0UsYUFBYSxFQUFBOztBQUdmO0VBQ0Usa0JBQWtCO0VBQ2xCLGNBQWMsRUFBQTs7QUFHaEI7RUFDRSxjQUFjLEVBQUE7O0FBR2hCO0VBQ0UscUJBQXFCLEVBQUE7O0FBR3ZCOzsrRUN4QitFO0FENEIvRTs7RUN6QkU7QUQ2QkY7RUFDRSx3QkFBd0IsRUFBQTs7QUFHMUI7Ozs7Ozs7RUN0QkU7QUQrQkY7RUFDRSxTQUFTO0VBQ1QsbUJBQW1CO0VBQ25CLFdBQVc7RUFDWCxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLFVBQVU7RUFDVixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLG1CQUFtQjtFQUFFLE1BQUEsRUFBTzs7QUFHOUI7Ozs7RUMxQkU7QURnQ0Y7O0VBRUUsVUFBVTtFQUNWLFlBQVk7RUFDWixTQUFTO0VBQ1QsaUJBQWlCO0VBQ2pCLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsb0JBQW9CLEVBQUE7O0FBR3RCOztFQzlCRTtBRGtDRjtFQUNFLGtCQUFrQixFQUFBOztBQUdwQjs7Ozs7Ozs7OztFQ3hCRTtBRG9DRjs7RUFFRSxZQUFZO0VBQUUsTUFBQTtFQUNkLGNBQWM7RUFBRSxNQUFBLEVBQU87O0FBR3pCO0VBQ0UsV0FBVyxFQUFBOztBQUdiOzs7OytFQy9CK0U7QURxQy9FO0VBQ0UsNERBQUEsRUFBNkQ7O0FBRy9EO0VBSUUsa0RBQUEsRUFBbUQ7O0FBR3JEOzs7OytFQ3JDK0U7QUQyQy9FO0VBQ0U7OztJQUdFLGtDQUFrQztJQUNsQyxzQkFBc0I7SUFBRSx3QkFBQTtJQUV4QiwyQkFBMkI7SUFDM0IsNEJBQTRCLEVBQUE7RUFHOUI7O0lBRUUsMEJBQTBCLEVBQUE7RUFHNUI7SUFDRSw0QkFBNEIsRUFBQTtFQUc5QjtJQUNFLDZCQUE2QixFQUFBO0VBRy9COzs7TUM5Q0k7RURtREo7O0lBRUUsV0FBVyxFQUFBO0VBR2I7SUFDRSxnQ0FBZ0MsRUFBQTtFQUVsQzs7SUFFRSxzQkFBc0I7SUFDdEIsd0JBQXdCLEVBQUE7RUFHMUI7OztNQ3BESTtFRHlESjtJQUNFLDJCQUEyQixFQUFBO0VBRzdCOztJQUVFLHdCQUF3QixFQUFBO0VBRzFCOzs7SUFHRSxVQUFVO0lBQ1YsU0FBUyxFQUFBO0VBR1g7O0lBRUUsdUJBQXVCLEVBQUEsRUFDeEIiLCJmaWxlIjoiY29yZS5jc3MifQ== */
