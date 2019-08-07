@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jamiel Rahi -- Full Stack
+    David Draguta -- Full Stack
+
+# THANKS
+
+    Dr. Charles Kiyanda (Concordia University)
+    Dr. Joe Shephard (Caltech)
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css, Bootstrap 3.3
+    Python3
+    Django, MySQL, Haystack, ElasticSearch
