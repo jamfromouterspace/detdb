@@ -5,8 +5,22 @@
 @import "variables";
 
 $theme-colors: (
-  primary: $detdb-red,
+  primary: $detdb-primary,
   light: $detdb-light
 );
+
+// $r: 0.2rem;
+
+// input {
+//   border-top-left-radius: $r !important;
+//   border-bottom-left-radius: $r !important;
+// }
+
+// button {
+//   border-top-right-radius: $r !important;
+//   border-bottom-right-radius: $r !important;
+// }
+
+$breadcrumb-bg: transparent;
 
 @import "../node_modules/bootstrap/scss/bootstrap";

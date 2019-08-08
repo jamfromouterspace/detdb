@@ -1,3 +1,8 @@
+@import "custom-bootstrap";
+
+// // // // // //
+//  HOME PAGE  //
+// // // // // //
 #home-page {
   text-align: center;
   padding-top: 30vh;
@@ -10,6 +15,142 @@
 
 input[type="text"],
 textarea {
-  /* background-color: #f4f4f4; */
   background-color: white;
 }
+
+// // // // // //
+// BROWSE PAGE //
+// // // // // //
+
+#browse {
+  height: 100%;
+}
+
+#browse > .row {
+  height: 50%;
+}
+
+.selection {
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: $border-radius-sm;
+  // transition: border 0.1s;
+}
+
+.selection:hover {
+  border: 1px solid darken($detdb-primary, 5%);
+  border-radius: $border-radius-sm;
+  h1 {
+    color: $detdb-primary;
+  }
+  .material-icons {
+    color: $detdb-primary;
+  }
+}
+
+.selection:active {
+  border-color: darken($detdb-primary, 10%);
+  h1 {
+    color: darken($detdb-primary, 10%);
+  }
+  .material-icons {
+    color: darken($detdb-primary, 10%);
+  }
+}
+
+.selection-link {
+  color: $detdb-secondary !important;
+}
+
+.selection-link:hover {
+  text-decoration: none;
+}
+
+.selection > .material-icons {
+  font-size: 82px;
+}
+
+.selection-list td a {
+  display: block;
+  padding: 12px !important;
+}
+
+// // // // // // //
+// CATEGORY PAGES //
+// // // // // // //
+
+.selection-list > div {
+  text-align: left;
+}
+
+.table {
+  border-bottom: 1px solid $border-color;
+}
+
+.selection-link.subcategory-selection h1 {
+  font-size: 2em;
+}
+
+.selection-link.subcategory-selection {
+  padding-top: 30px;
+  text-align: center;
+}
+
+// // // // // // //
+//   DATA PAGES   //
+// // // // // // //
+
+#data-sets > .row {
+  @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    padding-right: 1%;
+    padding-left: 1%;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "xs")) {
+    padding-right: 1%;
+    padding-left: 1%;
+  }
+}
+
+.detonation {
+  @media screen and (min-width: map-get($grid-breakpoints, "xl")) {
+    padding: 60px;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    padding: 20px;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    padding: 60px;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "xs")) {
+    padding: 30px 10px 10px 10px;
+  }
+}
+
+.detonation-heading {
+  font-size: 1em;
+}
+
+.detail-label {
+  font-size: 0.6em;
+  font-weight: bold;
+  color: darken($detdb-light, 40%);
+  padding: 7px !important;
+  text-align: right;
+}
+
+.detail {
+  font-size: 0.8em;
+  padding: 10px !important;
+}
+
+// // // // // // //
+//   PLOT PAGES   //
+// // // // // // //

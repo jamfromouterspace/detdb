@@ -69,6 +69,23 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <div id="nav-search" class="input-group active-input">
+              <input
+                type="text"
+                class="form-control form-control-md"
+                placeholder="Search detonations"
+              />
+              <div class="input-group-append">
+                <button id="search-btn" class="btn btn-primary" type="button">
+                  <!-- <i class="material-icons md-18 align-middle">search</i> -->
+                  <img src="media/baseline-search-16px.svg" alt="Search icon" />
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">About</a>
           </li>
@@ -79,22 +96,37 @@
       </div>
     </nav>
 
-    <div id="home-page" class="container animated fadeIn">
-      <div id="search-bar" class="input-group active-input">
-        <input
-          type="text"
-          class="form-control form-control-lg"
-          placeholder="Search detonations"
-        />
-        <div class="input-group-append">
-          <button id="search-btn" class="btn btn-primary" type="button">
-            <i class="material-icons md-24 align-middle">search</i>
-          </button>
+    <!-- END OF NAVBAR -->
+
+    <div id="browse" class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Browse</li>
+        </ol>
+      </nav>
+      <div class="row text-center align-items-center">
+        <div class="col-lg-6 col-12">
+          <a class="selection-link" href="data.html">
+            <div id="data" class="selection">
+              <h1>DATA</h1>
+              <div class="material-icons">
+                <i>notes</i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-12">
+          <a class="selection-link" href="data.html">
+            <div id="plots" class="selection">
+              <h1>PLOTS</h1>
+              <div class="material-icons">
+                <i>scatter_plot</i>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-      <p class="light-text">
-        or manually browse the <a href="browse.html">index</a>
-      </p>
     </div>
 
     <script
