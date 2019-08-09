@@ -93,6 +93,14 @@ td a:hover {
   padding-top: 30px;
 }
 
+.padded {
+  padding-top: 30px !important;
+}
+
+.padded-extra {
+  padding-top: 60px !important;
+}
+
 .smaller {
   font-size: 0.8em !important;
 }
@@ -100,6 +108,14 @@ td a:hover {
 .bigger {
   font-size: 1em !important;
 }
+
+.even-bigger {
+  font-size: 1.2em !important;
+}
+
+// .page-subtitle-div {
+//   padding-left: 4px !important;
+// }
 
 #logo-detonation {
   color: $detdb-secondary;

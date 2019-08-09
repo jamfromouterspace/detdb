@@ -75,6 +75,10 @@ textarea {
   padding: 12px !important;
 }
 
+.detonation a {
+  display: inline !important;
+}
+
 // // // // // // //
 // CATEGORY PAGES //
 // // // // // // //
@@ -135,6 +139,18 @@ textarea {
   }
 }
 
+@media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+  .detonation td {
+    padding: 5px !important;
+  }
+  .detonation .detail-label {
+    font-size: 0.2em !important;
+  }
+  .detonation .detail {
+    font-size: 0.3em !important;
+  }
+}
+
 .detonation-heading {
   font-size: 1em;
 }
@@ -163,13 +179,89 @@ textarea {
   border: 1px solid $detdb-primary;
 }
 
-// // // // // // //
-// SEARCH RESULTS //
-// // // // // // //
+.detonation {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+}
 
 // // // // // // //
 //   PLOT PAGES   //
 // // // // // // //
+
+.plot-img {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.plot-img > img {
+  max-width: 90%;
+}
+
+.table-heading {
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    padding-top: 60px !important;
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, "md")) {
+  .plot-nav {
+    padding-top: 20px !important;
+  }
+  .plot-title {
+    padding-top: 30px !important;
+  }
+}
+
+#plot .selection-list {
+  font-size: 0.7em;
+}
+
+.table-heading {
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+#plots-list img {
+  max-width: 40%;
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    max-width: 80%;
+  }
+}
+
+#plots-list .plot-list-item {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#plots-list .plot-img {
+  padding-top: 10px;
+}
+
+// // // // // // //
+// SEARCH RESULTS //
+// // // // // // //
+
+.plot-preview > .plot-img {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 10px !important;
+  @media screen and (min-width: map-get($grid-breakpoints, "md")) {
+    max-width: 50%;
+  }
+  @media screen and (min-width: map-get($grid-breakpoints, "lg")) {
+    max-width: 30%;
+  }
+}
+
+.plot-preview a {
+  display: inline !important;
+  padding: 10px !important;
+}
+
+.plot-preview .page-subtitle {
+  padding-top: 5px !important;
+}
 
 // // // // // //
 //  CITATIONS  //
