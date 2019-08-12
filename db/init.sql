@@ -188,7 +188,7 @@ CREATE TABLE plot_details (
 	detail_id INT NOT NULL,
 	FOREIGN KEY(plot_id) REFERENCES plots(id),
 	FOREIGN KEY(detail_id) REFERENCES details(id),
-)
+);
 
 CREATE TABLE related_plots (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -201,4 +201,13 @@ CREATE TABLE related_plots (
 	total_similarity FLOAT,
 	FOREIGN KEY(plot_id) REFERENCES plots(id),
 	FOREIGN KEY(related_plot_id) REFERENCES plots(id),
-)
+);
+
+
+CREATE TABLE common_fuels (
+	-- Use fuel name as the primary key
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	chemical VARCHAR(10) NOT NULL
+);
+
+
