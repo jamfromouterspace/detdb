@@ -1,3 +1,17 @@
+-- FILE 0 --
+
+INSERT INTO details(property_id, value)
+VALUES 
+(5, '"Additive"'), -- 359
+(5, '"Inhibitor"'); -- 360
+
+INSERT INTO properties(name, units)
+VALUES 
+('mixture', 'chemical'), -- 37
+('percent inhibitor', '%'); -- 38
+
+-- FILE 1 --
+
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
 ('Cell width vs equivalence ratio; H2-Air', 6, 9, 'log', 'log', 1, 4, 'H2-Air1', 1); -- 1
@@ -19,7 +33,7 @@ VALUES
 (1, 2), -- 2
 (1, 17); -- 3
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -39,7 +53,7 @@ VALUES
 (2, 2), -- 5
 (2, 17); -- 6
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -81,7 +95,7 @@ VALUES
 (87, 367), -- 2371
 (87, 368); -- 2372
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -130,7 +144,7 @@ VALUES
 (33, 373), -- 2383
 (33, 374); -- 2384
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -179,7 +193,7 @@ VALUES
 (71, 363), -- 2393
 (71, 372); -- 2394
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -206,7 +220,7 @@ VALUES
 (17, 367), -- 2397
 (17, 376); -- 2398
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -245,7 +259,7 @@ VALUES
 (91, 363), -- 2409
 (91, 378); -- 2410
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -266,7 +280,7 @@ VALUES
 (8, 17), -- 27
 (8, 96); -- 28
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -297,7 +311,7 @@ VALUES
 (24, 367), -- 2411
 (24, 376); -- 2412
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -332,7 +346,7 @@ VALUES
 (60, 383), -- 2415
 (60, 384); -- 2416
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -363,7 +377,7 @@ VALUES
 (2, 387), -- 2419
 (2, 388); -- 2420
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -387,7 +401,7 @@ VALUES
 (12, 2), -- 43
 (12, 11); -- 44
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -408,7 +422,7 @@ VALUES
 (13, 2), -- 46
 (13, 11); -- 47
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -449,7 +463,7 @@ VALUES
 (37, 395), -- 2425
 (37, 396); -- 2426
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -496,7 +510,7 @@ VALUES
 (4, 395), -- 2435
 (4, 403); -- 2436
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -527,20 +541,18 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(80, 399), -- 2437
-(80, 400), -- 2438
-(81, 404), -- 2439
-(81, 405), -- 2440
-(82, 406), -- 2441
-(82, 407), -- 2442
-(8, 399), -- 2443
-(8, 400), -- 2444
-(56, 406), -- 2445
-(56, 407), -- 2446
-(83, 399), -- 2447
-(83, 400); -- 2448
+(81, 404), -- 2437
+(81, 405), -- 2438
+(82, 406), -- 2439
+(82, 407), -- 2440
+(8, 399), -- 2441
+(8, 400), -- 2442
+(56, 406), -- 2443
+(56, 407), -- 2444
+(83, 399), -- 2445
+(83, 400); -- 2446
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -566,14 +578,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(73, 408), -- 2449
-(73, 409), -- 2450
-(74, 408), -- 2451
-(74, 409), -- 2452
-(5, 395), -- 2453
-(5, 403); -- 2454
+(73, 408), -- 2447
+(73, 409), -- 2448
+(74, 408), -- 2449
+(74, 409), -- 2450
+(5, 395), -- 2451
+(5, 403); -- 2452
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -619,16 +631,16 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(78, 399), -- 2455
-(78, 413), -- 2456
-(75, 414), -- 2457
-(75, 415), -- 2458
-(53, 416), -- 2459
-(53, 417), -- 2460
-(54, 399), -- 2461
-(54, 413); -- 2462
+(78, 399), -- 2453
+(78, 413), -- 2454
+(75, 414), -- 2455
+(75, 415), -- 2456
+(53, 416), -- 2457
+(53, 417), -- 2458
+(54, 399), -- 2459
+(54, 413); -- 2460
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -651,7 +663,7 @@ VALUES
 (19, 2), -- 75
 (19, 49); -- 76
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -691,14 +703,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(46, 420), -- 2463
-(46, 421), -- 2464
-(47, 422), -- 2465
-(47, 423), -- 2466
-(48, 424), -- 2467
-(48, 425); -- 2468
+(46, 420), -- 2461
+(46, 421), -- 2462
+(47, 422), -- 2463
+(47, 423), -- 2464
+(48, 424), -- 2465
+(48, 425); -- 2466
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -735,16 +747,16 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(49, 427), -- 2469
-(49, 428), -- 2470
-(50, 427), -- 2471
-(50, 428), -- 2472
-(51, 427), -- 2473
-(51, 428), -- 2474
-(52, 427), -- 2475
-(52, 428); -- 2476
+(49, 427), -- 2467
+(49, 428), -- 2468
+(50, 427), -- 2469
+(50, 428), -- 2470
+(51, 427), -- 2471
+(51, 428), -- 2472
+(52, 427), -- 2473
+(52, 428); -- 2474
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -763,7 +775,7 @@ VALUES
 (22, 11), -- 91
 (22, 1); -- 92
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -802,20 +814,20 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(44, 430), -- 2477
-(44, 431), -- 2478
-(45, 430), -- 2479
-(45, 432), -- 2480
-(209, 430), -- 2481
-(209, 431), -- 2482
-(27, 433), -- 2483
-(27, 434), -- 2484
-(28, 435), -- 2485
-(28, 436), -- 2486
-(29, 437), -- 2487
-(29, 438); -- 2488
+(44, 430), -- 2475
+(44, 431), -- 2476
+(45, 430), -- 2477
+(45, 432), -- 2478
+(209, 430), -- 2479
+(209, 431), -- 2480
+(27, 433), -- 2481
+(27, 434), -- 2482
+(28, 435), -- 2483
+(28, 436), -- 2484
+(29, 437), -- 2485
+(29, 438); -- 2486
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -867,23 +879,23 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(267, 360), -- 2489
-(267, 367), -- 2490
-(267, 442), -- 2491
-(270, 360), -- 2492
-(270, 367), -- 2493
-(270, 443), -- 2494
-(269, 360), -- 2495
-(269, 367), -- 2496
-(269, 444), -- 2497
-(268, 360), -- 2498
-(268, 367), -- 2499
-(268, 445), -- 2500
-(266, 360), -- 2501
-(266, 367), -- 2502
-(266, 446); -- 2503
+(267, 360), -- 2487
+(267, 367), -- 2488
+(267, 442), -- 2489
+(270, 360), -- 2490
+(270, 367), -- 2491
+(270, 443), -- 2492
+(269, 360), -- 2493
+(269, 367), -- 2494
+(269, 444), -- 2495
+(268, 360), -- 2496
+(268, 367), -- 2497
+(268, 445), -- 2498
+(266, 360), -- 2499
+(266, 367), -- 2500
+(266, 446); -- 2501
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -923,20 +935,20 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(235, 360), -- 2504
-(235, 395), -- 2505
-(235, 448), -- 2506
-(236, 360), -- 2507
-(236, 395), -- 2508
-(236, 448), -- 2509
-(237, 360), -- 2510
-(237, 395), -- 2511
-(237, 448), -- 2512
-(234, 360), -- 2513
-(234, 395), -- 2514
-(234, 449); -- 2515
+(235, 360), -- 2502
+(235, 395), -- 2503
+(235, 448), -- 2504
+(236, 360), -- 2505
+(236, 395), -- 2506
+(236, 448), -- 2507
+(237, 360), -- 2508
+(237, 395), -- 2509
+(237, 448), -- 2510
+(234, 360), -- 2511
+(234, 395), -- 2512
+(234, 449); -- 2513
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -958,7 +970,7 @@ VALUES
 (26, 116), -- 117
 (26, 17); -- 118
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -985,10 +997,10 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(118, 395), -- 2516
-(118, 403); -- 2517
+(118, 395), -- 2514
+(118, 403); -- 2515
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1008,7 +1020,7 @@ VALUES
 (28, 116), -- 123
 (28, 11); -- 124
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1030,7 +1042,7 @@ VALUES
 (29, 11), -- 127
 (29, 1); -- 128
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1046,7 +1058,7 @@ VALUES
 (30, 116), -- 130
 (30, 11); -- 131
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1077,14 +1089,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(253, 454), -- 2518
-(253, 455), -- 2519
-(254, 416), -- 2520
-(254, 456), -- 2521
-(255, 457), -- 2522
-(255, 458); -- 2523
+(253, 454), -- 2516
+(253, 455), -- 2517
+(254, 416), -- 2518
+(254, 456), -- 2519
+(255, 457), -- 2520
+(255, 458); -- 2521
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1123,18 +1135,18 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(105, 460), -- 2524
-(105, 461), -- 2525
-(106, 462), -- 2526
-(106, 463), -- 2527
-(107, 464), -- 2528
-(107, 465), -- 2529
-(108, 466), -- 2530
-(108, 467), -- 2531
-(109, 468), -- 2532
-(109, 469); -- 2533
+(105, 460), -- 2522
+(105, 461), -- 2523
+(106, 462), -- 2524
+(106, 463), -- 2525
+(107, 464), -- 2526
+(107, 465), -- 2527
+(108, 466), -- 2528
+(108, 467), -- 2529
+(109, 468), -- 2530
+(109, 469); -- 2531
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1158,7 +1170,7 @@ VALUES
 (33, 133), -- 139
 (33, 11); -- 140
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1178,7 +1190,7 @@ VALUES
 (34, 133), -- 142
 (34, 11); -- 143
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1199,7 +1211,7 @@ VALUES
 (35, 133), -- 145
 (35, 11); -- 146
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1237,22 +1249,22 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(128, 472), -- 2534
-(128, 473), -- 2535
-(131, 474), -- 2536
-(131, 475), -- 2537
-(123, 476), -- 2538
-(123, 477), -- 2539
-(124, 395), -- 2540
-(124, 403), -- 2541
-(125, 472), -- 2542
-(125, 473), -- 2543
-(152, 406), -- 2544
-(152, 407), -- 2545
-(153, 472), -- 2546
-(153, 473); -- 2547
+(128, 472), -- 2532
+(128, 473), -- 2533
+(131, 474), -- 2534
+(131, 475), -- 2535
+(123, 476), -- 2536
+(123, 477), -- 2537
+(124, 395), -- 2538
+(124, 403), -- 2539
+(125, 472), -- 2540
+(125, 473), -- 2541
+(152, 406), -- 2542
+(152, 407), -- 2543
+(153, 472), -- 2544
+(153, 473); -- 2545
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1285,12 +1297,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(129, 472), -- 2548
-(129, 479), -- 2549
-(132, 474), -- 2550
-(132, 480); -- 2551
+(129, 472), -- 2546
+(129, 479), -- 2547
+(132, 474), -- 2548
+(132, 480); -- 2549
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1320,14 +1332,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(127, 472), -- 2552
-(127, 482), -- 2553
-(130, 474), -- 2554
-(130, 483), -- 2555
-(151, 472), -- 2556
-(151, 482); -- 2557
+(127, 472), -- 2550
+(127, 482), -- 2551
+(130, 474), -- 2552
+(130, 483), -- 2553
+(151, 472), -- 2554
+(151, 482); -- 2555
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1350,7 +1362,7 @@ VALUES
 (39, 11), -- 161
 (39, 1); -- 162
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1370,7 +1382,7 @@ VALUES
 (40, 133), -- 164
 (40, 17); -- 165
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1388,7 +1400,7 @@ VALUES
 (41, 133), -- 167
 (41, 17); -- 168
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1404,7 +1416,7 @@ VALUES
 (42, 133), -- 170
 (42, 17); -- 171
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1427,7 +1439,7 @@ VALUES
 (43, 159), -- 173
 (43, 17); -- 174
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1445,7 +1457,7 @@ VALUES
 (44, 159), -- 176
 (44, 17); -- 177
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1465,7 +1477,7 @@ VALUES
 (45, 159), -- 179
 (45, 17); -- 180
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1492,12 +1504,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(175, 395), -- 2558
-(175, 403), -- 2559
-(176, 472), -- 2560
-(176, 473); -- 2561
+(175, 395), -- 2556
+(175, 403), -- 2557
+(176, 472), -- 2558
+(176, 473); -- 2559
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1535,18 +1547,18 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(158, 401), -- 2562
-(158, 489), -- 2563
-(159, 490), -- 2564
-(159, 491), -- 2565
-(160, 408), -- 2566
-(160, 492), -- 2567
-(161, 493), -- 2568
-(161, 494), -- 2569
-(162, 495), -- 2570
-(162, 496); -- 2571
+(158, 401), -- 2560
+(158, 489), -- 2561
+(159, 490), -- 2562
+(159, 491), -- 2563
+(160, 408), -- 2564
+(160, 492), -- 2565
+(161, 493), -- 2566
+(161, 494), -- 2567
+(162, 495), -- 2568
+(162, 496); -- 2569
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1582,16 +1594,16 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(167, 498), -- 2572
-(167, 499), -- 2573
-(165, 500), -- 2574
-(165, 501), -- 2575
-(163, 502), -- 2576
-(163, 503), -- 2577
-(164, 504), -- 2578
-(164, 505); -- 2579
+(167, 498), -- 2570
+(167, 499), -- 2571
+(165, 500), -- 2572
+(165, 501), -- 2573
+(163, 502), -- 2574
+(163, 503), -- 2575
+(164, 504), -- 2576
+(164, 505); -- 2577
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1613,7 +1625,7 @@ VALUES
 (49, 180), -- 193
 (49, 17); -- 194
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1630,7 +1642,7 @@ VALUES
 (50, 180), -- 196
 (50, 17); -- 197
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1667,14 +1679,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(261, 510), -- 2580
-(261, 511), -- 2581
-(262, 512), -- 2582
-(262, 513), -- 2583
-(263, 399), -- 2584
-(263, 514); -- 2585
+(261, 510), -- 2578
+(261, 511), -- 2579
+(262, 512), -- 2580
+(262, 513), -- 2581
+(263, 399), -- 2582
+(263, 514); -- 2583
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1703,12 +1715,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(203, 414), -- 2586
-(203, 516), -- 2587
-(199, 517), -- 2588
-(199, 518); -- 2589
+(203, 414), -- 2584
+(203, 516), -- 2585
+(199, 517), -- 2586
+(199, 518); -- 2587
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1746,16 +1758,16 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(183, 520), -- 2590
-(183, 521), -- 2591
-(184, 522), -- 2592
-(184, 523), -- 2593
-(185, 524), -- 2594
-(185, 525), -- 2595
-(186, 526), -- 2596
-(186, 527); -- 2597
+(183, 520), -- 2588
+(183, 521), -- 2589
+(184, 522), -- 2590
+(184, 523), -- 2591
+(185, 524), -- 2592
+(185, 525), -- 2593
+(186, 526), -- 2594
+(186, 527); -- 2595
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1775,7 +1787,7 @@ VALUES
 (54, 181), -- 210
 (54, 17); -- 211
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1813,7 +1825,7 @@ VALUES
 (55, 534), -- 222
 (55, 535); -- 223
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1834,7 +1846,7 @@ VALUES
 (56, 11), -- 226
 (56, 1); -- 227
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1884,7 +1896,7 @@ VALUES
 (57, 17), -- 247
 (57, 17); -- 248
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1936,20 +1948,20 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(188, 359), -- 2598
-(188, 548), -- 2599
-(188, 549), -- 2600
-(189, 359), -- 2601
-(189, 550), -- 2602
-(189, 551), -- 2603
-(190, 359), -- 2604
-(190, 552), -- 2605
-(190, 553), -- 2606
-(191, 359), -- 2607
-(191, 554), -- 2608
-(191, 555); -- 2609
+(188, 359), -- 2596
+(188, 548), -- 2597
+(188, 549), -- 2598
+(189, 359), -- 2599
+(189, 550), -- 2600
+(189, 551), -- 2601
+(190, 359), -- 2602
+(190, 552), -- 2603
+(190, 553), -- 2604
+(191, 359), -- 2605
+(191, 554), -- 2606
+(191, 555); -- 2607
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -1993,17 +2005,17 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(192, 359), -- 2610
-(192, 559), -- 2611
-(192, 560), -- 2612
-(193, 359), -- 2613
-(193, 561), -- 2614
-(193, 562), -- 2615
-(194, 359), -- 2616
-(194, 563), -- 2617
-(194, 564); -- 2618
+(192, 359), -- 2608
+(192, 559), -- 2609
+(192, 560), -- 2610
+(193, 359), -- 2611
+(193, 561), -- 2612
+(193, 562), -- 2613
+(194, 359), -- 2614
+(194, 563), -- 2615
+(194, 564); -- 2616
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -2038,12 +2050,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(178, 567), -- 2619
-(178, 568), -- 2620
-(179, 569), -- 2621
-(179, 570); -- 2622
+(178, 567), -- 2617
+(178, 568), -- 2618
+(179, 569), -- 2619
+(179, 570); -- 2620
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -2073,12 +2085,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(196, 572), -- 2623
-(196, 573), -- 2624
-(197, 574), -- 2625
-(197, 575); -- 2626
+(196, 572), -- 2621
+(196, 573), -- 2622
+(197, 574), -- 2623
+(197, 575); -- 2624
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -2098,7 +2110,7 @@ VALUES
 (62, 190), -- 288
 (62, 11); -- 289
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -2119,5 +2131,1010 @@ VALUES
 (63, 17), -- 292
 (63, 185); -- 293
 
-------------------------
+-- -------------------- --
+
+-- FILE 2 --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs equivalence ratio; H2-Air', 6, 28, 'log', 'log', 2, 2, 'H2-Air11', 1); -- 64
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(64, 271, 646, 647, 'T=293 K, P=101.3 kPa'), -- 242
+(64, 272, 649, 650, 'T=293 K, P=101.3 kPa'); -- 243
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(64, 361), -- 294
+(64, 2), -- 295
+(64, 17); -- 296
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs percent N2; H2-O2-N2', 8, 28, 'lin', 'lin', 2, 2, 'H2-Ox23', 1); -- 65
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(65, 276, 660, 661, 'P=101.3 kPa, ER=1'), -- 244
+(65, 273, 652, 653, 'P=101.3 kPa, ER=1'); -- 245
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(65, 390), -- 297
+(65, 2), -- 298
+(65, 11), -- 299
+(65, 1); -- 300
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs equivalence ratio; H2-O2', 6, 28, 'lin', 'lin', 2, 2, 'H2-Ox24', 1); -- 66
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(66, 280, 671, 672, 'T=100 K, P=100 kPa'), -- 246
+(66, 274, 654, 655, 'T=293 K, P=101.3 kPa'); -- 247
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(66, 389), -- 301
+(66, 2), -- 302
+(66, 11); -- 303
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs initial pressure; H2-O2-Additive', 1, 28, 'log', 'log', 2, 4, 'H2-Ox25', 1); -- 67
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(67, 275, 657, 658, 'T=293 K, ER=1'), -- 248
+(67, 277, 663, 664, 'T=293 K, ER=1'), -- 249
+(67, 279, 669, 670, 'T=293 K, ER=1, 5% CO2'), -- 250
+(67, 278, 666, 667, 'T=293 K, ER=1, 5% CF3Br'); -- 251
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '"H2-O2-Additive"'); -- 578
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(67, 578), -- 304
+(67, 2), -- 305
+(67, 11), -- 306
+(67, 359); -- 307
+
+INSERT INTO properties(name, units)
+VALUES 
+('percent cf3br', '%'); -- 50
+
+INSERT INTO details(property_id, value)
+VALUES 
+(50, '"5.0"'); -- 579
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(279, 359), -- 2625
+(279, 370), -- 2626
+(279, 371), -- 2627
+(278, 359), -- 2628
+(278, 370), -- 2629
+(278, 579); -- 2630
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs initial pressure (stoichiometric); CH4-O2-N2', 1, 28, 'lin', 'lin', 2, 3, 'CH4-Ox6', 1); -- 68
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(68, 285, 681, 682, 'ER=1, 36.2% N2'), -- 252
+(68, 290, 691, 692, 'ER=1'), -- 253
+(68, 289, 689, 690, 'ER=1'); -- 254
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(68, 453), -- 308
+(68, 116), -- 309
+(68, 11), -- 310
+(68, 1); -- 311
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"36.2"'), -- 580
+(8, '"36.2"'); -- 581
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(285, 580), -- 2631
+(285, 581); -- 2632
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs initial pressure; CH4-O2-N2', 1, 28, 'log', 'log', 2, 7, 'CH4-Ox7', 1); -- 69
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(69, 281, 674, 673, 'ER=1.08, 31.9% N2'), -- 255
+(69, 282, 676, 675, 'ER=1.09, 54.9% N2'), -- 256
+(69, 283, 678, 677, 'ER=1.15, 64.3% N2'), -- 257
+(69, 284, 680, 679, 'ER=1.09, 67.7% N2'), -- 258
+(69, 286, 683, 684, 'ER=1.3'), -- 259
+(69, 287, 685, 686, 'ER=1.3, 23% N2'), -- 260
+(69, 288, 687, 688, 'ER=1.3, 50% N2'); -- 261
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(69, 453), -- 312
+(69, 116), -- 313
+(69, 11), -- 314
+(69, 1); -- 315
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"54.9"'), -- 582
+(8, '"54.9"'), -- 583
+(18, '"64.3"'), -- 584
+(8, '"64.3"'), -- 585
+(18, '"67.7"'), -- 586
+(8, '"67.7"'), -- 587
+(18, '"23.0"'), -- 588
+(8, '"23.0"'); -- 589
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(281, 454), -- 2633
+(281, 455), -- 2634
+(282, 582), -- 2635
+(282, 583), -- 2636
+(283, 584), -- 2637
+(283, 585), -- 2638
+(284, 586), -- 2639
+(284, 587), -- 2640
+(287, 588), -- 2641
+(287, 589), -- 2642
+(288, 395), -- 2643
+(288, 396); -- 2644
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs percent diluent; C2H2-O2-N2', 18, 28, 'lin', 'lin', 2, 4, 'C2H2-Ox7', 1); -- 70
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(70, 291, 694, 695, 'ER=1'), -- 262
+(70, 294, 702, 703, 'ER=1'), -- 263
+(70, 293, 699, 700, 'ER=1.67'), -- 264
+(70, 297, 709, 710, 'ER=1'); -- 265
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(70, 484), -- 316
+(70, 133), -- 317
+(70, 11), -- 318
+(70, 1); -- 319
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs equivalence ratio; C2H2-Air', 6, 28, 'lin', 'lin', 2, 3, 'C2H2-Air4', 1); -- 71
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(71, 295, 704, 705), -- 266
+(71, 296, 706, 707), -- 267
+(71, 292, 696, 697); -- 268
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(71, 485), -- 320
+(71, 133), -- 321
+(71, 17); -- 322
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs equivalence ratio; C2H4-Air-Inhibitor', 6, 28, 'lin', 'lin', 2, 7, 'C2H4-Air4', 1); -- 72
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(72, 316, 755, 756, NULL), -- 269
+(72, 309, 740, 741, NULL), -- 270
+(72, 310, 742, 743, NULL), -- 271
+(72, 311, 744, 745, '1.5% CF4'), -- 272
+(72, 312, 746, 747, '1.5% CF3Br'), -- 273
+(72, 313, 748, 749, '3% CF3Br'), -- 274
+(72, 314, 750, 751, '3% CO2'); -- 275
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '"C2H4-Air-Inhibitor"'); -- 590
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(72, 590), -- 323
+(72, 159), -- 324
+(72, 17), -- 325
+(72, 360); -- 326
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"1.5"'), -- 591
+(27, '"1.5"'), -- 592
+(50, '"1.5"'), -- 593
+(18, '"3.0"'), -- 594
+(50, '"3.0"'), -- 595
+(17, '"3.0"'); -- 596
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(311, 360), -- 2645
+(311, 591), -- 2646
+(311, 592), -- 2647
+(312, 360), -- 2648
+(312, 591), -- 2649
+(312, 593), -- 2650
+(313, 360), -- 2651
+(313, 594), -- 2652
+(313, 595), -- 2653
+(314, 360), -- 2654
+(314, 594), -- 2655
+(314, 596); -- 2656
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs equivalence ratio; C2H4-O2', 6, 28, 'lin', 'lin', 2, 4, 'C2H4-Ox4', 1); -- 73
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(73, 303, 726, 727), -- 276
+(73, 305, 731, 732), -- 277
+(73, 306, 733, 734), -- 278
+(73, 307, 735, 736); -- 279
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '"C2H4-O2"'); -- 597
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(73, 597), -- 327
+(73, 159), -- 328
+(73, 11); -- 329
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs initial pressure; C2H4-O2-N2', 1, 28, 'log', 'log', 2, 4, 'C2H4-Ox5', 1); -- 74
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(74, 304, 730, 728, NULL), -- 280
+(74, 298, 713, 711, '71.4% N2'), -- 281
+(74, 299, 716, 714, '67.2% N2'), -- 282
+(74, 300, 719, 717, '60.1% N2'); -- 283
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(74, 488), -- 330
+(74, 159), -- 331
+(74, 11), -- 332
+(74, 1); -- 333
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"67.2"'), -- 598
+(8, '"67.2"'), -- 599
+(18, '"60.1"'), -- 600
+(8, '"60.1"'); -- 601
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(298, 524), -- 2657
+(298, 525), -- 2658
+(299, 598), -- 2659
+(299, 599), -- 2660
+(300, 600), -- 2661
+(300, 601); -- 2662
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs percent diluent; C2H4-O2-N2', 18, 28, 'lin', 'lin', 2, 4, 'C2H4-Ox6', 1); -- 75
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(75, 315, 753, 754, 'ER=1'), -- 284
+(75, 308, 738, 739, 'ER=1.5'), -- 285
+(75, 301, 721, 722, 'ER=1.05'), -- 286
+(75, 302, 724, 725, 'ER=1'); -- 287
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(75, 488), -- 334
+(75, 159), -- 335
+(75, 11), -- 336
+(75, 1); -- 337
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs equivalence ratio; C2H6-Air', 6, 28, 'lin', 'lin', 2, 1, 'C2H6-Air2', 1); -- 76
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(76, 324, 778, 779); -- 288
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(76, 506), -- 338
+(76, 180), -- 339
+(76, 17); -- 340
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs percent diluent; 2C2H6+5O2+nN2, 2C3H8+7O2+nN2, C3H6+3O2+nN2', 18, 28, 'lin', 'lin', 2, 4, 'HC-Ox1', 1); -- 77
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(77, 321, 770, 771, 'Fuel=C2H6, Oxidizer=O2'), -- 289
+(77, 322, 773, 774, 'Fuel=C3H8, Oxidizer=O2'), -- 290
+(77, 323, 776, 777, 'Fuel=C3H6, Oxidizer=O2'), -- 291
+(77, 317, 758, 759, 'Fuel=C2H6, Oxidizer=O2'); -- 292
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '"2C2H6+5O2+nN2"'), -- 602
+(37, '" 2C3H8+7O2+nN2"'), -- 603
+(37, '" C3H6+3O2+nN2"'), -- 604
+(3, '"2C2H6"'), -- 605
+(3, '"2C3H8"'), -- 606
+(4, '"7O2"'), -- 607
+(4, '"3O2"'), -- 608
+(5, '"nN2"'); -- 609
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(77, 602), -- 341
+(77, 603), -- 342
+(77, 604), -- 343
+(77, 605), -- 344
+(77, 606), -- 345
+(77, 200), -- 346
+(77, 533), -- 347
+(77, 607), -- 348
+(77, 608), -- 349
+(77, 609), -- 350
+(77, 609), -- 351
+(77, 609); -- 352
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical diameter vs initial pressure; C2H6-O2, C3H8-O2, C3H6-O2', 1, 28, 'log', 'log', 2, 3, 'HC-Ox2', 1); -- 78
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(78, 318, 762, 760, 'Fuel=C2H6'), -- 293
+(78, 319, 765, 763, 'Fuel=C3H8'), -- 294
+(78, 320, 768, 766, 'Fuel=C3H6'); -- 295
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '"C2H6-O2"'), -- 610
+(37, '" C3H8-O2"'), -- 611
+(37, '" C3H6-O2"'); -- 612
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(78, 610), -- 353
+(78, 611), -- 354
+(78, 612), -- 355
+(78, 180), -- 356
+(78, 181), -- 357
+(78, 200), -- 358
+(78, 11), -- 359
+(78, 11), -- 360
+(78, 11); -- 361
+
+-- -------------------- --
+
+-- FILE 3 --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; H2-Air', 6, 30, 'log', 'log', 3, 5, 'H2-Air10', 1); -- 79
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(79, 328, 789, 790, 'T=293 K, P=101.3 kPa'), -- 296
+(79, 325, 780, 782, 'T=293 K, P=101.3 kPa'), -- 297
+(79, 326, 783, 784, 'T=293 K, P=83.99 kPa'), -- 298
+(79, 348, 831, 833, 'T=293 K, P=101.3 kPa'), -- 299
+(79, 327, 786, 788, 'T=293 K, P=101.3 kPa'); -- 300
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(79, 361), -- 362
+(79, 2), -- 363
+(79, 17); -- 364
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; H2-O2, H2-Cl2', 6, 30, 'log', 'log', 3, 5, 'H2-Ox17', 1); -- 80
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(80, 349, 834, 835, 'T=293 K, P=101.3 kPa, Subcategory=spherical, Fuel=H2, Oxidizer=O2'), -- 301
+(80, 332, 798, 799, 'T=293 K, P=101.3 kPa, Subcategory=spherical, spark, Fuel=H2, Oxidizer=O2'), -- 302
+(80, 333, 800, 801, 'T=293 K, P=101.3 kPa, Subcategory=spherical, exploding wire, Fuel=H2, Oxidizer=O2'), -- 303
+(80, 329, 791, 792, 'T=293 K, P=8 kPa, Subcategory=spherical, spark, Fuel=H2, Oxidizer=Cl2'), -- 304
+(80, 330, 793, 794, 'T=293 K, P=16 kPa, Subcategory=spherical, spark, Fuel=H2, Oxidizer=Cl2'); -- 305
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '" H2-Cl2"'); -- 613
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(80, 389), -- 365
+(80, 613), -- 366
+(80, 2), -- 367
+(80, 2), -- 368
+(80, 11), -- 369
+(80, 49); -- 370
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs initial pressure - part 1; H2-O2', 1, 32, 'log', 'log', 3, 1, 'H2-Ox18', 1); -- 81
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(81, 331, 796, 797, 'T=293 K, ER=1'); -- 306
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(81, 389), -- 371
+(81, 2), -- 372
+(81, 11); -- 373
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs initial pressure - part 2; H2-O2', 1, 30, 'log', 'log', 3, 2, 'H2-Ox19', 1); -- 82
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(82, 350, 837, 838, 'T=293 K, ER=1'), -- 307
+(82, 351, 840, 841, 'T=123 K, ER=1'); -- 308
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(82, 389), -- 374
+(82, 2), -- 375
+(82, 11); -- 376
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs percent additive - part 1; H2-O2-Additive', 33, 30, 'lin', 'lin', 3, 5, 'H2-Ox20', 1); -- 83
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(83, 334, 802, 803, 'T=297 K, P=101.3 kPa, ER=0.82, 0-5% CH4'), -- 309
+(83, 335, 804, 805, 'T=297 K, P=101.3 kPa, ER=0.82, .7-5% CH3Cl'), -- 310
+(83, 336, 806, 807, 'T=297 K, P=101.3 kPa, ER=0.82, 1-5% CCl4'), -- 311
+(83, 337, 808, 809, 'T=297 K, P=101.3 kPa, ER=0.82, 1-5% CHCl3'), -- 312
+(83, 338, 810, 811, 'T=297 K, P=101.3 kPa, ER=0.82, 5% Cl2'); -- 313
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(83, 578), -- 377
+(83, 2), -- 378
+(83, 11), -- 379
+(83, 359); -- 380
+
+INSERT INTO properties(name, units)
+VALUES 
+('percent ch4', '%'), -- 51
+('percent ch3cl', '%'), -- 52
+('percent ccl4', '%'), -- 53
+('percent chcl3', '%'), -- 54
+('percent cl2', '%'); -- 55
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"[0.0, 5.0]"'), -- 614
+(51, '"[0.0, 5.0]"'), -- 615
+(18, '"[0.7, 5.0]"'), -- 616
+(52, '"[0.7, 5.0]"'), -- 617
+(18, '"[1.0, 5.0]"'), -- 618
+(53, '"[1.0, 5.0]"'), -- 619
+(54, '"[1.0, 5.0]"'), -- 620
+(55, '"5.0"'); -- 621
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(334, 359), -- 2663
+(334, 614), -- 2664
+(334, 615), -- 2665
+(335, 359), -- 2666
+(335, 616), -- 2667
+(335, 617), -- 2668
+(336, 359), -- 2669
+(336, 618), -- 2670
+(336, 619), -- 2671
+(337, 359), -- 2672
+(337, 618), -- 2673
+(337, 620), -- 2674
+(338, 359), -- 2675
+(338, 370), -- 2676
+(338, 621); -- 2677
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs percent additive - part 2; H2-O2-Additive', 33, 30, 'lin', 'lin', 3, 5, 'H2-Ox21', 1); -- 84
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(84, 339, 812, 813, 'T=297 K, P=101.3 kPa, ER=0.82, 1-5% C2H6'), -- 314
+(84, 340, 814, 815, 'T=297 K, P=101.3 kPa, ER=0.82, 2% i-C4H10'), -- 315
+(84, 341, 816, 817, 'T=297 K, P=101.3 kPa, ER=0.82, 1-3% n-C4H10'), -- 316
+(84, 342, 818, 819, 'T=297 K, P=101.3 kPa, ER=0.82, 2-4% C3H8'), -- 317
+(84, 343, 820, 821, 'T=297 K, P=101.3 kPa, ER=0.82, .5-1.5% Isobutene'); -- 318
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(84, 578), -- 381
+(84, 2), -- 382
+(84, 11), -- 383
+(84, 359); -- 384
+
+INSERT INTO properties(name, units)
+VALUES 
+('percent c2h6', '%'), -- 56
+('percent i-c4h10', '%'), -- 57
+('percent n-c4h10', '%'), -- 58
+('percent c3h8', '%'), -- 59
+('percent isobutene', '%'); -- 60
+
+INSERT INTO details(property_id, value)
+VALUES 
+(56, '"[1.0, 5.0]"'), -- 622
+(18, '"2.0"'), -- 623
+(57, '"2.0"'), -- 624
+(18, '"[1.0, 3.0]"'), -- 625
+(58, '"[1.0, 3.0]"'), -- 626
+(18, '"[2.0, 4.0]"'), -- 627
+(59, '"[2.0, 4.0]"'), -- 628
+(18, '"[0.5, 1.5]"'), -- 629
+(60, '"[0.5, 1.5]"'); -- 630
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(339, 359), -- 2678
+(339, 618), -- 2679
+(339, 622), -- 2680
+(340, 359), -- 2681
+(340, 623), -- 2682
+(340, 624), -- 2683
+(341, 359), -- 2684
+(341, 625), -- 2685
+(341, 626), -- 2686
+(342, 359), -- 2687
+(342, 627), -- 2688
+(342, 628), -- 2689
+(343, 359), -- 2690
+(343, 629), -- 2691
+(343, 630); -- 2692
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs percent additive - part 3; H2-O2-Additive', 33, 30, 'lin', 'lin', 3, 4, 'H2-Ox22', 1); -- 85
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(85, 344, 822, 823, 'T=297 K, P=101.3 kPa, ER=0.82, .5-2% Trans-butene-2'), -- 319
+(85, 345, 824, 825, 'T=297 K, P=101.3 kPa, ER=0.82, 1-2% Propylene'), -- 320
+(85, 346, 826, 827, 'T=297 K, P=101.3 kPa, ER=0.82, 2-3% Butene-1'), -- 321
+(85, 347, 828, 829, 'T=297 K, P=101.3 kPa, ER=0.82, 1-4% Ethylene'); -- 322
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(85, 578), -- 385
+(85, 2), -- 386
+(85, 11), -- 387
+(85, 359); -- 388
+
+INSERT INTO properties(name, units)
+VALUES 
+('percent trans-butene-2', '%'), -- 61
+('percent propylene', '%'), -- 62
+('percent butene-1', '%'), -- 63
+('percent ethylene', '%'); -- 64
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"[0.5, 2.0]"'), -- 631
+(61, '"[0.5, 2.0]"'), -- 632
+(18, '"[1.0, 2.0]"'), -- 633
+(62, '"[1.0, 2.0]"'), -- 634
+(18, '"[2.0, 3.0]"'), -- 635
+(63, '"[2.0, 3.0]"'), -- 636
+(18, '"[1.0, 4.0]"'), -- 637
+(64, '"[1.0, 4.0]"'); -- 638
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(344, 359), -- 2693
+(344, 631), -- 2694
+(344, 632), -- 2695
+(345, 359), -- 2696
+(345, 633), -- 2697
+(345, 634), -- 2698
+(346, 359), -- 2699
+(346, 635), -- 2700
+(346, 636), -- 2701
+(347, 359), -- 2702
+(347, 637), -- 2703
+(347, 638); -- 2704
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; CH4-Air', 6, 30, 'log', 'log', 3, 1, 'CH4-Air2', 1); -- 86
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(86, 354, 846, 847, 'T=293 K, P=101.3 kPa'); -- 323
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(86, 450), -- 389
+(86, 116), -- 390
+(86, 17); -- 391
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; CH4-Air', 6, 30, 'lin', 'lin', 3, 1, 'CH4-Air3', 1); -- 87
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(87, 360, 862, 863, 'T=293 K, P=101.3 kPa'); -- 324
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(87, 450), -- 392
+(87, 116), -- 393
+(87, 17); -- 394
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; CH4-O2', 6, 30, 'lin', 'lin', 3, 1, 'CH4-Ox8', 1); -- 88
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(88, 358, 858, 859, 'P=101.3 kPa'); -- 325
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(88, 452), -- 395
+(88, 116), -- 396
+(88, 11); -- 397
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; CH4-O2', 6, 32, 'lin', 'lin', 3, 4, 'CH4-Ox9', 1); -- 89
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(89, 359, 860, 861, 'P=101.3 kPa'), -- 326
+(89, 352, 842, 843, 'P=100 kPa'), -- 327
+(89, 353, 844, 845, 'P=120 kPa'), -- 328
+(89, 356, 852, 853, 'P=100 kPa'); -- 329
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(89, 452), -- 398
+(89, 116), -- 399
+(89, 11); -- 400
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs percent diluent; CH4-O2-N2', 18, 30, 'lin', 'lin', 3, 2, 'CH4-Ox10', 1); -- 90
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(90, 355, 849, 851), -- 330
+(90, 357, 855, 857); -- 331
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(90, 453), -- 401
+(90, 116), -- 402
+(90, 11), -- 403
+(90, 1); -- 404
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs initial pressure; C2H2-O2', 1, 32, 'lin', 'lin', 3, 2, 'C2H2-Ox8', 1); -- 91
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(91, 364, 874, 875), -- 332
+(91, 366, 879, 880); -- 333
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(91, 470), -- 405
+(91, 133), -- 406
+(91, 11); -- 407
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs initial pressure; C2H2-O2', 1, 30, 'lin', 'lin', 3, 1, 'C2H2-Ox9', 1); -- 92
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(92, 363, 871, 872); -- 334
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(92, 470), -- 408
+(92, 133), -- 409
+(92, 11); -- 410
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs initial pressure; C2H2-Air', 1, 32, 'lin', 'lin', 3, 1, 'C2H2-Air5', 1); -- 93
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(93, 367, 882, 883); -- 335
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(93, 485), -- 411
+(93, 133), -- 412
+(93, 17); -- 413
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; C2H2-Air', 6, 30, 'lin', 'lin', 3, 2, 'C2H2-Air6', 1); -- 94
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(94, 361, 864, 866), -- 336
+(94, 362, 867, 869); -- 337
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(94, 485), -- 414
+(94, 133), -- 415
+(94, 17); -- 416
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; C2H4-Air', 6, 30, 'lin', 'lin', 3, 5, 'C2H4-Air5', 1); -- 95
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data)
+VALUES 
+(95, 369, 887, 889), -- 338
+(95, 370, 890, 892), -- 339
+(95, 371, 893, 895), -- 340
+(95, 373, 898, 900), -- 341
+(95, 368, 884, 886); -- 342
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(95, 486), -- 417
+(95, 159), -- 418
+(95, 17); -- 419
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; C2H6-O2, C2H4-O2, C2H2-O2', 6, 30, 'lin', 'lin', 3, 3, 'HC-Ox3', 1); -- 96
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(96, 372, 896, 897, 'Fuel=C2H4'), -- 343
+(96, 378, 913, 914, 'Fuel=C2H6'), -- 344
+(96, 365, 876, 877, 'Fuel=C2H2'); -- 345
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '" C2H4-O2"'), -- 639
+(37, '" C2H2-O2"'); -- 640
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(96, 610), -- 420
+(96, 639), -- 421
+(96, 640), -- 422
+(96, 180), -- 423
+(96, 159), -- 424
+(96, 133), -- 425
+(96, 11), -- 426
+(96, 11), -- 427
+(96, 11); -- 428
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Critical energy vs equivalence ratio; C2H6-Air, C3H8-Air, C4H10-Air', 6, 30, 'lin', 'lin', 3, 4, 'HC-Air8', 1); -- 97
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(97, 377, 910, 912, 'Fuel=C2H6'), -- 346
+(97, 375, 904, 906, 'Fuel=C3H8'), -- 347
+(97, 376, 907, 909, 'Fuel=C4H10'), -- 348
+(97, 374, 901, 903, 'Fuel=C2H6'); -- 349
+
+INSERT INTO details(property_id, value)
+VALUES 
+(37, '" C3H8-Air"'), -- 641
+(37, '" C4H10-Air"'); -- 642
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(97, 506), -- 429
+(97, 641), -- 430
+(97, 642), -- 431
+(97, 180), -- 432
+(97, 181), -- 433
+(97, 194), -- 434
+(97, 17), -- 435
+(97, 17), -- 436
+(97, 17); -- 437
+
+-- -------------------- --
+
+-- FILE 4 --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Minimum tube diameter vs equivalence ratio; H2-Air', 6, 36, 'log', 'log', 4, 1, 'H2-Air12', 1); -- 98
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(98, 379, 916, 917, 'T=298 K, P=100 kPa'); -- 350
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(98, 361), -- 438
+(98, 2), -- 439
+(98, 17); -- 440
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Minimum tube diameter vs equivalence ratio; H2-O2', 6, 36, 'log', 'log', 4, 2, 'H2-Ox15', 1); -- 99
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(99, 380, 918, 919, 'T=298 K, P=100 kPa'), -- 351
+(99, 381, 920, 921, 'T=135 K, P=100 kPa'); -- 352
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(99, 389), -- 441
+(99, 2), -- 442
+(99, 11); -- 443
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Minimum tube diameter vs percent diluent; H2-O2-Diluent', 18, 36, 'lin', 'lin', 4, 5, 'H2-Ox16', 1); -- 100
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(100, 382, 923, 922, 'T=298 K, P=100 kPa, ER=1, 80-90% Ar'), -- 353
+(100, 383, 925, 924, 'T=298 K, P=100 kPa, ER=1, 70-80% He'), -- 354
+(100, 384, 927, 926, 'T=298 K, P=100 kPa, ER=1, 55-75% N2'), -- 355
+(100, 385, 929, 928, 'T=298 K, P=100 kPa, ER=1, 90% Ar'), -- 356
+(100, 386, 931, 930, 'T=298 K, P=100 kPa, ER=1, 86% He'); -- 357
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(100, 429), -- 444
+(100, 2), -- 445
+(100, 11); -- 446
+
+INSERT INTO details(property_id, value)
+VALUES 
+(18, '"[80.0, 90.0]"'), -- 643
+(15, '"[80.0, 90.0]"'), -- 644
+(18, '"[70.0, 80.0]"'), -- 645
+(16, '"[70.0, 80.0]"'), -- 646
+(18, '"[55.0, 75.0]"'), -- 647
+(8, '"[55.0, 75.0]"'), -- 648
+(18, '"90.0"'), -- 649
+(15, '"90.0"'), -- 650
+(18, '"86.0"'), -- 651
+(16, '"86.0"'); -- 652
+
+INSERT INTO detonation_details(detonation_id, detail_id)
+VALUES 
+(382, 643), -- 2705
+(382, 644), -- 2706
+(383, 645), -- 2707
+(383, 646), -- 2708
+(384, 647), -- 2709
+(384, 648), -- 2710
+(385, 649), -- 2711
+(385, 650), -- 2712
+(386, 651), -- 2713
+(386, 652); -- 2714
+
+-- -------------------- --
+
+INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
+VALUES 
+('Minimum tube diameter vs equivalence ratio; CH4-O2', 6, 36, 'lin', 'lin', 4, 1, 'CH4-Ox11', 1); -- 101
+
+INSERT INTO plot_detonations(plot_id, detonation_id, x_data, y_data, notes)
+VALUES 
+(101, 387, 932, 933, 'T=293 K, P=101.3 kPa'); -- 358
+
+INSERT INTO plot_details(plot_id, detail_id)
+VALUES 
+(101, 452), -- 447
+(101, 116), -- 448
+(101, 11); -- 449
+
+-- -------------------- --
 

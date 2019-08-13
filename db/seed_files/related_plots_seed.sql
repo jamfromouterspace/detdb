@@ -101,7 +101,7 @@ VALUES
 (1, 100, 0.5, 0.41935483870967744, 0.5263157894736842, 0.13667232597623083), -- 99
 (1, 101, 1.0, 0.41935483870967744, 0.5833333333333334, 0.47737237707485136); -- 100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -206,7 +206,7 @@ VALUES
 (2, 100, 0.5151515151515151, 0.41935483870967744, NULL, 0.5263157894736842, 0.130798514487169), -- 199
 (2, 101, 0.9714285714285714, 0.41935483870967744, NULL, 0.5833333333333334, 0.43126237728976463); -- 200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -311,7 +311,7 @@ VALUES
 (3, 100, 0.5151515151515151, 0.41935483870967744, NULL, 0.64, 0.16266156124697473), -- 299
 (3, 101, 0.9714285714285714, 0.41935483870967744, NULL, 0.3888888888888889, 0.29913252589263145); -- 300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -416,7 +416,7 @@ VALUES
 (4, 100, 0.5, 0.41935483870967744, 0.6086956521739131, 0.1348905712349575), -- 399
 (4, 101, 1.0, 0.41935483870967744, 0.5625, 0.4675145881223634); -- 400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -521,7 +521,7 @@ VALUES
 (5, 100, 0.5, 0.41935483870967744, 0.8888888888888888, 0.2928264407628427), -- 499
 (5, 101, 1.0, 0.41935483870967744, 0.35, 0.26747068397112217); -- 500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -626,7 +626,7 @@ VALUES
 (6, 100, 0.5161290322580645, 0.41935483870967744, 0.5263157894736842, 0.1389775132334823), -- 599
 (6, 101, 0.5757575757575758, 0.41935483870967744, 0.5833333333333334, 0.21152751903845116); -- 600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -731,7 +731,7 @@ VALUES
 (7, 100, 0.5161290322580645, 0.41935483870967744, 0.64, 0.18307692307692333), -- 699
 (7, 101, 0.5757575757575758, 0.41935483870967744, 0.3888888888888889, 0.0397219060009757); -- 700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -836,7 +836,7 @@ VALUES
 (8, 100, 1.0, 0.41935483870967744, 0.64, 0.5581969060547076), -- 799
 (8, 101, 0.5, 0.41935483870967744, 0.3888888888888889, NULL); -- 800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -941,7 +941,7 @@ VALUES
 (9, 100, 0.5294117647058824, 0.41935483870967744, 0.6060606060606061, 0.20158056920723916), -- 899
 (9, 101, 0.6388888888888888, 0.41935483870967744, 0.3076923076923077, 0.05003464149411109); -- 900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1046,7 +1046,7 @@ VALUES
 (10, 100, 0.5, 0.41935483870967744, 0.9259259259259259, 0.29225402865461686), -- 999
 (10, 101, 1.0, 0.41935483870967744, 0.4, 0.2747383896912565); -- 1000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1151,7 +1151,7 @@ VALUES
 (11, 100, 1.0, 0.41935483870967744, 0.9259259259259259, 0.6365569793687679), -- 1099
 (11, 101, 0.5, 0.41935483870967744, 0.4, NULL); -- 1100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1256,7 +1256,7 @@ VALUES
 (12, 100, 0.5161290322580645, 0.41935483870967744, 0.5555555555555556, 0.13119648737650944), -- 1199
 (12, 101, 0.5757575757575758, 0.41935483870967744, 0.8181818181818182, 0.3167388484183217); -- 1200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1361,7 +1361,7 @@ VALUES
 (13, 100, 0.5161290322580645, 0.41935483870967744, 0.5555555555555556, 0.13119648737650944), -- 1299
 (13, 101, 0.5757575757575758, 0.41935483870967744, 0.8181818181818182, 0.3167388484183217); -- 1300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1466,7 +1466,7 @@ VALUES
 (14, 100, 0.53125, 0.41935483870967744, NULL, 0.7142857142857143, 0.16794835132379832), -- 1399
 (14, 101, 0.5882352941176471, 0.41935483870967744, NULL, 0.6428571428571429, 0.159810656931541); -- 1400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1571,7 +1571,7 @@ VALUES
 (15, 100, 0.53125, 0.41935483870967744, NULL, 0.6666666666666666, 0.14526323808499517), -- 1499
 (15, 101, 0.5882352941176471, 0.41935483870967744, NULL, 0.6428571428571429, 0.16185457976857423); -- 1500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1676,7 +1676,7 @@ VALUES
 (16, 100, 0.53125, 0.41935483870967744, NULL, 0.6666666666666666, 0.14526323808499517), -- 1599
 (16, 101, 0.5882352941176471, 0.41935483870967744, NULL, 0.6428571428571429, 0.16185457976857423); -- 1600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1781,7 +1781,7 @@ VALUES
 (17, 100, 0.5161290322580645, 0.41935483870967744, 0.6666666666666666, 0.18416507590219056), -- 1699
 (17, 101, 0.5757575757575758, 0.41935483870967744, 0.6428571428571429, 0.2068755260737808); -- 1700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1886,7 +1886,7 @@ VALUES
 (18, 100, 0.5161290322580645, 0.41935483870967744, 0.5882352941176471, 0.13305785898727257), -- 1799
 (18, 101, 0.5757575757575758, 0.41935483870967744, 0.37037037037037035, 0.007108727683161441); -- 1800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -1991,7 +1991,7 @@ VALUES
 (19, 100, 0.5161290322580645, 0.41935483870967744, 0.5263157894736842, 0.11818099465531298), -- 1899
 (19, 101, 0.5757575757575758, 0.41935483870967744, 0.6666666666666666, 0.24819277108433732); -- 1900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2096,7 +2096,7 @@ VALUES
 (20, 100, 1.0, 0.41935483870967744, 0.72, 0.4946260387811636), -- 1999
 (20, 101, 0.5, 0.41935483870967744, 0.5555555555555556, 0.03816558941212686); -- 2000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2201,7 +2201,7 @@ VALUES
 (21, 100, 1.0, 0.41935483870967744, 0.72, 0.4946260387811636), -- 2099
 (21, 101, 0.5, 0.41935483870967744, 0.5, NULL); -- 2100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2306,7 +2306,7 @@ VALUES
 (22, 100, 1.0, 0.41935483870967744, 0.7142857142857143, 0.5194372762400458), -- 2199
 (22, 101, 0.5, 0.41935483870967744, 0.6428571428571429, 0.15583863236471723); -- 2200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2411,7 +2411,7 @@ VALUES
 (23, 100, 1.0, 0.41935483870967744, 1.0, 0.6695313301199878), -- 2299
 (23, 101, 0.5, 0.41935483870967744, 0.47368421052631576, NULL); -- 2300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2516,7 +2516,7 @@ VALUES
 (24, 100, 0.5161290322580645, 0.4375, 0.6176470588235294, 0.19957130093629794), -- 2399
 (24, 101, 0.5757575757575758, 0.4375, 0.4074074074074074, 0.08555069675918477); -- 2400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2621,7 +2621,7 @@ VALUES
 (25, 100, 0.75, 0.4375, 0.6774193548387096, 0.46264275414610506), -- 2499
 (25, 101, 0.5588235294117647, 0.4375, 0.375, NULL); -- 2500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2726,7 +2726,7 @@ VALUES
 (26, 100, 0.5161290322580645, 0.41935483870967744, 0.45, 0.08179919425865075), -- 2599
 (26, 101, 0.5757575757575758, 0.41935483870967744, 0.7692307692307693, 0.31995629485027144); -- 2600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2831,7 +2831,7 @@ VALUES
 (27, 100, 0.5161290322580645, 0.41935483870967744, 0.9259259259259259, 0.3220752673409305), -- 2699
 (27, 101, 0.5757575757575758, 0.41935483870967744, 0.6, 0.13166611887951893); -- 2700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -2936,7 +2936,7 @@ VALUES
 (28, 100, 0.5, 0.41935483870967744, 0.47368421052631576, 0.08355799847874276), -- 2799
 (28, 101, 1.0, 0.41935483870967744, 1.0, 0.747567187047083); -- 2800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3041,7 +3041,7 @@ VALUES
 (29, 100, 1.0, 0.41935483870967744, 0.6363636363636364, 0.45101475107436545), -- 2899
 (29, 101, 0.5, 0.41935483870967744, 0.8, 0.23229780751142612); -- 2900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3146,7 +3146,7 @@ VALUES
 (30, 100, 0.5, 0.4375, 0.47368421052631576, 0.1067640584350612), -- 2999
 (30, 101, 1.0, 0.4375, 1.0, 0.7623574144486696); -- 3000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3251,7 +3251,7 @@ VALUES
 (31, 100, 0.5161290322580645, 0.4375, 0.9259259259259259, 0.34435118752162225), -- 3099
 (31, 101, 0.5757575757575758, 0.4375, 0.6, 0.15660558474962166); -- 3100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3356,7 +3356,7 @@ VALUES
 (32, 100, 1.0, 0.41935483870967744, 0.8571428571428571, 0.5971856932025075), -- 3199
 (32, 101, 0.5, 0.41935483870967744, 0.5238095238095238, 0.08433661319186138); -- 3200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3461,7 +3461,7 @@ VALUES
 (33, 100, 0.53125, 0.41935483870967744, NULL, 0.5, 0.049881194127633144), -- 3299
 (33, 101, 0.5882352941176471, 0.41935483870967744, NULL, 0.8461538461538461, 0.2540482811858882); -- 3300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3566,7 +3566,7 @@ VALUES
 (34, 100, 0.53125, 0.41935483870967744, NULL, 0.5, 0.049881194127633144), -- 3399
 (34, 101, 0.5882352941176471, 0.41935483870967744, NULL, 0.8461538461538461, 0.2540482811858882); -- 3400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3671,7 +3671,7 @@ VALUES
 (35, 100, 0.5161290322580645, 0.41935483870967744, 0.5, 0.06582259917385666), -- 3499
 (35, 101, 0.5757575757575758, 0.41935483870967744, 0.8461538461538461, 0.3370054040989928); -- 3500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3776,7 +3776,7 @@ VALUES
 (36, 100, 0.5161290322580645, 0.41935483870967744, 0.6086956521739131, 0.10492818242910888), -- 3599
 (36, 101, 0.5757575757575758, 0.41935483870967744, 0.6875, 0.19306701785658706); -- 3600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3881,7 +3881,7 @@ VALUES
 (37, 100, 0.5161290322580645, 0.41935483870967744, 0.6086956521739131, 0.10492818242910888), -- 3699
 (37, 101, 0.5757575757575758, 0.41935483870967744, 0.6875, 0.19306701785658706); -- 3700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -3986,7 +3986,7 @@ VALUES
 (38, 100, 0.5161290322580645, 0.41935483870967744, 0.6521739130434783, 0.12591653416251725), -- 3799
 (38, 101, 0.5757575757575758, 0.41935483870967744, 0.6875, 0.18916091621098452); -- 3800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4091,7 +4091,7 @@ VALUES
 (39, 100, 1.0, 0.41935483870967744, 0.6521739130434783, 0.44755638125041963), -- 3899
 (39, 101, 0.5, 0.41935483870967744, 0.6875, 0.13572011400665743); -- 3900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4196,7 +4196,7 @@ VALUES
 (40, 100, 0.5294117647058824, 0.41935483870967744, 0.5714285714285714, 0.14550790019072513), -- 3999
 (40, 101, 0.6388888888888888, 0.41935483870967744, 0.6428571428571429, 0.2803411592932748); -- 4000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4301,7 +4301,7 @@ VALUES
 (41, 100, 0.5, 0.41935483870967744, 0.5714285714285714, 0.1189004020466411), -- 4099
 (41, 101, 1.0, 0.41935483870967744, 0.6428571428571429, 0.4669198331315434); -- 4100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4406,7 +4406,7 @@ VALUES
 (42, 100, 0.5161290322580645, 0.4375, 0.5714285714285714, 0.14171502978794906), -- 4199
 (42, 101, 0.5757575757575758, 0.4375, 0.6428571428571429, 0.2213532169987859); -- 4200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4511,7 +4511,7 @@ VALUES
 (43, 100, 0.5151515151515151, 0.41935483870967744, NULL, 0.5238095238095238, 0.08302328970280086), -- 4299
 (43, 101, 0.9714285714285714, 0.41935483870967744, NULL, 0.7142857142857143, 0.4033858240120416); -- 4300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4616,7 +4616,7 @@ VALUES
 (44, 100, 0.5151515151515151, 0.41935483870967744, NULL, 0.5238095238095238, 0.08302328970280086), -- 4399
 (44, 101, 0.9714285714285714, 0.41935483870967744, NULL, 0.7142857142857143, 0.4033858240120416); -- 4400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4721,7 +4721,7 @@ VALUES
 (45, 100, 0.5161290322580645, 0.4375, 0.5238095238095238, 0.1234319414760558), -- 4499
 (45, 101, 0.5757575757575758, 0.4375, 0.7142857142857143, 0.27358577369989817); -- 4500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4826,7 +4826,7 @@ VALUES
 (46, 100, 0.5161290322580645, 0.41935483870967744, 0.5652173913043478, 0.08840758155189878), -- 4599
 (46, 101, 0.5757575757575758, 0.41935483870967744, 0.75, 0.24213941580062548); -- 4600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -4931,7 +4931,7 @@ VALUES
 (47, 100, 0.5161290322580645, 0.41935483870967744, 0.6086956521739131, 0.0969579069946623), -- 4699
 (47, 101, 0.5757575757575758, 0.41935483870967744, 0.75, 0.2307889427647762); -- 4700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5036,7 +5036,7 @@ VALUES
 (48, 100, 1.0, 0.41935483870967744, 0.8928571428571429, 0.6074339019198821), -- 4799
 (48, 101, 0.5, 0.41935483870967744, 0.5714285714285714, 0.08826802842330007); -- 4800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5141,7 +5141,7 @@ VALUES
 (49, 100, 0.5, 0.41935483870967744, 0.5238095238095238, 0.08989878278956591), -- 4899
 (49, 101, 1.0, 0.41935483870967744, 0.6428571428571429, 0.4669198331315434); -- 4900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5246,7 +5246,7 @@ VALUES
 (50, 100, 0.5, 0.4375, 0.5238095238095238, 0.12100279416330341), -- 4999
 (50, 101, 1.0, 0.4375, 0.6428571428571429, 0.5246041601986962); -- 5000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5351,7 +5351,7 @@ VALUES
 (51, 100, 0.5161290322580645, 0.4375, 0.5555555555555556, 0.11292460562495271), -- 5099
 (51, 101, 0.5757575757575758, 0.4375, 0.5, 0.11632594038645785); -- 5100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5456,7 +5456,7 @@ VALUES
 (52, 100, 1.0, 0.41935483870967744, 0.8928571428571429, 0.6066093983996055), -- 5199
 (52, 101, 0.5, 0.41935483870967744, 0.5238095238095238, 0.05809249672265397); -- 5200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5561,7 +5561,7 @@ VALUES
 (53, 100, 0.5161290322580645, 0.41935483870967744, 0.6086956521739131, 0.08524110466066138), -- 5299
 (53, 101, 0.5757575757575758, 0.41935483870967744, 0.6875, 0.17864043068431246); -- 5300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5666,7 +5666,7 @@ VALUES
 (54, 100, 0.5, 0.41935483870967744, 0.47619047619047616, 0.06330691762936216), -- 5399
 (54, 101, 1.0, 0.41935483870967744, 0.6428571428571429, 0.4853962598734704); -- 5400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5771,7 +5771,7 @@ VALUES
 (55, 100, 0.5161290322580645, 0.41935483870967744, 0.29310344827586204, 0.10760925825178706), -- 5499
 (55, 101, 0.5757575757575758, 0.41935483870967744, 0.21568627450980393, 0.09466068480450533); -- 5500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5876,7 +5876,7 @@ VALUES
 (56, 100, 1.0, 0.41935483870967744, 0.5833333333333334, 0.4057761581636929), -- 5599
 (56, 101, 0.5, 0.41935483870967744, 0.7058823529411765, 0.15581804473485814); -- 5600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -5981,7 +5981,7 @@ VALUES
 (57, 100, 0.5, 0.41935483870967744, 0.24358974358974358, 0.04274966297271065), -- 5699
 (57, 101, 1.0, 0.41935483870967744, 0.15492957746478872, 0.3957235183249618); -- 5700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6086,7 +6086,7 @@ VALUES
 (58, 100, 0.7741935483870968, 0.41935483870967744, 0.2676056338028169, 0.2432492427345439), -- 5799
 (58, 101, 0.5454545454545454, 0.41935483870967744, 0.171875, 0.03203010858000586); -- 5800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6191,7 +6191,7 @@ VALUES
 (59, 100, 0.7741935483870968, 0.41935483870967744, 0.4166666666666667, 0.2960978666690205), -- 5899
 (59, 101, 0.5454545454545454, 0.41935483870967744, 0.2682926829268293, 0.03416779630538558); -- 5900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6296,7 +6296,7 @@ VALUES
 (60, 100, 1.0, 0.41935483870967744, 0.6410256410256411, 0.5714685203853432), -- 5999
 (60, 101, 0.5, 0.41935483870967744, 0.3125, 0.016373956197438536); -- 6000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6401,7 +6401,7 @@ VALUES
 (61, 100, 1.0, 0.41935483870967744, 0.8620689655172413, 0.5921415051967712), -- 6099
 (61, 101, 0.5, 0.41935483870967744, 0.5, 0.054572910855780477); -- 6100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6506,7 +6506,7 @@ VALUES
 (62, 100, 0.5161290322580645, 0.41935483870967744, 0.42857142857142855, 0.025096179171144168), -- 6199
 (62, 101, 0.5757575757575758, 0.41935483870967744, 0.7857142857142857, 0.30805417244765637); -- 6200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6611,7 +6611,7 @@ VALUES
 (63, 100, 0.7741935483870968, 0.41935483870967744, 0.5833333333333334, 0.3367994230937847), -- 6299
 (63, 101, 0.5454545454545454, 0.41935483870967744, 0.5882352941176471, 0.13192498240324474); -- 6300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6716,7 +6716,7 @@ VALUES
 (64, 100, 0.5, 0.7105263157894737, 0.5263157894736842, 0.2859628241779518), -- 6399
 (64, 101, 1.0, 0.7105263157894737, 0.5833333333333334, 0.6409846638344399); -- 6400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6821,7 +6821,7 @@ VALUES
 (65, 100, 0.75, 0.7105263157894737, NULL, 0.7142857142857143, 0.6772874675207592), -- 6499
 (65, 101, 0.5, 0.7105263157894737, NULL, 0.6428571428571429, 0.45377055146065487); -- 6500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -6926,7 +6926,7 @@ VALUES
 (66, 100, 0.5, 0.7105263157894737, 0.5555555555555556, 0.34672549637566963), -- 6599
 (66, 101, 1.0, 0.7105263157894737, 0.8181818181818182, 0.8530728017648912); -- 6600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7031,7 +7031,7 @@ VALUES
 (67, 100, 0.5161290322580645, 0.7105263157894737, 0.7407407407407407, 0.4826276054525164), -- 6699
 (67, 101, 0.5757575757575758, 0.7105263157894737, 0.45, 0.282616213431886); -- 6700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7136,7 +7136,7 @@ VALUES
 (68, 100, 0.53125, 0.7105263157894737, NULL, 0.6363636363636364, 0.3302841830202181), -- 6799
 (68, 101, 0.5882352941176471, 0.7105263157894737, NULL, 0.8, 0.4656447838788209); -- 6800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7241,7 +7241,7 @@ VALUES
 (69, 100, 0.5161290322580645, 0.7105263157894737, 0.6363636363636364, 0.32789060162412914), -- 6899
 (69, 101, 0.5757575757575758, 0.7105263157894737, 0.8, 0.46627628924740283); -- 6900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7346,7 +7346,7 @@ VALUES
 (70, 100, 1.0, 0.7105263157894737, 0.6521739130434783, 0.6450169281058808), -- 6999
 (70, 101, 0.5, 0.7105263157894737, 0.6875, 0.36415291081969525); -- 7000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7451,7 +7451,7 @@ VALUES
 (71, 100, 0.5, 0.7105263157894737, 0.5714285714285714, 0.275095659941934), -- 7099
 (71, 101, 1.0, 0.7105263157894737, 0.6428571428571429, 0.6335680786123725); -- 7100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7556,7 +7556,7 @@ VALUES
 (72, 100, 0.5, 0.7105263157894737, 0.5483870967741935, 0.27745749071371084), -- 7199
 (72, 101, 1.0, 0.7105263157894737, 0.4583333333333333, 0.639560281599282); -- 7200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7661,7 +7661,7 @@ VALUES
 (73, 100, 0.5, 0.7105263157894737, 0.45, 0.24811505934582007), -- 7299
 (73, 101, 1.0, 0.7105263157894737, 0.9230769230769231, 0.9196704123232716); -- 7300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7766,7 +7766,7 @@ VALUES
 (74, 100, 0.5161290322580645, 0.7105263157894737, 0.6086956521739131, 0.300348948842185), -- 7399
 (74, 101, 0.5757575757575758, 0.7105263157894737, 0.75, 0.4267704472779333); -- 7400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7871,7 +7871,7 @@ VALUES
 (75, 100, 1.0, 0.7105263157894737, 0.6086956521739131, 0.6217853238954348), -- 7499
 (75, 101, 0.5, 0.7105263157894737, 0.75, 0.40671131526350857); -- 7500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -7976,7 +7976,7 @@ VALUES
 (76, 100, 0.5, 0.7105263157894737, 0.5238095238095238, 0.24522295838606428), -- 7599
 (76, 101, 1.0, 0.7105263157894737, 0.6428571428571429, 0.6335680786123725); -- 7600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8081,7 +8081,7 @@ VALUES
 (77, 100, 1.0, 0.7105263157894737, 0.32727272727272727, 0.7498170959313177), -- 7699
 (77, 101, 0.5, 0.7105263157894737, 0.20833333333333334, 0.24764215503297246); -- 7700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8186,7 +8186,7 @@ VALUES
 (78, 100, 0.5161290322580645, 0.7105263157894737, 0.47368421052631576, 0.34887131630592266), -- 7799
 (78, 101, 0.5757575757575758, 0.7105263157894737, 0.3548387096774194, 0.30149980503248797); -- 7800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8291,7 +8291,7 @@ VALUES
 (79, 100, 0.5, 0.5277777777777778, 0.5263157894736842, 0.1878896927764168), -- 7899
 (79, 101, 1.0, 0.5277777777777778, 0.5833333333333334, 0.5350443953513961); -- 7900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8396,7 +8396,7 @@ VALUES
 (80, 100, 0.5, 0.5277777777777778, 0.6923076923076923, 0.27197696794509146), -- 7999
 (80, 101, 1.0, 0.5277777777777778, 0.47368421052631576, 0.5033978326638543); -- 8000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8501,7 +8501,7 @@ VALUES
 (81, 100, 0.53125, 0.5277777777777778, NULL, 0.5555555555555556, 0.19307760753393308), -- 8099
 (81, 101, 0.5882352941176471, 0.5277777777777778, NULL, 0.8181818181818182, 0.3449706462741146); -- 8100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8606,7 +8606,7 @@ VALUES
 (82, 100, 0.53125, 0.5277777777777778, NULL, 0.5555555555555556, 0.19307760753393308), -- 8199
 (82, 101, 0.5882352941176471, 0.5277777777777778, NULL, 0.8181818181818182, 0.3449706462741146); -- 8200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8711,7 +8711,7 @@ VALUES
 (83, 100, 0.78125, 0.5277777777777778, NULL, 0.7407407407407407, 0.3637373344815488), -- 8299
 (83, 101, 0.5294117647058824, 0.5277777777777778, NULL, 0.45, 0.090343702811589); -- 8300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8816,7 +8816,7 @@ VALUES
 (84, 100, 0.78125, 0.5277777777777778, NULL, 0.7407407407407407, 0.3637373344815488), -- 8399
 (84, 101, 0.5294117647058824, 0.5277777777777778, NULL, 0.45, 0.090343702811589); -- 8400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, extra_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -8921,7 +8921,7 @@ VALUES
 (85, 100, 0.78125, 0.5277777777777778, NULL, 0.7407407407407407, 0.3637373344815488), -- 8499
 (85, 101, 0.5294117647058824, 0.5277777777777778, NULL, 0.45, 0.090343702811589); -- 8500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9026,7 +9026,7 @@ VALUES
 (86, 100, 0.5, 0.5277777777777778, 0.45, 0.11455508551180517), -- 8599
 (86, 101, 1.0, 0.5277777777777778, 0.7692307692307693, 0.5910845355606174); -- 8600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9131,7 +9131,7 @@ VALUES
 (87, 100, 0.5, 0.5277777777777778, 0.45, 0.11455508551180517), -- 8699
 (87, 101, 1.0, 0.5277777777777778, 0.7692307692307693, 0.5910845355606174); -- 8700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9236,7 +9236,7 @@ VALUES
 (88, 100, 0.5, 0.5277777777777778, 0.47368421052631576, 0.1498478868630385), -- 8799
 (88, 101, 1.0, 0.5277777777777778, 1.0, 0.7320984072748892); -- 8800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9341,7 +9341,7 @@ VALUES
 (89, 100, 0.5, 0.5277777777777778, 0.47368421052631576, 0.1498478868630385), -- 8899
 (89, 101, 1.0, 0.5277777777777778, 1.0, 0.7320984072748892); -- 8900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9446,7 +9446,7 @@ VALUES
 (90, 100, 1.0, 0.5277777777777778, 0.6363636363636364, 0.6251602928152382), -- 8999
 (90, 101, 0.5, 0.5277777777777778, 0.8, 0.4017987645006267); -- 9000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9551,7 +9551,7 @@ VALUES
 (91, 100, 0.5161290322580645, 0.5277777777777778, 0.5, 0.15524494824664284), -- 9099
 (91, 101, 0.5757575757575758, 0.5277777777777778, 0.8461538461538461, 0.39066032271224344); -- 9100
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9656,7 +9656,7 @@ VALUES
 (92, 100, 0.5161290322580645, 0.5277777777777778, 0.5, 0.15524494824664284), -- 9199
 (92, 101, 0.5757575757575758, 0.5277777777777778, 0.8461538461538461, 0.39066032271224344); -- 9200
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9761,7 +9761,7 @@ VALUES
 (93, 100, 0.5161290322580645, 0.5277777777777778, 0.5714285714285714, 0.20228061169407094), -- 9299
 (93, 101, 0.5757575757575758, 0.5277777777777778, 0.6428571428571429, 0.29053073744088764); -- 9300
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9866,7 +9866,7 @@ VALUES
 (94, 100, 0.5, 0.5277777777777778, 0.5714285714285714, 0.17877010875941654), -- 9399
 (94, 101, 1.0, 0.5277777777777778, 0.6428571428571429, 0.5294212706234462); -- 9400
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -9971,7 +9971,7 @@ VALUES
 (95, 100, 0.5, 0.5277777777777778, 0.5238095238095238, 0.14954917860408062), -- 9499
 (95, 101, 1.0, 0.5277777777777778, 0.7142857142857143, 0.5732526658564501); -- 9500
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -10076,7 +10076,7 @@ VALUES
 (96, 100, 0.5, 0.5277777777777778, 0.47368421052631576, 0.0897767702608288), -- 9599
 (96, 101, 1.0, 0.5277777777777778, 0.3870967741935484, 0.39341928666488224); -- 9600
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -10181,7 +10181,7 @@ VALUES
 (97, 100, 0.5, 0.5277777777777778, 0.40476190476190477, 0.11354162624448799), -- 9699
 (97, 101, 1.0, 0.5277777777777778, 0.2857142857142857, 0.3716811728992781); -- 9700
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -10286,7 +10286,7 @@ VALUES
 (98, 100, 0.5, 1.0, 0.5263157894736842, 0.5550320446319478), -- 9799
 (98, 101, 1.0, 1.0, 0.5833333333333334, 0.9086271718499052); -- 9800
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -10391,7 +10391,7 @@ VALUES
 (99, 100, 0.5, 1.0, 0.5555555555555556, 0.5541540806052193), -- 9899
 (99, 101, 1.0, 1.0, 0.8181818181818182, 1.0); -- 9900
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -10496,7 +10496,7 @@ VALUES
 (100, 99, 0.5, 1.0, 0.5555555555555556, 0.7104454685099842), -- 9999
 (100, 101, 0.5, 1.0, 0.47368421052631576, 0.6452825612418138); -- 10000
 
--------------------------
+-- --------------------- --
 
 INSERT INTO related_plots(plot_id, related_plot_id, x_similarity, y_similarity, chemical_similarity, total_similarity)
 VALUES 
@@ -10601,5 +10601,5 @@ VALUES
 (101, 99, 1.0, 1.0, 0.8181818181818182, 1.0), -- 10099
 (101, 100, 0.5, 1.0, 0.47368421052631576, 0.4977705046877486); -- 10100
 
--------------------------
+-- --------------------- --
 

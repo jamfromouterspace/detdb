@@ -1,7 +1,3 @@
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(281, 3); -- 281
-
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '[400.0, 2200.0]'); -- 291
@@ -24,11 +20,7 @@ VALUES
 ('[51.8304, 59.5464, 134.512, 304.347, 282.458]', 28, 281), -- 673
 ('[2238.83, 1450.61, 946.43, 564.82, 421.03]', 1, 281); -- 674
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(282, 3); -- 282
+-- -------------------- --
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -52,11 +44,7 @@ VALUES
 ('[68.1482, 68.7634, 69.0754, 265.821, 275.8]', 28, 282), -- 675
 ('[1161.54, 708.73, 552.59, 324.53, 211.74]', 1, 282); -- 676
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(283, 3); -- 283
+-- -------------------- --
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -76,11 +64,7 @@ VALUES
 ('[127.423, 129.903, 268.163, 279.353, 263.343, 277.475]', 28, 283), -- 677
 ('[1130.88, 872.02, 664.72, 518.36, 364.12, 226.39]', 1, 283); -- 678
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(284, 3); -- 284
+-- -------------------- --
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -104,11 +88,7 @@ VALUES
 ('[160.462, 206.325, 195.629, 265.914, 258.02]', 28, 284), -- 679
 ('[1897.32, 1508.81, 1150.15, 708.02, 502.99]', 1, 284); -- 680
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(285, 3); -- 285
+-- -------------------- --
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -128,11 +108,7 @@ VALUES
 ('[101.3]', 1, 285), -- 681
 ('[206.6]', 28, 285); -- 682
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(286, 3); -- 286
+-- -------------------- --
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -156,11 +132,7 @@ VALUES
 ('[101.3]', 1, 286), -- 683
 ('[51.5]', 28, 286); -- 684
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(287, 3); -- 287
+-- -------------------- --
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -180,11 +152,7 @@ VALUES
 ('[101.3]', 1, 287), -- 685
 ('[116.8]', 28, 287); -- 686
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(288, 3); -- 288
+-- -------------------- --
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -204,11 +172,7 @@ VALUES
 ('[101.3]', 1, 288), -- 687
 ('[260.2]', 28, 288); -- 688
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(289, 3); -- 289
+-- -------------------- --
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -232,11 +196,7 @@ VALUES
 ('[183.98, 101.33]', 1, 289), -- 689
 ('[27.29, 51.19]', 28, 289); -- 690
 
-------------------------
-
-INSERT INTO detonation_subcategories(detonation_id, category_id)
-VALUES 
-(290, 3); -- 290
+-- -------------------- --
 
 INSERT INTO details(property_id, value)
 VALUES 
@@ -260,5 +220,5 @@ VALUES
 ('[106.66]', 1, 290), -- 691
 ('[32.0]', 28, 290); -- 692
 
-------------------------
+-- -------------------- --
 

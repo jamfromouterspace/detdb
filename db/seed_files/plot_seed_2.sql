@@ -13,7 +13,7 @@ VALUES
 (64, 2), -- 295
 (64, 17); -- 296
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -31,7 +31,7 @@ VALUES
 (65, 11), -- 299
 (65, 1); -- 300
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -48,7 +48,7 @@ VALUES
 (66, 2), -- 302
 (66, 11); -- 303
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -82,14 +82,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(279, 359), -- 2627
-(279, 370), -- 2628
-(279, 371), -- 2629
-(278, 359), -- 2630
-(278, 370), -- 2631
-(278, 579); -- 2632
+(279, 359), -- 2625
+(279, 370), -- 2626
+(279, 371), -- 2627
+(278, 359), -- 2628
+(278, 370), -- 2629
+(278, 579); -- 2630
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -115,10 +115,10 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(285, 580), -- 2633
-(285, 581); -- 2634
+(285, 580), -- 2631
+(285, 581); -- 2632
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -154,20 +154,20 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(281, 454), -- 2635
-(281, 455), -- 2636
-(282, 582), -- 2637
-(282, 583), -- 2638
-(283, 584), -- 2639
-(283, 585), -- 2640
-(284, 586), -- 2641
-(284, 587), -- 2642
-(287, 588), -- 2643
-(287, 589), -- 2644
-(288, 395), -- 2645
-(288, 396); -- 2646
+(281, 454), -- 2633
+(281, 455), -- 2634
+(282, 582), -- 2635
+(282, 583), -- 2636
+(283, 584), -- 2637
+(283, 585), -- 2638
+(284, 586), -- 2639
+(284, 587), -- 2640
+(287, 588), -- 2641
+(287, 589), -- 2642
+(288, 395), -- 2643
+(288, 396); -- 2644
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -187,7 +187,7 @@ VALUES
 (70, 11), -- 318
 (70, 1); -- 319
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -205,7 +205,7 @@ VALUES
 (71, 133), -- 321
 (71, 17); -- 322
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -243,20 +243,20 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(311, 360), -- 2647
-(311, 591), -- 2648
-(311, 592), -- 2649
-(312, 360), -- 2650
-(312, 591), -- 2651
-(312, 593), -- 2652
-(313, 360), -- 2653
-(313, 594), -- 2654
-(313, 595), -- 2655
-(314, 360), -- 2656
-(314, 594), -- 2657
-(314, 596); -- 2658
+(311, 360), -- 2645
+(311, 591), -- 2646
+(311, 592), -- 2647
+(312, 360), -- 2648
+(312, 591), -- 2649
+(312, 593), -- 2650
+(313, 360), -- 2651
+(313, 594), -- 2652
+(313, 595), -- 2653
+(314, 360), -- 2654
+(314, 594), -- 2655
+(314, 596); -- 2656
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -279,7 +279,7 @@ VALUES
 (73, 159), -- 328
 (73, 11); -- 329
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -308,14 +308,14 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(298, 524), -- 2659
-(298, 525), -- 2660
-(299, 598), -- 2661
-(299, 599), -- 2662
-(300, 600), -- 2663
-(300, 601); -- 2664
+(298, 524), -- 2657
+(298, 525), -- 2658
+(299, 598), -- 2659
+(299, 599), -- 2660
+(300, 600), -- 2661
+(300, 601); -- 2662
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -335,7 +335,7 @@ VALUES
 (75, 11), -- 336
 (75, 1); -- 337
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -351,7 +351,7 @@ VALUES
 (76, 180), -- 339
 (76, 17); -- 340
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -390,7 +390,7 @@ VALUES
 (77, 609), -- 351
 (77, 609); -- 352
 
-------------------------
+-- -------------------- --
 
 INSERT INTO plots(title, x_label, y_label, x_scale, y_scale, category_id, num_datasets, image_file, legacy)
 VALUES 
@@ -420,5 +420,5 @@ VALUES
 (78, 11), -- 360
 (78, 11); -- 361
 
-------------------------
+-- -------------------- --
 
