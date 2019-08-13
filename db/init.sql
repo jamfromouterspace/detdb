@@ -1,33 +1,34 @@
+DROP DATABASE IF EXISTS detdb;
 CREATE DATABASE detdb;
 USE detdb;
 
 CREATE TABLE authors (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	first_name NVARCHAR(80),
-	initials NVARCHAR(8) NOT NULL,
-	last_name NVARCHAR(80) NOT NULL,
+	first_name VARCHAR(80) CHARACTER SET UTF8MB4,
+	initials VARCHAR(8) CHARACTER SET UTF8MB4,
+	last_name VARCHAR(80) CHARACTER SET UTF8MB4 NOT NULL,
 	notes VARCHAR(150),
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY (first_name,initials,last_name)
 );
 
 CREATE TABLE journals (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	abbreviation NVARCHAR(50),
-	name NVARCHAR(150) NOT NULL,
+	abbreviation VARCHAR(50) CHARACTER SET UTF8MB4,
+	name VARCHAR(150) CHARACTER SET UTF8MB4 NOT NULL UNIQUE,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE citations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	preformatted NVARCHAR(550) NOT NULL DEFAULT '',
-	title NVARCHAR(150) NOT NULL,
+	preformatted VARCHAR(550) CHARACTER SET UTF8MB4,
+	title VARCHAR(300) CHARACTER SET UTF8MB4 NOT NULL DEFAULT 'untitled',
 	journal_id INT,
 	vol SMALLINT,
 	issue SMALLINT,
-	ed SMALLINT,
-	institution NVARCHAR(100),
+	institution VARCHAR(100) CHARACTER SET UTF8MB4,
 	isbn VARCHAR(20),
 	doi VARCHAR(30),
 	year VARCHAR(4) NOT NULL DEFAULT 'n.d.',
@@ -36,7 +37,7 @@ CREATE TABLE citations (
 	archived BIT NOT NULL DEFAULT 0,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-	FOREIGN KEY(journal_id) REFERENCES journals(id),
+	FOREIGN KEY(journal_id) REFERENCES journals(id)
 );
 
 CREATE TABLE author_citations (
@@ -44,17 +45,25 @@ CREATE TABLE author_citations (
 	author_id INT NOT NULL,
 	citation_id INT NOT NULL,
 	FOREIGN KEY(author_id) REFERENCES authors(id),
-	FOREIGN KEY(citation_id) REFERENCES citations(id)
+	FOREIGN KEY(citation_id) REFERENCES citations(id),
+    UNIQUE KEY (author_id,citation_id)
+);
+
+CREATE TABLE categories (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL UNIQUE,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	name NVARCHAR(100) NOT NULL,
+	name VARCHAR(100) CHARACTER SET UTF8MB4 NOT NULL UNIQUE,
 	category_id INT,
 	file_name VARCHAR(20) NOT NULL,
-	issues NVARCHAR(250) DEFAULT NULL, -- Problems with the data
-	notes NVARCHAR(200) DEFAULT NULL, -- Scientific notes
-	added_by NVARCHAR(164) NOT NULL,
+	issues VARCHAR(250) CHARACTER SET UTF8MB4, -- Problems with the data
+	notes VARCHAR(200) CHARACTER SET UTF8MB4, -- Scientific notes
+	added_by VARCHAR(164) NOT NULL,
 	citation_id INT NOT NULL,
 	legacy BIT NOT NULL DEFAULT 0,
 	archived BIT NOT NULL DEFAULT 0,
@@ -67,16 +76,10 @@ CREATE TABLE detonations (
 CREATE TABLE properties (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(50),
-	units NVARCHAR(15),
+	units VARCHAR(10),
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-);
-
-CREATE TABLE categories (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(50) NOT NULL,
-	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY (name,units)
 );
 
 CREATE TABLE subcategories (
@@ -86,6 +89,7 @@ CREATE TABLE subcategories (
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 	FOREIGN KEY(category_id) REFERENCES categories(id),
+	UNIQUE KEY (category_id,name)
 );
 
 CREATE TABLE detonation_subcategories (
@@ -94,15 +98,16 @@ CREATE TABLE detonation_subcategories (
 	detonation_id INT NOT NULL,
 	FOREIGN KEY(subcategory_id) REFERENCES subcategories(id),
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
+    UNIQUE KEY (subcategory_id,detonation_id)
 );
 
 CREATE TABLE data_points (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	column_data JSON NOT NULL,
-	property_id INT NOT NULL, --- There exists a (NULL, NULL) property
+	property_id INT NOT NULL, -- There exists a (NULL, NULL) property
 	detonation_id INT NOT NULL,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
 	FOREIGN KEY(property_id) REFERENCES properties(id),
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id)
 );
@@ -128,7 +133,8 @@ CREATE TABLE detonation_details (
 	detonation_id INT NOT NULL,
 	detail_id INT NOT NULL,
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
-	FOREIGN KEY(detail_id) REFERENCES details(id)
+	FOREIGN KEY(detail_id) REFERENCES details(id),
+    UNIQUE KEY (detonation_id,detail_id)
 );
 /*
 	Some justifications :
@@ -160,12 +166,12 @@ CREATE TABLE plots (
 	category_id INT,
 	num_datasets SMALLINT NOT NULL,
 	notes VARCHAR(100) DEFAULT NULL,
-	image_file VARCHAR(15) DEFAULT NULL,
+	image_file VARCHAR(15),
 	legacy BIT NOT NULL DEFAULT 0,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-	FOREIGN KEY(x_property) REFERENCES properties(id),
-	FOREIGN KEY(y_property) REFERENCES properties(id),
+	FOREIGN KEY(x_label) REFERENCES properties(id),
+	FOREIGN KEY(y_label) REFERENCES properties(id),
 	FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 
@@ -175,11 +181,12 @@ CREATE TABLE plot_detonations (
 	detonation_id INT NOT NULL,
 	x_data INT NOT NULL,
 	y_data INT NOT NULL,
-	notes VARCHAR(100) DEFAULT NULL,
+	notes VARCHAR(100),
 	FOREIGN KEY(plot_id) REFERENCES plots(id),
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
 	FOREIGN KEY(x_data) REFERENCES data_points(id),
 	FOREIGN KEY(y_data) REFERENCES data_points(id),
+	UNIQUE KEY (plot_id,x_data,y_data)
 );
 
 CREATE TABLE plot_details (
@@ -187,7 +194,7 @@ CREATE TABLE plot_details (
 	plot_id INT NOT NULL,
 	detail_id INT NOT NULL,
 	FOREIGN KEY(plot_id) REFERENCES plots(id),
-	FOREIGN KEY(detail_id) REFERENCES details(id),
+	FOREIGN KEY(detail_id) REFERENCES details(id)
 );
 
 CREATE TABLE related_plots (
@@ -196,18 +203,17 @@ CREATE TABLE related_plots (
 	related_plot_id INT NOT NULL,
 	x_similarity FLOAT NOT NULL,
 	y_similarity FLOAT NOT NULL,
-	extra_similarity FLOAT NOT NULL,
+	extra_similarity FLOAT,
 	chemical_similarity FLOAT NOT NULL,
 	total_similarity FLOAT,
 	FOREIGN KEY(plot_id) REFERENCES plots(id),
 	FOREIGN KEY(related_plot_id) REFERENCES plots(id),
+    UNIQUE KEY (plot_id,related_plot_id)
 );
 
 
 CREATE TABLE common_fuels (
 	-- Use fuel name as the primary key
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	chemical VARCHAR(10) NOT NULL
+	chemical VARCHAR(10) UNIQUE NOT NULL
 );
-
-

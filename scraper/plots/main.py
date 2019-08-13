@@ -12,6 +12,7 @@ from parser_functions import *
 from units import getPlotUnits
 from synonyms import *
 import json
+import os
 import regex as re # PyPi regex supports \p{}
 
 def savePlotImages() :
@@ -26,6 +27,7 @@ debug_notes = open('edge_case_notes.txt','w') # Reset debug notes
 debug_notes.close()
 
 cats,dets,dets_index,props,props_index,deets,deets_index = loadDetonationData()
+total_det_deets = set() # Keep track of all detonation_details to avoid duplicate entries
 ins_plots = InsertGen('plots', ('title', 'x_label', 'y_label', 'x_scale', 'y_scale',
                                 'category_id', 'num_datasets', 'image_file', 'legacy'))
 ins_plot_dets = InsertGen('plot_detonations', ('plot_id','detonation_id','x_data','y_data','notes'))
@@ -38,7 +40,10 @@ plot_index = 1
 
 urls = getPlotUrls()
 # Manually add additive and inhibitor since we can be certain they'll show up
-f = open('plot_seed_0.sql','w')
+folder = ''
+if os.path.exists('../../db/seed_files/') :
+        folder = '../../db/seed_files/'
+f = open(folder + 'plot_seed_0.sql','w')
 ins_details.add((props[('diluent','chemical')],'"Additive"'))
 deets[(props[('diluent','chemical')],'"Additive"')] = deets_index
 deets_index += 1
@@ -59,8 +64,13 @@ f.close()
 debug = False
 k = 1
 for category in urls :
+    # Place in /db/seed_files/ for convenience
+    folder = ''
+    if os.path.exists('../../db/seed_files/') :
+        folder = '../../db/seed_files/'
+
     printRed('Scraping "' + category +'"')
-    f = open('plot_seed_'+str(k)+'.sql','w')
+    f = open(folder + 'plot_seed_'+str(k)+'.sql','w')
     for url in urls[category][:-1] : # Last is an empty string
         plot = scrapePlotData(url,plot_index,debug=False)
         x_units = getPlotUnits(plot['x_label'],plot['detonations'])
@@ -261,8 +271,12 @@ for category in urls :
                         detail_indices.append(deets[(p,val)])
 
                     for j in detail_indices :
-                        data.append((dets[plot['detonations'][i]]['index'],j))
-                        ins_det_details.add((dets[plot['detonations'][i]]['index'],j))
+                        if (dets[plot['detonations'][i]]['index'],j) not in total_det_deets :
+                            data.append((dets[plot['detonations'][i]]['index'],j))
+                            ins_det_details.add((dets[plot['detonations'][i]]['index'],j))
+                            # This is a set {}
+                            total_det_deets.add((dets[plot['detonations'][i]]['index'],j))
+
 
         if debug :
             print('DETONATION DETAILS')
@@ -278,7 +292,7 @@ for category in urls :
         if ins_det_details.flushable() :
             f.write(ins_det_details.flush()+'\n')
 
-        f.write('------------------------\n\n')
+        f.write('-- -------------------- --\n\n')
         plot_index += 1
     k += 1
     f.close()
