@@ -1,5 +1,4 @@
--- FILE 0 --
-
+-- FILE 0 --\n
 INSERT INTO properties(name, units)
 VALUES 
 ('initial pressure', 'kPa'), -- 1
@@ -10,8 +9,7 @@ VALUES
 ('equivalence ratio', 'unitless'), -- 6
 (NULL, NULL); -- 7
 
--- FILE 1 --
-
+-- FILE 1 --\n
 INSERT INTO categories(name)
 VALUES 
 ('cell size'); -- 1
@@ -2882,8 +2880,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 2 --
-
+-- FILE 2 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '"CH4"'), -- 116
@@ -3388,8 +3385,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 3 --
-
+-- FILE 3 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '"C2H2"'); -- 133
@@ -4387,8 +4383,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 4 --
-
+-- FILE 4 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '"C2H4"'), -- 159
@@ -4989,8 +4984,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 5 --
-
+-- FILE 5 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '"NH3"'), -- 175
@@ -6512,8 +6506,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 6 --
-
+-- FILE 6 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '[8.1, 101.3]'); -- 230
@@ -6678,8 +6671,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 7 --
-
+-- FILE 7 --\n
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
 ('at193a', 1, 'at193a.txt', 'Joe Shepherd', 4, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 238
@@ -7644,8 +7636,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 8 --
-
+-- FILE 8 --\n
 INSERT INTO categories(name)
 VALUES 
 ('critical tube diameter'); -- 2
@@ -7879,8 +7870,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 9 --
-
+-- FILE 9 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '[400.0, 2200.0]'); -- 291
@@ -8105,8 +8095,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 10 --
-
+-- FILE 10 --\n
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
 ('at71a', 2, 'at71a.txt', 'Joe Shepherd', 56, 1, 'Assumed units of _unitless_ for _dilution ratio_. Standardized _tube diameter_ to _critical tube diameter_. '); -- 291
@@ -8263,8 +8252,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 11 --
-
+-- FILE 11 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (1, '[350.0, 880.0]'), -- 300
@@ -8686,8 +8674,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 12 --
-
+-- FILE 12 --\n
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
 ('at143a', 2, 'at143a.txt', 'Joe Shepherd', 56, 1, 'Assumed units of _unitless_ for _dilution ratio_. Standardized _tube diameter_ to _critical tube diameter_. '); -- 317
@@ -8879,8 +8866,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 13 --
-
+-- FILE 13 --\n
 INSERT INTO categories(name)
 VALUES 
 ('critical energy'); -- 3
@@ -9708,8 +9694,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 14 --
-
+-- FILE 14 --\n
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
 ('at195d', 3, 'at195d.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. '); -- 352
@@ -9951,8 +9936,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 15 --
-
+-- FILE 15 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.7, 4.1]'); -- 345
@@ -10142,8 +10126,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 16 --
-
+-- FILE 16 --\n
 INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.6, 3.0]'); -- 349
@@ -10305,8 +10288,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 17 --
-
+-- FILE 17 --\n
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
 ('at92', 3, 'at92.txt', 'Joe Shepherd', 22, 1, 'Assumed units of _unitless_ for _equivalence ratio_. '); -- 374
@@ -10451,8 +10433,7 @@ VALUES
 
 -- -------------------- --
 
--- FILE 18 --
-
+-- FILE 18 --\n
 INSERT INTO categories(name)
 VALUES 
 ('minimum tube diameter'); -- 4

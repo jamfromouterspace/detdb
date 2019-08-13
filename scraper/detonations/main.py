@@ -233,9 +233,11 @@ def scrape(url, output_file, debug=False) :
 
         if oxidizer :
             for o in oxidizer :
-                if o in synonyms :
-                    o = synonyms[o]
-                details.append((total_props[('oxidizer','chemical')], json.dumps(o)))
+                o = o.strip()
+                if o :
+                    if o in synonyms :
+                        o = synonyms[o]
+                    details.append((total_props[('oxidizer','chemical')], json.dumps(o)))
             if len(oxidizer) > 1 :
                 # Also add the complete mixture to the database
                 details.append((total_props[('oxidizer','chemical')], json.dumps('+'.join(oxidizer))))

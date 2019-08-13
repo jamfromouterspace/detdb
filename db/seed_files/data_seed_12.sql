@@ -4,12 +4,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(317, 1), -- 1941
-(317, 180), -- 1942
-(317, 11), -- 1943
-(317, 42), -- 1944
-(317, 5), -- 1945
-(317, 6); -- 1946
+(317, 1), -- 1940
+(317, 180), -- 1941
+(317, 11), -- 1942
+(317, 42), -- 1943
+(317, 5), -- 1944
+(317, 6); -- 1945
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -21,7 +21,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[30.0, 203.0]'); -- 309
+(1, '[30.0, 203.0]'); -- 308
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -29,12 +29,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(318, 14), -- 1947
-(318, 180), -- 1948
-(318, 11), -- 1949
-(318, 309), -- 1950
-(318, 5), -- 1951
-(318, 6); -- 1952
+(318, 14), -- 1946
+(318, 180), -- 1947
+(318, 11), -- 1948
+(318, 308), -- 1949
+(318, 5), -- 1950
+(318, 6); -- 1951
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -46,7 +46,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[23.0, 96.0]'); -- 310
+(1, '[23.0, 96.0]'); -- 309
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -54,12 +54,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(319, 14), -- 1953
-(319, 181), -- 1954
-(319, 11), -- 1955
-(319, 310), -- 1956
-(319, 5), -- 1957
-(319, 6); -- 1958
+(319, 14), -- 1952
+(319, 181), -- 1953
+(319, 11), -- 1954
+(319, 309), -- 1955
+(319, 5), -- 1956
+(319, 6); -- 1957
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -71,7 +71,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[20.0, 132.0]'); -- 311
+(1, '[20.0, 132.0]'); -- 310
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -79,12 +79,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(320, 14), -- 1959
-(320, 200), -- 1960
-(320, 11), -- 1961
-(320, 311), -- 1962
-(320, 5), -- 1963
-(320, 6); -- 1964
+(320, 14), -- 1958
+(320, 200), -- 1959
+(320, 11), -- 1960
+(320, 310), -- 1961
+(320, 5), -- 1962
+(320, 6); -- 1963
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -96,7 +96,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '1.4'); -- 312
+(6, '1.4'); -- 311
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -104,12 +104,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(321, 1), -- 1965
-(321, 180), -- 1966
-(321, 11), -- 1967
-(321, 42), -- 1968
-(321, 5), -- 1969
-(321, 312); -- 1970
+(321, 1), -- 1964
+(321, 180), -- 1965
+(321, 11), -- 1966
+(321, 42), -- 1967
+(321, 5), -- 1968
+(321, 311); -- 1969
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -121,7 +121,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '1.43'); -- 313
+(6, '1.43'); -- 312
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -129,12 +129,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(322, 1), -- 1971
-(322, 181), -- 1972
-(322, 11), -- 1973
-(322, 42), -- 1974
-(322, 5), -- 1975
-(322, 313); -- 1976
+(322, 1), -- 1970
+(322, 181), -- 1971
+(322, 11), -- 1972
+(322, 42), -- 1973
+(322, 5), -- 1974
+(322, 312); -- 1975
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -150,12 +150,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(323, 1), -- 1977
-(323, 200), -- 1978
-(323, 11), -- 1979
-(323, 42), -- 1980
-(323, 5), -- 1981
-(323, 53); -- 1982
+(323, 1), -- 1976
+(323, 200), -- 1977
+(323, 11), -- 1978
+(323, 42), -- 1979
+(323, 5), -- 1980
+(323, 53); -- 1981
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -167,7 +167,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[1.05, 1.25]'); -- 314
+(6, '[1.05, 1.25]'); -- 313
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -175,12 +175,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(324, 14), -- 1983
-(324, 180), -- 1984
-(324, 17), -- 1985
-(324, 42), -- 1986
-(324, 5), -- 1987
-(324, 314); -- 1988
+(324, 14), -- 1982
+(324, 180), -- 1983
+(324, 17), -- 1984
+(324, 42), -- 1985
+(324, 5), -- 1986
+(324, 313); -- 1987
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 

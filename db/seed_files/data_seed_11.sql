@@ -1,7 +1,7 @@
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[350.0, 880.0]'), -- 300
-(6, '3.0'); -- 301
+(1, '[350.0, 880.0]'), -- 299
+(6, '3.0'); -- 300
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -9,12 +9,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(298, 1), -- 1827
-(298, 159), -- 1828
-(298, 11), -- 1829
-(298, 300), -- 1830
-(298, 5), -- 1831
-(298, 301); -- 1832
+(298, 1), -- 1826
+(298, 159), -- 1827
+(298, 11), -- 1828
+(298, 299), -- 1829
+(298, 5), -- 1830
+(298, 300); -- 1831
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -30,12 +30,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(299, 1), -- 1833
-(299, 159), -- 1834
-(299, 11), -- 1835
-(299, 255), -- 1836
-(299, 5), -- 1837
-(299, 301); -- 1838
+(299, 1), -- 1832
+(299, 159), -- 1833
+(299, 11), -- 1834
+(299, 254), -- 1835
+(299, 5), -- 1836
+(299, 300); -- 1837
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -47,7 +47,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[100.0, 400.0]'); -- 302
+(1, '[100.0, 400.0]'); -- 301
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -55,12 +55,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(300, 1), -- 1839
-(300, 159), -- 1840
-(300, 11), -- 1841
-(300, 302), -- 1842
-(300, 5), -- 1843
-(300, 301); -- 1844
+(300, 1), -- 1838
+(300, 159), -- 1839
+(300, 11), -- 1840
+(300, 301), -- 1841
+(300, 5), -- 1842
+(300, 300); -- 1843
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -76,12 +76,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(301, 1), -- 1845
-(301, 159), -- 1846
-(301, 11), -- 1847
-(301, 4), -- 1848
-(301, 5), -- 1849
-(301, 254); -- 1850
+(301, 1), -- 1844
+(301, 159), -- 1845
+(301, 11), -- 1846
+(301, 4), -- 1847
+(301, 5), -- 1848
+(301, 253); -- 1849
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -97,12 +97,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(302, 1), -- 1851
-(302, 159), -- 1852
-(302, 11), -- 1853
-(302, 42), -- 1854
-(302, 5), -- 1855
-(302, 6); -- 1856
+(302, 1), -- 1850
+(302, 159), -- 1851
+(302, 11), -- 1852
+(302, 42), -- 1853
+(302, 5), -- 1854
+(302, 6); -- 1855
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -114,7 +114,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.5, 2.7]'); -- 303
+(6, '[0.5, 2.7]'); -- 302
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -122,12 +122,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(303, 14), -- 1857
-(303, 159), -- 1858
-(303, 11), -- 1859
-(303, 42), -- 1860
-(303, 240), -- 1861
-(303, 303); -- 1862
+(303, 14), -- 1856
+(303, 159), -- 1857
+(303, 11), -- 1858
+(303, 42), -- 1859
+(303, 239), -- 1860
+(303, 302); -- 1861
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -138,7 +138,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[14.6, 101.3]'); -- 304
+(1, '[14.6, 101.3]'); -- 303
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -146,12 +146,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(304, 14), -- 1863
-(304, 159), -- 1864
-(304, 11), -- 1865
-(304, 304), -- 1866
-(304, 5), -- 1867
-(304, 6); -- 1868
+(304, 14), -- 1862
+(304, 159), -- 1863
+(304, 11), -- 1864
+(304, 303), -- 1865
+(304, 5), -- 1866
+(304, 6); -- 1867
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -167,12 +167,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(305, 14), -- 1869
-(305, 159), -- 1870
-(305, 11), -- 1871
-(305, 42), -- 1872
-(305, 5), -- 1873
-(305, 6); -- 1874
+(305, 14), -- 1868
+(305, 159), -- 1869
+(305, 11), -- 1870
+(305, 42), -- 1871
+(305, 5), -- 1872
+(305, 6); -- 1873
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -187,12 +187,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(306, 14), -- 1875
-(306, 159), -- 1876
-(306, 11), -- 1877
-(306, 42), -- 1878
-(306, 5), -- 1879
-(306, 53); -- 1880
+(306, 14), -- 1874
+(306, 159), -- 1875
+(306, 11), -- 1876
+(306, 42), -- 1877
+(306, 5), -- 1878
+(306, 53); -- 1879
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -203,7 +203,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '2.0'); -- 305
+(6, '2.0'); -- 304
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -211,12 +211,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(307, 14), -- 1881
-(307, 159), -- 1882
-(307, 11), -- 1883
-(307, 42), -- 1884
-(307, 5), -- 1885
-(307, 305); -- 1886
+(307, 14), -- 1880
+(307, 159), -- 1881
+(307, 11), -- 1882
+(307, 42), -- 1883
+(307, 5), -- 1884
+(307, 304); -- 1885
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -231,12 +231,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(308, 1), -- 1887
-(308, 159), -- 1888
-(308, 11), -- 1889
-(308, 42), -- 1890
-(308, 5), -- 1891
-(308, 53); -- 1892
+(308, 1), -- 1886
+(308, 159), -- 1887
+(308, 11), -- 1888
+(308, 42), -- 1889
+(308, 5), -- 1890
+(308, 53); -- 1891
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -252,12 +252,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(309, 14), -- 1893
-(309, 159), -- 1894
-(309, 17), -- 1895
-(309, 42), -- 1896
-(309, 5), -- 1897
-(309, 298); -- 1898
+(309, 14), -- 1892
+(309, 159), -- 1893
+(309, 17), -- 1894
+(309, 42), -- 1895
+(309, 5), -- 1896
+(309, 297); -- 1897
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -268,7 +268,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.7, 1.0]'); -- 306
+(6, '[0.7, 1.0]'); -- 305
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -276,12 +276,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(310, 14), -- 1899
-(310, 159), -- 1900
-(310, 17), -- 1901
-(310, 42), -- 1902
-(310, 5), -- 1903
-(310, 306); -- 1904
+(310, 14), -- 1898
+(310, 159), -- 1899
+(310, 17), -- 1900
+(310, 42), -- 1901
+(310, 5), -- 1902
+(310, 305); -- 1903
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -292,7 +292,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '0.88'); -- 307
+(6, '0.88'); -- 306
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -300,12 +300,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(311, 234), -- 1905
-(311, 159), -- 1906
-(311, 17), -- 1907
-(311, 42), -- 1908
-(311, 5), -- 1909
-(311, 307); -- 1910
+(311, 233), -- 1904
+(311, 159), -- 1905
+(311, 17), -- 1906
+(311, 42), -- 1907
+(311, 5), -- 1908
+(311, 306); -- 1909
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -320,12 +320,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(312, 271), -- 1911
-(312, 159), -- 1912
-(312, 17), -- 1913
-(312, 42), -- 1914
-(312, 5), -- 1915
-(312, 307); -- 1916
+(312, 270), -- 1910
+(312, 159), -- 1911
+(312, 17), -- 1912
+(312, 42), -- 1913
+(312, 5), -- 1914
+(312, 306); -- 1915
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -340,12 +340,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(313, 271), -- 1917
-(313, 159), -- 1918
-(313, 17), -- 1919
-(313, 42), -- 1920
-(313, 5), -- 1921
-(313, 307); -- 1922
+(313, 270), -- 1916
+(313, 159), -- 1917
+(313, 17), -- 1918
+(313, 42), -- 1919
+(313, 5), -- 1920
+(313, 306); -- 1921
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -360,12 +360,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(314, 41), -- 1923
-(314, 159), -- 1924
-(314, 17), -- 1925
-(314, 42), -- 1926
-(314, 5), -- 1927
-(314, 307); -- 1928
+(314, 41), -- 1922
+(314, 159), -- 1923
+(314, 17), -- 1924
+(314, 42), -- 1925
+(314, 5), -- 1926
+(314, 306); -- 1927
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -380,12 +380,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(315, 1), -- 1929
-(315, 159), -- 1930
-(315, 11), -- 1931
-(315, 42), -- 1932
-(315, 5), -- 1933
-(315, 6); -- 1934
+(315, 1), -- 1928
+(315, 159), -- 1929
+(315, 11), -- 1930
+(315, 42), -- 1931
+(315, 5), -- 1932
+(315, 6); -- 1933
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 
@@ -397,7 +397,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.6, 0.78]'); -- 308
+(6, '[0.6, 0.78]'); -- 307
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -405,12 +405,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(316, 14), -- 1935
-(316, 159), -- 1936
-(316, 17), -- 1937
-(316, 42), -- 1938
-(316, 5), -- 1939
-(316, 308); -- 1940
+(316, 14), -- 1934
+(316, 159), -- 1935
+(316, 17), -- 1936
+(316, 42), -- 1937
+(316, 5), -- 1938
+(316, 307); -- 1939
 
 INSERT INTO data_points(column_data, property_id, detonation_id)
 VALUES 

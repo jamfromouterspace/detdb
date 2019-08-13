@@ -15,7 +15,7 @@ edge_cases = {
             'pages'       : '77-88',
             'institution' : None,
             'year'        : 1991 },
-    111 : { 'authors'     : [('R.A.', 'Strehlow'), ('R.E.', 'Maurer'), ('S.', 'Rajan.')],
+    111 : { 'authors'     : [('R.A.', 'Strehlow'), ('R.E.', 'Maurer'), ('S.', 'Rajan')],
             'title'       : 'Transverse waves in detonations: I. spacings in the hydrogen-system.',
             'journal'     : 'AIAA J.',
             'vol'         : 7,

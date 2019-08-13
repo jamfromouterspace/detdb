@@ -939,9 +939,8 @@ VALUES
 INSERT INTO details(property_id, value)
 VALUES 
 (3, '"N2H4"'), -- 206
-(4, '""'), -- 207
-(1, '[0.7, 2.6]'), -- 208
-(6, NULL); -- 209
+(1, '[0.7, 2.6]'), -- 207
+(6, NULL); -- 208
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -952,9 +951,8 @@ VALUES
 (212, 14), -- 1285
 (212, 206), -- 1286
 (212, 207), -- 1287
-(212, 208), -- 1288
-(212, 5), -- 1289
-(212, 209); -- 1290
+(212, 5), -- 1288
+(212, 208); -- 1289
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -969,8 +967,8 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"H2S"'), -- 210
-(6, '[0.78, 1.18]'); -- 211
+(3, '"H2S"'), -- 209
+(6, '[0.78, 1.18]'); -- 210
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -978,12 +976,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(213, 14), -- 1291
-(213, 210), -- 1292
-(213, 17), -- 1293
-(213, 42), -- 1294
-(213, 5), -- 1295
-(213, 211); -- 1296
+(213, 14), -- 1290
+(213, 209), -- 1291
+(213, 17), -- 1292
+(213, 42), -- 1293
+(213, 5), -- 1294
+(213, 210); -- 1295
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1006,12 +1004,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(214, 14), -- 1297
-(214, 210), -- 1298
-(214, 17), -- 1299
-(214, 42), -- 1300
-(214, 5), -- 1301
-(214, 211); -- 1302
+(214, 14), -- 1296
+(214, 209), -- 1297
+(214, 17), -- 1298
+(214, 42), -- 1299
+(214, 5), -- 1300
+(214, 210); -- 1301
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1026,7 +1024,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"n-octane, C8H18"'); -- 212
+(3, '"n-octane, C8H18"'); -- 211
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1034,12 +1032,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(215, 14), -- 1303
-(215, 212), -- 1304
-(215, 17), -- 1305
-(215, 42), -- 1306
-(215, 72), -- 1307
-(215, 6); -- 1308
+(215, 14), -- 1302
+(215, 211), -- 1303
+(215, 17), -- 1304
+(215, 42), -- 1305
+(215, 72), -- 1306
+(215, 6); -- 1307
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1058,12 +1056,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(216, 14), -- 1309
-(216, 180), -- 1310
-(216, 17), -- 1311
-(216, 42), -- 1312
-(216, 132), -- 1313
-(216, 6); -- 1314
+(216, 14), -- 1308
+(216, 180), -- 1309
+(216, 17), -- 1310
+(216, 42), -- 1311
+(216, 132), -- 1312
+(216, 6); -- 1313
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1078,7 +1076,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"1-Octene"'); -- 213
+(3, '"1-Octene"'); -- 212
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1086,12 +1084,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(217, 14), -- 1315
-(217, 213), -- 1316
-(217, 17), -- 1317
-(217, 42), -- 1318
-(217, 72), -- 1319
-(217, 6); -- 1320
+(217, 14), -- 1314
+(217, 212), -- 1315
+(217, 17), -- 1316
+(217, 42), -- 1317
+(217, 72), -- 1318
+(217, 6); -- 1319
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1106,7 +1104,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"1,7-Octadiene"'); -- 214
+(3, '"1,7-Octadiene"'); -- 213
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1114,12 +1112,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(218, 14), -- 1321
-(218, 214), -- 1322
-(218, 17), -- 1323
-(218, 42), -- 1324
-(218, 72), -- 1325
-(218, 6); -- 1326
+(218, 14), -- 1320
+(218, 213), -- 1321
+(218, 17), -- 1322
+(218, 42), -- 1323
+(218, 72), -- 1324
+(218, 6); -- 1325
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1134,7 +1132,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Octyne"'); -- 215
+(3, '"Octyne"'); -- 214
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1142,12 +1140,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(219, 14), -- 1327
-(219, 215), -- 1328
-(219, 17), -- 1329
-(219, 42), -- 1330
-(219, 72), -- 1331
-(219, 6); -- 1332
+(219, 14), -- 1326
+(219, 214), -- 1327
+(219, 17), -- 1328
+(219, 42), -- 1329
+(219, 72), -- 1330
+(219, 6); -- 1331
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1162,7 +1160,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"1,7-Octadiyne"'); -- 216
+(3, '"1,7-Octadiyne"'); -- 215
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1170,12 +1168,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(220, 14), -- 1333
-(220, 216), -- 1334
-(220, 17), -- 1335
-(220, 42), -- 1336
-(220, 72), -- 1337
-(220, 6); -- 1338
+(220, 14), -- 1332
+(220, 215), -- 1333
+(220, 17), -- 1334
+(220, 42), -- 1335
+(220, 72), -- 1336
+(220, 6); -- 1337
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1194,12 +1192,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(221, 14), -- 1339
-(221, 181), -- 1340
-(221, 17), -- 1341
-(221, 42), -- 1342
-(221, 132), -- 1343
-(221, 6); -- 1344
+(221, 14), -- 1338
+(221, 181), -- 1339
+(221, 17), -- 1340
+(221, 42), -- 1341
+(221, 132), -- 1342
+(221, 6); -- 1343
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1218,12 +1216,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(222, 14), -- 1345
-(222, 183), -- 1346
-(222, 17), -- 1347
-(222, 42), -- 1348
-(222, 72), -- 1349
-(222, 6); -- 1350
+(222, 14), -- 1344
+(222, 183), -- 1345
+(222, 17), -- 1346
+(222, 42), -- 1347
+(222, 72), -- 1348
+(222, 6); -- 1349
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1238,7 +1236,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"JP4"'); -- 217
+(3, '"JP4"'); -- 216
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1246,12 +1244,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(223, 14), -- 1351
-(223, 217), -- 1352
-(223, 17), -- 1353
-(223, 42), -- 1354
-(223, 72), -- 1355
-(223, 6); -- 1356
+(223, 14), -- 1350
+(223, 216), -- 1351
+(223, 17), -- 1352
+(223, 42), -- 1353
+(223, 72), -- 1354
+(223, 6); -- 1355
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1266,7 +1264,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"C10H22"'); -- 218
+(3, '"C10H22"'); -- 217
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1274,12 +1272,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(224, 14), -- 1357
-(224, 218), -- 1358
-(224, 17), -- 1359
-(224, 42), -- 1360
-(224, 72), -- 1361
-(224, 6); -- 1362
+(224, 14), -- 1356
+(224, 217), -- 1357
+(224, 17), -- 1358
+(224, 42), -- 1359
+(224, 72), -- 1360
+(224, 6); -- 1361
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1294,8 +1292,8 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Hexylnitrate"'), -- 219
-(6, '[0.4, 2.0]'); -- 220
+(3, '"Hexylnitrate"'), -- 218
+(6, '[0.4, 2.0]'); -- 219
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -1303,12 +1301,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(225, 14), -- 1363
-(225, 219), -- 1364
-(225, 17), -- 1365
-(225, 42), -- 1366
-(225, 72), -- 1367
-(225, 220); -- 1368
+(225, 14), -- 1362
+(225, 218), -- 1363
+(225, 17), -- 1364
+(225, 42), -- 1365
+(225, 72), -- 1366
+(225, 219); -- 1367
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1323,8 +1321,8 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Nitrohexane"'), -- 221
-(6, '0.7'); -- 222
+(3, '"Nitrohexane"'), -- 220
+(6, '0.7'); -- 221
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -1332,12 +1330,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(226, 14), -- 1369
-(226, 221), -- 1370
-(226, 17), -- 1371
-(226, 42), -- 1372
-(226, 72), -- 1373
-(226, 222); -- 1374
+(226, 14), -- 1368
+(226, 220), -- 1369
+(226, 17), -- 1370
+(226, 42), -- 1371
+(226, 72), -- 1372
+(226, 221); -- 1373
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1352,8 +1350,8 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Nitroethane"'), -- 223
-(6, '[0.35, 1.0]'); -- 224
+(3, '"Nitroethane"'), -- 222
+(6, '[0.35, 1.0]'); -- 223
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -1361,12 +1359,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(227, 14), -- 1375
-(227, 223), -- 1376
-(227, 17), -- 1377
-(227, 42), -- 1378
-(227, 72), -- 1379
-(227, 224); -- 1380
+(227, 14), -- 1374
+(227, 222), -- 1375
+(227, 17), -- 1376
+(227, 42), -- 1377
+(227, 72), -- 1378
+(227, 223); -- 1379
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1381,7 +1379,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"2,2,4-Trimethylpentane"'); -- 225
+(3, '"2,2,4-Trimethylpentane"'); -- 224
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1389,12 +1387,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(228, 14), -- 1381
-(228, 225), -- 1382
-(228, 17), -- 1383
-(228, 42), -- 1384
-(228, 72), -- 1385
-(228, 6); -- 1386
+(228, 14), -- 1380
+(228, 224), -- 1381
+(228, 17), -- 1382
+(228, 42), -- 1383
+(228, 72), -- 1384
+(228, 6); -- 1385
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1409,7 +1407,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Cyclooctane, C8H18"'); -- 226
+(3, '"Cyclooctane, C8H18"'); -- 225
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1417,12 +1415,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(229, 14), -- 1387
-(229, 226), -- 1388
-(229, 17), -- 1389
-(229, 42), -- 1390
-(229, 72), -- 1391
-(229, 6); -- 1392
+(229, 14), -- 1386
+(229, 225), -- 1387
+(229, 17), -- 1388
+(229, 42), -- 1389
+(229, 72), -- 1390
+(229, 6); -- 1391
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1437,7 +1435,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Cis-Cyclooctene"'); -- 227
+(3, '"Cis-Cyclooctene"'); -- 226
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1445,12 +1443,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(230, 14), -- 1393
-(230, 227), -- 1394
-(230, 17), -- 1395
-(230, 42), -- 1396
-(230, 72), -- 1397
-(230, 6); -- 1398
+(230, 14), -- 1392
+(230, 226), -- 1393
+(230, 17), -- 1394
+(230, 42), -- 1395
+(230, 72), -- 1396
+(230, 6); -- 1397
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1465,7 +1463,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"Pentyl Ether"'); -- 228
+(3, '"Pentyl Ether"'); -- 227
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1473,12 +1471,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(231, 14), -- 1399
-(231, 228), -- 1400
-(231, 17), -- 1401
-(231, 42), -- 1402
-(231, 72), -- 1403
-(231, 6); -- 1404
+(231, 14), -- 1398
+(231, 227), -- 1399
+(231, 17), -- 1400
+(231, 42), -- 1401
+(231, 72), -- 1402
+(231, 6); -- 1403
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -1493,7 +1491,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(3, '"1,2-Epoxydecane"'); -- 229
+(3, '"1,2-Epoxydecane"'); -- 228
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
 VALUES 
@@ -1501,12 +1499,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(232, 14), -- 1405
-(232, 229), -- 1406
-(232, 17), -- 1407
-(232, 42), -- 1408
-(232, 72), -- 1409
-(232, 6); -- 1410
+(232, 14), -- 1404
+(232, 228), -- 1405
+(232, 17), -- 1406
+(232, 42), -- 1407
+(232, 72), -- 1408
+(232, 6); -- 1409
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 

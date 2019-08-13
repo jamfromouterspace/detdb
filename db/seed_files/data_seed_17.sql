@@ -4,12 +4,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(374, 14), -- 2283
-(374, 180), -- 2284
-(374, 17), -- 2285
-(374, 42), -- 2286
-(374, 5), -- 2287
-(374, 6); -- 2288
+(374, 14), -- 2282
+(374, 180), -- 2283
+(374, 17), -- 2284
+(374, 42), -- 2285
+(374, 5), -- 2286
+(374, 6); -- 2287
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -26,7 +26,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.7, 1.75]'); -- 351
+(6, '[0.7, 1.75]'); -- 350
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -34,12 +34,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(375, 14), -- 2289
-(375, 181), -- 2290
-(375, 17), -- 2291
-(375, 42), -- 2292
-(375, 5), -- 2293
-(375, 351); -- 2294
+(375, 14), -- 2288
+(375, 181), -- 2289
+(375, 17), -- 2290
+(375, 42), -- 2291
+(375, 5), -- 2292
+(375, 350); -- 2293
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -56,7 +56,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.7, 2.0]'); -- 352
+(6, '[0.7, 2.0]'); -- 351
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -64,12 +64,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(376, 14), -- 2295
-(376, 194), -- 2296
-(376, 17), -- 2297
-(376, 42), -- 2298
-(376, 5), -- 2299
-(376, 352); -- 2300
+(376, 14), -- 2294
+(376, 194), -- 2295
+(376, 17), -- 2296
+(376, 42), -- 2297
+(376, 5), -- 2298
+(376, 351); -- 2299
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -86,7 +86,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '67.4'); -- 353
+(1, '67.4'); -- 352
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -94,12 +94,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(377, 1), -- 2301
-(377, 180), -- 2302
-(377, 11), -- 2303
-(377, 353), -- 2304
-(377, 5), -- 2305
-(377, 168); -- 2306
+(377, 1), -- 2300
+(377, 180), -- 2301
+(377, 11), -- 2302
+(377, 352), -- 2303
+(377, 5), -- 2304
+(377, 168); -- 2305
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -116,7 +116,7 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.67, 1.58]'); -- 354
+(6, '[0.67, 1.58]'); -- 353
 
 INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
 VALUES 
@@ -124,12 +124,12 @@ VALUES
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(378, 14), -- 2307
-(378, 180), -- 2308
-(378, 11), -- 2309
-(378, 42), -- 2310
-(378, 5), -- 2311
-(378, 354); -- 2312
+(378, 14), -- 2306
+(378, 180), -- 2307
+(378, 11), -- 2308
+(378, 42), -- 2309
+(378, 5), -- 2310
+(378, 353); -- 2311
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 

@@ -31,7 +31,7 @@ def parseAuthors(str) :
         distance = 0
         if last_author :
             distance = name.span()[0] - last_author.span()[1]
-        if distance < 8 :
+        if distance < 8 :            
             names.append(g[1:])
             last_author = name
         # Index of the end of the last author
