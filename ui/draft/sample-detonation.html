@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
+    <meta
+      name="description"
+      content="The revitalized Caltech Detonation Database, originally created by Joe Shepherd and"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/boilerplate.css" />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="css/custom-bootstrap.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/core.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <!--[if lte IE 10]>
+      <p class="browserupgrade">
+        You are using an outdated browser that is not supported by the new
+        Detonation Database. Please upgrade your browser or use the
+        <a href="http://shepherd.caltech.edu/detn_db/html/db.html"
+          >old database</a
+        >.
+      </p>
+    <![endif]-->
+
+    <nav class="navbar navbar-expand-sm navbar-custom">
+      <a class="navbar-brand" href="index.html">
+        <strong>
+          <span id="logo-detonation">Detonation</span>
+          <span id="logo-db">DB</span>
+        </strong>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"
+          ><i class="material-icons">menu</i></span
+        >
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <div id="nav-search" class="input-group active-input">
+              <input
+                type="text"
+                class="form-control form-control-md"
+                placeholder="Search detonations"
+              />
+              <div class="input-group-append">
+                <button id="search-btn" class="btn btn-primary" type="button">
+                  <i class="ui inverted search icon"></i>
+                  <!-- <img src="media/baseline-search-16px.svg" alt="Search icon" /> -->
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Download</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- END OF NAVBAR -->
+
+    <div id="detonation-page" class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="browse.html">Browse</a></li>
+          <li class="breadcrumb-item"><a href="data.html">Data Sets</a></li>
+          <li class="breadcrumb-item">
+            <a href="sample-category.html">Cell Size</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="sample-subcategory.html">Width</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="sample-data.html">H2 Fuel</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            ja5d
+          </li>
+        </ol>
+      </nav>
+      <h2 class="page-title">Data Sets</h2>
+      <div class="row">
+        <div
+          class="col-sm-12 col-md-3 order-first order-md-first page-subtitle-div"
+        >
+          <h4 class="page-subtitle">
+            CELL SIZE / WIDTH
+          </h4>
+        </div>
+        <div
+          class="col-6 col-md-1 text-center align-self-center order-3 order-md-2 plot-nav"
+        >
+          <span id="prev-page" class="plot-nav-btn">
+            <button class="btn btn-secondary btn-circle btn-circle-sm">
+              <i class="ui inverted left arrow icon"></i></button
+          ></span>
+        </div>
+        <div
+          class="col-12 col-md-4 page-data-title order-2 order-md-3 plot-title"
+        >
+          <h5 class="page-subtitle darker bigger">
+            ja5d
+          </h5>
+          <br />
+          <h5 class="page-subtitle darker smaller">
+            Akbar (1997)
+          </h5>
+        </div>
+        <div
+          class="col-6 col-md-1 text-center align-self-center order-4 order-md-4 plot-nav"
+        >
+          <span id="next-page" class="plot-nav-btn"
+            ><button class="btn btn-primary btn-circle btn-circle-sm">
+              <i class="ui inverted right arrow icon"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="">
+        <div id="detonation-main" class="detonation">
+          <table
+            class="table table-striped text-center detonation-details details"
+          >
+            <tr>
+              <td class="detail-label align-middle">CATEGORY</td>
+              <td class="category-detail detail align-middle">
+                <a href="sample-category.html">cell size</a>
+              </td>
+              <td></td>
+              <td class="detail-label align-middle">FUEL</td>
+              <td class="fuel-detail detail align-middle">H2</td>
+              <td class="align-middle detail-search">
+                <i class="ui tiny inverted grey circular search icon"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="detail-label align-middle">SUBCATEGORY</td>
+              <td class="subcategory-detail detail align-middle">
+                <a href="sample-subcategory.html">width</a>
+              </td>
+              <td></td>
+              <td class="detail-label align-middle">OXIDIZER</td>
+              <td class="oxidizer-detail detail align-middle">H2</td>
+              <td class="align-middle detail-search">
+                <button class="btn btn-primary btn-circle btn-circle-xs">
+                  <i class="ui tiny inverted grey search icon"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="detail-label align-middle">INITIAL PRESSURE</td>
+              <td class="pressure-detail detail align-middle">100 kPa</td>
+              <td class="align-middle detail-search">
+                <i class="ui tiny inverted grey circular search icon"></i>
+              </td>
+              <td class="detail-label align-middle">DILUENT</td>
+              <td class="diluent-detail detail align-middle">N2 (50-70%)</td>
+              <td class="align-middle detail-search">
+                <i class="ui tiny inverted grey circular search icon"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="detail-label align-middle">INITIAL TEMPERATURE</td>
+              <td class="temperature-detail detail align-middle">293 K</td>
+              <td class="align-middle detail-search">
+                <i class="ui tiny inverted grey circular search icon"></i>
+              </td>
+              <td class="detail-label align-middle">EQUIVALENCE RATIO</td>
+              <td class="er-detail detail align-middle">1</td>
+              <td class="align-middle detail-search">
+                <i class="ui tiny inverted grey circular search icon"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="selection-list selection-list-expandable">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="citation">
+                <div class="table-heading">
+                  <h5 class="page-subtitle darker">FULL CITATION</h5>
+                </div>
+                <div>
+                  <p class="citation">
+                    <span class="link"><a href="citations.html#3">[3]</a></span>
+                    R. Akbar, M.J. Kaneshige, E. Schultz, and J.E. Shepherd.
+                    Detonations in H_2-N_2O-CH_4-NH_3-O_2-N_2 mixtures.
+                    Technical Report FM97-3, Explosion Dynamics Laboratory,
+                    California Institute of Technology, 1997.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="download">
+                <div class="table-heading">
+                  <h5 class="page-subtitle darker">DOWNLOAD</h5>
+                </div>
+                <div>
+                  <h5 class="">
+                    <a class="txt-link" href="sample.txt">[txt]</a>
+                    <a class="csv-link" href="sample.csv">[csv]</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="notes">
+                <div class="table-heading">
+                  <h5 class="page-subtitle darker">NOTES</h5>
+                </div>
+                <div>
+                  <p class="">
+                    Retrieved from the
+                    <a href="http://shepherd.caltech.edu/detn_db/html/db.html"
+                      >original detonation database</a
+                    >. 50-70% diluent.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="related-plots" class="table-heading">
+            <h5 class="page-subtitle darker">PLOTS USING THIS DATA</h5>
+          </div>
+          <table id="related-plots-table" class="table">
+            <tr>
+              <td class="align-middle">
+                <div class="material-icons"><i>scatter_plot</i></div>
+              </td>
+              <td id="result-title-3" class="align-middle">
+                <a href="sample-plot.html"
+                  ><strong>Cell width vs percent diluent</strong></a
+                >
+              </td>
+              <td
+                id="result-preview-3"
+                class="align-middle result-preview plot"
+              >
+                <a href="#"><strong>H2-N2O-Diluent</strong></a>
+              </td>
+            </tr>
+          </table>
+
+          <div id="source-data" class="table-heading">
+            <h5 class="page-subtitle darker">FROM THE SAME AUTHOR</h5>
+          </div>
+
+          <table id="source-data-table" class="table">
+            <tr>
+              <td class="align-middle">
+                <div class="material-icons"><i>notes</i></div>
+              </td>
+              <td id="result-title-1" class="align-middle">
+                <a href="sample-data.html"
+                  ><strong>ja5d</strong> Akbar (1997)</a
+                >
+              </td>
+              <td
+                id="result-preview-1"
+                class="align-middle result-preview dataset"
+              >
+                <a href="#"
+                  ><strong>Cell size</strong> (width),
+                  <strong>H2</strong>-<strong>O2</strong>-<strong>N2</strong>,
+                  <strong>100kPa</strong>, <strong>100K</strong> ...</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <div class="material-icons"><i>notes</i></div>
+              </td>
+              <td id="result-title-2" class="align-middle" colspan="1">
+                <a href="sample-data.html"
+                  ><strong>ja5d</strong> Akbar (1997)</a
+                >
+              </td>
+              <td
+                id="result-preview-2"
+                class="align-middle result-preview dataset"
+              >
+                <a href="#"
+                  ><strong>Cell size</strong> (width),
+                  <strong>H2</strong>-<strong>O2</strong>-<strong>N2</strong>,
+                  <strong>100kPa</strong>, <strong>100K</strong> ...</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="align-middle">
+                <div class="material-icons"><i>notes</i></div>
+              </td>
+              <td id="result-title-4" class="align-middle">
+                <a href="sample-data.html"
+                  ><strong>ja5d</strong> Akbar (1997)</a
+                >
+              </td>
+              <td
+                id="result-preview-4"
+                class="align-middle result-preview dataset"
+              >
+                <a href="#"
+                  ><strong>Cell size</strong> (width),
+                  <strong>H2</strong>-<strong>O2</strong>-<strong>N2</strong>,
+                  <strong>100kPa</strong>, <strong>100K</strong> ...</a
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-3.3.1.min.js"><\/script>'
+        );
+    </script>
+    <!-- <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function() {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("send", "pageview");
+    </script>
+    <script
+      src="https://www.google-analytics.com/analytics.js"
+      async
+      defer
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

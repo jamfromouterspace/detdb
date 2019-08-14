@@ -1,0 +1,72 @@
+// Bootstrap v4.3.1 with some simple customizations
+
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "variables";
+
+$theme-colors: (
+  primary: $detdb-primary,
+  light: $detdb-light
+);
+
+// $r: 0.2rem;
+
+// input {
+//   border-top-left-radius: $r !important;
+//   border-bottom-left-radius: $r !important;
+// }
+
+// button {
+//   border-top-right-radius: $r !important;
+//   border-bottom-right-radius: $r !important;
+// }
+
+// Circular button classes retrieved from:
+// https://bootstrapious.com/p/bootstrap-circle-button
+
+.btn-circle {
+  width: 45px !important;
+  height: 45px !important;
+  line-height: 45px !important;
+  text-align: center !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+}
+
+.btn-circle i {
+  position: relative !important;
+  top: -1px !important;
+  left: 2px !important;
+}
+
+.btn-circle-xs {
+  width: 25px !important;
+  height: 25px !important;
+  line-height: 25px !important;
+  font-size: 0.6rem !important;
+}
+
+.btn-circle-sm {
+  width: 35px !important;
+  height: 35px !important;
+  line-height: 35px !important;
+  font-size: 0.9rem !important;
+}
+
+.btn-circle-lg {
+  width: 55px !important;
+  height: 55px !important;
+  line-height: 55px !important;
+  font-size: 1.1rem !important;
+}
+
+.btn-circle-xl {
+  width: 70px !important;
+  height: 70px !important;
+  line-height: 70px !important;
+  font-size: 1.3rem !important;
+}
+
+$breadcrumb-bg: transparent;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
