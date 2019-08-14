@@ -7,7 +7,7 @@
 
 import sys
 sys.path.append('../') # Include scraper folder
-
+import os
 import regex as re # PyPi regex supports \p{}
 from tools import *
 from edge_cases import *
@@ -94,7 +94,11 @@ ins_citations = InsertGen('citations', ('preformatted',
 ins_auth_cit = InsertGen('author_citations', ('author_id', 'citation_id'))
 
 # Begin parsing and outputing to citations_seed.sql
-f = open("citation_seed.sql", "w")
+# (place in /db/seed_files/ for convenience if it exists)
+folder = ''
+if os.path.exists('../../db/seed_files/') :
+    folder = '../../db/seed_files/'
+f = open(folder + "citation_seed.sql", "w")
 # Insert all existing journals (scraped from database)
 journal_index = 1
 for j in journals :

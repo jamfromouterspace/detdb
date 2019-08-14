@@ -35,7 +35,7 @@ def scrapePlotData(url,plot_index,save_img=False,debug=False) :
     y_label,x_label,mixtures = re.match(pattern,title).groups()
     y_label = y_label.lower()
     x_label = re.split('-|\(',x_label.lower())[0].strip()
-    mixtures = mixtures.strip().split(',')
+    mixtures = [x.strip() for x in mixtures.strip().split(',')]
     fuels = []
     oxidizers = []
     diluents = []
