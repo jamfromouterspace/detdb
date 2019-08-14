@@ -10,15 +10,28 @@ VALUES
 ('Combust. Flame', 'Combustion and Flame'), -- 8
 ('Combust. Sci. Technol.', 'Combustion Science and Technology'), -- 9
 ('Dokl. Akad. Nauk SSSR', 'Doklady Akademii Nauk SSSR (Proceedings of the Academy of Sciences of the USSR, Physical Chemistry Section)'), -- 10
-('J. Hazard M.', 'Journal of Hazardous Materials*'), -- 11
+('J. Hazard M.', 'Journal of Hazardous Materials'), -- 11
 ('J. Phys. D.', 'Journal of Physics D: Applied Physics'), -- 12
 ('Phys. Fluids', 'Physics of Fluids'), -- 13
 ('Prog. Astronaut. Aeronaut.', 'Progress in Astronautics and Aeronautics'), -- 14
 ('Sov. Phys. Tech. Phys.', 'Soviet Physics - Technical Physics'), -- 15
 ('Symp. Int. Combust. Proc.', 'Symposium (International) on Combustion, Proceedings'), -- 16
-('Symp. Mil. App. Blast Sim.', 'Symposium on Military Applications of Blast Simulation*'), -- 17
+('Symp. Mil. App. Blast Sim.', 'Symposium on Military Applications of Blast Simulation'), -- 17
 ('Trans. Inst. Chem. Eng.', 'Transactions of the Institution of Chemical Engineers'), -- 18
-('Z. Phys. Chem. Neue Folge', 'Zeitschrift fur Physikalische Chemie - Neue Folge; International Journal of Research in Physical Chemistry and Chemical Physics'); -- 19
+('Z. Phys. Chem. Neue Folge', 'Zeitschrift fur Physikalische Chemie - Neue Folge; International Journal of Research in Physical Chemistry and Chemical Physics'), -- 19
+('7th Symp. Mil. App. Blast Sim.', '7th Symposium on Military Applications of Blast Simulation'), -- 20
+('9th Symp. Int. Combust. Proc.', '9th Symposium (International) on Combustion, Proceedings'), -- 21
+('11th Symp. Int. Combust. Proc.', '11th Symposium (International) on Combustion, Proceedings'), -- 22
+('12th Symp. Int. Combust. Proc.', '12th Symposium (International) on Combustion, Proceedings'), -- 23
+('13th Symp. Int. Combust. Proc.', '13th Symposium (International) on Combustion, Proceedings'), -- 24
+('15th Symp. Int. Combust. Proc.', '15th Symposium (International) on Combustion, Proceedings'), -- 25
+('17th Symp. Int. Combust. Proc.', '17th Symposium (International) on Combustion, Proceedings'), -- 26
+('18th Symp. Int. Combust. Proc.', '18th Symposium (International) on Combustion, Proceedings'), -- 27
+('19th Symp. Int. Combust. Proc.', '19th Symposium (International) on Combustion, Proceedings'), -- 28
+('20th Symp. Int. Combust. Proc.', '20th Symposium (International) on Combustion, Proceedings'), -- 29
+('21st Symp. Int. Combust. Proc.', '21st Symposium (International) on Combustion, Proceedings'), -- 30
+('24th Symp. Int. Combust. Proc.', '24th Symposium (International) on Combustion, Proceedings'), -- 31
+('25th Symp. Int. Combust. Proc.', '25th Symposium (International) on Combustion, Proceedings'); -- 32
 
 INSERT INTO authors(initials, last_name)
 VALUES 
@@ -59,11 +72,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('Technical Report FM97-3'); -- 20
+('Technical Report FM97-3'); -- 33
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('R. Akbar, M.J. Kaneshige, E. Schultz, and J.E. Shepherd. Detonations in H_2-N_2O-CH_4-NH_3-O_2-N_2 mixtures. Technical Report FM97-3, Explosion Dynamics Laboratory, California Institute of Technology, 1997. ', 'Detonations in H_2-N_2O-CH_4-NH_3-O_2-N_2 mixtures', '1997', '20', 'Explosion Dynamics Laboratory, California Institute of Technology'); -- 3
+('R. Akbar, M.J. Kaneshige, E. Schultz, and J.E. Shepherd. Detonations in H_2-N_2O-CH_4-NH_3-O_2-N_2 mixtures. Technical Report FM97-3, Explosion Dynamics Laboratory, California Institute of Technology, 1997. ', 'Detonations in H_2-N_2O-CH_4-NH_3-O_2-N_2 mixtures', '1997', '33', 'Explosion Dynamics Laboratory, California Institute of Technology'); -- 3
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -93,13 +106,9 @@ VALUES
 ('T.J.', 'Anderson'), -- 13
 ('E.K.', 'Dabora'); -- 14
 
-INSERT INTO journals(name)
-VALUES 
-('24th Symp. Int. Combust. Proc.'); -- 21
-
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('T.J. Anderson and E.K. Dabora. Measurements of normal detonation wave structure using rayleigh imaging. In 24th Symp. Int. Combust. Proc., pages 1853-1860, 1992. ', 'Measurements of normal detonation wave structure using rayleigh imaging', '1992', '21', '1853-1860'); -- 5
+('T.J. Anderson and E.K. Dabora. Measurements of normal detonation wave structure using rayleigh imaging. In 24th Symp. Int. Combust. Proc., pages 1853-1860, 1992. ', 'Measurements of normal detonation wave structure using rayleigh imaging', '1992', '31', '1853-1860'); -- 5
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -142,13 +151,9 @@ VALUES
 ('R.', 'Knystautas'), -- 21
 ('J.H.', 'Lee'); -- 22
 
-INSERT INTO journals(name)
-VALUES 
-('13th Symp. Int. Combust. Proc.'); -- 22
-
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('G.G. Bach, R. Knystautas, and J.H. Lee. Initiation criteria for diverging gaseous detonations. In 13th Symp. Int. Combust. Proc., pages 1097-1110, 1971. ', 'Initiation criteria for diverging gaseous detonations', '1971', '22', '1097-1110'); -- 8
+('G.G. Bach, R. Knystautas, and J.H. Lee. Initiation criteria for diverging gaseous detonations. In 13th Symp. Int. Combust. Proc., pages 1097-1110, 1971. ', 'Initiation criteria for diverging gaseous detonations', '1971', '24', '1097-1110'); -- 8
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -174,11 +179,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('PhD thesis'); -- 23
+('PhD thesis'); -- 34
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('P. Bauer. Contribution a l_etude de la detonation des melanges explosifs gazeux a pression initiale elevee. PhD thesis, Universite de Poitiers, 1985. ', 'Contribution a l_etude de la detonation des melanges explosifs gazeux a pression initiale elevee', '1985', '23', 'Universite de Poitiers'); -- 10
+('P. Bauer. Contribution a l\'etude de la detonation des melanges explosifs gazeux a pression initiale elevee. PhD thesis, Universite de Poitiers, 1985. ', 'Contribution a l\'etude de la detonation des melanges explosifs gazeux a pression initiale elevee', '1985', '34', 'Universite de Poitiers'); -- 10
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -330,11 +335,11 @@ VALUES
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('S.', 'Loban_'); -- 46
+('S.', 'Loban\''); -- 46
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('A.A. Borisov and S. Loban_. Detonation limits of hydrocarbon-air mixtures in tubes. Combust. Explos. Shock Waves (USSR), 13(5):618-621, 1977. ', 'Detonation limits of hydrocarbon-air mixtures in tubes', '1977', '7', '13', '5', '618-621'); -- 20
+('A.A. Borisov and S. Loban\'. Detonation limits of hydrocarbon-air mixtures in tubes. Combust. Explos. Shock Waves (USSR), 13(5):618-621, 1977. ', 'Detonation limits of hydrocarbon-air mixtures in tubes', '1977', '7', '13', '5', '618-621'); -- 20
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -351,11 +356,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('Fuel-Air Explosions'); -- 24
+('Fuel-Air Explosions'); -- 35
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages, institution)
 VALUES 
-('D.C. Bull. Towards an understanding of the detonability of vapour clouds. In Fuel-Air Explosions, pages 139-155. University of Waterloo Press, 1982. ', 'Towards an understanding of the detonability of vapour clouds', '1982', '24', '139-155', 'University of Waterloo Press'); -- 22
+('D.C. Bull. Towards an understanding of the detonability of vapour clouds. In Fuel-Air Explosions, pages 139-155. University of Waterloo Press, 1982. ', 'Towards an understanding of the detonability of vapour clouds', '1982', '35', '139-155', 'University of Waterloo Press'); -- 22
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -402,11 +407,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('J. Phys. D'); -- 25
+('J. Phys. D'); -- 36
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('D.C. Bull, J.E. Elsworth, G. Hooper, and C.P. Quinn. A study of spherical detonation in mixtures of methane and oxygen diluted by nitrogen. J. Phys. D, 9(13):1991-2000, 1976. ', 'A study of spherical detonation in mixtures of methane and oxygen diluted by nitrogen', '1976', '25', '9', '13', '1991-2000'); -- 26
+('D.C. Bull, J.E. Elsworth, G. Hooper, and C.P. Quinn. A study of spherical detonation in mixtures of methane and oxygen diluted by nitrogen. J. Phys. D, 9(13):1991-2000, 1976. ', 'A study of spherical detonation in mixtures of methane and oxygen diluted by nitrogen', '1976', '36', '9', '13', '1991-2000'); -- 26
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -473,11 +478,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('Technical Report NUREG/CR-6391'); -- 26
+('Technical Report NUREG/CR-6391'); -- 37
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('G. Ciccarelli, T. Ginsberg, J. Boccio, C. Finfrock, L. Gerlach, H. Tagawa, and A. Malliakos. Detonation cell size measurements in high-temperature hydrogen-air-steam mixtures at the bnl high-temperature combustion facility. Technical Report NUREG/CR-6391, BNL-NUREG-52482, Brookhaven National Laboratory, 1997. ', 'Detonation cell size measurements in high-temperature hydrogen-air-steam mixtures at the bnl high-temperature combustion facility', '1997', '26', 'BNL-NUREG-52482, Brookhaven National Laboratory'); -- 30
+('G. Ciccarelli, T. Ginsberg, J. Boccio, C. Finfrock, L. Gerlach, H. Tagawa, and A. Malliakos. Detonation cell size measurements in high-temperature hydrogen-air-steam mixtures at the bnl high-temperature combustion facility. Technical Report NUREG/CR-6391, BNL-NUREG-52482, Brookhaven National Laboratory, 1997. ', 'Detonation cell size measurements in high-temperature hydrogen-air-steam mixtures at the bnl high-temperature combustion facility', '1997', '37', 'BNL-NUREG-52482, Brookhaven National Laboratory'); -- 30
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -518,11 +523,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('These 3e cycle'); -- 27
+('These 3e cycle'); -- 38
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('D. Desbordes. Celerites de propagation des detonations spheriques divergentes dans les melanges gazeux. These 3e cycle, Universite de Poitiers, 1973. ', 'Celerites de propagation des detonations spheriques divergentes dans les melanges gazeux', '1973', '27', 'Universite de Poitiers'); -- 33
+('D. Desbordes. Celerites de propagation des detonations spheriques divergentes dans les melanges gazeux. These 3e cycle, Universite de Poitiers, 1973. ', 'Celerites de propagation des detonations spheriques divergentes dans les melanges gazeux', '1973', '38', 'Universite de Poitiers'); -- 33
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -546,7 +551,7 @@ VALUES
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('D. Desbordes. Aspects stationnaires et transitoires de la detonation dans les gaz: relation avec la structure cellulaire du front. PhD thesis, Universite de Poitiers, 1990. ', 'Aspects stationnaires et transitoires de la detonation dans les gaz: relation avec la structure cellulaire du front', '1990', '23', 'Universite de Poitiers'); -- 36
+('D. Desbordes. Aspects stationnaires et transitoires de la detonation dans les gaz: relation avec la structure cellulaire du front. PhD thesis, Universite de Poitiers, 1990. ', 'Aspects stationnaires et transitoires de la detonation dans les gaz: relation avec la structure cellulaire du front', '1990', '34', 'Universite de Poitiers'); -- 36
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -597,13 +602,9 @@ INSERT INTO authors(initials, last_name)
 VALUES 
 ('D.H.', 'Edwards'); -- 69
 
-INSERT INTO journals(name)
-VALUES 
-('12th Symp. Int. Combust. Proc.'); -- 28
-
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('D.H. Edwards. A survey of recent work on the structure of detonation waves. In 12th Symp. Int. Combust. Proc., pages 819-828, 1969. ', 'A survey of recent work on the structure of detonation waves', '1969', '28', '819-828'); -- 40
+('D.H. Edwards. A survey of recent work on the structure of detonation waves. In 12th Symp. Int. Combust. Proc., pages 819-828, 1969. ', 'A survey of recent work on the structure of detonation waves', '1969', '23', '819-828'); -- 40
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -629,7 +630,7 @@ VALUES
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('D.H. Edwards, G. Hooper, J.M. Morgan, and G.O. Thomas. The quasi-steady regime in critically initiated detonation waves. J. Phys. D, 11(13):2103-2117, 1978. ', 'The quasi-steady regime in critically initiated detonation waves', '1978', '25', '11', '13', '2103-2117'); -- 42
+('D.H. Edwards, G. Hooper, J.M. Morgan, and G.O. Thomas. The quasi-steady regime in critically initiated detonation waves. J. Phys. D, 11(13):2103-2117, 1978. ', 'The quasi-steady regime in critically initiated detonation waves', '1978', '36', '11', '13', '2103-2117'); -- 42
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -670,13 +671,9 @@ VALUES
 ('H.', 'Freiwald'), -- 74
 ('H.W.', 'Koch'); -- 75
 
-INSERT INTO journals(name)
-VALUES 
-('9th Symp. Int. Combust. Proc.'); -- 29
-
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('H. Freiwald and H.W. Koch. Spherical detonations of acetylene-oxygen-nitrogen mixtures as a function of nature and strength of initiation. In 9th Symp. Int. Combust. Proc., pages 275-281, 1962. ', 'Spherical detonations of acetylene-oxygen-nitrogen mixtures as a function of nature and strength of initiation', '1962', '29', '275-281'); -- 45
+('H. Freiwald and H.W. Koch. Spherical detonations of acetylene-oxygen-nitrogen mixtures as a function of nature and strength of initiation. In 9th Symp. Int. Combust. Proc., pages 275-281, 1962. ', 'Spherical detonations of acetylene-oxygen-nitrogen mixtures as a function of nature and strength of initiation', '1962', '21', '275-281'); -- 45
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -719,13 +716,9 @@ VALUES
 ('W.', 'Benedick'), -- 82
 ('M.', 'Berman'); -- 83
 
-INSERT INTO journals(name)
-VALUES 
-('19th Symp. Int. Combust. Proc.'); -- 30
-
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('C.M. Guirao, R. Knystautas, J. Lee, W. Benedick, and M. Berman. Hydrogen-air detonations. In 19th Symp. Int. Combust. Proc., pages 583-590, 1982. ', 'Hydrogen-air detonations', '1982', '30', '583-590'); -- 48
+('C.M. Guirao, R. Knystautas, J. Lee, W. Benedick, and M. Berman. Hydrogen-air detonations. In 19th Symp. Int. Combust. Proc., pages 583-590, 1982. ', 'Hydrogen-air detonations', '1982', '28', '583-590'); -- 48
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -737,11 +730,11 @@ VALUES
 
 INSERT INTO journals(name)
 VALUES 
-('Technical Report NUREG/CR-4961'); -- 31
+('Technical Report NUREG/CR-4961'); -- 39
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('C.M. Guirao, R. Knystautas, and J.H. Lee. A summary of hydrogen-air detonation experiments. Technical Report NUREG/CR-4961, SAND87-7128, Sandia National Laboratories/McGill University, 1989. ', 'A summary of hydrogen-air detonation experiments', '1989', '31', 'SAND87-7128, Sandia National Laboratories/McGill University'); -- 49
+('C.M. Guirao, R. Knystautas, and J.H. Lee. A summary of hydrogen-air detonation experiments. Technical Report NUREG/CR-4961, SAND87-7128, Sandia National Laboratories/McGill University, 1989. ', 'A summary of hydrogen-air detonation experiments', '1989', '39', 'SAND87-7128, Sandia National Laboratories/McGill University'); -- 49
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
@@ -751,40 +744,40 @@ VALUES
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('T.', 'Hikita'); -- 84
+('T.', 'Hikita'), -- 84
+(NULL, 'et al.'); -- 85
 
 INSERT INTO journals(name)
 VALUES 
-('A report on the experimental results of explosions and fires of liquid ethylene facilities. Technical report'); -- 32
+('Technical Report'); -- 40
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('T. Hikita and al. et. A report on the experimental results of explosions and fires of liquid ethylene facilities. Technical report, Safety Information Centre, Institution for Safety of High Pressure Gas Engineering, Tokyo, Japan, 1975. ', 'nd al', '1975', '32', 'Safety Information Centre, Institution for Safety of High Pressure Gas Engineering, Tokyo, Japan'); -- 50
+('T. Hikita and al. et. A report on the experimental results of explosions and fires of liquid ethylene facilities. Technical report, Safety Information Centre, Institution for Safety of High Pressure Gas Engineering, Tokyo, Japan, 1975. ', 'A report on the experimental results of explosions and fires of liquid ethylene facilities', '1975', '40', 'Safety Information Centre, Institution for Safety of High Pressure Gas Engineering, Tokyo, Japan'); -- 50
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(84, 50); -- 139
+(84, 50), -- 139
+(85, 50); -- 140
 
-INSERT INTO authors(initials, last_name)
+INSERT INTO authors(first_name, initials, last_name)
 VALUES 
-('Z.W.', 'Huang'); -- 85
-
-INSERT INTO journals(name)
-VALUES 
-('Experimental study of the fine structure in spin detonations. In Prog. Astronaut. Aeronaut.'); -- 33
+(NULL, 'Z.W.', 'Huang'), -- 86
+('Tiggelen', 'T.', 'Van'); -- 87
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
-('Z.W. Huang and Tiggelen Van. Experimental study of the fine structure in spin detonations. In Prog. Astronaut. Aeronaut., volume 153, pages 132-143, 1993. ', 'nd Tiggelen Van', '1993', '33', '153', '132-143'); -- 51
+('Z.W. Huang and Tiggelen Van. Experimental study of the fine structure in spin detonations. In Prog. Astronaut. Aeronaut., volume 153, pages 132-143, 1993. ', 'Experimental study of the fine structure in spin detonations', '1993', '14', '153', '132-143'); -- 51
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(85, 51); -- 140
+(86, 51), -- 141
+(87, 51); -- 142
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('K.', 'Kailasanath'), -- 86
-('E.S.', 'Oran'); -- 87
+('K.', 'Kailasanath'), -- 88
+('E.S.', 'Oran'); -- 89
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -792,21 +785,21 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(86, 52), -- 141
-(87, 52); -- 142
+(88, 52), -- 143
+(89, 52); -- 144
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('M.J. Kaneshige. Gaseous Detonation Initiation and Stabilization by Hypervelocity Projectiles. PhD thesis, California Institute of Technology, 1999. ', 'Gaseous Detonation Initiation and Stabilization by Hypervelocity Projectiles', '1999', '23', 'California Institute of Technology'); -- 53
+('M.J. Kaneshige. Gaseous Detonation Initiation and Stabilization by Hypervelocity Projectiles. PhD thesis, California Institute of Technology, 1999. ', 'Gaseous Detonation Initiation and Stabilization by Hypervelocity Projectiles', '1999', '34', 'California Institute of Technology'); -- 53
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(7, 53); -- 143
+(7, 53); -- 145
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('C.', 'Guirao'), -- 88
-('A.', 'Sulmistras'); -- 89
+('C.', 'Guirao'), -- 90
+('A.', 'Sulmistras'); -- 91
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -814,10 +807,10 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(21, 54), -- 144
-(88, 54), -- 145
-(22, 54), -- 146
-(89, 54); -- 147
+(21, 54), -- 146
+(90, 54), -- 147
+(22, 54), -- 148
+(91, 54); -- 149
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -825,8 +818,8 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(21, 55), -- 148
-(22, 55); -- 149
+(21, 55), -- 150
+(22, 55); -- 151
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -834,13 +827,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(21, 56), -- 150
-(22, 56), -- 151
-(36, 56); -- 152
+(21, 56), -- 152
+(22, 56), -- 153
+(36, 56); -- 154
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('A.', 'Teodorczyk'); -- 90
+('A.', 'Teodorczyk'); -- 92
 
 INSERT INTO citations(preformatted, title, year, journal_id)
 VALUES 
@@ -848,14 +841,14 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(21, 57), -- 153
-(34, 57), -- 154
-(9, 57), -- 155
-(90, 57); -- 156
+(21, 57), -- 155
+(34, 57), -- 156
+(9, 57), -- 157
+(92, 57); -- 158
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('S.M.', 'Kogarko'); -- 91
+('S.M.', 'Kogarko'); -- 93
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -863,7 +856,7 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(91, 58); -- 157
+(93, 58); -- 159
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -871,12 +864,12 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(91, 59); -- 158
+(93, 59); -- 160
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('V.V.', 'Adushkin'), -- 92
-('A.G.', 'Lyamin'); -- 93
+('V.V.', 'Adushkin'), -- 94
+('A.G.', 'Lyamin'); -- 95
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -884,13 +877,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(91, 60), -- 159
-(92, 60), -- 160
-(93, 60); -- 161
+(93, 60), -- 161
+(94, 60), -- 162
+(95, 60); -- 163
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.K.', 'Kumar'); -- 94
+('R.K.', 'Kumar'); -- 96
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -898,11 +891,11 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(94, 61); -- 162
+(96, 61); -- 164
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('S.', 'Laberge'); -- 95
+('S.', 'Laberge'); -- 97
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -910,13 +903,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(95, 62), -- 163
-(21, 62), -- 164
-(34, 62); -- 165
+(97, 62), -- 165
+(21, 62), -- 166
+(34, 62); -- 167
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.', 'Ramamurthi'); -- 96
+('R.', 'Ramamurthi'); -- 98
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -924,8 +917,8 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 63), -- 166
-(96, 63); -- 167
+(22, 63), -- 168
+(98, 63); -- 169
 
 INSERT INTO citations(preformatted, title, year, journal_id)
 VALUES 
@@ -933,7 +926,7 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 64); -- 168
+(22, 64); -- 170
 
 INSERT INTO citations(preformatted, title, year, journal_id)
 VALUES 
@@ -941,11 +934,11 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 65); -- 169
+(22, 65); -- 171
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('A.', 'Freiman'); -- 97
+('A.', 'Freiman'); -- 99
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -953,13 +946,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 66), -- 170
-(21, 66), -- 171
-(97, 66); -- 172
+(22, 66), -- 172
+(21, 66), -- 173
+(99, 66); -- 174
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('B.H.K.', 'Lee'); -- 98
+('B.H.K.', 'Lee'); -- 100
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -967,13 +960,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 67), -- 173
-(98, 67), -- 174
-(21, 67); -- 175
+(22, 67), -- 175
+(100, 67), -- 176
+(21, 67); -- 177
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('H.', 'Matsui'); -- 99
+('H.', 'Matsui'); -- 101
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -981,13 +974,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 68), -- 176
-(99, 68); -- 177
+(22, 68), -- 178
+(101, 68); -- 179
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.I.', 'Soloukhin'), -- 100
-('A.K.', 'Oppenheim'); -- 101
+('R.I.', 'Soloukhin'), -- 102
+('A.K.', 'Oppenheim'); -- 103
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -995,75 +988,69 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(22, 69), -- 178
-(100, 69), -- 179
-(101, 69); -- 180
+(22, 69), -- 180
+(102, 69), -- 181
+(103, 69); -- 182
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages, institution)
 VALUES 
-('J.H.S. Lee, R. Knystautas, and C. Guirao. The link between cell size, critical tube diameter, initiation energy and detonability limits. In Fuel-Air Explosions, pages 157-187. University of Waterloo Press, 1982. ', 'The link between cell size, critical tube diameter, initiation energy and detonability limits', '1982', '24', '157-187', 'University of Waterloo Press'); -- 70
+('J.H.S. Lee, R. Knystautas, and C. Guirao. The link between cell size, critical tube diameter, initiation energy and detonability limits. In Fuel-Air Explosions, pages 157-187. University of Waterloo Press, 1982. ', 'The link between cell size, critical tube diameter, initiation energy and detonability limits', '1982', '35', '157-187', 'University of Waterloo Press'); -- 70
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(34, 70), -- 181
-(21, 70), -- 182
-(88, 70); -- 183
+(34, 70), -- 183
+(21, 70), -- 184
+(90, 70); -- 185
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.H.', 'Lefebvre'), -- 102
-('E.', 'Nzeyimana'); -- 103
-
-INSERT INTO journals(name)
-VALUES 
-('Influence of fluorocarbons on H_2-O_2-Ar detonation: Experiments and modeling. In Prog. Astronaut. Aeronaut.'); -- 34
+('M.H.', 'Lefebvre'), -- 104
+('E.', 'Nzeyimana'); -- 105
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
-('M.H. Lefebvre, E. Nzeyimana, and Tiggelen Van. Influence of fluorocarbons on H_2-O_2-Ar detonation: Experiments and modeling. In Prog. Astronaut. Aeronaut., volume 153, pages 144-161, 1993. ', 'and Tiggelen Van', '1993', '34', '153', '144-161'); -- 71
+('M.H. Lefebvre, E. Nzeyimana, and Tiggelen Van. Influence of fluorocarbons on H_2-O_2-Ar detonation: Experiments and modeling. In Prog. Astronaut. Aeronaut., volume 153, pages 144-161, 1993. ', 'Influence of fluorocarbons on H_2-O_2-Ar detonation: Experiments and modeling', '1993', '14', '153', '144-161'); -- 71
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(102, 71), -- 184
-(103, 71); -- 185
+(104, 71), -- 186
+(105, 71), -- 187
+(87, 71); -- 188
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('J.C.', 'Libouton'), -- 104
-('M.', 'Dormal'); -- 105
-
-INSERT INTO journals(name)
-VALUES 
-('The role of chemical kinetics on structure of detonation waves. In 15th Symp. Int. Combust. Proc.'); -- 35
+('J.C.', 'Libouton'), -- 106
+('M.', 'Dormal'); -- 107
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('J.C. Libouton, M. Dormal, and Tiggelen Van. The role of chemical kinetics on structure of detonation waves. In 15th Symp. Int. Combust. Proc., pages 79-86, 1975. ', 'and Tiggelen Van', '1975', '35', '79-86'); -- 72
+('J.C. Libouton, M. Dormal, and Tiggelen Van. The role of chemical kinetics on structure of detonation waves. In 15th Symp. Int. Combust. Proc., pages 79-86, 1975. ', 'The role of chemical kinetics on structure of detonation waves', '1975', '14', '79-86'); -- 72
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(104, 72), -- 186
-(105, 72); -- 187
+(106, 72), -- 189
+(107, 72), -- 190
+(87, 72); -- 191
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('E.L.', 'Litchfield'), -- 106
-('M.H.', 'Hay'), -- 107
-('D.R.', 'Forshey'); -- 108
+('E.L.', 'Litchfield'), -- 108
+('M.H.', 'Hay'), -- 109
+('D.R.', 'Forshey'); -- 110
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('E.L. Litchfield, M.H. Hay, and D.R. Forshey. Direct electrical initiation of freely expanding gaseous detonation waves. In 9th Symp. Int. Combust. Proc., pages 282-286, 1962. ', 'Direct electrical initiation of freely expanding gaseous detonation waves', '1962', '29', '282-286'); -- 73
+('E.L. Litchfield, M.H. Hay, and D.R. Forshey. Direct electrical initiation of freely expanding gaseous detonation waves. In 9th Symp. Int. Combust. Proc., pages 282-286, 1962. ', 'Direct electrical initiation of freely expanding gaseous detonation waves', '1962', '21', '282-286'); -- 73
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(106, 73), -- 188
-(107, 73), -- 189
-(108, 73); -- 190
+(108, 73), -- 192
+(109, 73), -- 193
+(110, 73); -- 194
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('Y.K.', 'Liu'); -- 109
+('Y.K.', 'Liu'); -- 111
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1071,13 +1058,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(109, 74), -- 191
-(22, 74), -- 192
-(21, 74); -- 193
+(111, 74), -- 195
+(22, 74), -- 196
+(21, 74); -- 197
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('A.', 'Macek'); -- 110
+('A.', 'Macek'); -- 112
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1085,16 +1072,16 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(110, 75); -- 194
+(112, 75); -- 198
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('V.I.', 'Makeev'), -- 111
-('Yu.A.', 'Gostintsev'), -- 112
-('V.V.', 'Strogonov'), -- 113
-('Yu.A.', 'Bokhon'), -- 114
-('Yu.N.', 'Chernushkin'), -- 115
-('V.N.', 'Kulikov'); -- 116
+('V.I.', 'Makeev'), -- 113
+('Yu.A.', 'Gostintsev'), -- 114
+('V.V.', 'Strogonov'), -- 115
+('Yu.A.', 'Bokhon'), -- 116
+('Yu.N.', 'Chernushkin'), -- 117
+('V.N.', 'Kulikov'); -- 118
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1102,37 +1089,33 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(111, 76), -- 195
-(112, 76), -- 196
-(113, 76), -- 197
-(114, 76), -- 198
-(115, 76), -- 199
-(116, 76); -- 200
+(113, 76), -- 199
+(114, 76), -- 200
+(115, 76), -- 201
+(116, 76), -- 202
+(117, 76), -- 203
+(118, 76); -- 204
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('A.', 'Makris'), -- 117
-('T.J.', 'Oh'); -- 118
-
-INSERT INTO journals(name)
-VALUES 
-('25th Symp. Int. Combust. Proc.'); -- 36
+('A.', 'Makris'), -- 119
+('T.J.', 'Oh'); -- 120
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('A. Makris, T.J. Oh, J.H.S. Lee, and R. Knystautas. Critical diameter for the transmission of a detonation wave into a porous medium. In 25th Symp. Int. Combust. Proc., pages 65-71, 1994. ', 'Critical diameter for the transmission of a detonation wave into a porous medium', '1994', '36', '65-71'); -- 77
+('A. Makris, T.J. Oh, J.H.S. Lee, and R. Knystautas. Critical diameter for the transmission of a detonation wave into a porous medium. In 25th Symp. Int. Combust. Proc., pages 65-71, 1994. ', 'Critical diameter for the transmission of a detonation wave into a porous medium', '1994', '32', '65-71'); -- 77
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(117, 77), -- 201
-(118, 77), -- 202
-(34, 77), -- 203
-(21, 77); -- 204
+(119, 77), -- 205
+(120, 77), -- 206
+(34, 77), -- 207
+(21, 77); -- 208
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('V.I.', 'Manzhalei'), -- 119
-('V.V.', 'Mitrofanov'); -- 120
+('V.I.', 'Manzhalei'), -- 121
+('V.V.', 'Mitrofanov'); -- 122
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1140,12 +1123,12 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(119, 78), -- 205
-(120, 78); -- 206
+(121, 78), -- 209
+(122, 78); -- 210
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('V.A.', 'Subbotin'); -- 121
+('V.A.', 'Subbotin'); -- 123
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1153,21 +1136,17 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(119, 79), -- 207
-(120, 79), -- 208
-(121, 79); -- 209
-
-INSERT INTO journals(name)
-VALUES 
-('17th Symp. Int. Combust. Proc.'); -- 37
+(121, 79), -- 211
+(122, 79), -- 212
+(123, 79); -- 213
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('H. Matsui. On the measure of the relative detonation hazards of gaseous fuel-oxygen and air mixtures. 17th Symp. Int. Combust. Proc., pages 1269-1280, 1979. ', 'On the measure of the relative detonation hazards of gaseous fuel-oxygen and air mixtures', '1979', '37', '1269-1280'); -- 80
+('H. Matsui. On the measure of the relative detonation hazards of gaseous fuel-oxygen and air mixtures. 17th Symp. Int. Combust. Proc., pages 1269-1280, 1979. ', 'On the measure of the relative detonation hazards of gaseous fuel-oxygen and air mixtures', '1979', '26', '1269-1280'); -- 80
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(99, 80); -- 210
+(101, 80); -- 214
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1175,11 +1154,11 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(120, 81); -- 211
+(122, 81); -- 215
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('I.O.', 'Moen'); -- 122
+('I.O.', 'Moen'); -- 124
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1187,33 +1166,29 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(122, 82); -- 212
+(124, 82); -- 216
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.', 'Donato'); -- 123
-
-INSERT INTO journals(name)
-VALUES 
-('18th Symp. Int. Combust. Proc.'); -- 38
+('M.', 'Donato'); -- 125
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('I.O. Moen, M. Donato, R. Knystautas, and J.H. Lee. The influence of confinement on the propagation of detonations near the detonability limits. In 18th Symp. Int. Combust. Proc., pages 1615-1622, 1981. ', 'The influence of confinement on the propagation of detonations near the detonability limits', '1981', '38', '1615-1622'); -- 83
+('I.O. Moen, M. Donato, R. Knystautas, and J.H. Lee. The influence of confinement on the propagation of detonations near the detonability limits. In 18th Symp. Int. Combust. Proc., pages 1615-1622, 1981. ', 'The influence of confinement on the propagation of detonations near the detonability limits', '1981', '27', '1615-1622'); -- 83
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(122, 83), -- 213
-(123, 83), -- 214
-(21, 83), -- 215
-(22, 83); -- 216
+(124, 83), -- 217
+(125, 83), -- 218
+(21, 83), -- 219
+(22, 83); -- 220
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('J.W.', 'Funk'), -- 124
-('S.A.', 'Ward'), -- 125
-('G.M.', 'Rude'), -- 126
-('P.A.', 'Thibault'); -- 127
+('J.W.', 'Funk'), -- 126
+('S.A.', 'Ward'), -- 127
+('G.M.', 'Rude'), -- 128
+('P.A.', 'Thibault'); -- 129
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1221,34 +1196,34 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(122, 84), -- 217
-(124, 84), -- 218
-(125, 84), -- 219
-(126, 84), -- 220
-(127, 84); -- 221
+(124, 84), -- 221
+(126, 84), -- 222
+(127, 84), -- 223
+(128, 84), -- 224
+(129, 84); -- 225
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('S.B.', 'Murray'), -- 128
-('D.', 'Bjerketvedt'), -- 129
-('A.', 'Rinnan'); -- 130
+('S.B.', 'Murray'), -- 130
+('D.', 'Bjerketvedt'), -- 131
+('A.', 'Rinnan'); -- 132
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('I.O. Moen, S.B. Murray, D. Bjerketvedt, A. Rinnan, R. Knystautas, and J.H. Lee. Diffraction of detonation from tubes into a large fuel-air explosive cloud. In 19th Symp. Int. Combust. Proc., pages 635-644, 1982. ', 'Diffraction of detonation from tubes into a large fuel-air explosive cloud', '1982', '30', '635-644'); -- 85
+('I.O. Moen, S.B. Murray, D. Bjerketvedt, A. Rinnan, R. Knystautas, and J.H. Lee. Diffraction of detonation from tubes into a large fuel-air explosive cloud. In 19th Symp. Int. Combust. Proc., pages 635-644, 1982. ', 'Diffraction of detonation from tubes into a large fuel-air explosive cloud', '1982', '28', '635-644'); -- 85
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(122, 85), -- 222
-(128, 85), -- 223
-(129, 85), -- 224
-(130, 85), -- 225
-(21, 85), -- 226
-(22, 85); -- 227
+(124, 85), -- 226
+(130, 85), -- 227
+(131, 85), -- 228
+(132, 85), -- 229
+(21, 85), -- 230
+(22, 85); -- 231
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('G.', 'Thomas'); -- 131
+('G.', 'Thomas'); -- 133
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1256,56 +1231,48 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(122, 86), -- 228
-(89, 86), -- 229
-(131, 86), -- 230
-(129, 86), -- 231
-(127, 86); -- 232
+(124, 86), -- 232
+(91, 86), -- 233
+(133, 86), -- 234
+(131, 86), -- 235
+(129, 86); -- 236
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('T.', 'Dean'); -- 132
-
-INSERT INTO journals(name)
-VALUES 
-('20th Symp. Int. Combust. Proc.'); -- 39
+('T.', 'Dean'); -- 134
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('I.O. Moen, S.A. Ward, P.A. Thibault, J.H. Lee, R. Knystautas, T. Dean, and C.K. Westbrook. The influence of diluents and inhibitors on detonations. In 20th Symp. Int. Combust. Proc., pages 1717-1726, 1985. ', 'The influence of diluents and inhibitors on detonations', '1985', '39', '1717-1726'); -- 87
+('I.O. Moen, S.A. Ward, P.A. Thibault, J.H. Lee, R. Knystautas, T. Dean, and C.K. Westbrook. The influence of diluents and inhibitors on detonations. In 20th Symp. Int. Combust. Proc., pages 1717-1726, 1985. ', 'The influence of diluents and inhibitors on detonations', '1985', '29', '1717-1726'); -- 87
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(122, 87), -- 233
-(125, 87), -- 234
-(127, 87), -- 235
-(22, 87), -- 236
-(21, 87), -- 237
-(132, 87), -- 238
-(33, 87); -- 239
+(124, 87), -- 237
+(127, 87), -- 238
+(129, 87), -- 239
+(22, 87), -- 240
+(21, 87), -- 241
+(134, 87), -- 242
+(33, 87); -- 243
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('J.J.', 'Gottlieb'), -- 133
-('C.', 'Coffey'), -- 134
-('D.', 'Remboutsikas'); -- 135
-
-INSERT INTO journals(name)
-VALUES 
-('7th Symp. Mil. App. Blast Sim.'); -- 40
+('J.J.', 'Gottlieb'), -- 135
+('C.', 'Coffey'), -- 136
+('D.', 'Remboutsikas'); -- 137
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('S.B. Murray, J.J. Gottlieb, C. Coffey, I.O. Moen, J.H. Lee, and D. Remboutsikas. Direct initiation of detonation in unconfined ethylene-air mixtures-influence of bag size. In 7th Symp. Mil. App. Blast Sim., pages 6.3(b)1-6.3(b)28, 1981. ', 'Direct initiation of detonation in unconfined ethylene-air mixtures-influence of bag size', '1981', '40', '6'); -- 88
+('S.B. Murray, J.J. Gottlieb, C. Coffey, I.O. Moen, J.H. Lee, and D. Remboutsikas. Direct initiation of detonation in unconfined ethylene-air mixtures-influence of bag size. In 7th Symp. Mil. App. Blast Sim., pages 6.3(b)1-6.3(b)28, 1981. ', 'Direct initiation of detonation in unconfined ethylene-air mixtures-influence of bag size', '1981', '20', '6'); -- 88
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(128, 88), -- 240
-(133, 88), -- 241
-(134, 88), -- 242
-(122, 88), -- 243
-(22, 88), -- 244
-(135, 88); -- 245
+(130, 88), -- 244
+(135, 88), -- 245
+(136, 88), -- 246
+(124, 88), -- 247
+(22, 88), -- 248
+(137, 88); -- 249
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1313,8 +1280,8 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(128, 89), -- 246
-(22, 89); -- 247
+(130, 89), -- 250
+(22, 89); -- 251
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1322,8 +1289,8 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(128, 90), -- 248
-(22, 90); -- 249
+(130, 90), -- 252
+(22, 90); -- 253
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1331,31 +1298,31 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(128, 91), -- 250
-(22, 91); -- 251
+(130, 91), -- 254
+(22, 91); -- 255
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.', 'Sichel'), -- 136
-('Z.', 'Gabrijel'), -- 137
-('R.D.', 'Oza'), -- 138
-('R.', 'Vandermolen'); -- 139
+('M.', 'Sichel'), -- 138
+('Z.', 'Gabrijel'), -- 139
+('R.D.', 'Oza'), -- 140
+('R.', 'Vandermolen'); -- 141
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('J.A. Nicholls, M. Sichel, Z. Gabrijel, R.D. Oza, and R. Vandermolen. Detonability of unconfined natural gas-air clouds. In 17th Symp. Int. Combust. Proc., pages 1223-1234, 1979. ', 'Detonability of unconfined natural gas-air clouds', '1979', '37', '1223-1234'); -- 92
+('J.A. Nicholls, M. Sichel, Z. Gabrijel, R.D. Oza, and R. Vandermolen. Detonability of unconfined natural gas-air clouds. In 17th Symp. Int. Combust. Proc., pages 1223-1234, 1979. ', 'Detonability of unconfined natural gas-air clouds', '1979', '26', '1223-1234'); -- 92
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(77, 92), -- 252
-(136, 92), -- 253
-(137, 92), -- 254
-(138, 92), -- 255
-(139, 92); -- 256
+(77, 92), -- 256
+(138, 92), -- 257
+(139, 92), -- 258
+(140, 92), -- 259
+(141, 92); -- 260
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.E.', 'Nolan'); -- 140
+('M.E.', 'Nolan'); -- 142
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1363,26 +1330,22 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(140, 93); -- 257
-
-INSERT INTO authors(first_name, initials, last_name)
-VALUES 
-('Tiggelen', 'T.', 'Van'); -- 141
+(142, 93); -- 261
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
-('E. Nzeyimana and Tiggelen Van. Influence of tetrafluoromethane on hydrogen-oxygen-argon detonations. In Prog. Astronaut. Aeronaut., volume 133, pages 77-88, 1991. ', 'Influence of tetrafluoromethane on hydrogen-oxygen-argon detonations.', '1991', '14', '133', '77-88'); -- 94
+('E. Nzeyimana and Tiggelen Van. Influence of tetrafluoromethane on hydrogen-oxygen-argon detonations. In Prog. Astronaut. Aeronaut., volume 133, pages 77-88, 1991. ', 'Influence of tetrafluoromethane on hydrogen-oxygen-argon detonations', '1991', '14', '133', '77-88'); -- 94
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(103, 94), -- 258
-(141, 94); -- 259
+(105, 94), -- 262
+(87, 94); -- 263
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('S.', 'Ohyagi'), -- 142
-('T.', 'Yoshihashi'), -- 143
-('Y.', 'Harigaya'); -- 144
+('S.', 'Ohyagi'), -- 143
+('T.', 'Yoshihashi'), -- 144
+('Y.', 'Harigaya'); -- 145
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1390,9 +1353,9 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(142, 95), -- 260
-(143, 95), -- 261
-(144, 95); -- 262
+(143, 95), -- 264
+(144, 95), -- 265
+(145, 95); -- 266
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1400,14 +1363,14 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(3, 96); -- 263
+(3, 96); -- 267
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.D.', 'Pedley'), -- 145
-('C.A.', 'Bennett'), -- 146
-('D.L.', 'Fenton'), -- 147
-('O.', 'Peraldi'); -- 148
+('M.D.', 'Pedley'), -- 146
+('C.A.', 'Bennett'), -- 147
+('D.L.', 'Fenton'), -- 148
+('O.', 'Peraldi'); -- 149
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1415,21 +1378,21 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(145, 97), -- 264
-(30, 97), -- 265
-(31, 97), -- 266
-(146, 97), -- 267
-(29, 97), -- 268
-(147, 97), -- 269
-(21, 97), -- 270
-(22, 97), -- 271
-(148, 97), -- 272
-(2, 97), -- 273
-(9, 97); -- 274
+(146, 97), -- 268
+(30, 97), -- 269
+(31, 97), -- 270
+(147, 97), -- 271
+(29, 97), -- 272
+(148, 97), -- 273
+(21, 97), -- 274
+(22, 97), -- 275
+(149, 97), -- 276
+(2, 97), -- 277
+(9, 97); -- 278
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('U.', 'Pfahl'); -- 149
+('U.', 'Pfahl'); -- 150
 
 INSERT INTO journals(name)
 VALUES 
@@ -1441,13 +1404,13 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(149, 98), -- 275
-(8, 98), -- 276
-(9, 98); -- 277
+(150, 98), -- 279
+(8, 98), -- 280
+(9, 98); -- 281
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.', 'Plaster'); -- 150
+('M.', 'Plaster'); -- 151
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1455,15 +1418,15 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(150, 99), -- 278
-(29, 99), -- 279
-(31, 99), -- 280
-(9, 99), -- 281
-(34, 99); -- 282
+(151, 99), -- 282
+(29, 99), -- 283
+(31, 99), -- 284
+(9, 99), -- 285
+(34, 99); -- 286
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('H.G.', 'Wagner'); -- 151
+('H.G.', 'Wagner'); -- 152
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1471,8 +1434,8 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(79, 100), -- 283
-(151, 100); -- 284
+(79, 100), -- 287
+(152, 100); -- 288
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1480,16 +1443,16 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(79, 101), -- 285
-(151, 101); -- 286
+(79, 101), -- 289
+(152, 101); -- 290
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages, institution)
 VALUES 
-('A. Rinnan. Transmission of detonation through tubes and orifices. In Fuel-Air Explosions, pages 553-564. University of Waterloo Press, 1982. ', 'Transmission of detonation through tubes and orifices', '1982', '24', '553-564', 'University of Waterloo Press'); -- 102
+('A. Rinnan. Transmission of detonation through tubes and orifices. In Fuel-Air Explosions, pages 553-564. University of Waterloo Press, 1982. ', 'Transmission of detonation through tubes and orifices', '1982', '35', '553-564', 'University of Waterloo Press'); -- 102
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(130, 102); -- 287
+(132, 102); -- 291
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1497,41 +1460,37 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(9, 103); -- 288
-
-INSERT INTO journals(name)
-VALUES 
-('21st Symp. Int. Combust. Proc.'); -- 42
+(9, 103); -- 292
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('J.E. Shepherd, I.O. Moen, S.B. Murray, and P.A. Thibault. Analyses of the cellular structure of detonations. In 21st Symp. Int. Combust. Proc., pages 1649-1658, 1988. ', 'Analyses of the cellular structure of detonations', '1988', '42', '1649-1658'); -- 104
+('J.E. Shepherd, I.O. Moen, S.B. Murray, and P.A. Thibault. Analyses of the cellular structure of detonations. In 21st Symp. Int. Combust. Proc., pages 1649-1658, 1988. ', 'Analyses of the cellular structure of detonations', '1988', '30', '1649-1658'); -- 104
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(9, 104), -- 289
-(122, 104), -- 290
-(128, 104), -- 291
-(127, 104); -- 292
+(9, 104), -- 293
+(124, 104), -- 294
+(130, 104), -- 295
+(129, 104); -- 296
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('D.W.', 'Stamps'), -- 152
-('S.R.', 'Tieszen'); -- 153
+('D.W.', 'Stamps'), -- 153
+('S.R.', 'Tieszen'); -- 154
 
 INSERT INTO journals(name)
 VALUES 
-('Technical Report NUREG/CR-5525'); -- 43
+('Technical Report NUREG/CR-5525'); -- 42
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('D.W. Stamps, W.B. Benedick, and S.R. Tieszen. Hydrogen-air-diluent detonation study for nuclear reactor safety analyses. Technical Report NUREG/CR-5525, SAND89-2398, Sandia National Laboratories, 1991. ', 'Hydrogen-air-diluent detonation study for nuclear reactor safety analyses', '1991', '43', 'SAND89-2398, Sandia National Laboratories'); -- 105
+('D.W. Stamps, W.B. Benedick, and S.R. Tieszen. Hydrogen-air-diluent detonation study for nuclear reactor safety analyses. Technical Report NUREG/CR-5525, SAND89-2398, Sandia National Laboratories, 1991. ', 'Hydrogen-air-diluent detonation study for nuclear reactor safety analyses', '1991', '42', 'SAND89-2398, Sandia National Laboratories'); -- 105
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(152, 105), -- 293
-(35, 105), -- 294
-(153, 105); -- 295
+(153, 105), -- 297
+(35, 105), -- 298
+(154, 105); -- 299
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1539,12 +1498,12 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(152, 106), -- 296
-(153, 106); -- 297
+(153, 106), -- 300
+(154, 106); -- 301
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.A.', 'Strehlow'); -- 154
+('R.A.', 'Strehlow'); -- 155
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1552,19 +1511,15 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(154, 107); -- 298
+(155, 107); -- 302
 
-INSERT INTO journals(name)
+INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('H_2-O_2'); -- 44
-
-INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages, institution)
-VALUES 
-('R.A. Strehlow. Transverse waves in detonations: II. structure and spacing in H_2-O_2, C_2H_2-O_2, C_2H_4-O_2 and CH_4-O_2 systems. AIAA J., 7(3):492-496, 1969. ', 'Transverse waves in detonations: II', '1969', '44', '7', '3', '492-496', 'C_2H_2-O_2, C_2H_4-O_2 and CH_4-O_2 systems. AIAA J.'); -- 108
+('R.A. Strehlow. Transverse waves in detonations: II. structure and spacing in H_2-O_2, C_2H_2-O_2, C_2H_4-O_2 and CH_4-O_2 systems. AIAA J., 7(3):492-496, 1969. ', 'Transverse waves in detonations: II. structure and spacing in H_2-O_2, C_2H_2-O_2, C_2H_4-O_2 and CH_4-O_2 systems', '1969', '2', '7', '3', '492-496'); -- 108
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(154, 108); -- 299
+(155, 108); -- 303
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1572,62 +1527,58 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(154, 109); -- 300
+(155, 109); -- 304
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.', 'Liangminas'), -- 155
-('R.H.', 'Watson'), -- 156
-('J.R.', 'Eyman'); -- 157
-
-INSERT INTO journals(name)
-VALUES 
-('11th Symp. Int. Combust. Proc.'); -- 45
+('R.', 'Liangminas'), -- 156
+('R.H.', 'Watson'), -- 157
+('J.R.', 'Eyman'); -- 158
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('R.A. Strehlow, R. Liangminas, R.H. Watson, and J.R. Eyman. Transverse wave structure in detonations. In 11th Symp. Int. Combust. Proc., pages 683-692, 1967. ', 'Transverse wave structure in detonations', '1967', '45', '683-692'); -- 110
+('R.A. Strehlow, R. Liangminas, R.H. Watson, and J.R. Eyman. Transverse wave structure in detonations. In 11th Symp. Int. Combust. Proc., pages 683-692, 1967. ', 'Transverse wave structure in detonations', '1967', '22', '683-692'); -- 110
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(154, 110), -- 301
-(155, 110), -- 302
-(156, 110), -- 303
-(157, 110); -- 304
+(155, 110), -- 305
+(156, 110), -- 306
+(157, 110), -- 307
+(158, 110); -- 308
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.E.', 'Maurer'), -- 158
-('S.', 'Rajan.'); -- 159
+('R.E.', 'Maurer'), -- 159
+('S.', 'Rajan'); -- 160
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('R.A. Strehlow, R.E. Maurer, and S. Rajan. Transverse waves in detonations: I. spacings in the hydrogen-oxygen system. AIAA J., 7(2):323-328, 1969. ', 'Transverse waves in detonations: I. spacings in the hydrogen-system.', '1969', '2', '7', '2', '323-328'); -- 111
+('R.A. Strehlow, R.E. Maurer, and S. Rajan. Transverse waves in detonations: I. spacings in the hydrogen-oxygen system. AIAA J., 7(2):323-328, 1969. ', 'Transverse waves in detonations: I. spacings in the hydrogen-system', '1969', '2', '7', '2', '323-328'); -- 111
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(154, 111), -- 305
-(158, 111), -- 306
-(159, 111); -- 307
+(155, 111), -- 309
+(159, 111), -- 310
+(160, 111); -- 311
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.P.', 'Sherman'); -- 160
+('M.P.', 'Sherman'); -- 161
 
 INSERT INTO journals(name)
 VALUES 
-('Technical Report NUREG/CR-4905'); -- 46
+('Technical Report NUREG/CR-4905'); -- 43
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('S.R. Tieszen, M.P. Sherman, W.B. Benedick, and M. Berman. Detonability of H_2-air-diluent mixtures. Technical Report NUREG/CR-4905, SAND85-1263, Sandia National Laboratories, 1987. ', 'Detonability of H_2-air-diluent mixtures', '1987', '46', 'SAND85-1263, Sandia National Laboratories'); -- 112
+('S.R. Tieszen, M.P. Sherman, W.B. Benedick, and M. Berman. Detonability of H_2-air-diluent mixtures. Technical Report NUREG/CR-4905, SAND85-1263, Sandia National Laboratories, 1987. ', 'Detonability of H_2-air-diluent mixtures', '1987', '43', 'SAND85-1263, Sandia National Laboratories'); -- 112
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(153, 112), -- 308
-(160, 112), -- 309
-(35, 112), -- 310
-(83, 112); -- 311
+(154, 112), -- 312
+(161, 112), -- 313
+(35, 112), -- 314
+(83, 112); -- 315
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1635,12 +1586,12 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(153, 113), -- 312
-(160, 113), -- 313
-(35, 113), -- 314
-(9, 113), -- 315
-(21, 113), -- 316
-(34, 113); -- 317
+(154, 113), -- 316
+(161, 113), -- 317
+(35, 113), -- 318
+(9, 113), -- 319
+(21, 113), -- 320
+(34, 113); -- 321
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1648,17 +1599,17 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(153, 114), -- 318
-(152, 114), -- 319
-(33, 114), -- 320
-(32, 114); -- 321
+(154, 114), -- 322
+(153, 114), -- 323
+(33, 114), -- 324
+(32, 114); -- 325
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('S.', 'Tsuge'), -- 161
-('H.', 'Furukawa'), -- 162
-('M.', 'Matsukawa'), -- 163
-('T.', 'Nakagawa'); -- 164
+('S.', 'Tsuge'), -- 162
+('H.', 'Furukawa'), -- 163
+('M.', 'Matsukawa'), -- 164
+('T.', 'Nakagawa'); -- 165
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
@@ -1666,10 +1617,10 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(161, 115), -- 322
-(162, 115), -- 323
-(163, 115), -- 324
-(164, 115); -- 325
+(162, 115), -- 326
+(163, 115), -- 327
+(164, 115), -- 328
+(165, 115); -- 329
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1677,14 +1628,14 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(73, 116), -- 326
-(19, 116), -- 327
-(72, 116); -- 328
+(73, 116), -- 330
+(19, 116), -- 331
+(72, 116); -- 332
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('P.A.', 'Urtiew'), -- 165
-('C.M.', 'Tarver'); -- 166
+('P.A.', 'Urtiew'), -- 166
+('C.M.', 'Tarver'); -- 167
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1692,118 +1643,110 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(165, 117), -- 329
-(166, 117); -- 330
+(166, 117), -- 333
+(167, 117); -- 334
 
 INSERT INTO authors(first_name, initials, last_name)
 VALUES 
-('Molen', 'M.', 'Vander'); -- 167
+('Molen', 'M.', 'Vander'); -- 168
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('Molen Vander and J.A. Nicholls. Blast wave initiation energy for the detonation of methane-ethane-air mixtures. Combust. Sci. Technol., 21(1):75-78, 1979. ', 'Blast wave initiation energy for the detonation of methane-ethane-air mixtures.', '1979', '9', '21', '1', '75-78'); -- 118
+('Molen Vander and J.A. Nicholls. Blast wave initiation energy for the detonation of methane-ethane-air mixtures. Combust. Sci. Technol., 21(1):75-78, 1979. ', 'Blast wave initiation energy for the detonation of methane-ethane-air mixtures', '1979', '9', '21', '1', '75-78'); -- 118
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(167, 118), -- 331
-(77, 118); -- 332
+(168, 118), -- 335
+(77, 118); -- 336
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('M.', 'Vandermeiren'); -- 168
-
-INSERT INTO journals(name)
-VALUES 
-('Cellular structure in detonation of acetylene-oxygen mixtures. In Prog. Astronaut. Aeronaut.'); -- 47
+('M.', 'Vandermeiren'); -- 169
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
-('M. Vandermeiren and Tiggelen Van. Cellular structure in detonation of acetylene-oxygen mixtures. In Prog. Astronaut. Aeronaut., volume 94, pages 104-117, 1984. ', 'nd Tiggelen Van', '1984', '47', '94', '104-117'); -- 119
+('M. Vandermeiren and Tiggelen Van. Cellular structure in detonation of acetylene-oxygen mixtures. In Prog. Astronaut. Aeronaut., volume 94, pages 104-117, 1984. ', 'Cellular structure in detonation of acetylene-oxygen mixtures', '1984', '14', '94', '104-117'); -- 119
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(168, 119); -- 333
-
-INSERT INTO journals(name)
-VALUES 
-('Role of an inhibitor on the onset of gas detonations in acetylene mixtures. In Prog. Astronaut. Aeronaut.'); -- 48
+(169, 119), -- 337
+(87, 119); -- 338
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
-('M. Vandermeiren and Tiggelen Van. Role of an inhibitor on the onset of gas detonations in acetylene mixtures. In Prog. Astronaut. Aeronaut., volume 114, pages 186-200, 1988. ', 'nd Tiggelen Van', '1988', '48', '114', '186-200'); -- 120
+('M. Vandermeiren and Tiggelen Van. Role of an inhibitor on the onset of gas detonations in acetylene mixtures. In Prog. Astronaut. Aeronaut., volume 114, pages 186-200, 1988. ', 'Role of an inhibitor on the onset of gas detonations in acetylene mixtures', '1988', '14', '114', '186-200'); -- 120
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(168, 120); -- 334
+(169, 120), -- 339
+(87, 120); -- 340
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('A.A.', 'Vasil_ev'); -- 169
+('A.A.', 'Vasil\'ev'); -- 170
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('A.A. Vasil_ev. Geometric limits of gas detonation propagation. Combust. Explos. Shock Waves (USSR), 18(2):245-249, 1982. ', 'Geometric limits of gas detonation propagation', '1982', '7', '18', '2', '245-249'); -- 121
+('A.A. Vasil\'ev. Geometric limits of gas detonation propagation. Combust. Explos. Shock Waves (USSR), 18(2):245-249, 1982. ', 'Geometric limits of gas detonation propagation', '1982', '7', '18', '2', '245-249'); -- 121
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(169, 121); -- 335
+(170, 121); -- 341
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('A.A. Vasil_ev. Critical initiation of a gas detonation. Combust. Explos. Shock Waves (USSR), 19(1):115-123, 1983. ', 'Critical initiation of a gas detonation', '1983', '7', '19', '1', '115-123'); -- 122
+('A.A. Vasil\'ev. Critical initiation of a gas detonation. Combust. Explos. Shock Waves (USSR), 19(1):115-123, 1983. ', 'Critical initiation of a gas detonation', '1983', '7', '19', '1', '115-123'); -- 122
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(169, 122); -- 336
+(170, 122); -- 342
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('V.V.', 'Grigor_ev'); -- 170
+('V.V.', 'Grigor\'ev'); -- 171
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('A.A. Vasil_ev and V.V. Grigor_ev. Critical conditions for gas detonation in sharply expanding channels. Combust. Explos. Shock Waves (USSR), 16(6):579-585, 1980. ', 'Critical conditions for gas detonation in sharply expanding channels', '1980', '7', '16', '6', '579-585'); -- 123
+('A.A. Vasil\'ev and V.V. Grigor\'ev. Critical conditions for gas detonation in sharply expanding channels. Combust. Explos. Shock Waves (USSR), 16(6):579-585, 1980. ', 'Critical conditions for gas detonation in sharply expanding channels', '1980', '7', '16', '6', '579-585'); -- 123
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(169, 123), -- 337
-(170, 123); -- 338
+(170, 123), -- 343
+(171, 123); -- 344
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('Yu.A.', 'Nikolaev'); -- 171
+('Yu.A.', 'Nikolaev'), -- 172
+('Yu.V.', 'Ul\'yanitskii'); -- 173
+
+INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
+VALUES 
+('A.A. Vasil\'ev, Yu.A. Nikolaev, and Ul\'yanitskii. Analysis of the cell parameters of a multifront gas detonation. Combust. Explos. Shock Waves (USSR), 13(3):338-341, 1977. ', 'Role of an inhibitor on the onset of gas detonations in acetylene mixtures', '1977', '7', '13', '3', '338-341'); -- 124
+
+INSERT INTO author_citations(author_id, citation_id)
+VALUES 
+(170, 124), -- 345
+(172, 124), -- 346
+(173, 124); -- 347
+
+INSERT INTO authors(initials, last_name)
+VALUES 
+('B.V.', 'Voitsekhovskii'), -- 174
+('M.E.', 'Topchian'); -- 175
 
 INSERT INTO journals(name)
 VALUES 
-('Analysis of the cell parameters of a multifront gas detonation. Combust. Explos. Shock Waves (USSR)'); -- 49
-
-INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
-VALUES 
-('A.A. Vasil_ev, Yu.A. Nikolaev, and Ul_yanitskii. Analysis of the cell parameters of a multifront gas detonation. Combust. Explos. Shock Waves (USSR), 13(3):338-341, 1977. ', 'and Ul_yanitskii', '1977', '49', '13', '3', '338-341'); -- 124
-
-INSERT INTO author_citations(author_id, citation_id)
-VALUES 
-(169, 124), -- 339
-(171, 124); -- 340
-
-INSERT INTO authors(initials, last_name)
-VALUES 
-('B.V.', 'Voitsekhovskii'), -- 172
-('M.E.', 'Topchian'); -- 173
-
-INSERT INTO journals(name)
-VALUES 
-('Technical Report FTD-MT-64-527 (AD 633821)'); -- 50
+('Technical Report FTD-MT-64-527 (AD 633821)'); -- 44
 
 INSERT INTO citations(preformatted, title, year, journal_id, institution)
 VALUES 
-('B.V. Voitsekhovskii, V.V. Mitrofanov, and M.E. Topchian. The structure of a detonation front in gases. Technical Report FTD-MT-64-527 (AD 633821), Wright-Patterson AFB, 1966. ', 'The structure of a detonation front in gases', '1966', '50', 'Wright-Patterson AFB'); -- 125
+('B.V. Voitsekhovskii, V.V. Mitrofanov, and M.E. Topchian. The structure of a detonation front in gases. Technical Report FTD-MT-64-527 (AD 633821), Wright-Patterson AFB, 1966. ', 'The structure of a detonation front in gases', '1966', '44', 'Wright-Patterson AFB'); -- 125
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(172, 125), -- 341
-(120, 125), -- 342
-(173, 125); -- 343
+(174, 125), -- 348
+(122, 125), -- 349
+(175, 125); -- 350
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, pages)
 VALUES 
@@ -1811,39 +1754,39 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(33, 126), -- 344
-(32, 126), -- 345
-(165, 126); -- 346
+(33, 126), -- 351
+(32, 126), -- 352
+(166, 126); -- 353
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('C.K. Westbrook and P.A. Urtiew. Chemical kinetic prediction of critical parameters in gaseous detonation. In 19th Symp. Int. Combust. Proc., pages 615-623, 1982. ', 'Chemical kinetic prediction of critical parameters in gaseous detonation', '1982', '30', '615-623'); -- 127
+('C.K. Westbrook and P.A. Urtiew. Chemical kinetic prediction of critical parameters in gaseous detonation. In 19th Symp. Int. Combust. Proc., pages 615-623, 1982. ', 'Chemical kinetic prediction of critical parameters in gaseous detonation', '1982', '28', '615-623'); -- 127
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(33, 127), -- 347
-(165, 127); -- 348
+(33, 127), -- 354
+(166, 127); -- 355
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('P.', 'Wolanski'), -- 174
-('C.W.', 'Kauffman'); -- 175
+('P.', 'Wolanski'), -- 176
+('C.W.', 'Kauffman'); -- 177
 
 INSERT INTO citations(preformatted, title, year, journal_id, pages)
 VALUES 
-('P. Wolanski, C.W. Kauffman, M. Sichel, and J.A. Nicholls. Detonation of methane-air mixtures. In 18th Symp. Int. Combust. Proc., pages 1651-1660, 1981. ', 'Detonation of methane-air mixtures', '1981', '38', '1651-1660'); -- 128
+('P. Wolanski, C.W. Kauffman, M. Sichel, and J.A. Nicholls. Detonation of methane-air mixtures. In 18th Symp. Int. Combust. Proc., pages 1651-1660, 1981. ', 'Detonation of methane-air mixtures', '1981', '27', '1651-1660'); -- 128
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(174, 128), -- 349
-(175, 128), -- 350
-(136, 128), -- 351
-(77, 128); -- 352
+(176, 128), -- 356
+(177, 128), -- 357
+(138, 128), -- 358
+(77, 128); -- 359
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('Ia.B.', 'Zeldovich'), -- 176
-('N.N.', 'Simonov'); -- 177
+('Ia.B.', 'Zeldovich'), -- 178
+('N.N.', 'Simonov'); -- 179
 
 INSERT INTO citations(preformatted, title, year, journal_id)
 VALUES 
@@ -1851,27 +1794,27 @@ VALUES
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(176, 129), -- 353
-(91, 129), -- 354
-(177, 129); -- 355
+(178, 129), -- 360
+(93, 129), -- 361
+(179, 129); -- 362
 
 INSERT INTO authors(initials, last_name)
 VALUES 
-('R.', 'Zitoun'), -- 178
-('B.', 'Deshaies'); -- 179
+('R.', 'Zitoun'), -- 180
+('B.', 'Deshaies'); -- 181
 
 INSERT INTO journals(name)
 VALUES 
-('Shock Waves'); -- 51
+('Shock Waves'); -- 45
 
 INSERT INTO citations(preformatted, title, year, journal_id, vol, issue, pages)
 VALUES 
-('R. Zitoun, D. Desbordes, C. Guerraud, and B. Deshaies. Direct initiation of detonation in cryogenic gaseous H_2-O_2 mixtures. Shock Waves, 4(6):331-337, 1995. ', 'Direct initiation of detonation in cryogenic gaseous H_2-O_2 mixtures', '1995', '51', '4', '6', '331-337'); -- 130
+('R. Zitoun, D. Desbordes, C. Guerraud, and B. Deshaies. Direct initiation of detonation in cryogenic gaseous H_2-O_2 mixtures. Shock Waves, 4(6):331-337, 1995. ', 'Direct initiation of detonation in cryogenic gaseous H_2-O_2 mixtures', '1995', '45', '4', '6', '331-337'); -- 130
 
 INSERT INTO author_citations(author_id, citation_id)
 VALUES 
-(178, 130), -- 356
-(64, 130), -- 357
-(65, 130), -- 358
-(179, 130); -- 359
+(180, 130), -- 363
+(64, 130), -- 364
+(65, 130), -- 365
+(181, 130); -- 366
 

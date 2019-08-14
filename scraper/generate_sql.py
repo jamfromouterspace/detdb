@@ -20,7 +20,7 @@ def sanitize(string) :
         for char in string :
             if char in SPECIAL_CHARS :
                 # safe_string += '\\' + char
-                safe_string += '_'
+                safe_string += '\\' + char
             else :
                 safe_string += char
         return safe_string

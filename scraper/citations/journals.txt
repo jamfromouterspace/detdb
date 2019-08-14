@@ -30,7 +30,7 @@ Dokl. Akad. Nauk SSSR
 Doklady Akademii Nauk SSSR (Proceedings of the Academy of Sciences of the USSR, Physical Chemistry Section)
 [11]
 J. Hazard M.
-Journal of Hazardous Materials*
+Journal of Hazardous Materials
 [12]
 J. Phys. D.
 Journal of Physics D: Applied Physics
@@ -48,10 +48,49 @@ Symp. Int. Combust. Proc.
 Symposium (International) on Combustion, Proceedings
 [17]
 Symp. Mil. App. Blast Sim.
-Symposium on Military Applications of Blast Simulation*
+Symposium on Military Applications of Blast Simulation
 [18]
 Trans. Inst. Chem. Eng.
 Transactions of the Institution of Chemical Engineers
 [19]
 Z. Phys. Chem. Neue Folge
 Zeitschrift fur Physikalische Chemie - Neue Folge; International Journal of Research in Physical Chemistry and Chemical Physics
+[20]
+7th Symp. Mil. App. Blast Sim.
+7th Symposium on Military Applications of Blast Simulation
+[21]
+9th Symp. Int. Combust. Proc.
+9th Symposium (International) on Combustion, Proceedings
+[22]
+11th Symp. Int. Combust. Proc.
+11th Symposium (International) on Combustion, Proceedings
+[23]
+12th Symp. Int. Combust. Proc.
+12th Symposium (International) on Combustion, Proceedings
+[24]
+13th Symp. Int. Combust. Proc.
+13th Symposium (International) on Combustion, Proceedings
+[25]
+15th Symp. Int. Combust. Proc.
+15th Symposium (International) on Combustion, Proceedings
+[26]
+17th Symp. Int. Combust. Proc.
+17th Symposium (International) on Combustion, Proceedings
+[27]
+18th Symp. Int. Combust. Proc.
+18th Symposium (International) on Combustion, Proceedings
+[28]
+19th Symp. Int. Combust. Proc.
+19th Symposium (International) on Combustion, Proceedings
+[29]
+20th Symp. Int. Combust. Proc.
+20th Symposium (International) on Combustion, Proceedings
+[30]
+21st Symp. Int. Combust. Proc.
+21st Symposium (International) on Combustion, Proceedings
+[31]
+24th Symp. Int. Combust. Proc.
+24th Symposium (International) on Combustion, Proceedings
+[32]
+25th Symp. Int. Combust. Proc.
+25th Symposium (International) on Combustion, Proceedings
