@@ -1,0 +1,16 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" %}
+
+  <div id="data-sets" class="container">
+    {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+    <h2 class="page-title">{{ title }}</h2>
+    <div class="row">
+      {% for d in detonations %}
+        <div class="col-md-12 col-lg-6 detonation">
+          {% include "../components/detonation_table.html" with data=d.data %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% include "../components/footer.html" %}

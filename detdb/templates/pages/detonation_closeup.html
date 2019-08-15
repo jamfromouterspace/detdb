@@ -1,0 +1,65 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+    <div id="detonation-page" class="container">
+      {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+      {% include "../components/page_header.html" with header=header %}
+
+      <div id="detonation-main">
+        {% include "../components/detonation_table.html" with data=data %}
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="citation">
+                <div class="table-heading">
+                  <h5 class="page-subtitle darker">FULL CITATION</h5>
+                </div>
+                <div>
+                  <p class="citation">
+                    <span class="link"><a href="{{ citation.link }}">{{ citation.id }}</a></span>
+                    {{ citation.text|safe }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="download">
+                <div class="table-heading">
+                  <h5 class="page-subtitle darker">DOWNLOAD</h5>
+                </div>
+                <div>
+                  <h5>
+                    <a class="txt-link" href="{{ data.txt_link }}">[txt]</a>
+                    <a class="csv-link" href="{{ data.csv_link }}">[csv]</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div id="notes">
+                <div class="table-heading">
+                  <h5 class="page-subtitle darker">NOTES</h5>
+                </div>
+                <div>
+                  <p class="notes-p">
+                    {{ notes|safe }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div id="related-plots">
+          <div  class="table-heading">
+            <h5 class="page-subtitle darker">PLOTS USING THIS DATA</h5>
+          </div>
+          {% include "../components/list_expandable.html" with items=related_plots %}
+        </div>
+        <div id="same-author">
+          <div  class="table-heading">
+            <h5 class="page-subtitle darker">FROM THE SAME AUTHOR</h5>
+          </div>
+          {% include "../components/list_expandable.html" with items=same_author %}
+        </div>
+      </div>
+    </div>
+
+{% include "../components/footer.html" %}

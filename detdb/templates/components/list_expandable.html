@@ -1,0 +1,18 @@
+<div class="selection-list selection-list-expandable">
+  <table class="table">
+    {% for i in items %}
+      <tr>
+        <td class="align-middle">
+          <div class="material-icons">{{ i.icon|safe }}</div>
+        </td>
+        <td id="result-title-{{ i.index }}" class="align-middle">
+          <a href="{{ i.link }}">{{ i.name|safe }}</a>
+        </td>
+        <td id="result-preview-{{ i.index }}"
+          class="align-middle result-preview plot">
+          <a class="expandable">{{ i.name|safe }}</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

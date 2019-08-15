@@ -1,0 +1,36 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+    <div id="categories" class="container selection-list">
+      {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+      <h2 class="page-title">{{ title }}</h2>
+      <h4 class="page-subtitle">{{ subtitle }}</h4>
+      <div class="{% if subcategories %}row{% endif %} padded">
+        <div class="{% if subcategories %}col-md-6 table-div{% endif %}">
+          {% include "../components/list.html" with hover=list.hover items=list.items %}
+        </div>
+
+        {% if subcategories %}
+          <div class="col-md-6 order-md-2 order-sm-first order-first">
+            <div class="text-center">
+              <h4 class="page-subtitle darker mb-20">SUBCATEGORIES</h4>
+            </div>
+            {% for subcat in subcategories %}
+              <div class="row justify-content-center">
+                <div class="col-6 col-md-12 col-lg-6">
+                  <a class="selection-link subcategory-selection"
+                     href="{{ subcat.link }}" >
+                    <div class="selection">
+                      <h1>{{ subcat.name }}</h1>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+      </div>
+    </div>
+
+{% include "../components/footer.html" %}

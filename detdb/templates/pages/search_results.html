@@ -1,0 +1,10 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True prefilled=search_query %}
+
+<div id="search-results" class="container">
+  <h2 class="page-title">Search Results</h2>
+  <h4 class="page-subtitle">{{ search_query }}</h4>
+  {% include "../components/list_expandable.html" with items=search_results %}
+</div>
+
+{% include "../components/footer.html" %}
