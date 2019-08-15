@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'db.apps.DbConfig',
+    'home.apps.HomeConfig',
+    'django_mysql',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,6 +83,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file': '/etc/detdb-dev/my.cnf',
+            'charset': 'utf8mb4'
+        },
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
         }
     }
 }
