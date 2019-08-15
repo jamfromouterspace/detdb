@@ -1,0 +1,14 @@
+<table class="table {% if hover %}table-hover{% endif %}">
+  {% for i in items %}
+  <tr>
+    {% if i.icon %}
+    <td class="align-middle">
+      <div class="material-icons"><i>{{ i.icon }}</i></div>
+    </td>
+    {% endif %}
+    <td>
+      <a href="{{ i.link }}">{{ i.name|safe }}</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>

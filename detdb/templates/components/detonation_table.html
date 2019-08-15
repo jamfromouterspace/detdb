@@ -1,0 +1,67 @@
+<div class="detonation">
+  {% if data.include_title %}
+  <h5 class="detonation-heading text-center">
+    <a class="bigger" href="sample-detonation.html">{{ data.title }}</a>
+    <a class="txt-link smaller" href="{{ data.txt_link }}">[txt]</a>
+    <a class="csv-link smaller" href="{{ data.csv_link }}">[csv]</a>
+  </h5>
+  <h5 class="detonation-heading text-center">
+    <span class="search-citation">
+      {{ data.citation }}
+      <a class="citation-link" href="{{ data.citation_link }}">[{{ data.citation_id }}]</a></span
+    >
+  </h5>
+  {% endif %}
+  <table
+    class="table table-striped text-center detonation-details details"
+  >
+    <tr>
+      <td class="detail-label align-middle">CATEGORY</td>
+      <td class="category-detail detail align-middle">
+        <a href="{{ data.category_link }}">{{ data.category }}</a>
+      </td>
+      <td></td>
+      <td class="detail-label align-middle">FUEL</td>
+      <td class="fuel-detail detail align-middle">{{ data.fuel }}</td>
+      <td class="align-middle detail-search">
+        <i class="ui tiny inverted grey circular search icon"></i>
+      </td>
+    </tr>
+    <tr>
+      <td class="detail-label align-middle">SUBCATEGORY</td>
+      <td class="subcategory-detail detail align-middle">
+        <a href="{{ data.subcategory_link }}">{{ data.subcategory }}</a>
+      </td>
+      <td></td>
+      <td class="detail-label align-middle">OXIDIZER</td>
+      <td class="oxidizer-detail detail align-middle">{{ data.oxidizer }}</td>
+      <td class="align-middle detail-search">
+        <i class="ui tiny inverted grey circular search icon"></i>
+      </td>
+    </tr>
+    <tr>
+      <td class="detail-label align-middle">INITIAL PRESSURE</td>
+      <td class="pressure-detail detail align-middle">{{ data.pressure }}</td>
+      <td class="align-middle detail-search">
+        <i class="ui tiny inverted grey circular search icon"></i>
+      </td>
+      <td class="detail-label align-middle">DILUENT</td>
+      <td class="diluent-detail detail align-middle">{{ data.diluent }}</td>
+      <td class="align-middle detail-search">
+        <i class="ui tiny inverted grey circular search icon"></i>
+      </td>
+    </tr>
+    <tr>
+      <td class="detail-label align-middle">INITIAL TEMPERATURE</td>
+      <td class="temperature-detail detail align-middle">{{ data.temperature }}</td>
+      <td class="align-middle detail-search">
+        <i class="ui tiny inverted grey circular search icon"></i>
+      </td>
+      <td class="detail-label align-middle">EQUIVALENCE RATIO</td>
+      <td class="er-detail detail align-middle">{{ data.er }}</td>
+      <td class="align-middle detail-search">
+        <i class="ui tiny inverted grey circular search icon"></i>
+      </td>
+    </tr>
+  </table>
+</div>

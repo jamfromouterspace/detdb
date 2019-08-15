@@ -1,0 +1,30 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+  <div id="browse" class="container">
+    {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+    <div class="row text-center align-items-center">
+      <div class="col-lg-6 col-12">
+        <a class="selection-link" href="/db/detonations">
+          <div id="data" class="selection">
+            <h1>DATA</h1>
+            <div class="material-icons">
+              <i>notes</i>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-6 col-12">
+        <a class="selection-link" href="/db/plots">
+          <div id="plots" class="selection">
+            <h1>PLOTS</h1>
+            <div class="material-icons">
+              <i>scatter_plot</i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+{% include "../components/footer.html" %}

@@ -1,0 +1,13 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+  <div id="categories" class="container selection-list">
+    {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+    <h2 class="page-title">{{ title }}</h2>
+    
+    <div class="padded">
+      {% include "../components/list.html" with hover=list.hover items=list.items %}
+    </div>
+  </div>
+
+{% include "../components/footer.html" %}

@@ -1,0 +1,16 @@
+{% load static %}
+<div id={% if size == "lg" %}"search-bar"{% else %}"nav-search"{% endif %} class="input-group active-input">
+  <input type="text"
+         class="form-control form-control-{{ size }}"
+         placeholder="Search detonations"
+         value="{{ prefilled }}"/>
+  <div class="input-group-append">
+    <button id="search-btn" class="btn btn-primary" type="button">
+    {% if size == "lg" %}
+    	<i class="material-icons md-24 align-middle">search</i>
+    {% else %}
+    	<img src={% static "media/baseline-search-16px.svg" %} alt="Search icon" />
+    {% endif %}
+    </button>
+  </div>
+</div>

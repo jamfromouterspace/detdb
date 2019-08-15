@@ -1,0 +1,36 @@
+/* Rules for sizing the icon. */
+i {
+  font-style: normal !important;
+}
+.material-icons.md-12 {
+  font-size: 12px;
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwrQkFBK0I7QUFDL0I7RUFDRSw2QkFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtBQUNqQjtBQUNBO0VBQ0UsZUFBZTtBQUNqQjtBQUNBO0VBQ0EsZUFBQTtBQUNBO0FBQ0E7RUFDQSxlQUFBO0FBQ0E7O0FBRUEsMERBQUE7QUFDQTtFQUNBLDBCQUFBO0FBQ0E7QUFDQTtFQUNBLDBCQUFBO0FBQ0E7O0FBRUEseURBQUE7QUFDQTtFQUNFLDZCQUFBO0FBQ0Y7QUFDQTtFQUNFLCtCQUErQjtBQUNqQyIsImZpbGUiOiJpY29ucy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBSdWxlcyBmb3Igc2l6aW5nIHRoZSBpY29uLiAqL1xuLm1hdGVyaWFsLWljb25zLm1kLTE4IHtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuLm1hdGVyaWFsLWljb25zLm1kLTI0IHtcbiAgZm9udC1zaXplOiAyNHB4O1xufVxuLm1hdGVyaWFsLWljb25zLm1kLTM2IHtcbiAgZm9udC1zaXplOiAzNnB4O1xufVxuLm1hdGVyaWFsLWljb25zLm1kLTQ4IHtcbiAgZm9udC1zaXplOiA0OHB4O1xufVxuXG4vKiBSdWxlcyBmb3IgdXNpbmcgaWNvbnMgYXMgYmxhY2sgb24gYSBsaWdodCBiYWNrZ3JvdW5kLiAqL1xuLm1hdGVyaWFsLWljb25zLm1kLWRhcmsge1xuICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjU0KTtcbn1cbi5tYXRlcmlhbC1pY29ucy5tZC1kYXJrLm1kLWluYWN0aXZlIHtcbiAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4yNik7XG59XG5cbi8qIFJ1bGVzIGZvciB1c2luZyBpY29ucyBhcyB3aGl0ZSBvbiBhIGRhcmsgYmFja2dyb3VuZC4gKi9cbi5tYXRlcmlhbC1pY29ucy5tZC1saWdodCB7XG4gIGNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDEpO1xufVxuLm1hdGVyaWFsLWljb25zLm1kLWxpZ2h0Lm1kLWluYWN0aXZlIHtcbiAgY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC4zKTtcbn1cbiJdfQ== */

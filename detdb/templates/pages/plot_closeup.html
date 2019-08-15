@@ -1,0 +1,31 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+    <div id="plot" class="container">
+      {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+      {% include "../components/page_header.html" with header=header %}
+
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="plot-img">
+            <img src="{{ plot_image }}" alt="{{ header.title }}" />
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div id="source-data">
+            <div  class="table-heading">
+              <h5 class="page-subtitle darker">SOURCE DATA</h5>
+            </div>
+            {% include "../components/list_expandable.html" with items=source_data %}
+          </div>
+          <div id="related-plots">
+            <div  class="table-heading">
+              <h5 class="page-subtitle darker">RELATED PLOTS</h5>
+            </div>
+            {% include "../components/list_expandable.html" with items=related_plots %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% include "../components/footer.html" %}
