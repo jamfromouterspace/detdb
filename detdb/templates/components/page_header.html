@@ -1,5 +1,5 @@
 <h2 class="page-title">{{ header.title }}</h2>
-{% if header.type=='nav' %}
+{% if header.type == "nav" %}
 <div class="row">
   <div class="col-sm-12 col-md-3 order-first order-md-first page-subtitle-div">
     <h4 class="page-subtitle">{{ header.category }}{% if subcategory %} / {{ header.subcategory }}{% endif %}</h4>
@@ -13,11 +13,11 @@
   </div>
   <div class="col-12 col-md-4 page-data-title order-2 order-md-3 plot-title">
     <h5 class="page-subtitle darker bigger">
-      {{ header.title }}
+      {{ header.subtitle }}
     </h5>
     <br />
     <h5 class="page-subtitle darker smaller">
-      {{ header.subtitle }}
+      {{ header.subsubtitle }}
     </h5>
   </div>
   <div class="col-6 col-md-1 text-center align-self-center order-4 order-md-4 plot-nav">
@@ -37,7 +37,7 @@
     </h4>
   </div>
   <div class="col-sm-12 col-md-4 page-data-title">
-    <h5 class="page-subtitle darker bigger">{{ header.title }}</h5>
+    <h5 class="page-subtitle darker bigger">{{ header.subtitle }}</h5>
   </div>
 </div>
 {% endif %}

@@ -15,8 +15,10 @@ from django.db.models import (
     ForeignKey,
     IntegerField,
     SmallIntegerField,
-    FloatField
+    FloatField,
+    ManyToManyField
 )
+
 from django_mysql.models import (
     Bit1BooleanField,
     DynamicField,
@@ -32,14 +34,16 @@ from django_mysql.models import (
     SizedTextField,
 )
 
+from db.constants import *
+
 class AuthorCitations(Model):
     id = IntegerField(primary_key=True)
     author = ForeignKey('Authors',
-                                DO_NOTHING,
-                                related_name='author_citations')
+                        DO_NOTHING,
+                        related_name='author_citations')
     citation = ForeignKey('Citations',
-                                DO_NOTHING,
-                                related_name='author_citations')
+                        DO_NOTHING,
+                        related_name='author_citations')
 
     class Meta:
         app_label='db'
@@ -56,6 +60,7 @@ class Authors(Model):
     notes = CharField(max_length=150, blank=True, null=True)
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
+    citations = ManyToManyField('Citations', through="AuthorCitations",related_name='citations')
 
     class Meta:
         app_label='db'
@@ -81,10 +86,10 @@ class Citations(Model):
     preformatted = CharField(max_length=550, blank=True, null=True)
     title = CharField(max_length=300)
     journal = ForeignKey('Journals',
-                                DO_NOTHING,
-                                blank=True,
-                                null=True,
-                                related_name='citations')
+                        DO_NOTHING,
+                        blank=True,
+                        null=True,
+                        related_name='citations')
     vol = SmallIntegerField(blank=True, null=True)
     issue = SmallIntegerField(blank=True, null=True)
     institution = CharField(max_length=100, blank=True, null=True)
@@ -96,6 +101,22 @@ class Citations(Model):
     archived = Bit1BooleanField()
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
+    authors = ManyToManyField(Authors, through="AuthorCitations",related_name='authors')
+
+    def brief(self) :
+        formatted = ''
+        authors = self.authors.all().order_by('id')
+        if len(authors) == 0 :
+            raise Exception('Unexpected error in Citation.brief(). Citation object with no authors was found!')
+
+        formatted += authors[0].last_name
+        if len(authors) == 2 :
+            formatted += ' and ' + authors[1].last_name
+        if len(authors) > 2 :
+            formatted += ' et al.'
+
+        formatted += ' (' + self.year + ')'
+        return formatted
 
     class Meta:
         app_label='db'
@@ -117,11 +138,11 @@ class DataPoints(Model):
     id = IntegerField(primary_key=True)
     column_data = JSONField()
     property = ForeignKey('Properties',
-                                 DO_NOTHING,
-                                 related_name='data_points')
+                            DO_NOTHING,
+                            related_name='data_points')
     detonation = ForeignKey('Detonations',
-                                   DO_NOTHING,
-                                   related_name='data_points')
+                            DO_NOTHING,
+                            related_name='data_points')
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
 
@@ -130,15 +151,58 @@ class DataPoints(Model):
         managed = True
         db_table = 'data_points'
 
+class Properties(Model):
+    id = IntegerField(primary_key=True)
+    name = CharField(max_length=50, blank=True, null=True)
+    units = CharField(max_length=10, blank=True, null=True)
+    created = DateTimeField(blank=True, null=True)
+    updated = DateTimeField(blank=True, null=True)
+
+    class Meta:
+        app_label='db'
+        managed = True
+        db_table = 'properties'
+        unique_together = (('name', 'units'),)
+
 
 class Details(Model):
     id = IntegerField(primary_key=True)
     property = ForeignKey('Properties',
-                                 DO_NOTHING,
-                                 related_name='details')
+                            DO_NOTHING,
+                            related_name='details')
     value = JSONField(blank=True, null=True)
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
+    dets = ManyToManyField('Detonations', 
+        through="DetonationDetails",
+        related_name='dets')
+
+    def __str__(self) :
+        # Details are stored as JSON to be more flexible.
+        # For example, 'pressure' can be a float 103.0
+        # or a range [270, 4600]
+        # To represent it as a string (such as in the data tables)
+        # we need a bit of logic
+        if not self.value :
+            return '' 
+        if type(self.value) == type('') :
+            return self.value
+
+        res = ''
+
+        units = self.property.units
+        if self.property.units == 'unitless' :
+            units = ''
+
+        if type(self.value) == type(0.0) :
+            res += str(self.value)
+        elif type(self.value) == type([]) :
+            if len(self.value) > 2 :
+                raise Exception('Unexpected error: pressure range > 2')
+            res += '-'.join(str(x) for x in self.value)
+
+        res += ' ' + units if units else ''
+        return res
 
     class Meta:
         app_label='db'
@@ -149,11 +213,11 @@ class Details(Model):
 class DetonationDetails(Model):
     id = IntegerField(primary_key=True)
     detonation = ForeignKey('Detonations',
-                                   DO_NOTHING,
-                                   related_name='det_details')
+                            DO_NOTHING,
+                            related_name='det_details')
     detail = ForeignKey('Details',
-                                DO_NOTHING,
-                                related_name='det_details')
+                        DO_NOTHING,
+                        related_name='det_details')
 
     class Meta:
         app_label='db'
@@ -165,11 +229,11 @@ class DetonationDetails(Model):
 class DetonationSubcategories(Model):
     id = IntegerField(primary_key=True)
     subcategory = ForeignKey('Subcategories',
-                                    DO_NOTHING,
-                                    related_name='det_subcats')
+                            DO_NOTHING,
+                            related_name='det_subcats')
     detonation = ForeignKey('Detonations',
-                                    DO_NOTHING,
-                                    related_name='det_subcats')
+                            DO_NOTHING,
+                            related_name='det_subcats')
 
     class Meta:
         app_label='db'
@@ -186,17 +250,50 @@ class Detonations(Model):
                                  blank=True,
                                  null=True,
                                  related_name='detonations')
-    file_name = CharField(max_length=20)
+    file_name = CharField(max_length=15, blank=True, null=True)
     issues = CharField(max_length=250, blank=True, null=True)
     notes = CharField(max_length=200, blank=True, null=True)
     added_by = CharField(max_length=164)
     citation = ForeignKey('Citations',
-                                 DO_NOTHING,
-                                 related_name='detonations')
+                            DO_NOTHING,
+                            related_name='detonations')
     legacy = Bit1BooleanField()
     archived = Bit1BooleanField()
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
+    details = ManyToManyField(Details, through="DetonationDetails")
+    subcats = ManyToManyField('Subcategories', 
+        through="DetonationSubcategories",
+        related_name='subcats')
+    plots = ManyToManyField('Plots', through="PlotDetonations")
+    fuel = ForeignKey(Details,
+                     DO_NOTHING,
+                     related_name='fuel')
+    oxidizer = ForeignKey(Details,
+                        DO_NOTHING,
+                        related_name='oxidizer')
+    diluent = ForeignKey(Details,
+                        DO_NOTHING,
+                        related_name='diluent')
+    pressure = ForeignKey(Details,
+                        DO_NOTHING,
+                        related_name='pressure')
+    temperature = ForeignKey(Details,
+                            DO_NOTHING,
+                            related_name='temperature')
+    er = ForeignKey(Details,
+                    DO_NOTHING,
+                    related_name='er')
+
+
+    def fileLocation(self, file_type) :
+        if file_type not in SUPPORTED_TYPES :
+            raise Exception('Unsupported file type ' + file_type)
+
+        if self.file_name :
+            return DATASETS_DIR + file_type + '/' + self.file_name + '.' + file_type
+        return DATASETS_DIR + file_type + '/' + self.name + '.' + file_type
+
 
     class Meta:
         app_label='db'
@@ -220,11 +317,11 @@ class Journals(Model):
 class PlotDetails(Model):
     id = IntegerField(primary_key=True)
     plot = ForeignKey('Plots',
-                             DO_NOTHING,
-                             related_name='plot_details')
+                      DO_NOTHING,
+                      related_name='plot_details')
     detail = ForeignKey(Details,
-                              DO_NOTHING,
-                              related_name='plot_details')
+                        DO_NOTHING,
+                        related_name='plot_details')
 
     class Meta:
         app_label='db'
@@ -235,19 +332,19 @@ class PlotDetails(Model):
 class PlotDetonations(Model):
     id = IntegerField(primary_key=True)
     plot = ForeignKey('Plots',
-                             DO_NOTHING,
-                             related_name='plot_dets')
+                        DO_NOTHING,
+                        related_name='plot_dets')
     detonation = ForeignKey(Detonations,
                              DO_NOTHING,
                              related_name='plot_dets')
     x_data = ForeignKey(DataPoints,
-                               DO_NOTHING,
-                               db_column='x_data',
-                               related_name='plot_dets_x')
+                        DO_NOTHING,
+                        db_column='x_data',
+                        related_name='plot_dets_x')
     y_data = ForeignKey(DataPoints,
-                               DO_NOTHING,
-                               db_column='y_data',
-                               related_name='plot_dets_y')
+                        DO_NOTHING,
+                        db_column='y_data',
+                        related_name='plot_dets_y')
     notes = CharField(max_length=100, blank=True, null=True)
 
     class Meta:
@@ -261,55 +358,46 @@ class Plots(Model):
     id = IntegerField(primary_key=True)
     title = CharField(max_length=100)
     x_label = ForeignKey('Properties',
-                                DO_NOTHING,
-                                db_column='x_label',
-                                related_name='plots_x')
+                        DO_NOTHING,
+                        db_column='x_label',
+                        related_name='plots_x')
     y_label = ForeignKey('Properties',
-                                DO_NOTHING,
-                                db_column='y_label',
-                                related_name='plots_y')
+                        DO_NOTHING,
+                        db_column='y_label',
+                        related_name='plots_y')
     x_scale = CharField(max_length=10)
     y_scale = CharField(max_length=10)
     category = ForeignKey(Categories,
-                                 DO_NOTHING,
-                                 blank=True,
-                                 null=True,
-                                 related_name='plots')
+                         DO_NOTHING,
+                         blank=True,
+                         null=True,
+                         related_name='plots')
     num_datasets = SmallIntegerField()
     notes = CharField(max_length=100, blank=True, null=True)
     image_file = CharField(max_length=15, blank=True, null=True)
     legacy = Bit1BooleanField()
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
+    details = ManyToManyField(Details, 
+        through="PlotDetails",
+        related_name='details')
+    dets = ManyToManyField(Detonations, 
+        through="PlotDetonations",
+        related_name='related_dets')
 
     class Meta:
         app_label='db'
         managed = True
         db_table = 'plots'
 
-
-class Properties(Model):
-    id = IntegerField(primary_key=True)
-    name = CharField(max_length=50, blank=True, null=True)
-    units = CharField(max_length=10, blank=True, null=True)
-    created = DateTimeField(blank=True, null=True)
-    updated = DateTimeField(blank=True, null=True)
-
-    class Meta:
-        app_label='db'
-        managed = True
-        db_table = 'properties'
-        unique_together = (('name', 'units'),)
-
-
 class RelatedPlots(Model):
     id = IntegerField(primary_key=True)
     plot = ForeignKey(Plots,
-                             DO_NOTHING,
-                             related_name='related_plots')
+                      DO_NOTHING,
+                      related_name='related_plots')
     related_plot = ForeignKey(Plots,
-                                     DO_NOTHING,
-                                     related_name='+') # Do not map
+                              DO_NOTHING,
+                              related_name='+') # Do not map
     x_similarity = FloatField()
     y_similarity = FloatField()
     extra_similarity = FloatField(blank=True, null=True)
@@ -326,11 +414,13 @@ class RelatedPlots(Model):
 class Subcategories(Model):
     id = IntegerField(primary_key=True)
     category = ForeignKey(Categories,
-                             DO_NOTHING,
-                             related_name='subcategories')
+                          DO_NOTHING,
+                          related_name='subcategories')
     name = CharField(max_length=50)
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
+    detonations = ManyToManyField(Detonations, 
+        through="DetonationSubcategories")
 
     class Meta:
         app_label='db'

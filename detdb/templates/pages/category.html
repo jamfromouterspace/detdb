@@ -15,8 +15,8 @@
             <div class="text-center">
               <h4 class="page-subtitle darker mb-20">SUBCATEGORIES</h4>
             </div>
+            <div class="row justify-content-center">
             {% for subcat in subcategories %}
-              <div class="row justify-content-center">
                 <div class="col-6 col-md-12 col-lg-6">
                   <a class="selection-link subcategory-selection"
                      href="{{ subcat.link }}" >
@@ -25,8 +25,8 @@
                     </div>
                   </a>
                 </div>
-              </div>
             {% endfor %}
+            </div>
           </div>
         {% endif %}
         
