@@ -4,7 +4,15 @@
     <div id="categories" class="container selection-list">
       {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
       <h2 class="page-title">{{ title }}</h2>
-      <h4 class="page-subtitle">{{ subtitle }}</h4>
+      <h4 class="page-subtitle">
+        {{ subtitle }}
+        {% if selected_subcats %}
+          /
+          {% for s in selected_subcats %}
+            {{ s }} 
+          {% endfor %}
+        {% endif %}
+      </h4>
       <div class="{% if subcategories %}row{% endif %} padded">
         <div class="{% if subcategories %}col-md-6 table-div{% endif %}">
           {% include "../components/list.html" with hover=list.hover items=list.items %}
