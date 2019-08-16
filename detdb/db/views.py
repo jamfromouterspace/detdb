@@ -108,7 +108,7 @@ def category(request, category, section, subcats=None):
 
         remaining_subcats = [{'name':x.name.upper(),'link': url+x.name.replace(' ','-')} for x in remaining_subcats]
         # Get common fuels that have at least one data set in this category
-        list_items = [{'name': '<strong>All</strong>', 'link': base_url+'/'+'all-fuel'}]
+        list_items = [{'name': '<strong>All</strong>', 'link': url+'all-fuel'}]
         pid = Properties.objects.get(name='fuel').id
         # Get all detonations with this category
         dets_with_category = Detonations.objects.filter(category_id=cat_id) 
@@ -187,13 +187,17 @@ def dataset(request,category,fuel,subcats=None) :
     # dets = get_list_or_404(Detonations,category=cat,fuel=fuel)
     dets = None
     dets = Detonations.objects.filter(category=cat)
+
     if subcats :
         # Including subcategories can help constrain the data being shown
-        subcats_str = subcats.replace('-',' ')
-        subcats = get_object_or_404(Subcategories, category=cat, name=subcats_str)
-        dets = dets.filter(subcats=subcats)
-        page_header['subcategory'] = subcats.name.upper()
-        prev.append((prev[-1][0]+'/'+subcats_str,subcats.name.title()))
+        for subcat in subcats.split('/') :
+            subcat_str = subcat
+            subcat = subcat.replace('-',' ')
+            subcat = get_object_or_404(Subcategories, category=cat, name=subcat)
+            dets = dets.filter(subcats=subcat)
+            page_header['subcategory'] = subcat.name.upper()
+            prev.append((prev[-1][0]+'/'+subcat_str,subcat.name.title()))
+
     if fuel == 'misc' :
         for f in CommonFuels.objects.all() :
             dets = dets.exclude(fuel=Details.objects.get(property_id=fuel_pid,value=f.chemical))
@@ -202,7 +206,7 @@ def dataset(request,category,fuel,subcats=None) :
         dets = dets.filter(fuel=fuel)
 
     for d in dets :
-        cat_link = '/db/detonations/'+cat.name+'/'
+        cat_link = '/db/detonations/'+cat.name.replace(' ','-')+'/'
         detonations.append({
             'include_title' : True,
             'name' : d.name,
@@ -214,8 +218,8 @@ def dataset(request,category,fuel,subcats=None) :
             'citation_link' : CITATION_DIR + str(d.citation_id),
             'category' : cat.name,
             'category_link' : cat_link,
-            'subcategory' : ','.join(x.name for x in d.subcats.all()) or None,
-            'subcategory_link' : cat_link+'-'.join(x.name for x in d.subcats.all()),
+            'subcategory' : ','.join(x.name.replace(' ','-') for x in d.subcats.all()) or None,
+            'subcategory_link' : cat_link+'/'.join(x.name.replace(' ','-') for x in d.subcats.all()),
             'fuel' : d.fuel.value,
             'oxidizer' : d.oxidizer.value,
             'diluent' : d.diluent.value,
