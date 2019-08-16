@@ -1,15 +1,15 @@
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at195d', 3, 'at195d.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. '); -- 352
+('at195d', 3, 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. No diluent data. ', 4, 5, 116, 11, 14, 125); -- 352
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(352, 14), -- 2150
-(352, 116), -- 2151
-(352, 11), -- 2152
-(352, 4), -- 2153
-(352, 5), -- 2154
-(352, 125); -- 2155
+(352, 14), -- 2151
+(352, 116), -- 2152
+(352, 11), -- 2153
+(352, 4), -- 2154
+(352, 5), -- 2155
+(352, 125); -- 2156
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -23,18 +23,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at195e', 3, 'at195e.txt', 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. '); -- 353
+('at195e', 3, 'Joe Shepherd', 4, 1, 'Hidden units of J/cm deduced from plot. No diluent data. ', 124, 5, 116, 11, 14, 125); -- 353
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(353, 14), -- 2156
-(353, 116), -- 2157
-(353, 11), -- 2158
-(353, 124), -- 2159
-(353, 5), -- 2160
-(353, 125); -- 2161
+(353, 14), -- 2157
+(353, 116), -- 2158
+(353, 11), -- 2159
+(353, 124), -- 2160
+(353, 5), -- 2161
+(353, 125); -- 2162
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -48,18 +48,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at177a', 3, 'at177a.txt', 'Joe Shepherd', 13, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'J\' for \'critical energy\'. '); -- 354
+('at177a', 3, 'Joe Shepherd', 13, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'J\' for \'critical energy\'. No diluent data. ', 42, 5, 116, 17, 14, 6); -- 354
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(354, 14), -- 2162
-(354, 116), -- 2163
-(354, 17), -- 2164
-(354, 42), -- 2165
-(354, 5), -- 2166
-(354, 6); -- 2167
+(354, 14), -- 2163
+(354, 116), -- 2164
+(354, 17), -- 2165
+(354, 42), -- 2166
+(354, 5), -- 2167
+(354, 6); -- 2168
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -72,18 +72,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at210a', 3, 'at210a.txt', 'Joe Shepherd', 26, 1, 'Assumed units of \'unitless\' for \'dilution ratio\'. Assumed units of \'J\' for \'critical energy\'. '); -- 355
+('at210a', 3, 'Joe Shepherd', 26, 1, 'Assumed units of \'unitless\' for \'dilution ratio\'. Assumed units of \'J\' for \'critical energy\'. ', 42, 5, 116, 11, 1, 6); -- 355
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(355, 1), -- 2168
-(355, 116), -- 2169
-(355, 11), -- 2170
-(355, 42), -- 2171
-(355, 5), -- 2172
-(355, 6); -- 2173
+(355, 1), -- 2169
+(355, 116), -- 2170
+(355, 11), -- 2171
+(355, 42), -- 2172
+(355, 5), -- 2173
+(355, 6); -- 2174
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -99,18 +99,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at209a', 3, 'at209a.txt', 'Joe Shepherd', 33, 1, 'Hidden units of J/cm deduced from plot. '); -- 356
+('at209a', 3, 'Joe Shepherd', 33, 1, 'Hidden units of J/cm deduced from plot. No diluent data. ', 4, 5, 116, 11, 14, 6); -- 356
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(356, 14), -- 2174
-(356, 116), -- 2175
-(356, 11), -- 2176
-(356, 4), -- 2177
-(356, 5), -- 2178
-(356, 6); -- 2179
+(356, 14), -- 2175
+(356, 116), -- 2176
+(356, 11), -- 2177
+(356, 4), -- 2178
+(356, 5), -- 2179
+(356, 6); -- 2180
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -123,18 +123,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at210b', 3, 'at210b.txt', 'Joe Shepherd', 60, 1, 'Assumed units of \'unitless\' for \'dilution ratio\'. Assumed units of \'J\' for \'critical energy\'. No initial temperature data. '); -- 357
+('at210b', 3, 'Joe Shepherd', 60, 1, 'Assumed units of \'unitless\' for \'dilution ratio\'. Assumed units of \'J\' for \'critical energy\'. No initial temperature data. ', 42, 240, 116, 11, 1, 6); -- 357
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(357, 1), -- 2180
-(357, 116), -- 2181
-(357, 11), -- 2182
-(357, 42), -- 2183
-(357, 239), -- 2184
-(357, 6); -- 2185
+(357, 1), -- 2181
+(357, 116), -- 2182
+(357, 11), -- 2183
+(357, 42), -- 2184
+(357, 240), -- 2185
+(357, 6); -- 2186
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -156,20 +156,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.7, 1.7]'); -- 342
+(6, '[0.7, 1.7]'); -- 343
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at79a', 3, 'at79a.txt', 'Joe Shepherd', 80, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 358
+('at79a', 3, 'Joe Shepherd', 80, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. No diluent data. ', 42, 5, 116, 11, 14, 343); -- 358
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(358, 14), -- 2186
-(358, 116), -- 2187
-(358, 11), -- 2188
-(358, 42), -- 2189
-(358, 5), -- 2190
-(358, 342); -- 2191
+(358, 14), -- 2187
+(358, 116), -- 2188
+(358, 11), -- 2189
+(358, 42), -- 2190
+(358, 5), -- 2191
+(358, 343); -- 2192
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -182,18 +182,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at195c', 3, 'at195c.txt', 'Joe Shepherd', 92, 1, 'Hidden units of J/cm deduced from plot. '); -- 359
+('at195c', 3, 'Joe Shepherd', 92, 1, 'Hidden units of J/cm deduced from plot. No diluent data. ', 42, 16, 116, 11, 14, 6); -- 359
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(359, 14), -- 2192
-(359, 116), -- 2193
-(359, 11), -- 2194
-(359, 42), -- 2195
-(359, 16), -- 2196
-(359, 6); -- 2197
+(359, 14), -- 2193
+(359, 116), -- 2194
+(359, 11), -- 2195
+(359, 42), -- 2196
+(359, 16), -- 2197
+(359, 6); -- 2198
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -209,20 +209,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '[0.8, 1.4]'); -- 343
+(6, '[0.8, 1.4]'); -- 344
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at115', 3, 'at115.txt', 'Joe Shepherd', 128, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'J\' for \'critical energy\'. '); -- 360
+('at115', 3, 'Joe Shepherd', 128, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'J\' for \'critical energy\'. No diluent data. ', 42, 5, 116, 17, 14, 344); -- 360
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(360, 14), -- 2198
-(360, 116), -- 2199
-(360, 17), -- 2200
-(360, 42), -- 2201
-(360, 5), -- 2202
-(360, 343); -- 2203
+(360, 14), -- 2199
+(360, 116), -- 2200
+(360, 17), -- 2201
+(360, 42), -- 2202
+(360, 5), -- 2203
+(360, 344); -- 2204
 
 INSERT INTO subcategories(name, category_id)
 VALUES 

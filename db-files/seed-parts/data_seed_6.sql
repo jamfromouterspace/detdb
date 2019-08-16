@@ -1,19 +1,19 @@
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[8.1, 101.3]'); -- 229
+(1, '[8.1, 101.3]'); -- 230
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk2', 1, 'mk2.txt', 'Joe Shepherd', 27, 1); -- 233
+('mk2', 1, 'Joe Shepherd', 27, 1, 'No diluent data. ', 230, 5, 2, 17, 14, 6); -- 233
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(233, 14), -- 1410
-(233, 2), -- 1411
-(233, 17), -- 1412
-(233, 229), -- 1413
-(233, 5), -- 1414
-(233, 6); -- 1415
+(233, 14), -- 1411
+(233, 2), -- 1412
+(233, 17), -- 1413
+(233, 230), -- 1414
+(233, 5), -- 1415
+(233, 6); -- 1416
 
 INSERT INTO subcategories(name, category_id)
 VALUES 
@@ -36,24 +36,24 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"CF3H"'), -- 230
-(5, '"Ar+CF3H"'), -- 231
-(1, '26.7'); -- 232
+(5, '"CF3H"'), -- 231
+(5, '"Ar+CF3H"'), -- 232
+(1, '26.7'); -- 233
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at189', 1, 'at189.txt', 'Joe Shepherd', 71, 1, 'Assumed units of \'mm\' for \'cell length\'. '); -- 234
+('at189', 1, 'Joe Shepherd', 71, 1, 'Assumed units of \'mm\' for \'cell length\'. ', 233, 5, 2, 11, 232, 6); -- 234
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(234, 10), -- 1416
-(234, 230), -- 1417
+(234, 10), -- 1417
 (234, 231), -- 1418
-(234, 2), -- 1419
-(234, 11), -- 1420
-(234, 232), -- 1421
-(234, 5), -- 1422
-(234, 6); -- 1423
+(234, 232), -- 1419
+(234, 2), -- 1420
+(234, 11), -- 1421
+(234, 233), -- 1422
+(234, 5), -- 1423
+(234, 6); -- 1424
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -72,24 +72,24 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"CF4"'), -- 233
-(5, '"Ar+CF4"'), -- 234
-(6, '0.8'); -- 235
+(5, '"CF4"'), -- 234
+(5, '"Ar+CF4"'), -- 235
+(6, '0.8'); -- 236
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at70a', 1, 'at70a.txt', 'Joe Shepherd', 94, 1, 'Assumed units of \'mm\' for \'cell length\'. '); -- 235
+('at70a', 1, 'Joe Shepherd', 94, 1, 'Assumed units of \'mm\' for \'cell length\'. ', 233, 5, 2, 11, 235, 236); -- 235
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(235, 10), -- 1424
-(235, 233), -- 1425
+(235, 10), -- 1425
 (235, 234), -- 1426
-(235, 2), -- 1427
-(235, 11), -- 1428
-(235, 232), -- 1429
-(235, 5), -- 1430
-(235, 235); -- 1431
+(235, 235), -- 1427
+(235, 2), -- 1428
+(235, 11), -- 1429
+(235, 233), -- 1430
+(235, 5), -- 1431
+(235, 236); -- 1432
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -106,20 +106,20 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at70b', 1, 'at70b.txt', 'Joe Shepherd', 94, 1, 'Assumed units of \'mm\' for \'cell length\'. '); -- 236
+('at70b', 1, 'Joe Shepherd', 94, 1, 'Assumed units of \'mm\' for \'cell length\'. ', 233, 5, 2, 11, 235, 6); -- 236
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(236, 10), -- 1432
-(236, 233), -- 1433
+(236, 10), -- 1433
 (236, 234), -- 1434
-(236, 2), -- 1435
-(236, 11), -- 1436
-(236, 232), -- 1437
-(236, 5), -- 1438
-(236, 6); -- 1439
+(236, 235), -- 1435
+(236, 2), -- 1436
+(236, 11), -- 1437
+(236, 233), -- 1438
+(236, 5), -- 1439
+(236, 6); -- 1440
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -134,22 +134,22 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(6, '1.2'); -- 236
+(6, '1.2'); -- 237
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at70c', 1, 'at70c.txt', 'Joe Shepherd', 94, 1, 'Assumed units of \'mm\' for \'cell length\'. '); -- 237
+('at70c', 1, 'Joe Shepherd', 94, 1, 'Assumed units of \'mm\' for \'cell length\'. ', 233, 5, 2, 11, 235, 237); -- 237
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(237, 10), -- 1440
-(237, 233), -- 1441
+(237, 10), -- 1441
 (237, 234), -- 1442
-(237, 2), -- 1443
-(237, 11), -- 1444
-(237, 232), -- 1445
-(237, 5), -- 1446
-(237, 236); -- 1447
+(237, 235), -- 1443
+(237, 2), -- 1444
+(237, 11), -- 1445
+(237, 233), -- 1446
+(237, 5), -- 1447
+(237, 237); -- 1448
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 

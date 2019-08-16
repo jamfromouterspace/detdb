@@ -54,7 +54,9 @@ ins_dets_subcats = InsertGen('detonation_subcategories', ('detonation_id','subca
 ins_details = InsertGen('details', ('property_id','value'))
 ins_dets = InsertGen('detonations', ('name','category_id',
                                      'file_name','added_by',
-                                     'citation_id','legacy', 'issues'))
+                                     'citation_id','legacy', 'issues',
+                                     'pressure_id','temperature_id','fuel_id',
+                                     'oxidizer_id','diluent_id','er_id'))
 ins_det_details = InsertGen('detonation_details', ('detonation_id','detail_id'))
 ins_data = InsertGen('data_points', ('column_data','property_id','detonation_id'))
 
@@ -71,8 +73,8 @@ props_index = 8
 for p in total_props :
     ins_props.add(p)
 folder = ''
-if os.path.exists('../../db/seed_files/') :
-    folder = '../../db/seed_files/'
+if os.path.exists('../../db-files/seed-parts/') :
+    folder = '../../db-files/seed-parts/'
 f = open(folder + 'data_seed_0.sql', "w")
 f.write(ins_props.flush())
 f.write('\n')
@@ -111,12 +113,18 @@ def scrape(url, output_file, debug=False) :
         subcats = list(x.strip() for x in bottom[5].string.strip().split(','))
         # Chemical compounds are sometimes mixtures such as '18.46CO+H2'
         fuel = list(x.strip() for x in re.split('\+|and',bottom[3].string.strip()))
+        fuel_id = None
         oxidizer = list(x.strip() for x in re.split('\+|and',bottom[7].string.strip()))
+        oxidizer_id = None
         pressure = tuple(safeFloat(x.strip()) for x in re.split(',|-',bottom[9].string.strip().split('kPa')[0]))
+        pressure_id = None
         diluent = list(x.strip() for x in re.split('\+|and',bottom[11].string.strip()))
+        diluent_id = None
         temp = tuple(safeFloat(x.strip()) for x in re.split(',|-',bottom[13].string.strip().split('K')[0]))
+        temp_id = None
         eq_ratio = bottom[15].string.strip()
         eq_ratio = tuple(safeFloat(x.strip()) for x in re.split(',|-',eq_ratio) if eq_ratio)
+        er_id = None
 
         # Save relevant information for later (see end of script)
         total_dets[id] = {'index' : dets_index, 'data': {}}
@@ -124,6 +132,8 @@ def scrape(url, output_file, debug=False) :
         # Clean up special cases
         if not diluent or not diluent[0] :
             diluent = None
+        if not oxidizer or not oxidizer[0] :
+            oxidizer = None
         if not temp or not temp[0]:
             temp = None
         if not pressure or not pressure[0]:
@@ -265,6 +275,10 @@ def scrape(url, output_file, debug=False) :
         else :
             notes += 'No equivalence ratio data. '
             details.append((total_props[('equivalence ratio', 'unitless')], None))
+        if not oxidizer :
+            notes += 'No oxidizer data. '
+        if not diluent :
+            notes += 'No diluent data. '
 
         for d in details :
             if d in total_details :
@@ -278,8 +292,36 @@ def scrape(url, output_file, debug=False) :
             f.write(ins_details.flush())
             f.write('\n')
 
+        for d in details :
+            if d not in total_details :
+                raise Exception('Unexpected error. A detail was not properly added')
+            if d[0] == 1:
+                pressure_id = total_details[d]
+            elif d[0] == 2:
+                temperature_id = total_details[d]
+            elif d[0] == 3:
+                fuel_id = total_details[d]
+            elif d[0] == 4:
+                oxidizer_id = total_details[d]
+            elif d[0] == 5:
+                diluent_id = total_details[d]
+            elif d[0] == 6:
+                er_id = total_details[d]
+
+        if debug :
+            printBlue('Pressure ID : ' + str(pressure_id))    
+            printBlue('Temperature ID : ' + str(temperature_id))    
+            printBlue('Fuel ID : ' + str(fuel_id))    
+            printBlue('Oxidizer ID : ' + str(oxidizer_id))    
+            printBlue('Diluent ID : ' + str(diluent_id))    
+            printBlue('ER ID : ' + str(er_id))    
+
+
         # detonations table entry
-        ins_dets.add((id,cat,id+'.txt','Joe Shepherd',cit, 1, notes))
+        ins_dets.add((id, cat, None, 'Joe Shepherd',cit, 1, notes,
+            pressure_id, temperature_id, 
+            fuel_id, oxidizer_id, diluent_id, er_id))
+            
         # 1 -> True -> Legacy entry
         f.write(ins_dets.flush())
         f.write('\n')
@@ -361,8 +403,8 @@ for i in range(0,len(pages)) :
     # Place seed file in more convenient folder /db/seed_files/
     # if it exists, otherwise place in current folder
     folder = ''
-    if os.path.exists('../../db/seed_files/') :
-        folder = '../../db/seed_files/'
+    if os.path.exists('../../db-files/seed-parts/') :
+        folder = '../../db-files/seed-parts/'
     scrape(url, folder + 'data_seed_' + str(i+1) + '.sql', debug=debug)
     # Small delay so that requests to the site are less frequent
     time.sleep(0.1)

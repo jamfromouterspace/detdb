@@ -1,15 +1,15 @@
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at193a', 1, 'at193a.txt', 'Joe Shepherd', 4, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 238
+('at193a', 1, 'Joe Shepherd', 4, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. No diluent data. ', 124, 5, 116, 11, 14, 125); -- 238
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(238, 14), -- 1448
-(238, 116), -- 1449
-(238, 11), -- 1450
-(238, 124), -- 1451
-(238, 5), -- 1452
-(238, 125); -- 1453
+(238, 14), -- 1449
+(238, 116), -- 1450
+(238, 11), -- 1451
+(238, 124), -- 1452
+(238, 5), -- 1453
+(238, 125); -- 1454
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -24,20 +24,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[90.0, 120.0]'); -- 237
+(1, '[90.0, 120.0]'); -- 238
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at194c', 1, 'at194c.txt', 'Joe Shepherd', 4, 1); -- 239
+('at194c', 1, 'Joe Shepherd', 4, 1, 'No diluent data. ', 238, 5, 116, 11, 14, 6); -- 239
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(239, 14), -- 1454
-(239, 116), -- 1455
-(239, 11), -- 1456
-(239, 237), -- 1457
-(239, 5), -- 1458
-(239, 6); -- 1459
+(239, 14), -- 1455
+(239, 116), -- 1456
+(239, 11), -- 1457
+(239, 238), -- 1458
+(239, 5), -- 1459
+(239, 6); -- 1460
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -51,18 +51,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at194a', 1, 'at194a.txt', 'Joe Shepherd', 10, 1, 'Assumed units of \'mm\' for \'cell length\'. '); -- 240
+('at194a', 1, 'Joe Shepherd', 10, 1, 'Assumed units of \'mm\' for \'cell length\'. No diluent data. ', 42, 5, 116, 11, 14, 6); -- 240
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(240, 14), -- 1460
-(240, 116), -- 1461
-(240, 11), -- 1462
-(240, 42), -- 1463
-(240, 5), -- 1464
-(240, 6); -- 1465
+(240, 14), -- 1461
+(240, 116), -- 1462
+(240, 11), -- 1463
+(240, 42), -- 1464
+(240, 5), -- 1465
+(240, 6); -- 1466
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -78,22 +78,22 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[270.0, 4600.0]'), -- 238
-(2, NULL), -- 239
-(6, '1.13'); -- 240
+(1, '[270.0, 4600.0]'), -- 239
+(2, NULL), -- 240
+(6, '1.13'); -- 241
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk1a', 1, 'mk1a.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 241
+('mk1a', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 239, 240, 181, 17, 14, 241); -- 241
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(241, 14), -- 1466
-(241, 181), -- 1467
-(241, 17), -- 1468
-(241, 238), -- 1469
+(241, 14), -- 1467
+(241, 181), -- 1468
+(241, 17), -- 1469
 (241, 239), -- 1470
-(241, 240); -- 1471
+(241, 240), -- 1471
+(241, 241); -- 1472
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -109,21 +109,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[270.0, 900.0]'), -- 241
-(6, '1.31'); -- 242
+(1, '[270.0, 900.0]'), -- 242
+(6, '1.31'); -- 243
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk1b', 1, 'mk1b.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 242
+('mk1b', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 242, 240, 181, 17, 14, 243); -- 242
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(242, 14), -- 1472
-(242, 181), -- 1473
-(242, 17), -- 1474
-(242, 241), -- 1475
-(242, 239), -- 1476
-(242, 242); -- 1477
+(242, 14), -- 1473
+(242, 181), -- 1474
+(242, 17), -- 1475
+(242, 242), -- 1476
+(242, 240), -- 1477
+(242, 243); -- 1478
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -139,21 +139,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[1000.0, 4500.0]'), -- 243
-(6, '1.41'); -- 244
+(1, '[1000.0, 4500.0]'), -- 244
+(6, '1.41'); -- 245
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk1c', 1, 'mk1c.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 243
+('mk1c', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 244, 240, 181, 17, 14, 245); -- 243
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(243, 14), -- 1478
-(243, 181), -- 1479
-(243, 17), -- 1480
-(243, 243), -- 1481
-(243, 239), -- 1482
-(243, 244); -- 1483
+(243, 14), -- 1479
+(243, 181), -- 1480
+(243, 17), -- 1481
+(243, 244), -- 1482
+(243, 240), -- 1483
+(243, 245); -- 1484
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -169,21 +169,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '5300.0'), -- 245
-(6, '1.61'); -- 246
+(1, '5300.0'), -- 246
+(6, '1.61'); -- 247
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk1d', 1, 'mk1d.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 244
+('mk1d', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 246, 240, 181, 17, 14, 247); -- 244
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(244, 14), -- 1484
-(244, 181), -- 1485
-(244, 17), -- 1486
-(244, 245), -- 1487
-(244, 239), -- 1488
-(244, 246); -- 1489
+(244, 14), -- 1485
+(244, 181), -- 1486
+(244, 17), -- 1487
+(244, 246), -- 1488
+(244, 240), -- 1489
+(244, 247); -- 1490
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -199,20 +199,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[300.0, 1000.0]'); -- 247
+(1, '[300.0, 1000.0]'); -- 248
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk3a', 1, 'mk3a.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 245
+('mk3a', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 248, 240, 159, 17, 14, 236); -- 245
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(245, 14), -- 1490
-(245, 159), -- 1491
-(245, 17), -- 1492
-(245, 247), -- 1493
-(245, 239), -- 1494
-(245, 235); -- 1495
+(245, 14), -- 1491
+(245, 159), -- 1492
+(245, 17), -- 1493
+(245, 248), -- 1494
+(245, 240), -- 1495
+(245, 236); -- 1496
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -228,20 +228,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[150.0, 900.0]'); -- 248
+(1, '[150.0, 900.0]'); -- 249
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk3b', 1, 'mk3b.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 246
+('mk3b', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 249, 240, 159, 17, 14, 241); -- 246
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(246, 14), -- 1496
-(246, 159), -- 1497
-(246, 17), -- 1498
-(246, 248), -- 1499
-(246, 239), -- 1500
-(246, 240); -- 1501
+(246, 14), -- 1497
+(246, 159), -- 1498
+(246, 17), -- 1499
+(246, 249), -- 1500
+(246, 240), -- 1501
+(246, 241); -- 1502
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -255,18 +255,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk3c', 1, 'mk3c.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 247
+('mk3c', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 248, 240, 159, 17, 14, 241); -- 247
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(247, 14), -- 1502
-(247, 159), -- 1503
-(247, 17), -- 1504
-(247, 247), -- 1505
-(247, 239), -- 1506
-(247, 240); -- 1507
+(247, 14), -- 1503
+(247, 159), -- 1504
+(247, 17), -- 1505
+(247, 248), -- 1506
+(247, 240), -- 1507
+(247, 241); -- 1508
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -282,20 +282,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[200.0, 1100.0]'); -- 249
+(1, '[200.0, 1100.0]'); -- 250
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk3d', 1, 'mk3d.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 248
+('mk3d', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. No diluent data. ', 250, 240, 159, 17, 14, 247); -- 248
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(248, 14), -- 1508
-(248, 159), -- 1509
-(248, 17), -- 1510
-(248, 249), -- 1511
-(248, 239), -- 1512
-(248, 246); -- 1513
+(248, 14), -- 1509
+(248, 159), -- 1510
+(248, 17), -- 1511
+(248, 250), -- 1512
+(248, 240), -- 1513
+(248, 247); -- 1514
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -311,21 +311,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[50.0, 200.0]'), -- 250
-(6, '1.01'); -- 251
+(1, '[50.0, 200.0]'), -- 251
+(6, '1.01'); -- 252
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk4a', 1, 'mk4a.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 249
+('mk4a', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. ', 251, 240, 159, 11, 1, 252); -- 249
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(249, 1), -- 1514
-(249, 159), -- 1515
-(249, 11), -- 1516
-(249, 250), -- 1517
-(249, 239), -- 1518
-(249, 251); -- 1519
+(249, 1), -- 1515
+(249, 159), -- 1516
+(249, 11), -- 1517
+(249, 251), -- 1518
+(249, 240), -- 1519
+(249, 252); -- 1520
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -341,21 +341,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[70.0, 400.0]'), -- 252
-(6, '1.05'); -- 253
+(1, '[70.0, 400.0]'), -- 253
+(6, '1.05'); -- 254
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk4b', 1, 'mk4b.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 250
+('mk4b', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. ', 253, 240, 159, 11, 1, 254); -- 250
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(250, 1), -- 1520
-(250, 159), -- 1521
-(250, 11), -- 1522
-(250, 252), -- 1523
-(250, 239), -- 1524
-(250, 253); -- 1525
+(250, 1), -- 1521
+(250, 159), -- 1522
+(250, 11), -- 1523
+(250, 253), -- 1524
+(250, 240), -- 1525
+(250, 254); -- 1526
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -371,20 +371,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[150.0, 600.0]'); -- 254
+(1, '[150.0, 600.0]'); -- 255
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk4c', 1, 'mk4c.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 251
+('mk4c', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. ', 255, 240, 159, 11, 1, 254); -- 251
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(251, 1), -- 1526
-(251, 159), -- 1527
-(251, 11), -- 1528
-(251, 254), -- 1529
-(251, 239), -- 1530
-(251, 253); -- 1531
+(251, 1), -- 1527
+(251, 159), -- 1528
+(251, 11), -- 1529
+(251, 255), -- 1530
+(251, 240), -- 1531
+(251, 254); -- 1532
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -400,20 +400,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[350.0, 900.0]'); -- 255
+(1, '[350.0, 900.0]'); -- 256
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk4d', 1, 'mk4d.txt', 'Joe Shepherd', 12, 1, 'No initial temperature data. '); -- 252
+('mk4d', 1, 'Joe Shepherd', 12, 1, 'No initial temperature data. ', 256, 240, 159, 11, 1, 254); -- 252
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(252, 1), -- 1532
-(252, 159), -- 1533
-(252, 11), -- 1534
-(252, 255), -- 1535
-(252, 239), -- 1536
-(252, 253); -- 1537
+(252, 1), -- 1533
+(252, 159), -- 1534
+(252, 11), -- 1535
+(252, 256), -- 1536
+(252, 240), -- 1537
+(252, 254); -- 1538
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -429,21 +429,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[50.0, 230.0]'), -- 256
-(6, '1.08'); -- 257
+(1, '[50.0, 230.0]'), -- 257
+(6, '1.08'); -- 258
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk5a', 1, 'mk5a.txt', 'Joe Shepherd', 12, 1); -- 253
+('mk5a', 1, 'Joe Shepherd', 12, 1, 257, 5, 116, 11, 1, 258); -- 253
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(253, 1), -- 1538
-(253, 116), -- 1539
-(253, 11), -- 1540
-(253, 256), -- 1541
-(253, 5), -- 1542
-(253, 257); -- 1543
+(253, 1), -- 1539
+(253, 116), -- 1540
+(253, 11), -- 1541
+(253, 257), -- 1542
+(253, 5), -- 1543
+(253, 258); -- 1544
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -459,21 +459,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[300.0, 700.0]'), -- 258
-(6, '1.09'); -- 259
+(1, '[300.0, 700.0]'), -- 259
+(6, '1.09'); -- 260
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk5b', 1, 'mk5b.txt', 'Joe Shepherd', 12, 1); -- 254
+('mk5b', 1, 'Joe Shepherd', 12, 1, 259, 5, 116, 11, 1, 260); -- 254
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(254, 1), -- 1544
-(254, 116), -- 1545
-(254, 11), -- 1546
-(254, 258), -- 1547
-(254, 5), -- 1548
-(254, 259); -- 1549
+(254, 1), -- 1545
+(254, 116), -- 1546
+(254, 11), -- 1547
+(254, 259), -- 1548
+(254, 5), -- 1549
+(254, 260); -- 1550
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -489,21 +489,21 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[650.0, 1100.0]'), -- 260
-(6, '1.15'); -- 261
+(1, '[650.0, 1100.0]'), -- 261
+(6, '1.15'); -- 262
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk5c', 1, 'mk5c.txt', 'Joe Shepherd', 12, 1); -- 255
+('mk5c', 1, 'Joe Shepherd', 12, 1, 261, 5, 116, 11, 1, 262); -- 255
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(255, 1), -- 1550
-(255, 116), -- 1551
-(255, 11), -- 1552
-(255, 260), -- 1553
-(255, 5), -- 1554
-(255, 261); -- 1555
+(255, 1), -- 1551
+(255, 116), -- 1552
+(255, 11), -- 1553
+(255, 261), -- 1554
+(255, 5), -- 1555
+(255, 262); -- 1556
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -517,18 +517,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at194b', 1, 'at194b.txt', 'Joe Shepherd', 27, 1, 'Assumed units of \'mm\' for \'cell length\'. '); -- 256
+('at194b', 1, 'Joe Shepherd', 27, 1, 'Assumed units of \'mm\' for \'cell length\'. No diluent data. ', 42, 5, 116, 11, 14, 6); -- 256
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(256, 14), -- 1556
-(256, 116), -- 1557
-(256, 11), -- 1558
-(256, 42), -- 1559
-(256, 5), -- 1560
-(256, 6); -- 1561
+(256, 14), -- 1557
+(256, 116), -- 1558
+(256, 11), -- 1559
+(256, 42), -- 1560
+(256, 5), -- 1561
+(256, 6); -- 1562
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -544,20 +544,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '33.8'); -- 262
+(1, '33.8'); -- 263
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at93a', 1, 'at93a.txt', 'Joe Shepherd', 22, 1, 'Missing labels (deduced from plots). '); -- 257
+('at93a', 1, 'Joe Shepherd', 22, 1, 'Missing labels (deduced from plots). ', 263, 5, 180, 11, 1, 98); -- 257
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(257, 1), -- 1562
-(257, 180), -- 1563
-(257, 11), -- 1564
-(257, 262), -- 1565
-(257, 5), -- 1566
-(257, 98); -- 1567
+(257, 1), -- 1563
+(257, 180), -- 1564
+(257, 11), -- 1565
+(257, 263), -- 1566
+(257, 5), -- 1567
+(257, 98); -- 1568
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -572,20 +572,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '67.5'); -- 263
+(1, '67.5'); -- 264
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at93b', 1, 'at93b.txt', 'Joe Shepherd', 22, 1, 'Missing labels (deduced from plots). '); -- 258
+('at93b', 1, 'Joe Shepherd', 22, 1, 'Missing labels (deduced from plots). ', 264, 5, 180, 11, 1, 98); -- 258
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(258, 1), -- 1568
-(258, 180), -- 1569
-(258, 11), -- 1570
-(258, 263), -- 1571
-(258, 5), -- 1572
-(258, 98); -- 1573
+(258, 1), -- 1569
+(258, 180), -- 1570
+(258, 11), -- 1571
+(258, 264), -- 1572
+(258, 5), -- 1573
+(258, 98); -- 1574
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -600,20 +600,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[3.0, 30.0]'); -- 264
+(1, '[3.0, 30.0]'); -- 265
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at139a', 1, 'at139a.txt', 'Joe Shepherd', 27, 1); -- 259
+('at139a', 1, 'Joe Shepherd', 27, 1, 'No diluent data. ', 265, 5, 180, 11, 14, 6); -- 259
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(259, 14), -- 1574
-(259, 180), -- 1575
-(259, 11), -- 1576
-(259, 264), -- 1577
-(259, 5), -- 1578
-(259, 6); -- 1579
+(259, 14), -- 1575
+(259, 180), -- 1576
+(259, 11), -- 1577
+(259, 265), -- 1578
+(259, 5), -- 1579
+(259, 6); -- 1580
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -629,20 +629,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[60.8, 101.3]'); -- 265
+(1, '[60.8, 101.3]'); -- 266
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at139e', 1, 'at139e.txt', 'Joe Shepherd', 27, 1); -- 260
+('at139e', 1, 'Joe Shepherd', 27, 1, 'No diluent data. ', 266, 5, 180, 17, 14, 6); -- 260
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(260, 14), -- 1580
-(260, 180), -- 1581
-(260, 17), -- 1582
-(260, 265), -- 1583
-(260, 5), -- 1584
-(260, 6); -- 1585
+(260, 14), -- 1581
+(260, 180), -- 1582
+(260, 17), -- 1583
+(260, 266), -- 1584
+(260, 5), -- 1585
+(260, 6); -- 1586
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -658,20 +658,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[10.0, 40.5]'); -- 266
+(1, '[10.0, 40.5]'); -- 267
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at139b', 1, 'at139b.txt', 'Joe Shepherd', 27, 1); -- 261
+('at139b', 1, 'Joe Shepherd', 27, 1, 267, 5, 180, 11, 1, 6); -- 261
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(261, 1), -- 1586
-(261, 180), -- 1587
-(261, 11), -- 1588
-(261, 266), -- 1589
-(261, 5), -- 1590
-(261, 6); -- 1591
+(261, 1), -- 1587
+(261, 180), -- 1588
+(261, 11), -- 1589
+(261, 267), -- 1590
+(261, 5), -- 1591
+(261, 6); -- 1592
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -685,18 +685,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at139c', 1, 'at139c.txt', 'Joe Shepherd', 27, 1); -- 262
+('at139c', 1, 'Joe Shepherd', 27, 1, 267, 5, 180, 11, 1, 6); -- 262
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(262, 1), -- 1592
-(262, 180), -- 1593
-(262, 11), -- 1594
-(262, 266), -- 1595
-(262, 5), -- 1596
-(262, 6); -- 1597
+(262, 1), -- 1593
+(262, 180), -- 1594
+(262, 11), -- 1595
+(262, 267), -- 1596
+(262, 5), -- 1597
+(262, 6); -- 1598
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -712,20 +712,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '40.5'); -- 267
+(1, '40.5'); -- 268
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at139d', 1, 'at139d.txt', 'Joe Shepherd', 27, 1); -- 263
+('at139d', 1, 'Joe Shepherd', 27, 1, 268, 5, 180, 11, 1, 6); -- 263
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(263, 1), -- 1598
-(263, 180), -- 1599
-(263, 11), -- 1600
-(263, 267), -- 1601
-(263, 5), -- 1602
-(263, 6); -- 1603
+(263, 1), -- 1599
+(263, 180), -- 1600
+(263, 11), -- 1601
+(263, 268), -- 1602
+(263, 5), -- 1603
+(263, 6); -- 1604
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -739,18 +739,18 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at140a', 1, 'at140a.txt', 'Joe Shepherd', 27, 1); -- 264
+('at140a', 1, 'Joe Shepherd', 27, 1, 'No diluent data. ', 230, 5, 133, 17, 14, 6); -- 264
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(264, 14), -- 1604
-(264, 133), -- 1605
-(264, 17), -- 1606
-(264, 229), -- 1607
-(264, 5), -- 1608
-(264, 6); -- 1609
+(264, 14), -- 1605
+(264, 133), -- 1606
+(264, 17), -- 1607
+(264, 230), -- 1608
+(264, 5), -- 1609
+(264, 6); -- 1610
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -766,20 +766,20 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[30.4, 101.3]'); -- 268
+(1, '[30.4, 101.3]'); -- 269
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at140b', 1, 'at140b.txt', 'Joe Shepherd', 27, 1); -- 265
+('at140b', 1, 'Joe Shepherd', 27, 1, 'No diluent data. ', 269, 5, 159, 17, 14, 6); -- 265
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(265, 14), -- 1610
-(265, 159), -- 1611
-(265, 17), -- 1612
-(265, 268), -- 1613
-(265, 5), -- 1614
-(265, 6); -- 1615
+(265, 14), -- 1611
+(265, 159), -- 1612
+(265, 17), -- 1613
+(265, 269), -- 1614
+(265, 5), -- 1615
+(265, 6); -- 1616
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -795,29 +795,29 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"11.88Ar"'), -- 269
-(5, '"CF3Br"'), -- 270
-(5, '"11.88Ar+CF3Br"'), -- 271
-(3, '"18.46CO"'), -- 272
-(3, '"18.46CO+H2"'), -- 273
-(1, '[22.7, 33.3]'); -- 274
+(5, '"11.88Ar"'), -- 270
+(5, '"CF3Br"'), -- 271
+(5, '"11.88Ar+CF3Br"'), -- 272
+(3, '"18.46CO"'), -- 273
+(3, '"18.46CO+H2"'), -- 274
+(1, '[22.7, 33.3]'); -- 275
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at169e', 1, 'at169e.txt', 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. '); -- 266
+('at169e', 1, 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. ', 275, 5, 274, 11, 272, 6); -- 266
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(266, 269), -- 1616
 (266, 270), -- 1617
 (266, 271), -- 1618
 (266, 272), -- 1619
-(266, 2), -- 1620
-(266, 273), -- 1621
-(266, 11), -- 1622
-(266, 274), -- 1623
-(266, 5), -- 1624
-(266, 6); -- 1625
+(266, 273), -- 1620
+(266, 2), -- 1621
+(266, 274), -- 1622
+(266, 11), -- 1623
+(266, 275), -- 1624
+(266, 5), -- 1625
+(266, 6); -- 1626
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -832,22 +832,22 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(1, '[4.7, 40.0]'); -- 275
+(1, '[4.7, 40.0]'); -- 276
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at169a', 1, 'at169a.txt', 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. '); -- 267
+('at169a', 1, 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. ', 276, 5, 274, 11, 10, 6); -- 267
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(267, 10), -- 1626
-(267, 272), -- 1627
-(267, 2), -- 1628
-(267, 273), -- 1629
-(267, 11), -- 1630
-(267, 275), -- 1631
-(267, 5), -- 1632
-(267, 6); -- 1633
+(267, 10), -- 1627
+(267, 273), -- 1628
+(267, 2), -- 1629
+(267, 274), -- 1630
+(267, 11), -- 1631
+(267, 276), -- 1632
+(267, 5), -- 1633
+(267, 6); -- 1634
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -862,26 +862,26 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"CFCl3"'), -- 276
-(5, '"11.88Ar+CFCl3"'), -- 277
-(1, '[13.3, 40.0]'); -- 278
+(5, '"CFCl3"'), -- 277
+(5, '"11.88Ar+CFCl3"'), -- 278
+(1, '[13.3, 40.0]'); -- 279
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at169d', 1, 'at169d.txt', 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. '); -- 268
+('at169d', 1, 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. ', 279, 5, 274, 11, 278, 6); -- 268
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(268, 269), -- 1634
-(268, 276), -- 1635
+(268, 270), -- 1635
 (268, 277), -- 1636
-(268, 272), -- 1637
-(268, 2), -- 1638
-(268, 273), -- 1639
-(268, 11), -- 1640
-(268, 278), -- 1641
-(268, 5), -- 1642
-(268, 6); -- 1643
+(268, 278), -- 1637
+(268, 273), -- 1638
+(268, 2), -- 1639
+(268, 274), -- 1640
+(268, 11), -- 1641
+(268, 279), -- 1642
+(268, 5), -- 1643
+(268, 6); -- 1644
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -896,26 +896,26 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"CF2Cl2"'), -- 279
-(5, '"11.88Ar+CF2Cl2"'), -- 280
-(1, '[8.0, 33.3]'); -- 281
+(5, '"CF2Cl2"'), -- 280
+(5, '"11.88Ar+CF2Cl2"'), -- 281
+(1, '[8.0, 33.3]'); -- 282
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at169c', 1, 'at169c.txt', 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. '); -- 269
+('at169c', 1, 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. ', 282, 5, 274, 11, 281, 6); -- 269
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(269, 269), -- 1644
-(269, 279), -- 1645
+(269, 270), -- 1645
 (269, 280), -- 1646
-(269, 272), -- 1647
-(269, 2), -- 1648
-(269, 273), -- 1649
-(269, 11), -- 1650
-(269, 281), -- 1651
-(269, 5), -- 1652
-(269, 6); -- 1653
+(269, 281), -- 1647
+(269, 273), -- 1648
+(269, 2), -- 1649
+(269, 274), -- 1650
+(269, 11), -- 1651
+(269, 282), -- 1652
+(269, 5), -- 1653
+(269, 6); -- 1654
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 
@@ -930,26 +930,26 @@ VALUES
 
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"CF3Cl"'), -- 282
-(5, '"11.88Ar+CF3Cl"'), -- 283
-(1, '[9.3, 26.7]'); -- 284
+(5, '"CF3Cl"'), -- 283
+(5, '"11.88Ar+CF3Cl"'), -- 284
+(1, '[9.3, 26.7]'); -- 285
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at169b', 1, 'at169b.txt', 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. '); -- 270
+('at169b', 1, 'Joe Shepherd', 72, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell length\'. ', 285, 5, 274, 11, 284, 6); -- 270
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
-(270, 269), -- 1654
-(270, 282), -- 1655
+(270, 270), -- 1655
 (270, 283), -- 1656
-(270, 272), -- 1657
-(270, 2), -- 1658
-(270, 273), -- 1659
-(270, 11), -- 1660
-(270, 284), -- 1661
-(270, 5), -- 1662
-(270, 6); -- 1663
+(270, 284), -- 1657
+(270, 273), -- 1658
+(270, 2), -- 1659
+(270, 274), -- 1660
+(270, 11), -- 1661
+(270, 285), -- 1662
+(270, 5), -- 1663
+(270, 6); -- 1664
 
 INSERT INTO detonation_subcategories(detonation_id, subcategory_id)
 VALUES 

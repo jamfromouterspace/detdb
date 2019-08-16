@@ -11,9 +11,9 @@ VALUES
 (2, '293.0'), -- 5
 (6, '1.0'); -- 6
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja5d', 1, 'ja5d.txt', 'Joe Shepherd', 3, 1); -- 1
+('ja5d', 1, 'Joe Shepherd', 3, 1, 4, 5, 2, 3, 1, 6); -- 1
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -53,9 +53,9 @@ VALUES
 (1, '[70.0, 100.0]'), -- 8
 (6, '[0.07, 0.39]'); -- 9
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja5e', 1, 'ja5e.txt', 'Joe Shepherd', 3, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 2
+('ja5e', 1, 'Joe Shepherd', 3, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 8, 5, 2, 3, 7, 9); -- 2
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -87,9 +87,9 @@ VALUES
 (4, '"O2"'), -- 11
 (1, '[26.3, 56.7]'); -- 12
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at33a', 1, 'at33a.txt', 'Joe Shepherd', 5, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 3
+('at33a', 1, 'Joe Shepherd', 5, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 12, 5, 2, 11, 10, 6); -- 3
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -116,9 +116,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at33b', 1, 'at33b.txt', 'Joe Shepherd', 5, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 4
+('at33b', 1, 'Joe Shepherd', 5, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 12, 5, 2, 11, 10, 6); -- 4
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -145,9 +145,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '0.75'); -- 13
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at33c', 1, 'at33c.txt', 'Joe Shepherd', 5, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 5
+('at33c', 1, 'Joe Shepherd', 5, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 12, 5, 2, 11, 10, 13); -- 5
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -176,9 +176,9 @@ VALUES
 (1, '[6.7, 53.3]'), -- 15
 (2, '298.0'); -- 16
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at58a', 1, 'at58a.txt', 'Joe Shepherd', 9, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 6
+('at58a', 1, 'Joe Shepherd', 9, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 15, 16, 2, 11, 14, 6); -- 6
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -201,9 +201,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at58b', 1, 'at58b.txt', 'Joe Shepherd', 9, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 7
+('at58b', 1, 'Joe Shepherd', 9, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 15, 16, 2, 11, 10, 6); -- 7
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -226,9 +226,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at58c', 1, 'at58c.txt', 'Joe Shepherd', 9, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 8
+('at58c', 1, 'Joe Shepherd', 9, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 15, 16, 2, 11, 10, 6); -- 8
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -257,9 +257,9 @@ VALUES
 (1, '82.7'), -- 18
 (6, '[0.5, 0.7]'); -- 19
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at19', 1, 'at19.txt', 'Joe Shepherd', 16, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. '); -- 9
+('at19', 1, 'Joe Shepherd', 16, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 18, 5, 2, 17, 14, 19); -- 9
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -286,9 +286,9 @@ VALUES
 (2, '300.0'), -- 20
 (6, '[0.5, 3.3]'); -- 21
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at14', 1, 'at14.txt', 'Joe Shepherd', 29, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. '); -- 10
+('at14', 1, 'Joe Shepherd', 29, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 20, 2, 17, 14, 21); -- 10
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -315,9 +315,9 @@ VALUES
 (2, '500.0'), -- 22
 (6, '[0.35, 2.4]'); -- 23
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at15', 1, 'at15.txt', 'Joe Shepherd', 29, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. '); -- 11
+('at15', 1, 'Joe Shepherd', 29, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 22, 2, 17, 14, 23); -- 11
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -344,9 +344,9 @@ VALUES
 (2, '650.0'), -- 24
 (6, '[0.26, 2.4]'); -- 25
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at16', 1, 'at16.txt', 'Joe Shepherd', 29, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. '); -- 12
+('at16', 1, 'Joe Shepherd', 29, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 24, 2, 17, 14, 25); -- 12
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -372,9 +372,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.37, 2.51]'); -- 26
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja20a', 1, 'ja20a.txt', 'Joe Shepherd', 30, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Standardized \'cell size\' to \'cell width\'. '); -- 13
+('ja20a', 1, 'Joe Shepherd', 30, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 20, 2, 17, 14, 26); -- 13
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -400,9 +400,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.26, 1.0]'); -- 27
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja20b', 1, 'ja20b.txt', 'Joe Shepherd', 30, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Standardized \'cell size\' to \'cell width\'. '); -- 14
+('ja20b', 1, 'Joe Shepherd', 30, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 22, 2, 17, 14, 27); -- 14
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -428,9 +428,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.12, 0.4]'); -- 28
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja20c', 1, 'ja20c.txt', 'Joe Shepherd', 30, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Standardized \'cell size\' to \'cell width\'. '); -- 15
+('ja20c', 1, 'Joe Shepherd', 30, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 24, 2, 17, 14, 28); -- 15
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -458,9 +458,9 @@ VALUES
 (1, '[150.0, 200.0]'), -- 30
 (6, '0.5'); -- 31
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja21a', 1, 'ja21a.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 16
+('ja21a', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 30, 24, 2, 17, 29, 31); -- 16
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -486,9 +486,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '0.4'); -- 32
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja21b', 1, 'ja21b.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 17
+('ja21b', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 30, 24, 2, 17, 29, 32); -- 17
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -515,9 +515,9 @@ VALUES
 (1, '[170.0, 240.0]'), -- 33
 (6, '0.2'); -- 34
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja21c', 1, 'ja21c.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 18
+('ja21c', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. No diluent data. ', 33, 24, 2, 17, 14, 34); -- 18
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -539,9 +539,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja22a', 1, 'ja22a.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 19
+('ja22a', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 4, 24, 2, 17, 29, 6); -- 19
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -571,9 +571,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (2, '400.0'); -- 35
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja22b', 1, 'ja22b.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 20
+('ja22b', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 4, 35, 2, 17, 29, 6); -- 20
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -595,9 +595,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja22c', 1, 'ja22c.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 21
+('ja22c', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 4, 24, 2, 17, 29, 31); -- 21
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -619,9 +619,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja22d', 1, 'ja22d.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 22
+('ja22d', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 4, 35, 2, 17, 29, 31); -- 22
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -647,9 +647,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '0.3'); -- 36
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja22e', 1, 'ja22e.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 23
+('ja22e', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 4, 24, 2, 17, 29, 36); -- 23
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -675,9 +675,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (2, '[500.0, 650.0]'); -- 37
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja22f', 1, 'ja22f.txt', 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 24
+('ja22f', 1, 'Joe Shepherd', 30, 1, 'Standardized \'cell size\' to \'cell width\'. ', 4, 37, 2, 17, 29, 6); -- 24
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -703,9 +703,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[4.0, 120.0]'); -- 38
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk9b', 1, 'mk9b.txt', 'Joe Shepherd', 32, 1); -- 25
+('mk9b', 1, 'Joe Shepherd', 32, 1, 'No diluent data. ', 38, 5, 2, 11, 14, 6); -- 25
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -736,9 +736,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[50.7, 101.3]'); -- 39
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at21a', 1, 'at21a.txt', 'Joe Shepherd', 36, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 26
+('at21a', 1, 'Joe Shepherd', 36, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 39, 5, 2, 11, 14, 6); -- 26
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -765,9 +765,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja2', 1, 'ja2.txt', 'Joe Shepherd', 39, 1); -- 27
+('ja2', 1, 'Joe Shepherd', 39, 1, 4, 5, 2, 11, 10, 6); -- 27
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -797,9 +797,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (5, '"He"'); -- 40
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja3', 1, 'ja3.txt', 'Joe Shepherd', 39, 1); -- 28
+('ja3', 1, 'Joe Shepherd', 39, 1, 4, 5, 2, 11, 40, 6); -- 28
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -829,9 +829,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (5, '"CO2"'); -- 41
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja4', 1, 'ja4.txt', 'Joe Shepherd', 39, 1); -- 29
+('ja4', 1, 'Joe Shepherd', 39, 1, 4, 5, 2, 11, 41, 6); -- 29
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -862,9 +862,9 @@ VALUES
 (1, '101.3'), -- 42
 (6, '[0.54, 2.03]'); -- 43
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('H2-Air1', 1, 'H2-Air1.txt', 'Joe Shepherd', 48, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. '); -- 30
+('H2-Air1', 1, 'Joe Shepherd', 48, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 42, 5, 2, 17, 14, 43); -- 30
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -890,9 +890,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.52, 2.68]'); -- 44
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja26b', 1, 'ja26b.txt', 'Joe Shepherd', 49, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 31
+('ja26b', 1, 'Joe Shepherd', 49, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 5, 2, 17, 41, 44); -- 31
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -918,9 +918,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.65, 1.87]'); -- 45
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja26d', 1, 'ja26d.txt', 'Joe Shepherd', 49, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 32
+('ja26d', 1, 'Joe Shepherd', 49, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 5, 2, 17, 41, 45); -- 32
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -946,9 +946,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.8, 1.22]'); -- 46
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja26f', 1, 'ja26f.txt', 'Joe Shepherd', 49, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 33
+('ja26f', 1, 'Joe Shepherd', 49, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 5, 2, 17, 41, 46); -- 33
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -970,9 +970,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja1a', 1, 'ja1a.txt', 'Joe Shepherd', 53, 1); -- 34
+('ja1a', 1, 'Joe Shepherd', 53, 1, 4, 5, 2, 11, 1, 6); -- 34
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -998,9 +998,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[10.0, 101.5]'); -- 47
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja1c', 1, 'ja1c.txt', 'Joe Shepherd', 53, 1, 'Missing comma. '); -- 35
+('ja1c', 1, 'Joe Shepherd', 53, 1, 'Missing comma. ', 47, 5, 2, 11, 1, 6); -- 35
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1026,9 +1026,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[26.5, 101.5]'); -- 48
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja1d', 1, 'ja1d.txt', 'Joe Shepherd', 53, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 36
+('ja1d', 1, 'Joe Shepherd', 53, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 48, 5, 2, 11, 1, 6); -- 36
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1051,9 +1051,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja1e', 1, 'ja1e.txt', 'Joe Shepherd', 53, 1); -- 37
+('ja1e', 1, 'Joe Shepherd', 53, 1, 48, 5, 2, 11, 1, 6); -- 37
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1081,9 +1081,9 @@ VALUES
 (1, '[2.1, 24.0]'), -- 50
 (6, '0.56'); -- 51
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at182a', 1, 'at182a.txt', 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. '); -- 38
+('at182a', 1, 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. No diluent data. ', 50, 5, 2, 49, 14, 51); -- 38
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1109,9 +1109,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '0.67'); -- 52
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at182b', 1, 'at182b.txt', 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. '); -- 39
+('at182b', 1, 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. No diluent data. ', 50, 5, 2, 49, 14, 52); -- 39
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1137,9 +1137,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '1.5'); -- 53
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at182c', 1, 'at182c.txt', 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. '); -- 40
+('at182c', 1, 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. No diluent data. ', 50, 5, 2, 49, 14, 53); -- 40
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1161,9 +1161,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at182d', 1, 'at182d.txt', 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. '); -- 41
+('at182d', 1, 'Joe Shepherd', 55, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. No diluent data. ', 50, 5, 2, 49, 14, 6); -- 41
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1185,9 +1185,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk7b', 1, 'mk7b.txt', 'Joe Shepherd', 56, 1, 'Assumed units of \'mm\' for \'cell size\'. Standardized \'%\' to \'percent\'. Standardized \'cell size\' to \'cell width\'. '); -- 42
+('mk7b', 1, 'Joe Shepherd', 56, 1, 'Assumed units of \'mm\' for \'cell size\'. Standardized \'%\' to \'percent\'. Standardized \'cell size\' to \'cell width\'. ', 42, 5, 2, 11, 1, 6); -- 42
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1213,9 +1213,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[5.3, 20.0]'); -- 54
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at74', 1, 'at74.txt', 'Joe Shepherd', 56, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 43
+('at74', 1, 'Joe Shepherd', 56, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 54, 5, 2, 11, 14, 6); -- 43
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1242,9 +1242,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '106.6'); -- 55
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at35a', 1, 'at35a.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 44
+('at35a', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 5, 2, 11, 40, 6); -- 44
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1270,9 +1270,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at35b', 1, 'at35b.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 45
+('at35b', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 5, 2, 11, 10, 6); -- 45
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1299,9 +1299,9 @@ VALUES
 (5, '"He+CO2"'), -- 56
 (2, '295.0'); -- 57
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at38a', 1, 'at38a.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 46
+('at38a', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 57, 2, 11, 56, 6); -- 46
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1325,9 +1325,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at38b', 1, 'at38b.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 47
+('at38b', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 57, 2, 11, 56, 6); -- 47
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1351,9 +1351,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at38c', 1, 'at38c.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 48
+('at38c', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 57, 2, 11, 56, 6); -- 48
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1382,9 +1382,9 @@ VALUES
 (5, '"He+H2O"'), -- 58
 (2, '353.0'); -- 59
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at39a', 1, 'at39a.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 49
+('at39a', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 59, 2, 11, 58, 6); -- 49
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1408,9 +1408,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at39b', 1, 'at39b.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 50
+('at39b', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 59, 2, 11, 58, 6); -- 50
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1434,9 +1434,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at39c', 1, 'at39c.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 51
+('at39c', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 59, 2, 11, 58, 6); -- 51
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1460,9 +1460,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at39d', 1, 'at39d.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 52
+('at39d', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 55, 59, 2, 11, 58, 6); -- 52
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1490,9 +1490,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[20.0, 150.0]'); -- 60
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at42a', 1, 'at42a.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. '); -- 53
+('at42a', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. ', 60, 57, 2, 11, 40, 6); -- 53
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1514,9 +1514,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at42b', 1, 'at42b.txt', 'Joe Shepherd', 61, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. '); -- 54
+('at42b', 1, 'Joe Shepherd', 61, 1, 'Assumed units of \'kPa\' for \'initial pressure\'. Assumed units of \'mm\' for \'cell width\'. ', 60, 57, 2, 11, 40, 6); -- 54
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1542,9 +1542,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[5.1, 30.4]'); -- 61
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at47a', 1, 'at47a.txt', 'Joe Shepherd', 68, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 55
+('at47a', 1, 'Joe Shepherd', 68, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 61, 5, 2, 11, 14, 6); -- 55
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1571,9 +1571,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[20.3, 40.5]'); -- 62
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at47b', 1, 'at47b.txt', 'Joe Shepherd', 68, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 56
+('at47b', 1, 'Joe Shepherd', 68, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 62, 5, 2, 11, 10, 6); -- 56
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1600,9 +1600,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[10.1, 1013.0]'); -- 63
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at57a', 1, 'at57a.txt', 'Joe Shepherd', 79, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 57
+('at57a', 1, 'Joe Shepherd', 79, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 63, 5, 2, 11, 14, 6); -- 57
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1630,9 +1630,9 @@ VALUES
 (1, '70.9'), -- 64
 (6, '[0.06, 5.7]'); -- 65
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja5a', 1, 'ja5a.txt', 'Joe Shepherd', 98, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 58
+('ja5a', 1, 'Joe Shepherd', 98, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. No diluent data. ', 64, 5, 2, 3, 14, 65); -- 58
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1658,9 +1658,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.11, 4.0]'); -- 66
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja5b', 1, 'ja5b.txt', 'Joe Shepherd', 98, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 59
+('ja5b', 1, 'Joe Shepherd', 98, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 64, 5, 2, 3, 1, 66); -- 59
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1687,9 +1687,9 @@ VALUES
 (4, '"N2O+O2"'), -- 67
 (6, '[0.231, 1.667]'); -- 68
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja5c', 1, 'ja5c.txt', 'Joe Shepherd', 98, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 60
+('ja5c', 1, 'Joe Shepherd', 98, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 64, 5, 2, 67, 1, 68); -- 60
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1717,9 +1717,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[25.3, 152.0]'); -- 69
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at5a', 1, 'at5a.txt', 'Joe Shepherd', 106, 1); -- 61
+('at5a', 1, 'Joe Shepherd', 106, 1, 'No diluent data. ', 69, 5, 2, 17, 14, 6); -- 61
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1745,9 +1745,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[20.2, 253.3]'); -- 70
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at5b', 1, 'at5b.txt', 'Joe Shepherd', 106, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 62
+('at5b', 1, 'Joe Shepherd', 106, 1, 'Assumed units of \'mm\' for \'cell width\'. No diluent data. ', 70, 5, 2, 17, 14, 31); -- 62
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1774,9 +1774,9 @@ VALUES
 (1, '[100.0, 266.0]'), -- 71
 (2, '373.0'); -- 72
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23a', 1, 'ja23a.txt', 'Joe Shepherd', 106, 1); -- 63
+('ja23a', 1, 'Joe Shepherd', 106, 1, 71, 72, 2, 17, 29, 6); -- 63
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1798,9 +1798,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23c', 1, 'ja23c.txt', 'Joe Shepherd', 106, 1); -- 64
+('ja23c', 1, 'Joe Shepherd', 106, 1, 4, 72, 2, 17, 29, 6); -- 64
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1822,9 +1822,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23e', 1, 'ja23e.txt', 'Joe Shepherd', 106, 1); -- 65
+('ja23e', 1, 'Joe Shepherd', 106, 1, 4, 72, 2, 17, 29, 6); -- 65
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1846,9 +1846,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23g', 1, 'ja23g.txt', 'Joe Shepherd', 106, 1); -- 66
+('ja23g', 1, 'Joe Shepherd', 106, 1, 'No diluent data. ', 4, 72, 2, 17, 14, 6); -- 66
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1875,9 +1875,9 @@ VALUES
 (2, '393.0'), -- 73
 (6, '[0.95, 1.54]'); -- 74
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja25a', 1, 'ja25a.txt', 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 67
+('ja25a', 1, 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 73, 2, 17, 29, 74); -- 67
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1903,9 +1903,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.7, 2.02]'); -- 75
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja25b', 1, 'ja25b.txt', 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 68
+('ja25b', 1, 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 73, 2, 17, 29, 75); -- 68
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1931,9 +1931,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.53, 4.25]'); -- 76
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja25c', 1, 'ja25c.txt', 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 69
+('ja25c', 1, 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 73, 2, 17, 29, 76); -- 69
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1959,9 +1959,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.88, 1.04]'); -- 77
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja25d', 1, 'ja25d.txt', 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 70
+('ja25d', 1, 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 73, 2, 17, 41, 77); -- 70
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -1987,9 +1987,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.52, 2.0]'); -- 78
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja25e', 1, 'ja25e.txt', 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 71
+('ja25e', 1, 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 73, 2, 17, 41, 78); -- 71
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2015,9 +2015,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.37, 3.03]'); -- 79
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja25f', 1, 'ja25f.txt', 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 72
+('ja25f', 1, 'Joe Shepherd', 105, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. No diluent data. ', 4, 73, 2, 17, 14, 79); -- 72
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2044,9 +2044,9 @@ VALUES
 (1, '[13.2, 32.4]'), -- 80
 (6, '0.36'); -- 81
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at64c', 1, 'at64c.txt', 'Joe Shepherd', 111, 1); -- 73
+('at64c', 1, 'Joe Shepherd', 111, 1, 80, 5, 2, 11, 10, 81); -- 73
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2073,9 +2073,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '2.12'); -- 82
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at64b', 1, 'at64b.txt', 'Joe Shepherd', 111, 1); -- 74
+('at64b', 1, 'Joe Shepherd', 111, 1, 80, 5, 2, 11, 10, 82); -- 74
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2103,9 +2103,9 @@ VALUES
 (5, '"3.75Ar"'), -- 83
 (5, '"3.75Ar+N2"'); -- 84
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at64a', 1, 'at64a.txt', 'Joe Shepherd', 111, 1); -- 75
+('at64a', 1, 'Joe Shepherd', 111, 1, 80, 5, 2, 11, 84, 6); -- 75
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2134,9 +2134,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[5.6, 32.4]'); -- 85
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at62a', 1, 'at62a.txt', 'Joe Shepherd', 108, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 76
+('at62a', 1, 'Joe Shepherd', 108, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 85, 5, 2, 11, 14, 6); -- 76
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2163,9 +2163,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[9.1, 40.5]'); -- 86
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at62b', 1, 'at62b.txt', 'Joe Shepherd', 108, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 77
+('at62b', 1, 'Joe Shepherd', 108, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 86, 5, 2, 11, 10, 6); -- 77
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2192,9 +2192,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[14.0, 47.0]'); -- 87
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at69f', 1, 'at69f.txt', 'Joe Shepherd', 110, 1); -- 78
+('at69f', 1, 'Joe Shepherd', 110, 1, 87, 5, 2, 11, 40, 6); -- 78
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2221,9 +2221,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[8.0, 47.0]'); -- 88
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at69c', 1, 'at69c.txt', 'Joe Shepherd', 110, 1); -- 79
+('at69c', 1, 'Joe Shepherd', 110, 1, 88, 5, 2, 11, 10, 6); -- 79
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2250,9 +2250,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[10.0, 40.0]'); -- 89
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at69d', 1, 'at69d.txt', 'Joe Shepherd', 110, 1); -- 80
+('at69d', 1, 'Joe Shepherd', 110, 1, 89, 5, 2, 11, 10, 6); -- 80
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2279,9 +2279,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[8.0, 40.0]'); -- 90
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at69e', 1, 'at69e.txt', 'Joe Shepherd', 110, 1); -- 81
+('at69e', 1, 'Joe Shepherd', 110, 1, 90, 5, 2, 11, 10, 6); -- 81
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2308,9 +2308,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[24.0, 46.0]'); -- 91
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at69g', 1, 'at69g.txt', 'Joe Shepherd', 110, 1); -- 82
+('at69g', 1, 'Joe Shepherd', 110, 1, 91, 5, 2, 11, 10, 6); -- 82
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2338,9 +2338,9 @@ VALUES
 (1, '[1.3, 7.3]'), -- 92
 (2, '[600.0, 800.0]'); -- 93
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at65', 1, 'at65.txt', 'Joe Shepherd', 111, 1, 'Assumed units of \'mm\' for \'cell width\'. '); -- 83
+('at65', 1, 'Joe Shepherd', 111, 1, 'Assumed units of \'mm\' for \'cell width\'. ', 92, 93, 2, 11, 10, 6); -- 83
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2368,9 +2368,9 @@ VALUES
 (1, '[150.0, 300.0]'), -- 94
 (6, '[0.35, 3.0]'); -- 95
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at3a', 1, 'at3a.txt', 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 84
+('at3a', 1, 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. No diluent data. ', 94, 72, 2, 17, 14, 95); -- 84
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2398,9 +2398,9 @@ VALUES
 (1, '[150.0, 304.0]'), -- 97
 (6, '[0.5, 2.0]'); -- 98
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at3b', 1, 'at3b.txt', 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell width\'. '); -- 85
+('at3b', 1, 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell width\'. ', 97, 72, 2, 17, 96, 98); -- 85
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2426,9 +2426,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.8, 2.0]'); -- 99
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at3c', 1, 'at3c.txt', 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell width\'. '); -- 86
+('at3c', 1, 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell width\'. ', 97, 72, 2, 17, 96, 99); -- 86
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2454,9 +2454,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.93, 1.04]'); -- 100
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at3d', 1, 'at3d.txt', 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell width\'. '); -- 87
+('at3d', 1, 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell width\'. ', 97, 72, 2, 17, 96, 100); -- 87
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2482,9 +2482,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.4, 5.0]'); -- 101
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at4', 1, 'at4.txt', 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. '); -- 88
+('at4', 1, 'Joe Shepherd', 113, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. Assumed units of \'mm\' for \'cell size\'. Standardized \'cell size\' to \'cell width\'. No diluent data. ', 42, 16, 2, 17, 14, 101); -- 88
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2510,9 +2510,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '260.0'); -- 102
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23b', 1, 'ja23b.txt', 'Joe Shepherd', 113, 1); -- 89
+('ja23b', 1, 'Joe Shepherd', 113, 1, 102, 72, 2, 17, 29, 6); -- 89
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2538,9 +2538,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '227.0'); -- 103
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23d', 1, 'ja23d.txt', 'Joe Shepherd', 113, 1); -- 90
+('ja23d', 1, 'Joe Shepherd', 113, 1, 103, 72, 2, 17, 29, 6); -- 90
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2566,9 +2566,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '200.0'); -- 104
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23f', 1, 'ja23f.txt', 'Joe Shepherd', 113, 1); -- 91
+('ja23f', 1, 'Joe Shepherd', 113, 1, 104, 72, 2, 17, 29, 6); -- 91
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2594,9 +2594,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '180.0'); -- 105
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja23h', 1, 'ja23h.txt', 'Joe Shepherd', 113, 1); -- 92
+('ja23h', 1, 'Joe Shepherd', 113, 1, 'No diluent data. ', 105, 72, 2, 17, 14, 6); -- 92
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2622,9 +2622,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.47, 0.64]'); -- 106
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja26a', 1, 'ja26a.txt', 'Joe Shepherd', 112, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 93
+('ja26a', 1, 'Joe Shepherd', 112, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 5, 2, 17, 41, 106); -- 93
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2650,9 +2650,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.68, 0.8]'); -- 107
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja26c', 1, 'ja26c.txt', 'Joe Shepherd', 112, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 94
+('ja26c', 1, 'Joe Shepherd', 112, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 5, 2, 17, 41, 107); -- 94
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2678,9 +2678,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (6, '[0.72, 0.98]'); -- 108
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja26e', 1, 'ja26e.txt', 'Joe Shepherd', 112, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. '); -- 95
+('ja26e', 1, 'Joe Shepherd', 112, 1, 'Assumed units of \'unitless\' for \'equivalence ratio\'. ', 4, 5, 2, 17, 41, 108); -- 95
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2707,9 +2707,9 @@ VALUES
 (2, '[288.0, 372.0]'), -- 109
 (6, '[0.448, 0.51]'); -- 110
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja27a', 1, 'ja27a.txt', 'Joe Shepherd', 112, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 96
+('ja27a', 1, 'Joe Shepherd', 112, 1, 'Standardized \'cell size\' to \'cell width\'. No diluent data. ', 4, 109, 2, 17, 14, 110); -- 96
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2737,9 +2737,9 @@ VALUES
 (2, '[278.0, 370.0]'), -- 112
 (6, '[0.446, 0.511]'); -- 113
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja27b', 1, 'ja27b.txt', 'Joe Shepherd', 112, 1, 'Standardized \'cell size\' to \'cell width\'. '); -- 97
+('ja27b', 1, 'Joe Shepherd', 112, 1, 'Standardized \'cell size\' to \'cell width\'. No diluent data. ', 111, 112, 2, 17, 14, 113); -- 97
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2765,9 +2765,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (1, '[13.0, 85.0]'); -- 114
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('mk8a', 1, 'mk8a.txt', 'Joe Shepherd', 125, 1); -- 98
+('mk8a', 1, 'Joe Shepherd', 125, 1, 'No diluent data. ', 114, 5, 2, 11, 14, 6); -- 98
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2790,9 +2790,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at21b', 1, 'at21b.txt', 'Joe Shepherd', 130, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 99
+('at21b', 1, 'Joe Shepherd', 130, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 39, 5, 2, 11, 14, 6); -- 99
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2819,9 +2819,9 @@ INSERT INTO details(property_id, value)
 VALUES 
 (2, '123.0'); -- 115
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy, issues)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, issues, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('at21c', 1, 'at21c.txt', 'Joe Shepherd', 130, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. '); -- 100
+('at21c', 1, 'Joe Shepherd', 130, 1, 'Assumed units of \'mm\' for \'cell width\'. Standardized \'pressure\' to \'initial pressure\'. Standardized \'pressure\' to \'initial pressure\'. No diluent data. ', 39, 115, 2, 11, 14, 6); -- 100
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
@@ -2844,9 +2844,9 @@ VALUES
 
 -- -------------------- --
 
-INSERT INTO detonations(name, category_id, file_name, added_by, citation_id, legacy)
+INSERT INTO detonations(name, category_id, added_by, citation_id, legacy, pressure_id, temperature_id, fuel_id, oxidizer_id, diluent_id, er_id)
 VALUES 
-('ja1b', 1, 'ja1b.txt', 'Joe Shepherd', 39, 1); -- 101
+('ja1b', 1, 'Joe Shepherd', 39, 1, 4, 5, 2, 11, 1, 6); -- 101
 
 INSERT INTO detonation_details(detonation_id, detail_id)
 VALUES 
