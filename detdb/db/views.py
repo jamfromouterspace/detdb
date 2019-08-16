@@ -2,7 +2,13 @@ from django.shortcuts import render,get_object_or_404,get_list_or_404
 from django.http import HttpResponse,Http404
 from db.models import Categories,Subcategories,Properties,Detonations,Details,CommonFuels
 from db.constants import *
+import db.tools as tools
 import time
+
+
+####################################
+# DETONATIONS, PLOTS, OR CITATIONS #
+####################################
 
 def index(request):
     # Pass page path for breadcrumb navigation
@@ -12,6 +18,10 @@ def index(request):
         'bc' : { 'prev' : prev, 'current': current }
     }
     return render(request, 'pages/db_root.html', context)
+
+######################
+# LIST OF CATEGORIES #
+######################
 
 def categories(request,section):
     # Pass page path for breadcrumb navigation
@@ -34,21 +44,34 @@ def categories(request,section):
     }
     return render(request, 'pages/categories.html', context)
 
+###########################
+# CATEGORY OR SUBCATEGORY #
+###########################
+
 def category(request, category, section, subcats=None):
     url = request.build_absolute_uri()
     base_url = '/db/'+section+'/'+category
     # Pass page path for breadcrumb navigation
     prev = [('/','Home'),('/db','Browse'),('/db/'+section,section.title())]
     current = category.replace('-',' ').title()
-    # Replace '-' in category name with ' '
+    # Replace '-' with ' ' in category string from url
     category = category.replace('-',' ')
+    # Get category
     cat = get_object_or_404(Categories, name=category)
     cat_id = cat.id
-    subcategories = None
+    # Here it may seem a bit confusing, 
+    # but this view can be used for both categories AND subcategories.
+    # So if user has selected a subcategory, we filter everything through the subcat.
+    # There are sometimes still subcategory links to show because we can
+    # chain subcategories together. 
+    # For example, some detonations have 'cylindrical' and 'high explosive'
+    # but some only have 'cylindrical', so the UI allows users to filter through multiple
     selected_subcats = []
+    selected_subcat_ids = []
+    remaining_subcats = None
+
     if subcats :
         subcats = subcats.split('/')
-        subcat_ids = []
         prev.append((base_url,current))
         for i in range(0,len(subcats)) :
             subcats[i]
@@ -57,7 +80,7 @@ def category(request, category, section, subcats=None):
             subcats[i] = subcats[i].replace('-',' ')
             tuple_b = subcats[i].title()
             selected_subcats.append(subcats[i].upper())
-            subcat_ids.append(get_object_or_404(Subcategories, name=subcats[i]).id)
+            selected_subcat_ids.append(get_object_or_404(Subcategories, name=subcats[i]).id)
             # Add extra breadcrumbs
             if i < len(subcats)-1 :
                 prev.append((tuple_a,tuple_b))
@@ -66,11 +89,24 @@ def category(request, category, section, subcats=None):
 
     if section == 'detonations' :
         # Subcategories are currently only used for detonation data
-        subcategories = Subcategories.objects.filter(category=cat)
+        remaining_subcats = Subcategories.objects.filter(category=cat)
         if subcats :
-            for subcat_id in subcat_ids :
-                subcategories = subcategories.exclude(id=subcat_id)
-        subcategories = [{'name':x.name.upper(),'link': url+x.name.replace(' ','-')} for x in subcategories]
+            for subcat_id in selected_subcat_ids :
+                # Exclude subcategories that have already been selected
+                remaining_subcats = remaining_subcats.exclude(id=subcat_id)
+            # Also exclude subcategory combinations that contain no detonation data
+            # This operation is quadratic
+            # BUT the number of subcategories to iterate through is usually tiny
+            for subcat_id in selected_subcat_ids :
+                for remaining_subcat in remaining_subcats :
+                    # Basically, we're looking ahead because we 
+                    # need to know which remaining subcats to show
+                    valid = tools.isValidSubcatPair(cat_id,subcat_id,remaining_subcat.id)
+                    if not valid :
+                        remaining_subcats = remaining_subcats.exclude(id=remaining_subcat.id)
+
+
+        remaining_subcats = [{'name':x.name.upper(),'link': url+x.name.replace(' ','-')} for x in remaining_subcats]
         # Get common fuels that have at least one data set in this category
         list_items = [{'name': '<strong>All</strong>', 'link': base_url+'/'+'all-fuel'}]
         pid = Properties.objects.get(name='fuel').id
@@ -88,7 +124,7 @@ def category(request, category, section, subcats=None):
             misc_dets = misc_dets.exclude(fuel=fuel_id)
             dets = dets.filter(fuel=fuel_id)
             if subcats :
-                for subcat_id in subcat_ids :
+                for subcat_id in selected_subcat_ids :
                     dets = dets.filter(subcats = subcat_id)
                     misc_dets = misc_dets.filter(subcats = subcat_id)
 
@@ -110,11 +146,16 @@ def category(request, category, section, subcats=None):
         'subtitle' : category.upper(),
         'bc' : { 'prev' : prev, 'current': current },
         'list' : { 'hover' : True, 'items' : list_items },
-        'subcategories' : subcategories,
+        'subcategories' : remaining_subcats,
         'selected_subcats' : selected_subcats,
     }
 
     return render(request, 'pages/category.html', context)
+
+
+###########
+# DATASET #
+###########
 
 def dataset(request,category,fuel,subcats=None) :
     # Breadcrumbs
