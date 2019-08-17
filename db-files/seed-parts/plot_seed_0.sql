@@ -1,7 +1,7 @@
 INSERT INTO details(property_id, value)
 VALUES 
-(5, '"Additive"'), -- 358
-(5, '"Inhibitor"'); -- 359
+(5, '"Additive"'), -- 359
+(5, '"Inhibitor"'); -- 360
 
 INSERT INTO properties(name, units)
 VALUES 

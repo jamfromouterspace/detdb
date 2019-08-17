@@ -263,7 +263,6 @@ for category in urls :
                         detail_indices.append(special_diluent_index)
                     # Check if these detail entries already exist
                     for p,val in new_details :
-                        val = json.dumps(val)
                         if (p,val) not in deets :
                             deets[(p,val)] = deets_index
                             ins_details.add((p,val))
