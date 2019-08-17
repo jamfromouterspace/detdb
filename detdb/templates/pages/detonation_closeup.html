@@ -6,7 +6,7 @@
       {% include "../components/page_header.html" with header=header %}
 
       <div id="detonation-main">
-        {% include "../components/detonation_table.html" with data=data %}
+        {% include "../components/detonation_table.html" with data=table_data %}
           <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
               <div id="citation">
@@ -15,7 +15,7 @@
                 </div>
                 <div>
                   <p class="citation">
-                    <span class="link"><a href="{{ citation.link }}">{{ citation.id }}</a></span>
+                    <span class="link"><a href="{{ citation.link }}">[{{ citation.id }}]</a></span>
                     {{ citation.text|safe }}
                   </p>
                 </div>
@@ -28,8 +28,8 @@
                 </div>
                 <div>
                   <h5>
-                    <a class="txt-link" href="{{ data.txt_link }}">[txt]</a>
-                    <a class="csv-link" href="{{ data.csv_link }}">[csv]</a>
+                    <a class="txt-link" href="{{ files.txt_link }}">[txt]</a>
+                    <a class="csv-link" href="{{ files.csv_link }}">[csv]</a>
                   </h5>
                 </div>
               </div>

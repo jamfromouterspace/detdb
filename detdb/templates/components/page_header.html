@@ -6,9 +6,13 @@
   </div>
   <div class="col-6 col-md-1 text-center align-self-center order-3 order-md-2 plot-nav">
     <span id="prev-page" class="plot-nav-btn">
-      <button class="btn btn-secondary btn-circle btn-circle-sm">
+      {% if header.prev %}
+      <a href='{{ header.prev }}'>
+      <button class="btn btn-primary btn-circle btn-circle-sm">
         <i class="ui inverted left arrow icon"></i>
       </button>
+      </a>
+      {% endif %}
     </span>
   </div>
   <div class="col-12 col-md-4 page-data-title order-2 order-md-3 plot-title">
@@ -21,10 +25,14 @@
     </h5>
   </div>
   <div class="col-6 col-md-1 text-center align-self-center order-4 order-md-4 plot-nav">
-    <span id="next-page" class="plot-nav-btn"
-      ><button class="btn btn-primary btn-circle btn-circle-sm">
+    <span id="next-page" class="plot-nav-btn">
+      {% if header.next %}
+      <a href='{{ header.next }}'>
+      <button class="btn btn-primary btn-circle btn-circle-sm">
         <i class="ui inverted right arrow icon"></i>
       </button>
+      </a>
+      {% endif %}
     </span>
   </div>
 </div>

@@ -23,7 +23,7 @@ def index(request):
 # LIST OF CATEGORIES #
 ######################
 
-def categories(request,section):
+def list_of_categories(request,section):
     # Pass page path for breadcrumb navigation
     prev = [('/','Home'),('/db','Browse')]
     current = section.title()
@@ -42,6 +42,7 @@ def categories(request,section):
         'bc' : { 'prev' : prev, 'current': current },
         'list' : { 'hover' : True, 'items' : list_items }
     }
+
     return render(request, 'pages/categories.html', context)
 
 ###########################
@@ -136,7 +137,7 @@ def category(request, category, section, subcats=None):
 
         if misc_dets.exists() :
             # There are indeed detonations with uncommon fuels
-            list_items.append({'name': 'Miscellaneous', 'link': url+'misc-fuel'})
+            list_items.append({'name': 'Miscellaneous Fuel', 'link': url+'misc-fuel'})
 
     if len(list_items) < 2 :
         raise Http404('No Detonations found with the given options.')
@@ -152,12 +153,12 @@ def category(request, category, section, subcats=None):
 
     return render(request, 'pages/category.html', context)
 
-
 ###########
 # DATASET #
 ###########
 
-def dataset(request,category,fuel,subcats=None) :
+# For pages that list many datasets
+def datasets(request,category,fuel,subcats=None) :
     # Breadcrumbs
     prev = [
         ('/','Home'),
@@ -234,7 +235,110 @@ def dataset(request,category,fuel,subcats=None) :
         'header' : page_header,
         'detonations' : detonations,
     }
+
     return render(request, 'pages/detonations.html', context)
+
+##############
+# DETONATION #
+##############
+
+def detonation(request,detonation,category=None,subcats=None,fuel=None) :
+    # (Expects a query object for 'd')
+    # Breadcrumbs
+    prev = [
+        ('/','Home'),
+        ('/db/','Browse'),
+        ('/db/detonations/','Detonations'),
+    ]
+    current = detonation.name
+    base_url = '/db/detonations/' + ((category + '/') if category else '')
+    base_url += (subcats + '/') if subcats else ''
+    base_url += (fuel + '/') if fuel else ''
+
+    # Parse options into IDs and fill breadcrumbs if necessary
+    if category :
+        prev = tools.appendBreadCrumb(prev, category)
+        category = Categories.objects.get(name=category)
+        if subcats :
+            subcats = [x for x in subcats.split('/')]
+            for s in range(0,len(subcats)) :
+                prev = tools.appendBreadCrumb(prev,s)
+                subcats[i] = Subcategories.objects.get(name=s.replace('-',' '))
+        if fuel :
+            prev = tools.appendBreadCrumb(prev,fuel)
+
+    # Arrow buttons can be used to go to the next or previous detonation in the db
+    # This is contextual: if you got there by browsing to a list of data sets,
+    # it'll take you to the data sets that you previously saw surrounding the one you're lookign at
+    prev_det,next_det = tools.getAdjacentDetonations(detonation,category,subcats,fuel)
+    page_header = {
+        'type' : 'nav',
+        'title' : 'Detonations',
+        'subtitle' : detonation.name,
+        'subsubtitle' : detonation.citation.brief(),
+        'category' : '',
+        'subcategory' : None,
+        'prev' : (base_url+prev_det) if prev_det else None,
+        'next' : (base_url+next_det) if next_det else None,
+    }
+
+    table_data = {
+        'category' : detonation.category.name,
+        'category_link' : detonation.categoryLink(),
+        'subcategory' : detonation.subcatString(),
+        'subcategory_link' : detonation.subcatLink(),
+        'fuel' : str(detonation.fuel),
+        'oxidizer' : str(detonation.oxidizer),
+        'diluent' : str(detonation.diluent),
+        'pressure' : str(detonation.pressure),
+        'temperature' : str(detonation.temperature),
+        'er' : str(detonation.er),
+    }
+
+    citation = {
+        'id' : detonation.citation_id,
+        'link' : '/db/citations/%d' % detonation.citation_id,
+        'text' : detonation.citation.preformatted
+    }
+
+    files = { 
+        'txt_link' : detonation.fileLocation('txt'),
+        'csv_link' : detonation.fileLocation('csv')
+    }
+    notes = ''
+    if detonation.legacy :
+        notes += LEGACY_NOTE
+    percent_diluent = detonation.percentDiluent(string=True)
+    if percent_diluent :
+        notes += 'Diluent is ' + percent_diluent + '. '
+    if detonation.hasInhibitor() :
+        notes += 'Uses an inhibitor. '
+    if detonation.hasAdditive() :
+        notes += 'Uses an additive. '
+    if detonation.notes :
+        notes += detonation.notes
+
+    context = {
+        'bc' : { 'prev' : prev, 'current': current },
+        'header' : page_header,
+        'table_data' : table_data,
+        'citation' : citation,
+        'files' : files,
+        'notes' : notes
+    }
+
+    return render(request, 'pages/detonation_closeup.html', context)
+
+
+def detonation_by_pk(request,pk,category=None,subcats=None,fuel=None) :
+    d = Detonations.objects.get(id=pk)
+    return detonation(request,d,category=None,subcats=None,fuel=None)
+
+
+def detonation_by_name(request,name,category=None,subcats=None,fuel=None) :
+    d = Detonations.objects.get(name=name)
+    return detonation(request,d,category=None,subcats=None,fuel=None)
+
 
 def handler404(request, exception, template_name="404.html"):
     response = render_to_response("pages/404.html")
