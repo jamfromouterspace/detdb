@@ -2,7 +2,7 @@
 {% if header.type == "nav" %}
 <div class="row">
   <div class="col-sm-12 col-md-3 order-first order-md-first page-subtitle-div">
-    <h4 class="page-subtitle">{{ header.category }}{% if subcategory %} / {{ header.subcategory }}{% endif %}</h4>
+    <h4 class="page-subtitle">{{ header.category }}{% if header.subcategory %} / {{ header.subcategory }}{% endif %}</h4>
   </div>
   <div class="col-6 col-md-1 text-center align-self-center order-3 order-md-2 plot-nav">
     <span id="prev-page" class="plot-nav-btn">

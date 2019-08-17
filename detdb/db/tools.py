@@ -1,4 +1,4 @@
-from db.models import Properties,Details,Detonations,Citations,Authors
+from db.models import Properties,Details,Detonations,Citations,Authors,CommonFuels
 
 def createCategoryLink(d) :
     # E.g. /db/detonations/cell-size/
@@ -42,8 +42,18 @@ def getAdjacentDetonations(d,cat,subcats,fuel) :
         if subcats :
             for s in subcats :
                 qs = qs.filter(subcats=s)
-        if fuel :
-            qs = qs.filter(fuel=fuel)
+        if fuel and fuel != 'all' :
+            prop_id = Properties.objects.get(name='fuel')
+            print(fuel)
+            if fuel == 'misc' :
+                # Filter out common fuels
+                for f in CommonFuels.objects.all() :
+                    detail_id = Details.objects.get(property_id=prop_id,value=f.chemical)
+                    qs = qs.exclude(fuel=detail_id)
+            else :
+                fuel = fuel.upper()
+                detail_id = Details.objects.get(property_id=prop_id,value=fuel)
+                qs = qs.filter(fuel=detail_id)
 
     qs = qs.values_list('id',flat=True)
     j = -1
@@ -64,10 +74,22 @@ def getAdjacentDetonations(d,cat,subcats,fuel) :
 
     return prev_det,next_det
 
-def appendBreadCrumb(history,item) :
+def appendBreadCrumb(history,item,isFuel=False) :
     # Append new URL to breadcrumb history
     tuple_a = history[-1][0] + '%s/'%item
     item = item.replace('-',' ')
-    tuple_b = item.title()
+    tuple_b = None
+    if isFuel :
+        tuple_a = tuple_a[:-1] + '-fuel'
+        # Some special cases
+        if item == 'misc' :
+            tuple_b = 'Miscellaneous Fuel'
+        elif item == 'all' :
+            tuple_b = 'All Fuel'
+        else :
+            # Normal case
+            tuple_b = item.upper() + ' Fuel'
+    else :
+        tuple_b = item.title()
     history.append((tuple_a, tuple_b))
     return history

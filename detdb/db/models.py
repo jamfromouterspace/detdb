@@ -300,7 +300,7 @@ class Detonations(Model):
     def categoryLink(self) :
         # E.g. /db/detonations/cell-size/
         cat_link = None
-        return 'db/detonations/%s/'%self.category.name.replace(' ','-')
+        return '/db/detonations/%s/'%self.category.name.replace(' ','-')
 
     def subcatString(self) :
         # Combine subcats into one string

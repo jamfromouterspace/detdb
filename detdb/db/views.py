@@ -211,7 +211,7 @@ def datasets(request,category,fuel,subcats=None) :
         detonations.append({
             'include_title' : True,
             'name' : d.name,
-            'link' : '/db/detonations/' + d.name,
+            'link' : request.build_absolute_uri() + d.name,
             'txt_link' : DATASETS_DIR + d.fileLocation('txt'),
             'csv_link' : DATASETS_DIR + d.fileLocation('csv'),
             'citation' : d.citation.brief(),
@@ -242,7 +242,7 @@ def datasets(request,category,fuel,subcats=None) :
 # DETONATION #
 ##############
 
-def detonation(request,detonation,category=None,subcats=None,fuel=None) :
+def detonation(request,detonation,category,subcats,fuel) :
     # (Expects a query object for 'd')
     # Breadcrumbs
     prev = [
@@ -253,19 +253,21 @@ def detonation(request,detonation,category=None,subcats=None,fuel=None) :
     current = detonation.name
     base_url = '/db/detonations/' + ((category + '/') if category else '')
     base_url += (subcats + '/') if subcats else ''
-    base_url += (fuel + '/') if fuel else ''
+    base_url += (fuel + '-fuel/') if fuel else ''
 
     # Parse options into IDs and fill breadcrumbs if necessary
+    subcat_heading = None
     if category :
         prev = tools.appendBreadCrumb(prev, category)
-        category = Categories.objects.get(name=category)
+        category = Categories.objects.get(name=category.replace('-',' '))
         if subcats :
             subcats = [x for x in subcats.split('/')]
-            for s in range(0,len(subcats)) :
-                prev = tools.appendBreadCrumb(prev,s)
-                subcats[i] = Subcategories.objects.get(name=s.replace('-',' '))
+            for i in range(0,len(subcats)) :
+                prev = tools.appendBreadCrumb(prev,subcats[i])
+                subcats[i] = Subcategories.objects.get(name=subcats[i].replace('-',' '))
+            subcat_heading = ' '.join(x.name.replace('-',' ').upper() for x in subcats)
         if fuel :
-            prev = tools.appendBreadCrumb(prev,fuel)
+            prev = tools.appendBreadCrumb(prev,fuel,isFuel=True)
 
     # Arrow buttons can be used to go to the next or previous detonation in the db
     # This is contextual: if you got there by browsing to a list of data sets,
@@ -276,8 +278,8 @@ def detonation(request,detonation,category=None,subcats=None,fuel=None) :
         'title' : 'Detonations',
         'subtitle' : detonation.name,
         'subsubtitle' : detonation.citation.brief(),
-        'category' : '',
-        'subcategory' : None,
+        'category' : category.name.upper() if category else None,
+        'subcategory' : subcat_heading,
         'prev' : (base_url+prev_det) if prev_det else None,
         'next' : (base_url+next_det) if next_det else None,
     }
@@ -332,12 +334,12 @@ def detonation(request,detonation,category=None,subcats=None,fuel=None) :
 
 def detonation_by_pk(request,pk,category=None,subcats=None,fuel=None) :
     d = Detonations.objects.get(id=pk)
-    return detonation(request,d,category=None,subcats=None,fuel=None)
+    return detonation(request,d,category,subcats,fuel)
 
 
 def detonation_by_name(request,name,category=None,subcats=None,fuel=None) :
     d = Detonations.objects.get(name=name)
-    return detonation(request,d,category=None,subcats=None,fuel=None)
+    return detonation(request,d,category,subcats,fuel)
 
 
 def handler404(request, exception, template_name="404.html"):
