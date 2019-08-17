@@ -325,14 +325,24 @@ class Detonations(Model):
 
     def percentDiluent(self, string=False) :
         detail = None
-        pid = Properties.objects.get(name='percent diluent')
-        detail = self.details.filter(property=pid)
+        p = Properties.objects.get(name='percent diluent')
+        detail = self.details.filter(property=p)
         if not detail :
             return None
         detail = detail[0]
         if string :
             return str(detail) + ' ' + self.diluent.value
         return detail
+
+    def hasInhibitor(self) :
+        res = False
+        p = Properties.objects.get(name='percent inhibitor')
+        return self.details.filter(property=p).exists()
+
+    def hasAdditive(self) :
+        res = False
+        p = Properties.objects.get(name='percent additive')
+        return self.details.filter(property=p).exists()
 
     class Meta:
         app_label='db'
