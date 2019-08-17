@@ -6,6 +6,7 @@
 #   * Remove `managed = True` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 # from django.db import models
+
 from django.db.models import (
     CASCADE,
     DO_NOTHING,
@@ -189,11 +190,9 @@ class Details(Model):
             return self.value
 
         res = ''
-
         units = self.property.units
         if self.property.units == 'unitless' :
             units = ''
-
         if type(self.value) == type(0.0) :
             res += str(self.value)
         elif type(self.value) == type([]) :
@@ -201,7 +200,11 @@ class Details(Model):
                 raise Exception('Unexpected error: pressure range > 2')
             res += '-'.join(str(x) for x in self.value)
 
-        res += ' ' + units if units else ''
+        if units == '%' :
+            res += units
+        elif units :
+            res += ' %s'%units
+            
         return res
 
     class Meta:
@@ -285,8 +288,8 @@ class Detonations(Model):
                     DO_NOTHING,
                     related_name='er')
 
-
     def fileLocation(self, file_type) :
+        # Get URL paths for the txt/csv data files
         if file_type not in SUPPORTED_TYPES :
             raise Exception('Unsupported file type ' + file_type)
 
@@ -294,6 +297,42 @@ class Detonations(Model):
             return DATASETS_DIR + file_type + '/' + self.file_name + '.' + file_type
         return DATASETS_DIR + file_type + '/' + self.name + '.' + file_type
 
+    def categoryLink(self) :
+        # E.g. /db/detonations/cell-size/
+        cat_link = None
+        return 'db/detonations/%s/'%self.category.name.replace(' ','-')
+
+    def subcatString(self) :
+        # Combine subcats into one string
+        # E.g. 'cylindrical, high explosive'
+        subcat = None
+        if self.subcats :
+            subcat = ', '.join(x for x in \
+                self.subcats.all().values_list('name',flat=True)
+            )
+        return subcat
+
+    def subcatLink(self) :
+        # E.g. /db/detonations/critical-energy/cylindrical/high-explosive/
+        subcat_link = None
+        if self.subcats :
+            subcat_link = '/db/detonations/%s/'%self.category.name.replace(' ','-')
+            subcat_link += '/'.join(
+                x.replace(' ','-') for x in \
+                self.subcats.all().values_list('name',flat=True)
+            ) + '/'
+        return subcat_link
+
+    def percentDiluent(self, string=False) :
+        detail = None
+        pid = Properties.objects.get(name='percent diluent')
+        detail = self.details.filter(property=pid)
+        if not detail :
+            return None
+        detail = detail[0]
+        if string :
+            return str(detail) + ' ' + self.diluent.value
+        return detail
 
     class Meta:
         app_label='db'
