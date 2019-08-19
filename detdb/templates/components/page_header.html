@@ -19,10 +19,12 @@
     <h5 class="page-subtitle darker bigger">
       {{ header.subtitle }}
     </h5>
-    <br />
-    <h5 class="page-subtitle darker smaller">
-      {{ header.subsubtitle }}
-    </h5>
+    {% if header.subsubtitle %}
+      <br />
+      <h5 class="page-subtitle darker smaller">
+        {{ header.subsubtitle }}
+      </h5>
+    {% endif %}
   </div>
   <div class="col-6 col-md-1 text-center align-self-center order-4 order-md-4 plot-nav">
     <span id="next-page" class="plot-nav-btn">

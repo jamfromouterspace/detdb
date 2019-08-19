@@ -126,3 +126,29 @@ def getFuelType(d) :
         if d.fuel.value == f.chemical:
             return d.fuel.value
     return 'misc'
+
+
+def getSimilarCitations(c) :
+    # c must be a Query object
+    # This function returns a QueryList of citations "similar" to c
+    count = 0
+    similar = []
+    # Get first 10 citations from the same authors
+    for a in c.authors.all() :
+        for ac in a.citations.all() :
+            if count >= 5 :
+                return similar
+            if c != ac :
+                similar.append(ac)
+            count += 1
+
+    # If there arent enough, related by journal
+    for jc in Journals.objects.filter(id=c.journal_id) :
+        if count >= 5 :
+            return similar
+        if jc != ac :
+            similar.append(jc)
+        count += 1
+
+    # Return incomplete list if nothing more was found
+    return similar

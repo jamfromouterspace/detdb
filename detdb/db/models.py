@@ -63,6 +63,13 @@ class Authors(Model):
     updated = DateTimeField(blank=True, null=True)
     citations = ManyToManyField('Citations', through="AuthorCitations",related_name='citations')
 
+    def fullName(self):
+        if self.first_name :
+            return self.first_name + ' ' + self.last_name
+        if self.initials :
+            return self.initials + ' ' + self.last_name
+        return self.last_name
+
     class Meta:
         app_label='db'
         managed = True
