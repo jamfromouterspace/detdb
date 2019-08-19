@@ -174,7 +174,7 @@ class Details(Model):
     value = JSONField(blank=True, null=True)
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
-    dets = ManyToManyField('Detonations', 
+    dets = ManyToManyField('Detonations',
         through="DetonationDetails",
         related_name='dets')
 
@@ -185,7 +185,7 @@ class Details(Model):
         # To represent it as a string (such as in the data tables)
         # we need a bit of logic
         if not self.value :
-            return '' 
+            return ''
         if type(self.value) == type('') :
             return self.value
 
@@ -204,7 +204,7 @@ class Details(Model):
             res += units
         elif units :
             res += ' %s'%units
-            
+
         return res
 
     class Meta:
@@ -265,7 +265,7 @@ class Detonations(Model):
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
     details = ManyToManyField(Details, through="DetonationDetails")
-    subcats = ManyToManyField('Subcategories', 
+    subcats = ManyToManyField('Subcategories',
         through="DetonationSubcategories",
         related_name='subcats')
     plots = ManyToManyField('Plots', through="PlotDetonations")
@@ -288,7 +288,7 @@ class Detonations(Model):
                     DO_NOTHING,
                     related_name='er')
 
-    def fileLocation(self, file_type) :
+    def fileLocation(self, file_type):
         # Get URL paths for the txt/csv data files
         if file_type not in SUPPORTED_TYPES :
             raise Exception('Unsupported file type ' + file_type)
@@ -297,12 +297,12 @@ class Detonations(Model):
             return DATASETS_DIR + file_type + '/' + self.file_name + '.' + file_type
         return DATASETS_DIR + file_type + '/' + self.name + '.' + file_type
 
-    def categoryLink(self) :
+    def categoryLink(self):
         # E.g. /db/detonations/cell-size/
         cat_link = None
         return '/db/detonations/%s/'%self.category.name.replace(' ','-')
 
-    def subcatString(self) :
+    def subcatString(self):
         # Combine subcats into one string
         # E.g. 'cylindrical, high explosive'
         subcat = None
@@ -312,7 +312,7 @@ class Detonations(Model):
             )
         return subcat
 
-    def subcatLink(self) :
+    def subcatLink(self):
         # E.g. /db/detonations/critical-energy/cylindrical/high-explosive/
         subcat_link = None
         if self.subcats :
@@ -323,7 +323,7 @@ class Detonations(Model):
             ) + '/'
         return subcat_link
 
-    def percentDiluent(self, string=False) :
+    def percentDiluent(self, string=False):
         detail = None
         p = Properties.objects.get(name='percent diluent')
         detail = self.details.filter(property=p)
@@ -334,15 +334,30 @@ class Detonations(Model):
             return str(detail) + ' ' + self.diluent.value
         return detail
 
-    def hasInhibitor(self) :
+    def hasInhibitor(self):
         res = False
         p = Properties.objects.get(name='percent inhibitor')
         return self.details.filter(property=p).exists()
 
-    def hasAdditive(self) :
+    def hasAdditive(self):
         res = False
         p = Properties.objects.get(name='percent additive')
         return self.details.filter(property=p).exists()
+
+    def preview(self):
+        s = self.category.name.capitalize()
+        s += ', %s'%self.fuel.value
+        if self.oxidizer.value :
+            s += '-%s'%self.oxidizer.value
+            if self.diluent.value :
+                s += '-%s'%self.diluent.value
+        if self.temperature.value :
+            s += ', T = %s'%str(self.temperature)
+        if self.pressure.value :
+            s += ', P = %s'%str(self.pressure)
+        if self.er.value :
+            s += ', ER = %s'%str(self.er)
+        return s
 
     class Meta:
         app_label='db'
@@ -427,12 +442,21 @@ class Plots(Model):
     legacy = Bit1BooleanField()
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
-    details = ManyToManyField(Details, 
+    details = ManyToManyField(Details,
         through="PlotDetails",
         related_name='details')
-    dets = ManyToManyField(Detonations, 
+    dets = ManyToManyField(Detonations,
         through="PlotDetonations",
         related_name='related_dets')
+
+    def brief(self,include_details=False) :
+        # if include_details :
+        #     return self.title.split(';')[0]
+        # return (self.x_label.name + ' vs. ' + self.y_label.name).capitalize()
+        return self.title.split(';')[0]
+
+    def preview(self) :
+        return self.title.split(';')[1]
 
     class Meta:
         app_label='db'
@@ -468,7 +492,7 @@ class Subcategories(Model):
     name = CharField(max_length=50)
     created = DateTimeField(blank=True, null=True)
     updated = DateTimeField(blank=True, null=True)
-    detonations = ManyToManyField(Detonations, 
+    detonations = ManyToManyField(Detonations,
         through="DetonationSubcategories")
 
     class Meta:

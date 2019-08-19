@@ -1,4 +1,5 @@
-DATASETS_DIR = '/media/datasets/'
+DATASETS_DIR = '/static/db/datasets/'
+PLOT_IMAGES_DIR = '/static/db/plots/legacy/png/'
 CITATION_DIR = '/citations/'
 SUPPORTED_TYPES = {'txt','csv'}
 ORIGINAL_DETDB_URL = 'http://shepherd.caltech.edu/detn_db/html/db.html'

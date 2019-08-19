@@ -1,4 +1,4 @@
-from db.models import Properties,Details,Detonations,Citations,Authors,CommonFuels
+from db.models import Properties,Details,Detonations,Citations,Authors,CommonFuels,Plots
 
 def createCategoryLink(d) :
     # E.g. /db/detonations/cell-size/
@@ -61,7 +61,6 @@ def getAdjacentDetonations(d,cat,subcats,fuel) :
         if id == d.id :
             j = i
             break
-
     if j == -1 :
         raise Exception('Detonation not found.')
 
@@ -73,6 +72,32 @@ def getAdjacentDetonations(d,cat,subcats,fuel) :
         next_det = Detonations.objects.get(id=qs[j+1]).name
 
     return prev_det,next_det
+
+
+def getAdjacentPlots(p,category=None) :
+    if not category:
+        pk = p.id
+        prev_plot = pk-1 if pk > 0 else None
+        next_plot = pk+1 if pk < Plots.objects.all().count()-1 else None
+        return prev_plot,next_plot
+    else :
+        prev_plot = None
+        next_plot = None
+        qs = Plots.objects.filter(category=category)
+        qs = qs.values_list('id',flat=True)
+        j = -1
+        for i,id in enumerate(qs) :
+            if id == p.id :
+                j = i
+                break
+        if j == -1 :
+            raise Exception('Plot not found.')
+        if j > 0 :
+            prev_plot = Plots.objects.get(id=qs[j-1]).id
+        if j < qs.count()-1 :
+            next_plot = Plots.objects.get(id=qs[j+1]).id
+        return prev_plot,next_plot
+
 
 def appendBreadCrumb(history,item,isFuel=False) :
     # Append new URL to breadcrumb history
@@ -93,3 +118,11 @@ def appendBreadCrumb(history,item,isFuel=False) :
         tuple_b = item.title()
     history.append((tuple_a, tuple_b))
     return history
+
+
+def getFuelType(d) :
+    # Returns a common fuel or 'misc'
+    for f in CommonFuels.objects.all() :
+        if d.fuel.value == f.chemical:
+            return d.fuel.value
+    return 'misc'

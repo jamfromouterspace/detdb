@@ -53,11 +53,19 @@
           </div>
           {% include "../components/list_expandable.html" with items=related_plots %}
         </div>
-        <div id="same-author">
+        {% if same_citation %}
+        <div id="authors">
           <div  class="table-heading">
-            <h5 class="page-subtitle darker">FROM THE SAME AUTHOR</h5>
+            <h5 class="page-subtitle darker">FROM THE SAME PAPER</h5>
           </div>
-          {% include "../components/list_expandable.html" with items=same_author %}
+          {% include "../components/list_expandable.html" with items=same_citation %}
+        </div>
+        {% endif%}
+        <div id="authors">
+          <div  class="table-heading">
+            <h5 class="page-subtitle darker">AUTHORS</h5>
+          </div>
+          {% include "../components/list.html" with items=authors hover=hover %}
         </div>
       </div>
     </div>
