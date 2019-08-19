@@ -317,9 +317,9 @@ def detonation(request,detonation,category,subcats,fuel) :
         elif a.initials :
             name += a.initials
         name += ' %s'%a.last_name
-        print(a.last_name)
         authors.append({
             'name' : name,
+            'link' : '/db/authors/%d/'%a.id
         })
 
 
@@ -340,7 +340,7 @@ def detonation(request,detonation,category,subcats,fuel) :
 
 
 def detonation_by_pk(request,pk,category=None,subcats=None,fuel=None) :
-    d = get_object_or_404(Detonations,id=name)
+    d = get_object_or_404(Detonations,id=pk)
     return detonation(request,d,category,subcats,fuel)
 
 

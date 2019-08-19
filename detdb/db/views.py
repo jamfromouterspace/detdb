@@ -20,6 +20,8 @@ def index(request):
 ######################
 
 def list_of_categories(request,section):
+    if section != 'plots' and section != 'detonations' :
+        raise Http404('Page does not exist.')
     # Pass page path for breadcrumb navigation
     prev = [('/','Home'),('/db','Browse')]
     current = section.title()
@@ -35,11 +37,12 @@ def list_of_categories(request,section):
 
     context = {
         'title' : section.title(),
+        'id' : section.lower(),
         'bc' : { 'prev' : prev, 'current': current },
         'list' : { 'hover' : True, 'items' : list_items }
     }
 
-    return render(request, 'pages/categories.html', context)
+    return render(request, 'pages/simple_list.html', context)
 
 # 404 VIEW
 

@@ -1,4 +1,4 @@
-from db.models import Properties,Details,Detonations,Citations,Authors,CommonFuels,Plots
+from db.models import Properties,Details,Detonations,Citations,Authors,CommonFuels,Plots,Journals
 
 def createCategoryLink(d) :
     # E.g. /db/detonations/cell-size/
@@ -143,7 +143,7 @@ def getSimilarCitations(c) :
             count += 1
 
     # If there arent enough, related by journal
-    for jc in Journals.objects.filter(id=c.journal_id) :
+    for jc in Citations.objects.filter(journal_id=c.journal_id) :
         if count >= 5 :
             return similar
         if jc != ac :
