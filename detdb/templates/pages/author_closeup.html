@@ -1,0 +1,22 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+    <div id="citation-page" class="container">
+      {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+      {% include "../components/page_header.html" with header=header %}
+
+      <div class="selection-list padded">
+        <div class="table-heading">
+          <h5 class="page-subtitle darker">CITATIONS FROM THIS AUTHOR</h5>
+        </div>
+        {% include "../components/list.html" with items=citations hover=True %}
+      </div>
+      <div class="">
+        <div class="table-heading">
+          <h5 class="page-subtitle darker">DETONATIONS FROM THIS AUTHOR</h5>
+        </div>
+        {% include "../components/list_expandable.html" with items=detonations %}
+      </div>
+    </div>
+
+{% include "../components/footer.html" %}

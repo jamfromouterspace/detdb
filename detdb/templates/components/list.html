@@ -1,13 +1,17 @@
 <table class="table {% if hover %}table-hover{% endif %}">
   {% for i in items %}
-  <tr>
+  <tr {% if i.id %} id="{{ i.id }}" {% endif %}>
     {% if i.icon %}
     <td class="align-middle">
       <div class="material-icons"><i>{{ i.icon }}</i></div>
     </td>
     {% endif %}
     <td>
+      {% if i.link %}
       <a href="{{ i.link }}">{{ i.name|safe }}</a>
+      {% else %}
+      <p>{{ i.name|safe }}</p>
+      {% endif %}
     </td>
   </tr>
   {% endfor %}

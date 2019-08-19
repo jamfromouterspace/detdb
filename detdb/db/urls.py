@@ -1,11 +1,11 @@
-from django.urls import path
-
+from django.urls import re_path,path
+from .detonations import urls as detonations
+from .plots import urls as plots
+from .citations import urls as citations
 from . import views
 
 handler404 = 'db.views.handler404'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('detonations/', views.detonations, name='detonations'),
-    path('plots/', views.plots, name='plots'),
-]
+] + detonations.urlpatterns + plots.urlpatterns + citations.urlpatterns

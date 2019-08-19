@@ -1,6 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render,get_object_or_404,get_list_or_404
+from django.http import HttpResponse,Http404
 from db.models import Categories
+
+####################################
+# DETONATIONS, PLOTS, OR CITATIONS #
+####################################
 
 def index(request):
     # Pass page path for breadcrumb navigation
@@ -11,33 +15,38 @@ def index(request):
     }
     return render(request, 'pages/db_root.html', context)
 
-def categories(request,location):
+######################
+# LIST OF CATEGORIES #
+######################
+
+def list_of_categories(request,section):
+    if section != 'plots' and section != 'detonations' :
+        raise Http404('Page does not exist.')
     # Pass page path for breadcrumb navigation
     prev = [('/','Home'),('/db','Browse')]
-    current = location.title()
+    current = section.title()
     # Get list of category name
     categories = Categories.objects.values_list('name', flat=True)
     list_items = []
+
     for c in categories :
         list_items.append({
             'name':c.title(),
-            'link':'/db/'+location+'/'+c.replace(' ','-')
+            'link':'/db/'+section+'/'+c.replace(' ','-')
         })
+
     context = {
-        'title' : location.title(),
+        'title' : section.title(),
+        'id' : section.lower(),
         'bc' : { 'prev' : prev, 'current': current },
         'list' : { 'hover' : True, 'items' : list_items }
     }
-    return render(request, 'pages/categories.html', context)
 
-def plots(request):
-    return categories(request,'plots')
+    return render(request, 'pages/simple_list.html', context)
 
-def detonations(request):
-    return categories(request,'detonations')
-
+# 404 VIEW
 
 def handler404(request, exception, template_name="404.html"):
-    response = render_to_response("404.html")
+    response = render_to_response("pages/404.html")
     response.status_code = 404
     return response

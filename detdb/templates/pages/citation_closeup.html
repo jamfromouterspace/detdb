@@ -1,0 +1,59 @@
+{% include "../components/header.html" %}
+{% include "../components/nav_bar.html" with include_search=True %}
+
+    <div id="citation-page" class="container">
+      {% include "../components/breadcrumb.html" with prev=bc.prev current=bc.current %}
+      {% include "../components/page_header.html" with header=header %}
+      <div class="row padded">
+        {% if journal %}
+          <div class="col-12 col-md-4">
+            <div class="table-heading">
+              <h5 class="page-subtitle darker">JOURNAL</h5>
+            </div>
+            <p class="journal">
+              {{ journal }}
+            </p>
+          </div>
+        {% endif %}
+        <div class="col-12 {% if journal %}col-md-4{% else %}col-md-6{% endif %}">
+          <div class="table-heading">
+            <h5 class="page-subtitle darker">FULL CITATION</h5>
+          </div>
+          <p class="citation">
+            {{ full_citation|safe }}
+          </p>
+        </div>
+        <div class="col-12 {% if journal %}col-md-4{% else %}col-md-6{% endif %}">
+          <div class="table-heading">
+            <h5 class="page-subtitle darker">TEX</h5>
+          </div>
+          <p class="tex">
+            {{ tex|safe }}
+          </p>
+        </div>
+      </div>
+      <div class="selection-list">
+        <div class="table-heading">
+          <h5 class="page-subtitle darker">AUTHORS</h5>
+        </div>
+        {% include "../components/list.html" with items=authors hover=True %}
+      </div>
+      <div class="">
+        <div class="table-heading">
+          <h5 class="page-subtitle darker">DETONATIONS</h5>
+        </div>
+        {% include "../components/list_expandable.html" with items=detonations %}
+      </div>
+      <div class="selection-list">
+        <div class="table-heading">
+          <h5 class="page-subtitle darker">
+            RELATED CITATIONS
+          </h5>
+
+        </div>
+        {# {% include "../components/list.html" with items=related_citations hover=True %} #}
+        <p><em>Coming soon...</em></p>
+      </div>
+    </div>
+
+{% include "../components/footer.html" %}

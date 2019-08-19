@@ -48,8 +48,8 @@ for i in range(0, len(titles)):
 # a better approach with dynamic programming.
 # Also generate the SQL at the the end of each set of calculations.
 folder = ''
-if os.path.exists('../../db/seed_files/') :
-    folder = '../../db/seed_files/'
+if os.path.exists('../../db-files/seed-parts/') :
+    folder = '../../db/seed-parts/'
 f = open(folder + 'related_plots_seed.sql', 'w')
 ins_related_plots = InsertGen('related_plots',
                               ('plot_id', 'related_plot_id', 'x_similarity', 'y_similarity',

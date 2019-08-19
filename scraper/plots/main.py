@@ -41,8 +41,8 @@ plot_index = 1
 urls = getPlotUrls()
 # Manually add additive and inhibitor since we can be certain they'll show up
 folder = ''
-if os.path.exists('../../db/seed_files/') :
-        folder = '../../db/seed_files/'
+if os.path.exists('../../db-files/seed-parts/') :
+        folder = '../../db-files/seed-parts/'
 f = open(folder + 'plot_seed_0.sql','w')
 ins_details.add((props[('diluent','chemical')],'"Additive"'))
 deets[(props[('diluent','chemical')],'"Additive"')] = deets_index
@@ -66,8 +66,8 @@ k = 1
 for category in urls :
     # Place in /db/seed_files/ for convenience
     folder = ''
-    if os.path.exists('../../db/seed_files/') :
-        folder = '../../db/seed_files/'
+    if os.path.exists('../../db-files/seed-parts/') :
+        folder = '../../db-files/seed-parts/'
 
     printRed('Scraping "' + category +'"')
     f = open(folder + 'plot_seed_'+str(k)+'.sql','w')
@@ -263,7 +263,6 @@ for category in urls :
                         detail_indices.append(special_diluent_index)
                     # Check if these detail entries already exist
                     for p,val in new_details :
-                        val = json.dumps(val)
                         if (p,val) not in deets :
                             deets[(p,val)] = deets_index
                             ins_details.add((p,val))

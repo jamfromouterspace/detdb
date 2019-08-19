@@ -96,8 +96,8 @@ ins_auth_cit = InsertGen('author_citations', ('author_id', 'citation_id'))
 # Begin parsing and outputing to citations_seed.sql
 # (place in /db/seed_files/ for convenience if it exists)
 folder = ''
-if os.path.exists('../../db/seed_files/') :
-    folder = '../../db/seed_files/'
+if os.path.exists('../../db-files/seed-parts/') :
+    folder = '../../db-files/seed-parts/'
 f = open(folder + "citation_seed.sql", "w")
 # Insert all existing journals (scraped from database)
 journal_index = 1

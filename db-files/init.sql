@@ -56,11 +56,36 @@ CREATE TABLE categories (
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 );
 
+CREATE TABLE properties (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50),
+	units VARCHAR(10),
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY (name,units)
+);
+
+/*
+	Hardcoding common types (fuel, diulent, etc) leads to
+	lots of code duplication, and confines the possible types
+	of data entries. This was a tough choice, but it seems better
+	to have a generalized 'details' table that can hold any technical details.
+*/
+
+CREATE TABLE details (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	property_id INT NOT NULL,
+	value JSON,
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	FOREIGN KEY(property_id) REFERENCES properties(id)
+);
+
 CREATE TABLE detonations (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(100) CHARACTER SET UTF8MB4 NOT NULL UNIQUE,
 	category_id INT,
-	file_name VARCHAR(20) NOT NULL,
+	file_name VARCHAR(15),
 	issues VARCHAR(250) CHARACTER SET UTF8MB4, -- Problems with the data
 	notes VARCHAR(200) CHARACTER SET UTF8MB4, -- Scientific notes
 	added_by VARCHAR(164) NOT NULL,
@@ -69,17 +94,32 @@ CREATE TABLE detonations (
 	archived BIT NOT NULL DEFAULT 0,
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+	-- The following IDs are shortcuts to `details` entries
+	-- to reduce the number of queries required to get the info
+	-- (frequently required information)
+	fuel_id INT NOT NULL,
+	oxidizer_id INT NOT NULL,
+	diluent_id INT NOT NULL,
+	pressure_id INT NOT NULL,
+	temperature_id INT NOT NULL,
+	er_id INT NOT NULL, -- Equivalence ratio
 	FOREIGN KEY(citation_id) REFERENCES citations(id),
-	FOREIGN KEY(category_id) REFERENCES categories(id)
+	FOREIGN KEY(category_id) REFERENCES categories(id),
+	FOREIGN KEY(fuel_id) REFERENCES details(id),
+	FOREIGN KEY(oxidizer_id) REFERENCES details(id),
+	FOREIGN KEY(diluent_id) REFERENCES details(id),
+	FOREIGN KEY(pressure_id) REFERENCES details(id),
+	FOREIGN KEY(temperature_id) REFERENCES details(id),
+	FOREIGN KEY(er_id) REFERENCES details(id)
 );
 
-CREATE TABLE properties (
+CREATE TABLE detonation_details (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(50),
-	units VARCHAR(10),
-	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY (name,units)
+	detonation_id INT NOT NULL,
+	detail_id INT NOT NULL,
+	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
+	FOREIGN KEY(detail_id) REFERENCES details(id),
+    UNIQUE KEY (detonation_id,detail_id)
 );
 
 CREATE TABLE subcategories (
@@ -112,30 +152,6 @@ CREATE TABLE data_points (
 	FOREIGN KEY(detonation_id) REFERENCES detonations(id)
 );
 
-/*
-	Hardcoding common types (fuel, diulent, etc) leads to
-	lots of code duplication, and confines the possible types
-	of data entries. This was a tough choice, but it seems better
-	to have a generalized 'details' table that can hold any technical details.
-*/
-
-CREATE TABLE details (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	property_id INT NOT NULL,
-	value JSON,
-	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	updated TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-	FOREIGN KEY(property_id) REFERENCES properties(id)
-);
-
-CREATE TABLE detonation_details (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	detonation_id INT NOT NULL,
-	detail_id INT NOT NULL,
-	FOREIGN KEY(detonation_id) REFERENCES detonations(id),
-	FOREIGN KEY(detail_id) REFERENCES details(id),
-    UNIQUE KEY (detonation_id,detail_id)
-);
 /*
 	Some justifications :
 
