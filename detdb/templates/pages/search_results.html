@@ -4,10 +4,13 @@
 <div id="search-results" class="container">
   {% if advanced %}
     <h2 class="page-title advanced">Advanced Search</h2>
+    {% if not malformed %}
+    <h4 class="page-subtitle">{{ advanced }}</h4>
+    {% endif %}
   {% else %}
     <h2 class="page-title">Search Results</h2>
+    <h4 class="page-subtitle">{{ query }}</h4>
   {% endif %}
-  <h4 class="page-subtitle">{{ query }}</h4>
   {% if malformed %}
     <p class="no-results padded">Malformed advanced search! To get the best results, check out the <a href="/about#cheatsheet">Search Cheatsheet</a> page.</p>
   {% elif results %}

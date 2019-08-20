@@ -18,7 +18,9 @@ recognized_keys = {
 'a' : 'author',
 'auth' : 'author',
 'y' : 'year',
-'j' : 'journal'
+'j' : 'journal',
+'name' : 'name',
+'id' : 'name'
 }
 
 values = {

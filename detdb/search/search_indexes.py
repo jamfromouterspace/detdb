@@ -58,10 +58,11 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
             data_points.append(dp.property.name)
         return data_points
 
-    def prepare_authors(self, obj) :
+    def prepare_author(self, obj) :
         authors = []
         for a in obj.citation.authors.all() :
             authors.append(a.fullName())
+        return authors
 
     def prepare_journal(self, obj) :
         if obj.citation.journal :

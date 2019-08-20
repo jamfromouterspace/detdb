@@ -22,6 +22,7 @@ def search(request) :
         'advanced' : advanced,
         'malformed' : malformed
     }
+    print(advanced)
     return render(request, 'pages/search_results.html', context)
 
 def advancedSearch(q) :
