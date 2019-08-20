@@ -56,6 +56,6 @@ urlpatterns = [
    	# Less simple subcategory index
    	# Allows for any number of subcategories to be chained together
     re_path(r'^detonations/(?P<category>[\w-]+)/(?P<subcats>[\w/-]+)/$',
-    	views.category, {'section': 'detonations'},
+    	views.category,
     	name='detonation_subcategories'),
 ]

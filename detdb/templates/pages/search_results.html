@@ -1,10 +1,29 @@
 {% include "../components/header.html" %}
-{% include "../components/nav_bar.html" with include_search=True prefilled=search_query %}
+{% include "../components/nav_bar.html" with include_search=True prefilled=query %}
 
 <div id="search-results" class="container">
-  <h2 class="page-title">Search Results</h2>
-  <h4 class="page-subtitle">{{ search_query }}</h4>
-  {% include "../components/list_expandable.html" with items=search_results %}
+  {% if advanced %}
+    <h2 class="page-title advanced">Advanced Search</h2>
+    {% if not malformed %}
+    <h4 class="page-subtitle">{{ advanced }}</h4>
+    {% endif %}
+  {% else %}
+    <h2 class="page-title">Search Results</h2>
+    <h4 class="page-subtitle">{{ query }}</h4>
+  {% endif %}
+  {% if malformed %}
+    <p class="no-results padded">Malformed advanced search! To get the best results, check out the <a href="/about#cheatsheet">Search Cheatsheet</a> page.</p>
+  {% elif results %}
+    <div class="selection-list selection-list-expandable padded">
+      <table class="table">
+        {% for result in results %}
+          {{ result.rendered|safe }}
+        {% endfor %}
+      </table>
+    </div>
+  {% else %}
+  <p class="no-results padded" >No results! To get the best results, check out the <a href="/about#cheatsheet">Search Cheatsheet</a> page.</p>
+  {% endif %}
 </div>
 
 {% include "../components/footer.html" %}

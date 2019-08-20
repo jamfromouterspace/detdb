@@ -1,0 +1,40 @@
+{{ object.name }}
+{{ object.id }}
+{{ object.category.name }}
+{% for sc in object.subcats.all %}
+  {{ sc.name }}
+{% endfor %}
+{{ object.citation.preformatted }}
+{{ object.citation.journal.name }}
+{% for d in object.details.all %}
+  {% if d.property_id == object.fuel.property_id %}
+    {{ d.value }}
+  {% elif d.property_id == object.oxidizer.property_id %}
+    {{ d.value }}
+  {% elif d.property_id == object.diluent.property_id %}
+    {{ d.value }}
+  {% elif d.property_id == object.pressure.property_id %}
+    {{ d.value }}
+  {% elif d.property_id == object.temperature.property_id %}
+    {{ d.value }}
+  {% elif d.property_id == object.er.property_id %}
+    {{ d.value }}
+  {% else %}
+    {{ d.property.name }} {{ d.value }}
+  {% endif %}
+{% endfor %}
+{% for dp in object.data_points.all %}
+  {{ dp.property.name }}
+{% endfor %}
+{% if object.legacy %}
+  legacy
+{% endif %}
+{% for p in object.plots.all %}
+  {{ p.title }}
+{% endfor %}
+{% for a in object.citation.authors.all %}
+  {% if a.first_name %}{{ a.first_name }}{% endif %} {% if a.initials %}{{ a.initials }}{% endif %} {{ a.last_name }}
+{% endfor %}
+{% if object.notes %}
+  {{ object.notes }}
+{% endif %}

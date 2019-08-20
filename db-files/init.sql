@@ -233,3 +233,13 @@ CREATE TABLE common_fuels (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	chemical VARCHAR(10) UNIQUE NOT NULL
 );
+
+
+-- Keep a record of searches for extreme data mining
+CREATE TABLE searches (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	query VARCHAR(100) NOT NULL,
+	empty_results BIT NOT NULL,
+	ipv4_address VARCHAR(15),
+	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+);
