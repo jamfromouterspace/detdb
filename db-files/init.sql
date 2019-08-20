@@ -239,6 +239,7 @@ CREATE TABLE common_fuels (
 CREATE TABLE searches (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	query VARCHAR(100) NOT NULL,
+	empty_results BIT NOT NULL,
 	ipv4_address VARCHAR(15),
 	created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 );

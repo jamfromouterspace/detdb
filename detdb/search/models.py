@@ -33,4 +33,5 @@ class Searches(Model):
     id = IntegerField(primary_key=True)
     query = CharField(max_length=100)
     ipv4_address = CharField(max_length=15)
+    empty_results = Bit1BooleanField()
     created = DateTimeField(default=now, editable=False)
