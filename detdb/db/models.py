@@ -113,7 +113,7 @@ class Citations(Model):
 
     def brief(self) :
         formatted = ''
-        authors = self.authors.all().order_by('id')
+        authors = self.authors.all()
         if len(authors) == 0 :
             raise Exception('Unexpected error in Citation.brief(). Citation object with no authors was found!')
 
