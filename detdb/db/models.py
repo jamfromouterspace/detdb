@@ -36,6 +36,7 @@ from django_mysql.models import (
 )
 
 from db.constants import *
+from django.utils.timezone import now
 
 class AuthorCitations(Model):
     id = IntegerField(primary_key=True)
@@ -59,7 +60,7 @@ class Authors(Model):
     initials = CharField(max_length=8, blank=True, null=True)
     last_name = CharField(max_length=80)
     notes = CharField(max_length=150, blank=True, null=True)
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
     citations = ManyToManyField('Citations', through="AuthorCitations",related_name='citations')
 
@@ -80,7 +81,7 @@ class Authors(Model):
 class Categories(Model):
     id = IntegerField(primary_key=True)
     name = CharField(unique=True, max_length=50)
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
 
     class Meta:
@@ -107,7 +108,7 @@ class Citations(Model):
     pages = CharField(max_length=20, blank=True, null=True)
     notes = CharField(max_length=150, blank=True, null=True)
     archived = Bit1BooleanField()
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
     authors = ManyToManyField(Authors, through="AuthorCitations",related_name='authors')
 
@@ -151,7 +152,7 @@ class DataPoints(Model):
     detonation = ForeignKey('Detonations',
                             DO_NOTHING,
                             related_name='data_points')
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
 
     class Meta:
@@ -163,7 +164,7 @@ class Properties(Model):
     id = IntegerField(primary_key=True)
     name = CharField(max_length=50, blank=True, null=True)
     units = CharField(max_length=10, blank=True, null=True)
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
 
     class Meta:
@@ -179,7 +180,7 @@ class Details(Model):
                             DO_NOTHING,
                             related_name='details')
     value = JSONField(blank=True, null=True)
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
     dets = ManyToManyField('Detonations',
         through="DetonationDetails",
@@ -269,7 +270,7 @@ class Detonations(Model):
                             related_name='detonations')
     legacy = Bit1BooleanField()
     archived = Bit1BooleanField()
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
     details = ManyToManyField(Details, through="DetonationDetails")
     subcats = ManyToManyField('Subcategories',
@@ -376,7 +377,7 @@ class Journals(Model):
     id = IntegerField(primary_key=True)
     abbreviation = CharField(max_length=50, blank=True, null=True)
     name = CharField(unique=True, max_length=150)
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
 
     class Meta:
@@ -447,7 +448,7 @@ class Plots(Model):
     notes = CharField(max_length=100, blank=True, null=True)
     image_file = CharField(max_length=15, blank=True, null=True)
     legacy = Bit1BooleanField()
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
     details = ManyToManyField(Details,
         through="PlotDetails",
@@ -497,7 +498,7 @@ class Subcategories(Model):
                           DO_NOTHING,
                           related_name='subcategories')
     name = CharField(max_length=50)
-    created = DateTimeField(blank=True, null=True)
+    created = DateTimeField(default=now)
     updated = DateTimeField(blank=True, null=True)
     detonations = ManyToManyField(Detonations,
         through="DetonationSubcategories")

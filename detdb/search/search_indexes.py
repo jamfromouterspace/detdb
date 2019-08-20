@@ -14,6 +14,8 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
     author = indexes.MultiValueField()
     journal = indexes.CharField(null=True)
     year = indexes.CharField()
+    # Pre-rendered
+    rendered = indexes.CharField(use_template=True, indexed=False)
 
     def get_model(self) :
         return Detonations
