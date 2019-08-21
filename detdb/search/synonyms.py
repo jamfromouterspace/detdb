@@ -20,7 +20,13 @@ recognized_keys = {
 'y' : 'year',
 'j' : 'journal',
 'name' : 'name',
-'id' : 'name'
+'id' : 'name',
+'category' : 'category',
+'cat' : 'category',
+'c' : 'category',
+'subcat' : 'subcategory',
+'sc' : 'subcategory',
+'subcategory' : 'subcategory'
 }
 
 values = {

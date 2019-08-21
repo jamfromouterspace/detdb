@@ -4,6 +4,8 @@ from db.models import Detonations,Plots,Properties
 class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
     text = indexes.CharField(document=True, use_template=True)
     name = indexes.CharField(model_attr='name')
+    category = indexes.CharField(model_attr='category')
+    subcategory = indexes.MultiValueField(model_attr='subcats')
     fuel = indexes.MultiValueField(model_attr='fuel')
     oxidizer = indexes.MultiValueField(model_attr='oxidizer',null=True)
     diluent = indexes.MultiValueField(model_attr='diluent',null=True)
@@ -31,6 +33,15 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
         for d in obj.details.filter(property_id = pid) :
             values.append(d.value)
         return values
+
+    def prepare_category(self, obj) :
+        return obj.category.name
+
+    def prepare_subcategory(self, obj) :
+        subcats = []
+        for sc in obj.subcats.all() :
+            subcats.append(sc.name)
+        return subcats
 
     def prepare_fuel(self, obj) :
         return self.get_detail_values(obj,'fuel', 'chemical')
