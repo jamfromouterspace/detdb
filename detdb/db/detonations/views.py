@@ -264,7 +264,7 @@ def detonation(request,detonation,category,subcats,fuel) :
 
     citation = {
         'id' : detonation.citation_id,
-        'link' : '/db/citations/%d' % detonation.citation_id,
+        'link' : CITATION_DIR + str(detonation.citation_id),
         'text' : detonation.citation.preformatted
     }
 
