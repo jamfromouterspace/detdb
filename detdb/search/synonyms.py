@@ -4,6 +4,7 @@ recognized_keys = {
 'diluent' : 'diluent',
 'pressure' : 'pressure',
 'temperature' : 'temperature',
+'er' : 'er',
 'author' : 'author',
 'year' : 'year',
 'journal' : 'journal',
@@ -27,6 +28,12 @@ recognized_keys = {
 'subcat' : 'subcategory',
 'sc' : 'subcategory',
 'subcategory' : 'subcategory'
+}
+
+json_keys = {
+    'er' : None,
+    'pressure' : None,
+    'temperature' : None,
 }
 
 values = {

@@ -3,6 +3,7 @@ from django.http import HttpResponse,Http404
 from search.models import Searches
 from haystack.query import SearchQuerySet
 import search.synonyms as synonyms
+import json
 
 def search(request) :
     query = request.POST.get('q', None)
@@ -22,7 +23,6 @@ def search(request) :
         'advanced' : advanced,
         'malformed' : malformed
     }
-    print(advanced)
     return render(request, 'pages/search_results.html', context)
 
 def advancedSearch(q) :
@@ -32,19 +32,27 @@ def advancedSearch(q) :
     unpacked = {}
     stack = ''
     prev = ''
+    ignore_comma = False
     for c in q :
         if c == '=' :
             advanced = True
             unpacked[stack] = None
             prev = stack
             stack = ''
-        elif c == ',' :
+        elif c == ',' and not ignore_comma :
             unpacked[prev] = stack
             prev = ''
             stack = ''
+        elif c == '[' :
+            ignore_comma = True
+            stack += c
+        elif c == ']' :
+            ignore_comma = False
+            stack += c
         else :
             stack += c
     unpacked[prev] = stack
+    print(unpacked)
     if not advanced :
         return None,False
     # Validation
@@ -69,4 +77,11 @@ def advancedSearch(q) :
         if unpacked[j] in synonyms.values :
             unpacked_valid[synonyms.recognized_keys[i]] = synonyms.values[unpacked[j]]
 
+    # Convert JSON number ranges
+    try :
+        for i in unpacked_valid :
+            if i in synonyms.json_keys :
+                unpacked_valid[i] = json.loads(unpacked_valid[i])
+    except Exception :
+        return None,True
     return unpacked_valid,malformed
