@@ -33,13 +33,40 @@ def advancedSearch(q) :
     stack = ''
     prev = ''
     ignore_comma = False
+    gt = set()
+    gte = set()
+    lt = set()
+    lte = set()
     for c in q :
         if c == '=' :
+            if prev in gt :
+                gte.add(prev)
+                gt.remove(prev)
+            elif prev in lt :
+                lte.add(prev)
+                lt.remove(prev)
+            else :
+                advanced = True
+                unpacked[stack] = None
+                prev = stack
+                stack = ''
+        elif c == '>' :
             advanced = True
             unpacked[stack] = None
+            gt.add(stack)
             prev = stack
-            stack = ''
+            stack = '['
+        elif c == '<' :
+            advanced = True
+            unpacked[stack] = None
+            lt.add(stack)
+            prev = stack
+            stack = '[-9999999,'
         elif c == ',' and not ignore_comma :
+            if prev in lt or prev in lte :
+                stack += ']'
+            elif prev in gt or prev in gte :
+                stack += ',9999999]'
             unpacked[prev] = stack
             prev = ''
             stack = ''
@@ -51,6 +78,10 @@ def advancedSearch(q) :
             stack += c
         else :
             stack += c
+    if prev in lt or prev in lte :
+        stack += ']'
+    elif prev in gt or prev in gte :
+        stack += ',9999999]'
     unpacked[prev] = stack
     print(unpacked)
     if not advanced :
@@ -77,11 +108,28 @@ def advancedSearch(q) :
         if unpacked[j] in synonyms.values :
             unpacked_valid[synonyms.recognized_keys[i]] = synonyms.values[unpacked[j]]
 
+    # Convert keys in gt and lt to the proper versions
+    gte = set(gt)
+    lte = set(lt) # Reuse these variables for convenience
+    for i in gte :
+        gt.add(synonyms.recognized_keys[i.strip()])
+        gt.remove(i)
+    for i in lte :
+        lt.add(synonyms.recognized_keys[i.strip()])
+        lt.remove(i)
     # Convert JSON number ranges
+    unpacked = {}
     try :
         for i in unpacked_valid :
             if i in synonyms.json_keys :
-                unpacked_valid[i] = json.loads(unpacked_valid[i])
+                vals = json.loads(unpacked_valid[i])
+                if i in gt :
+                    vals[0] += 0.0001
+                elif i in lt :
+                    vals[1] -= 0.0001
+                unpacked[i+'__range'] = vals
+            else :
+                unpacked[i] = unpacked_valid[i]
     except Exception :
         return None,True
-    return unpacked_valid,malformed
+    return unpacked,malformed
