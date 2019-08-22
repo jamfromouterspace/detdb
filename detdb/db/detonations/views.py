@@ -179,8 +179,8 @@ def datasets(request,category,fuel,subcats=None) :
             'citation_link' : CITATION_DIR + str(d.citation_id),
             'category' : cat.name,
             'category_link' : cat_link,
-            'subcategory' : ','.join(x.name for x in d.subcats.all()) or None,
-            'subcategory_link' : cat_link+'/'.join(x.name.replace(' ','-') for x in d.subcats.all()),
+            'subcategory' : d.subcatString(),
+            'subcategory_link' : d.subcatLink(),
             'fuel' : d.fuel.value,
             'oxidizer' : d.oxidizer.value,
             'diluent' : d.diluent.value,
@@ -314,6 +314,7 @@ def detonation(request,detonation,category,subcats,fuel) :
         name += ' %s'%a.last_name
         authors.append({
             'name' : name,
+            'author' : True,
             'link' : '/db/authors/%d/'%a.id
         })
 

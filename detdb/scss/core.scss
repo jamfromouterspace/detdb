@@ -1,0 +1,143 @@
+@import "custom-bootstrap";
+
+/* ==========================================================================
+   DETDB CUSTOM STYLES
+   ========================================================================== */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+body {
+  background-color: $detdb-light;
+}
+
+a {
+  color: $detdb-primary !important;
+}
+
+a:hover {
+  color: lighten($detdb-primary, 20%) !important;
+  text-decoration: none !important;
+}
+
+a:active {
+  color: darken($detdb-primary, 10%) !important;
+}
+
+nav {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+td {
+  padding: 0 !important;
+}
+
+.active-input input[type="text"]:focus:not([readonly]) {
+  border: 1px solid $detdb-primary;
+  box-shadow: 0 0 0 1px lighten($detdb-light, 20%);
+}
+
+.light-text {
+  color: silver;
+}
+
+.breadcrumb {
+  margin-top: 20px;
+}
+
+.page-title {
+  padding-top: 10px;
+}
+
+.page-subtitle {
+  font-size: 1em !important;
+  color: darken($detdb-light, 40%);
+  padding-top: 10px;
+  display: inline;
+}
+
+.page-data-title {
+  text-align: center;
+  @media screen and (max-width: map-get($grid-breakpoints, "sm")) {
+    padding-top: 10px;
+  }
+}
+
+.page-subtitle.darker {
+  color: darken($detdb-light, 60%);
+}
+
+// .page-subtitle.bigger {
+//   font-size: 1.3em !important;
+// }
+
+.table-div {
+  @media screen and (max-width: map-get($grid-breakpoints, "md")) {
+    padding-top: 30px;
+  }
+}
+
+td a:hover {
+  text-decoration: none;
+}
+
+.selection-list > .padded {
+  padding-top: 30px;
+}
+
+.padded {
+  padding-top: 30px !important;
+}
+
+.padded-extra {
+  padding-top: 60px !important;
+}
+
+.smaller {
+  font-size: 0.8em !important;
+}
+
+.bigger {
+  font-size: 1em !important;
+}
+
+.even-bigger {
+  font-size: 1.2em !important;
+}
+
+// .page-subtitle-div {
+//   padding-left: 4px !important;
+// }
+
+#logo-detonation {
+  color: $detdb-secondary;
+}
+
+#logo-db {
+  font-family: "Tahoma";
+}
+
+#nav-search {
+  width: 40vw;
+}
+
+.detonation {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.navbar {
+  background-color: white;
+}
+
+body {
+  padding-top: 60px;
+}

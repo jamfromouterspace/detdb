@@ -15,6 +15,7 @@ def all_citations(request) :
         list_items.append({
             'name' : '[%d] %s'%(c.id,c.brief()),
             'link' : '/db/citations/%d/'%c.id,
+            'citation' : True,
             'id' : str(c.id)
         })
     context = {
@@ -35,6 +36,7 @@ def all_authors(request) :
     for a in Authors.objects.all().order_by('last_name'):
         list_items.append({
             'name' : a.fullName(),
+            'author' : True,
             'link' : '/db/authors/%d/'%a.id,
             'id' : str(a.id)
         })
@@ -77,6 +79,7 @@ def citation(request, pk) :
     for a in c.authors.all() :
         authors.append({
             'name' : a.fullName(),
+            'author' : True,
             'link' : '/db/authors/%d/'%a.id
         })
     detonations = []
@@ -97,6 +100,7 @@ def citation(request, pk) :
     for q in ql :
         related_citations.append({
             'name' : '[%d] %s'%(q.id,q.brief()),
+            'citation' : True,
             'link' : '/db/citations/%d/'%q.id,
             'id' : str(q.id)
         })
@@ -139,6 +143,7 @@ def author(request, pk) :
     for c in a.citations.all().order_by('id') :
         citations.append({
             'name' : '[%d] %s'%(c.id,c.brief()),
+            'citation' : True,
             'link' : '/db/citations/%d/'%c.id,
             'id' : str(c.id)
         })

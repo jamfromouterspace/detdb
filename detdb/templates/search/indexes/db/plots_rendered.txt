@@ -3,17 +3,17 @@
 {% load preview %}
 <tr>
   <td class="align-middle">
-    <div class="material-icons">notes</div>
+    <div><i class="ui chart area icon"></i></div>
   </td>
   <td id="result-title-p{{ object.id }}" class="align-middle">
     <a href="/db/plots/{{ object.category.name|hyphenate }}/{{ object.id }}/">{{ object|brief }}</a>
   </td>
   <td id="result-preview-p{{ object.id }}"
     class="align-middle result-preview plot">
-    <a class="expandable">{{ object|preview }}</a>
+    <a href="/db/plots/{{ object.category.name|hyphenate }}/{{ object.id }}/">{{ object|preview }}</a>
   </td>
   <td colspan=2 id="result-table-p{{ object.id }}" hidden>
-    <a href="/db/plots/{{ object.category.name|hyphenate }}/{{ object.id }}/"><h5 class="page-subtitle darker">{{ object.title }}</h5></a>
+    <a href="/db/plots/{{ object.category.name|hyphenate }}/{{ object.id }}/"><h5 class="plot-title">{{ object.title }}</h5></a>
     <div class="plot-img">
       <img src="/static/db/plots/legacy/png/{{ object.image_file }}.png" alt="{{ object.title }}" />
     </div>

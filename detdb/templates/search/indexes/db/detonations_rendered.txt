@@ -1,5 +1,6 @@
 {% load hyphenate %}
 {% load fuel_type %}
+{% load brief %}
 {% load preview %}
 {% load detail %}
 {% load txt_link %}
@@ -8,14 +9,14 @@
 {% load subcats %}
 <tr>
   <td class="align-middle">
-    <div class="material-icons">notes</div>
+    <div><i class="ui fire extinguisher icon"></i></div>
   </td>
   <td id="result-title-d{{ object.id }}" class="align-middle">
     <a href="/db/detonations/{{ object.category.name|hyphenate }}/{{ object|fuel_type }}-fuel/{{ object.name }}/">{{ object.name|safe }}</a>
   </td>
   <td id="result-preview-d{{ object.id }}"
     class="align-middle result-preview plot">
-    <a class="expandable">{{ object|preview }}</a>
+    <a href="/db/detonations/{{ object.category.name|hyphenate }}/{{ object|fuel_type }}-fuel/{{ object.name }}/">{{ object|preview }}</a>
   </td>
   <td colspan=2 id="result-table-d{{ object.id }}" hidden>
 
@@ -27,7 +28,7 @@
         </h5>
         <h5 class="detonation-heading text-center">
           <span class="search-citation">
-            {{ object.citation.name|safe }}
+            {{ object.citation|brief }}
             <a class="citation-link" href="/db/citations/{{ object.citation_id|safe }}">[{{ object.citation_id|safe }}]</a></span>
         </h5>
         <table
