@@ -1,0 +1,15 @@
+{% load hyphenate %}
+{% load brief %}
+{% load preview %}
+<tr>
+  <td class="align-middle">
+    <div class="material-icons">notes</div>
+  </td>
+  <td id="result-title-d{{ object.id }}" class="align-middle">
+    <a href="/db/plots/{{ object.category.name|hyphenate }}/{{ object.id }}/">{{ object|brief }}</a>
+  </td>
+  <td id="result-preview-d{{ object.id }}"
+    class="align-middle result-preview plot">
+    <a class="expandable">{{ object|preview }}</a>
+  </td>
+</tr>
