@@ -10,8 +10,14 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
     oxidizer = indexes.MultiValueField(model_attr='oxidizer',null=True)
     diluent = indexes.MultiValueField(model_attr='diluent',null=True)
     pressure = indexes.MultiValueField(model_attr='pressure',null=True)
+    pressure_min = indexes.FloatField(null=True)
+    pressure_max = indexes.FloatField(null=True)
     temperature = indexes.MultiValueField(model_attr='pressure',null=True)
+    temperature_min = indexes.FloatField(null=True)
+    temperature_max = indexes.FloatField(null=True)
     er = indexes.MultiValueField(model_attr='er',null=True)
+    er_min = indexes.FloatField(null=True)
+    er_max = indexes.FloatField(null=True)
     data_points = indexes.MultiValueField()
     author = indexes.MultiValueField()
     journal = indexes.CharField(null=True)
@@ -31,7 +37,27 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
         values = []
         pid = Properties.objects.get(name=property,units=units).id
         for d in obj.details.filter(property_id = pid) :
+            # Numerical details are sometimes ranges, and all we need is that
+            # list [min, max]
+            if type(d.value) == type([]) :
+                return d.value
             values.append(d.value)
+        return values
+
+    def get_detail_min(self, obj, property, units) :
+        # For ranged numerical values like pressure and temperature
+        pid = Properties.objects.get(name=property,units=units).id
+        values = obj.details.get(property_id = pid).value
+        if type(values) == type([]) and len(values) > 1 :
+            return values[0]
+        return values
+
+    def get_detail_max(self, obj, property, units) :
+        # For ranged numerical values like pressure and temperature
+        pid = Properties.objects.get(name=property,units=units).id
+        values = obj.details.get(property_id = pid).value
+        if type(values) == type([]) and len(values) > 1 :
+            return values[1]
         return values
 
     def prepare_category(self, obj) :
@@ -55,11 +81,29 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
     def prepare_pressure(self, obj) :
         return self.get_detail_values(obj,'initial pressure', 'kPa')
 
+    def prepare_pressure_min(self, obj) :
+        return self.get_detail_min(obj,'initial pressure', 'kPa')
+
+    def prepare_pressure_max(self, obj) :
+        return self.get_detail_max(obj,'initial pressure', 'kPa')
+
     def prepare_temperature(self, obj) :
         return self.get_detail_values(obj,'initial temperature', 'K')
 
+    def prepare_temperature_min(self, obj) :
+        return self.get_detail_min(obj,'initial temperature', 'K')
+
+    def prepare_temperature_max(self, obj) :
+        return self.get_detail_max(obj,'initial temperature', 'K')
+
     def prepare_er(self, obj) :
         return self.get_detail_values(obj,'equivalence ratio', 'unitless')
+
+    def prepare_er_min(self, obj) :
+        return self.get_detail_min(obj,'equivalence ratio', 'unitless')
+
+    def prepare_er_max(self, obj) :
+        return self.get_detail_max(obj,'equivalence ratio', 'unitless')
 
     def prepare_data_points(self, obj) :
         # Construct a list of the column labels for the raw data

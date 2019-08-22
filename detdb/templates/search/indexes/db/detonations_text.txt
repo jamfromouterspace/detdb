@@ -24,7 +24,7 @@
   {% endif %}
 {% endfor %}
 {% for dp in object.data_points.all %}
-  {{ dp.property.name }}
+  {{ dp.property.name }} {{ d.property.units }}
 {% endfor %}
 {% if object.legacy %}
   legacy
