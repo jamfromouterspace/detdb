@@ -27,7 +27,9 @@ recognized_keys = {
 'c' : 'category',
 'subcat' : 'subcategory',
 'sc' : 'subcategory',
-'subcategory' : 'subcategory'
+'subcategory' : 'subcategory',
+'x' : 'x',
+'y' : 'y'
 }
 
 json_keys = {
