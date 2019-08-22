@@ -1,15 +1,116 @@
 {% load hyphenate %}
 {% load fuel_type %}
 {% load preview %}
+{% load detail %}
+{% load txt_link %}
+{% load csv_link %}
+{% load subcat_link %}
+{% load subcats %}
 <tr>
   <td class="align-middle">
     <div class="material-icons">notes</div>
   </td>
-  <td id="result-title-p{{ object.id }}" class="align-middle">
+  <td id="result-title-d{{ object.id }}" class="align-middle">
     <a href="/db/detonations/{{ object.category.name|hyphenate }}/{{ object|fuel_type }}-fuel/{{ object.name }}/">{{ object.name|safe }}</a>
   </td>
-  <td id="result-preview-p{{ object.id }}"
+  <td id="result-preview-d{{ object.id }}"
     class="align-middle result-preview plot">
     <a class="expandable">{{ object|preview }}</a>
+  </td>
+  <td colspan=2 id="result-table-d{{ object.id }}" hidden>
+
+      <div class="detonation">
+        <h5 class="detonation-heading text-center">
+          <a class="bigger" href="/db/detonations/{{ object.category.name|hyphenate }}/{{ object|fuel_type }}-fuel/{{ object.name }}/">{{ object.name|safe }}</a>
+          <a class="txt-link smaller" href="{{ object|txt_link }}">[txt]</a>
+          <a class="csv-link smaller" href="{{ object|csv_link }}">[csv]</a>
+        </h5>
+        <h5 class="detonation-heading text-center">
+          <span class="search-citation">
+            {{ object.citation.name|safe }}
+            <a class="citation-link" href="/db/citations/{{ object.citation_id|safe }}">[{{ object.citation_id|safe }}]</a></span>
+        </h5>
+        <table
+          class="table table-striped text-center detonation-details details"
+        >
+          <tr>
+            <td class="detail-label align-middle left">CATEGORY</td>
+            <td class="category-detail detail align-middle left">
+              <a id="cat-{{ object.id }}" href="/db/detonations/{{ object.category.name|hyphenate }}/">{{ object.category.name|safe }}</a>
+            </td>
+            <td class="align-middle detail-search left">
+              <button id="cat-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+            <td class="detail-label align-middle right">FUEL</td>
+            <td id="fuel-{{ object.id }}" class="fuel-detail detail align-middle right">{{ object.fuel|detail }}</td>
+            <td class="align-middle detail-search right">
+              <button id="fuel-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="detail-label align-middle left">SUBCATEGORY</td>
+            <td class="subcategory-detail detail align-middle left">
+              {% if object.subcats %}
+              <a id="subcat-{{ object.id }}" href="{{ object|subcat_link }}">{{ object|subcats }}</a>
+              {% endif %}
+            </td>
+            <td class="align-middle detail-search left">
+              <button id="subcat-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+            <td class="detail-label align-middle right">OXIDIZER</td>
+            <td id="ox-{{ object.id }}" class="oxidizer-detail detail align-middle right">{{ object.oxidizer|detail }}</td>
+            <td class="align-middle detail-search right">
+              <button id="ox-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="detail-label align-middle left">INITIAL PRESSURE</td>
+            <td id="p-{{ object.id }}" class="pressure-detail detail align-middle left">{{ object.pressure|detail }}</td>
+            <td class="align-middle detail-search left">
+              <button id="p-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+            <td class="detail-label align-middle right">DILUENT</td>
+            <td id="dil-{{ object.id }}" class="diluent-detail detail align-middle right">{{ object.diluent|detail }}</td>
+            <td class="align-middle detail-search right">
+              <button id="dil-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="detail-label align-middle left">INITIAL TEMPERATURE</td>
+            <td id="temp-{{ object.id }}" class="temperature-detail detail align-middle left">{{ object.temperature|detail }}</td>
+            <td class="align-middle detail-search left">
+              <button id="temp-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+            <td class="detail-label align-middle right">EQUIVALENCE RATIO</td>
+            <td id="er-{{ object.id }}" class="er-detail detail align-middle right">{{ object.er|detail }}</td>
+            <td class="align-middle detail-search right">
+              <button id="er-btn-{{ object.id }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+                <i class="ui tiny inverted grey search icon"></i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+  </td>
+  <td id="result-expand-d{{ object.id }}"
+    class="align-middle result-preview plot">
+    <button class="btn btn-sm btn-outline-secondary expand">
+      Expand
+    </button>
   </td>
 </tr>

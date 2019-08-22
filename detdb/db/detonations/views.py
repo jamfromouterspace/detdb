@@ -165,7 +165,7 @@ def datasets(request,category,fuel,subcats=None) :
     elif fuel != 'all' :
         fuel = get_object_or_404(Details, property_id=fuel_pid, value=fuel)
         dets = dets.filter(fuel=fuel)
-    i = 0
+
     for d in dets :
         cat_link = '/db/detonations/'+cat.name.replace(' ','-')+'/'
         detonations.append({
@@ -187,9 +187,8 @@ def datasets(request,category,fuel,subcats=None) :
             'pressure' : str(d.pressure),
             'temperature' : str(d.temperature),
             'er' : str(d.er),
-            'i' : i
+            'i' : d.id
         })
-        i += 1
     print(time.clock()-t)
 
     context = {
@@ -251,19 +250,7 @@ def detonation(request,detonation,category,subcats,fuel) :
         'next' : (base_url+next_det) if next_det else None,
     }
 
-    table_data = {
-        'category' : detonation.category.name,
-        'category_link' : detonation.categoryLink(),
-        'subcategory' : detonation.subcatString(),
-        'subcategory_link' : detonation.subcatLink(),
-        'fuel' : str(detonation.fuel),
-        'oxidizer' : str(detonation.oxidizer),
-        'diluent' : str(detonation.diluent),
-        'pressure' : str(detonation.pressure),
-        'temperature' : str(detonation.temperature),
-        'er' : str(detonation.er),
-        'i' : 0
-    }
+    table_data = tools.getTableData(detonation,base_url=base_url,include_title=False)
 
     citation = {
         'id' : detonation.citation_id,
@@ -295,7 +282,10 @@ def detonation(request,detonation,category,subcats,fuel) :
         related_plots.append({
             'link' : base_plot_url + str(p.id),
             'name' : p.brief(),
-            'preview' : p.preview()
+            'preview' : p.preview(),
+            'index' : 'p%d'%p.id,
+            'plot' : True,
+            'data' : tools.getPlotPreview(p,base_url=base_plot_url)
         })
 
     # Find other detonations from the same
@@ -303,13 +293,15 @@ def detonation(request,detonation,category,subcats,fuel) :
     if detonation.citation.detonations.count() > 1 :
         same_citation = []
         for d in detonation.citation.detonations.exclude(id=detonation.id) :
+            base_link = '/db/detonations/%s/%s/'%(d.category.name.replace(' ','-'),
+                tools.getFuelType(d).lower()+'-fuel')
             same_citation.append({
                 'name' : d.name,
                 'preview' : d.preview(),
-                'link' : '/db/detonations/%s/%s/%s/'%
-                (d.category.name.replace(' ','-'),
-                 d.fuel.value.lower()+'-fuel',
-                 d.name)
+                'link' : base_link + d.name,
+                'index': 'd%d'%d.id,
+                'detonation' : True,
+                'data' : tools.getTableData(d,base_url=base_link)
             })
 
     authors = []

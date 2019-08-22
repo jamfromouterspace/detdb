@@ -120,3 +120,26 @@ for (var i = 0; i < elements.length; i++) {
     }
   })
 }
+
+
+// EXPANDABLE LISTS
+elements = document.getElementsByClassName('expand');
+for (var i = 0; i < elements.length; i++) {
+  elements[i].addEventListener('click', function() {
+    var id = this.parentNode.id.split('-');
+    id = id[id.length-1];
+    var table = document.getElementById('result-table-'+id)
+    var hidden = table.hidden
+    if (hidden) {
+      table.hidden = false;
+      document.getElementById('result-title-'+id).hidden = true
+      document.getElementById('result-preview-'+id).hidden = true
+      this.innerHTML = "Collapse"
+    } else {
+      table.hidden = true;
+      document.getElementById('result-title-'+id).hidden = false
+      document.getElementById('result-preview-'+id).hidden = false
+      this.innerHTML = "Expand"
+    }
+  })
+}
