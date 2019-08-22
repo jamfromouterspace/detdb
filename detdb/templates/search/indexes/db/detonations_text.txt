@@ -1,3 +1,5 @@
+{% load split_initials %}
+
 {{ object.name }}
 {{ object.id }}
 {{ object.category.name }}
@@ -33,7 +35,7 @@
   {{ p.title }}
 {% endfor %}
 {% for a in object.citation.authors.all %}
-  {% if a.first_name %}{{ a.first_name }}{% endif %} {% if a.initials %}{{ a.initials }}{% endif %} {{ a.last_name }}
+  {% if a.first_name %}{{ a.first_name }}{% endif %} {% if a.initials %}{{ a.initials|split_initials }}{% endif %} {{ a.last_name }}
 {% endfor %}
 {% if object.notes %}
   {{ object.notes }}
