@@ -37,6 +37,7 @@ def advancedSearch(q) :
     gte = set()
     lt = set()
     lte = set()
+    json_queries = set()
     for c in q :
         if c == '=' :
             if prev in gt :
@@ -53,11 +54,13 @@ def advancedSearch(q) :
         elif c == '>' :
             advanced = True
             unpacked[stack] = None
+            json_queries.add(stack)
             gt.add(stack)
             prev = stack
             stack = '['
         elif c == '<' :
             advanced = True
+            json_queries.add(stack)
             unpacked[stack] = None
             lt.add(stack)
             prev = stack
@@ -71,6 +74,7 @@ def advancedSearch(q) :
             prev = ''
             stack = ''
         elif c == '[' :
+            json_queries.add(prev)
             ignore_comma = True
             stack += c
         elif c == ']' :
@@ -117,11 +121,15 @@ def advancedSearch(q) :
     for i in lte :
         lt.add(synonyms.recognized_keys[i.strip()])
         lt.remove(i)
+    gte = set(json_queries) # Do the same for json_keys
+    for i in gte :
+        json_queries.add(synonyms.recognized_keys[i.strip()])
+        json_queries.remove(i)
     # Convert JSON number ranges
     unpacked = {}
     try :
         for i in unpacked_valid :
-            if i in synonyms.json_keys :
+            if i in synonyms.json_keys and i in json_queries :
                 vals = json.loads(unpacked_valid[i])
                 if i in gt :
                     vals[0] += 0.0001

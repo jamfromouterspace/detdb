@@ -17,17 +17,17 @@
     <tr>
       <td class="detail-label align-middle left">CATEGORY</td>
       <td class="category-detail detail align-middle left">
-        <a href="{{ data.category_link|safe }}">{{ data.category|safe }}</a>
+        <a id="cat-{{ data.i }}" href="{{ data.category_link|safe }}">{{ data.category|safe }}</a>
       </td>
       <td class="align-middle detail-search left">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="cat-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
       <td class="detail-label align-middle right">FUEL</td>
-      <td class="fuel-detail detail align-middle right">{{ data.fuel|safe }}</td>
+      <td id="fuel-{{ data.i }}" class="fuel-detail detail align-middle right">{{ data.fuel|safe }}</td>
       <td class="align-middle detail-search right">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="fuel-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
@@ -36,50 +36,50 @@
       <td class="detail-label align-middle left">SUBCATEGORY</td>
       <td class="subcategory-detail detail align-middle left">
         {% if data.subcategory%}
-        <a href="{{ data.subcategory_link|safe }}">{{ data.subcategory|safe }}</a>
+        <a id="subcat-{{ data.i }}" href="{{ data.subcategory_link|safe }}">{{ data.subcategory|safe }}</a>
         {% endif %}
       </td>
       <td class="align-middle detail-search left">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="subcat-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
       <td class="detail-label align-middle right">OXIDIZER</td>
-      <td class="oxidizer-detail detail align-middle right">{{ data.oxidizer|safe }}</td>
+      <td id="ox-{{ data.i }}" class="oxidizer-detail detail align-middle right">{{ data.oxidizer|safe }}</td>
       <td class="align-middle detail-search right">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="ox-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
     </tr>
     <tr>
       <td class="detail-label align-middle left">INITIAL PRESSURE</td>
-      <td class="pressure-detail detail align-middle left">{{ data.pressure|safe }}</td>
+      <td id="p-{{ data.i }}" class="pressure-detail detail align-middle left">{{ data.pressure|safe }}</td>
       <td class="align-middle detail-search left">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="p-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
       <td class="detail-label align-middle right">DILUENT</td>
-      <td class="diluent-detail detail align-middle right">{{ data.diluent|safe }}</td>
+      <td id="dil-{{ data.i }}" class="diluent-detail detail align-middle right">{{ data.diluent|safe }}</td>
       <td class="align-middle detail-search right">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="dil-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
     </tr>
     <tr>
       <td class="detail-label align-middle left">INITIAL TEMPERATURE</td>
-      <td class="temperature-detail detail align-middle left">{{ data.temperature|safe }}</td>
+      <td id="temp-{{ data.i }}" class="temperature-detail detail align-middle left">{{ data.temperature|safe }}</td>
       <td class="align-middle detail-search left">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="temp-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
       <td class="detail-label align-middle right">EQUIVALENCE RATIO</td>
-      <td class="er-detail detail align-middle right">{{ data.er|safe }}</td>
+      <td id="er-{{ data.i }}" class="er-detail detail align-middle right">{{ data.er|safe }}</td>
       <td class="align-middle detail-search right">
-        <button class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
+        <button id="er-btn-{{ data.i }}" class="btn btn-primary btn-circle btn-circle-xs detail-search-btn" style="visibility:hidden">
           <i class="ui tiny inverted grey search icon"></i>
         </button>
       </td>
