@@ -78,20 +78,26 @@ def plot(request,pk,category=None) :
     for d in plot.dets.all().order_by('name') :
         det_category = d.category.name.replace(' ','-')
         fuel_link = tools.getFuelType(d).lower()+'-fuel'
+        base_link = '/db/detonations/%s/%s/'%(det_category,fuel_link)
         source_data.append({
             'name' : d.name,
             'preview' : d.preview(),
-            'link' : '/db/detonations/%s/%s/%s'%
-            (det_category,fuel_link,d.name)
+            'link' : base_link + d.name,
+            'detonation' : True,
+            'index' : 'd%d'%d.id,
+            'data' : tools.getTableData(d,base_url=base_link)
         })
     related_plots = []
     for rp in plot.related_plots.order_by('-total_similarity')[:5]:
         rp = rp.related_plot
+        base_link = '/db/plots/%s/'%(rp.category.name.replace(' ','-'))
         related_plots.append({
             'name' : rp.brief(),
             'preview' : rp.preview(),
-            'link' : '/db/plots/%s/%d/'%
-            (rp.category.name.replace(' ','-'),rp.id)
+            'link' : base_link + str(rp.id),
+            'plot' : True,
+            'index' : 'p%d'%rp.id,
+            'data' : tools.getPlotPreview(rp,base_url=base_link)
         })
 
     context = {

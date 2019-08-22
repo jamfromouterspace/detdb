@@ -12,7 +12,7 @@
           class="align-middle result-preview plot">
           <a class="">{{ i.preview|safe }}</a>
         </td>
-        <td colspan=3 id="result-table-{{ i.index }}" hidden>
+        <td colspan=2 id="result-table-{{ i.index }}" hidden>
           {% if i.detonation %}
             {% include "./detonation_table.html" with data=i.data %}
           {% elif i.plot %}

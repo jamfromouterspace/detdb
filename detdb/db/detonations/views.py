@@ -165,7 +165,7 @@ def datasets(request,category,fuel,subcats=None) :
     elif fuel != 'all' :
         fuel = get_object_or_404(Details, property_id=fuel_pid, value=fuel)
         dets = dets.filter(fuel=fuel)
-    i = 0
+
     for d in dets :
         cat_link = '/db/detonations/'+cat.name.replace(' ','-')+'/'
         detonations.append({
@@ -187,9 +187,8 @@ def datasets(request,category,fuel,subcats=None) :
             'pressure' : str(d.pressure),
             'temperature' : str(d.temperature),
             'er' : str(d.er),
-            'i' : i
+            'i' : d.id
         })
-        i += 1
     print(time.clock()-t)
 
     context = {
@@ -284,6 +283,7 @@ def detonation(request,detonation,category,subcats,fuel) :
             'link' : base_plot_url + str(p.id),
             'name' : p.brief(),
             'preview' : p.preview(),
+            'index' : 'p%d'%p.id,
             'plot' : True,
             'data' : tools.getPlotPreview(p,base_url=base_plot_url)
         })
@@ -292,7 +292,6 @@ def detonation(request,detonation,category,subcats,fuel) :
     same_citation = None
     if detonation.citation.detonations.count() > 1 :
         same_citation = []
-        i = 0
         for d in detonation.citation.detonations.exclude(id=detonation.id) :
             base_link = '/db/detonations/%s/%s/'%(d.category.name.replace(' ','-'),
                 tools.getFuelType(d).lower()+'-fuel')
@@ -300,11 +299,10 @@ def detonation(request,detonation,category,subcats,fuel) :
                 'name' : d.name,
                 'preview' : d.preview(),
                 'link' : base_link + d.name,
-                'index': i,
+                'index': 'd%d'%d.id,
                 'detonation' : True,
-                'data' : tools.getTableData(d,i=i,base_url=base_link)
+                'data' : tools.getTableData(d,base_url=base_link)
             })
-            i += 1
 
     authors = []
     for a in detonation.citation.authors.all() :

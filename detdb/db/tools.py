@@ -154,7 +154,7 @@ def getSimilarCitations(c) :
     # Return incomplete list if nothing more was found
     return similar
 
-def getTableData(d,i=0,base_url='/db/detonations/',include_title=True) :
+def getTableData(d,base_url='/db/detonations/',include_title=True) :
     data = {
         'category' : d.category.name,
         'category_link' : d.categoryLink(),
@@ -166,7 +166,7 @@ def getTableData(d,i=0,base_url='/db/detonations/',include_title=True) :
         'pressure' : str(d.pressure),
         'temperature' : str(d.temperature),
         'er' : str(d.er),
-        'i' : i
+        'i' : d.id
     }
     if include_title :
         data['include_title'] = True

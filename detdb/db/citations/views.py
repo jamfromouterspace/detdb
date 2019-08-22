@@ -83,10 +83,14 @@ def citation(request, pk) :
     for d in Detonations.objects.filter(citation_id = c.id) :
         cat = d.category.name.replace(' ','-')
         fuel = tools.getFuelType(d).lower()+'-fuel'
+        base_link = '/db/detonations/%s/%s/'%(cat,fuel)
         detonations.append({
             'name' : d.name,
             'preview' : d.preview(),
-            'link' : '/db/detonations/%s/%s/%s/'%(cat,fuel,d.name)
+            'link' : base_link + d.name,
+            'index' : 'd%d'%d.id,
+            'detonation' : True,
+            'data' : tools.getTableData(d,base_url=base_link)
         })
     ql = tools.getSimilarCitations(c) # Returns a querylist
     related_citations = []
@@ -141,10 +145,14 @@ def author(request, pk) :
         for d in c.detonations.all().order_by('name'):
             cat = d.category.name.replace(' ','-')
             fuel = tools.getFuelType(d).lower()+'-fuel'
+            base_link = '/db/detonations/%s/%s/'%(cat,fuel)
             detonations.append({
                 'name' : d.name,
                 'preview' : d.preview(),
-                'link' : '/db/detonations/%s/%s/%s/'%(cat,fuel,d.name)
+                'link' : base_link + d.name,
+                'index' : 'd%d'%d.id,
+                'detonation' : True,
+                'data' : tools.getTableData(d,base_url=base_link)
             })
 
     context = {
