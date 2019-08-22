@@ -2,7 +2,8 @@
 <div id={% if size == "lg" %}"search-bar"{% else %}"nav-search"{% endif %} class="input-group active-input">
   <form class="input-group" action="/search/" method="POST">
       {% csrf_token %}
-      <input type="text"
+      <input id = "search-input"
+             type="text"
              name="q"
              class="form-control form-control-{{ size }}"
              placeholder="Search detonations"

@@ -8,19 +8,19 @@
 {{ object.citation.journal.name }}
 {% for d in object.details.all %}
   {% if d.property_id == object.fuel.property_id %}
-    {{ d.value }}
+    {{ d.value }} {{ d.property.units }}
   {% elif d.property_id == object.oxidizer.property_id %}
-    {{ d.value }}
+    {{ d.value }} {{ d.property.units }}
   {% elif d.property_id == object.diluent.property_id %}
-    {{ d.value }}
+    {{ d.value }} {{ d.property.units }}
   {% elif d.property_id == object.pressure.property_id %}
-    {{ d.value }}
+    {{ d.value }} {{ d.property.units }}
   {% elif d.property_id == object.temperature.property_id %}
-    {{ d.value }}
+    {{ d.value }} {{ d.property.units }}
   {% elif d.property_id == object.er.property_id %}
-    {{ d.value }}
+    {{ d.value }} {{ d.property.units }}
   {% else %}
-    {{ d.property.name }} {{ d.value }}
+    {{ d.property.name }} {{ d.value }} {{ d.property.units }}
   {% endif %}
 {% endfor %}
 {% for dp in object.data_points.all %}

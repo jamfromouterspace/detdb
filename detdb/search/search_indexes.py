@@ -4,6 +4,8 @@ from db.models import Detonations,Plots,Properties
 class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
     text = indexes.CharField(document=True, use_template=True)
     name = indexes.CharField(model_attr='name')
+    category = indexes.CharField()
+    subcategory = indexes.MultiValueField()
     fuel = indexes.MultiValueField(model_attr='fuel')
     oxidizer = indexes.MultiValueField(model_attr='oxidizer',null=True)
     diluent = indexes.MultiValueField(model_attr='diluent',null=True)
@@ -31,6 +33,15 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
         for d in obj.details.filter(property_id = pid) :
             values.append(d.value)
         return values
+
+    def prepare_category(self, obj) :
+        return obj.category.name
+
+    def prepare_subcategory(self, obj) :
+        subcats = []
+        for sc in obj.subcats.all() :
+            subcats.append(sc.name)
+        return subcats
 
     def prepare_fuel(self, obj) :
         return self.get_detail_values(obj,'fuel', 'chemical')
@@ -71,3 +82,47 @@ class DetonationsIndex(indexes.SearchIndex, indexes.Indexable) :
 
     def prepare_year(self, obj) :
         return obj.citation.year
+
+class PlotsIndex(indexes.SearchIndex, indexes.Indexable) :
+    text = indexes.CharField(document=True, use_template=True)
+    category = indexes.CharField()
+    fuel = indexes.MultiValueField()
+    oxidizer = indexes.MultiValueField()
+    diluent = indexes.MultiValueField()
+    x = indexes.CharField()
+    y = indexes.CharField()
+    # Pre-rendered
+    rendered = indexes.CharField(use_template=True, indexed=False)
+
+    def get_model(self) :
+        return Plots
+
+    def get_detail_values(self, obj, property, units) :
+        # A general-purpose function for preparing any multi-valued details
+        # such as fuel, diluent, pressure, etc.
+        # I should clarify that mixtures were indexed with each
+        # chemical as well as the combiantion. For example, diluent = He+CO2
+        # was indexed as diluent = [He,CO2,He+CO2]
+        values = []
+        pid = Properties.objects.get(name=property,units=units).id
+        for d in obj.details.filter(property_id = pid) :
+            values.append(d.value)
+        return values
+
+    def prepare_category(self, obj) :
+        return obj.category.name
+
+    def get_fuel(self, obj) :
+        return get_detail_values(self, obj, "fuel")
+
+    def get_diluent(self, obj) :
+        return get_detail_values(self, obj, "diluent")
+
+    def get_oxidizer(self, obj) :
+        return get_detail_values(self, obj, "oxidizer")
+
+    def get_x(self, obj) :
+        return self.x_label.name
+
+    def get_y(self, obj) :
+        return self.y_label.name

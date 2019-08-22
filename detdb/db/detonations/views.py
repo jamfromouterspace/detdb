@@ -165,7 +165,7 @@ def datasets(request,category,fuel,subcats=None) :
     elif fuel != 'all' :
         fuel = get_object_or_404(Details, property_id=fuel_pid, value=fuel)
         dets = dets.filter(fuel=fuel)
-
+    i = 0
     for d in dets :
         cat_link = '/db/detonations/'+cat.name.replace(' ','-')+'/'
         detonations.append({
@@ -179,7 +179,7 @@ def datasets(request,category,fuel,subcats=None) :
             'citation_link' : CITATION_DIR + str(d.citation_id),
             'category' : cat.name,
             'category_link' : cat_link,
-            'subcategory' : ','.join(x.name.replace(' ','-') for x in d.subcats.all()) or None,
+            'subcategory' : ','.join(x.name for x in d.subcats.all()) or None,
             'subcategory_link' : cat_link+'/'.join(x.name.replace(' ','-') for x in d.subcats.all()),
             'fuel' : d.fuel.value,
             'oxidizer' : d.oxidizer.value,
@@ -187,7 +187,9 @@ def datasets(request,category,fuel,subcats=None) :
             'pressure' : str(d.pressure),
             'temperature' : str(d.temperature),
             'er' : str(d.er),
+            'i' : i
         })
+        i += 1
     print(time.clock()-t)
 
     context = {
@@ -260,11 +262,12 @@ def detonation(request,detonation,category,subcats,fuel) :
         'pressure' : str(detonation.pressure),
         'temperature' : str(detonation.temperature),
         'er' : str(detonation.er),
+        'i' : 0
     }
 
     citation = {
         'id' : detonation.citation_id,
-        'link' : '/db/citations/%d' % detonation.citation_id,
+        'link' : CITATION_DIR + str(detonation.citation_id),
         'text' : detonation.citation.preformatted
     }
 

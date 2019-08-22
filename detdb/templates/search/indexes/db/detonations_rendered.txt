@@ -5,10 +5,10 @@
   <td class="align-middle">
     <div class="material-icons">notes</div>
   </td>
-  <td id="result-title-d{{ object.id }}" class="align-middle">
+  <td id="result-title-p{{ object.id }}" class="align-middle">
     <a href="/db/detonations/{{ object.category.name|hyphenate }}/{{ object|fuel_type }}-fuel/{{ object.name }}/">{{ object.name|safe }}</a>
   </td>
-  <td id="result-preview-d{{ object.id }}"
+  <td id="result-preview-p{{ object.id }}"
     class="align-middle result-preview plot">
     <a class="expandable">{{ object|preview }}</a>
   </td>

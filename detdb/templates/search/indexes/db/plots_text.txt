@@ -1,0 +1,23 @@
+{{ object.title }}
+{{ object.category.name }}
+{% for d in object.dets.all %}
+  {{ d.name }}
+  {% for sc in d.subcats.all %}
+    {{ sc.name }}
+  {% endfor %}
+  {% for dp in d.data_points.all %}
+    {{ dp.property.name }}
+    {{ dp.column_data }}
+  {% endfor %}
+{% endfor %}
+{% for d in object.details.all %}
+  {{ d.property.name }} {{ d.value }} {{ d.units }}
+{% endfor %}
+{{ object.num_datasets }} datasets data sets
+{{ object.image_file }}
+{% if object.legacy %}
+  legacy
+{% endif %}
+x {{ object.x_label.name }} {{ object.x_scale }}
+y {{ object.y_label.name }} {{ object.y_scale }}
+{{ object.notes }}
