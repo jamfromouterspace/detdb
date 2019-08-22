@@ -9,7 +9,11 @@ import json
 def search(request) :
     query = request.POST.get('q', None)
     if not query :
-        return redirect('/')
+        query = request.GET.get('q', None)
+        if not query :
+            return redirect('/')
+    else :
+        return redirect('/search/?q='+query)
     query = query.lower()
     original_query = query
     # Get any exclusions marked by !
