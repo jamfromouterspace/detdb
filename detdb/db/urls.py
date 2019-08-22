@@ -4,8 +4,6 @@ from .plots import urls as plots
 from .citations import urls as citations
 from . import views
 
-handler404 = 'db.views.handler404'
-
 urlpatterns = [
     path('', views.index, name='index'),
 ] + detonations.urlpatterns + plots.urlpatterns + citations.urlpatterns

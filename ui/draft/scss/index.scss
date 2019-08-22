@@ -92,11 +92,12 @@ textarea {
 }
 
 .selection-link.subcategory-selection h1 {
-  font-size: 2em;
+  font-size: 1.4em;
 }
 
 .selection-link.subcategory-selection {
   padding-top: 30px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -196,6 +197,10 @@ textarea {
 
 .plot-img > img {
   max-width: 90%;
+}
+
+.plot-img {
+  max-width: 300px !important;
 }
 
 .table-heading {

@@ -43,10 +43,3 @@ def list_of_categories(request,section):
     }
 
     return render(request, 'pages/simple_list.html', context)
-
-# 404 VIEW
-
-def handler404(request, exception, template_name="404.html"):
-    response = render_to_response("pages/404.html")
-    response.status_code = 404
-    return response
