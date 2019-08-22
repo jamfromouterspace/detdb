@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404,get_list_or_404,redirect
 from django.http import HttpResponse,Http404
 from search.models import Searches
+from db.models import Detonations,Plots
 from haystack.query import SearchQuerySet
 import search.synonyms as synonyms
 import json
@@ -10,20 +11,57 @@ def search(request) :
     if not query :
         return redirect('/')
     query = query.lower()
+    original_query = query
+    # Get any exclusions marked by !
+    exclusions,malformed,query = getExclusions(query)
     # Get advanced search dict if it is indeed an advanced search
-    advanced,malformed = advancedSearch(query)
+    advanced,malformed_adv = advancedSearch(query)
+    malformed = malformed or malformed_adv
     results = None
     if advanced and not malformed:
-        results = SearchQuerySet().filter(**advanced)[:30]
+        results = SearchQuerySet()
+        if exclusions and 'l' in exclusions :
+            results = results.exclude(content='legacy')
+        if exclusions and 'p' in exclusions :
+            results = results.models(Detonations)
+        results = results.filter(**advanced)[:30]
     elif not advanced :
-        results = SearchQuerySet().filter(content=query)[:30]
+        results = SearchQuerySet()
+        if exclusions and 'l' in exclusions :
+            results = results.exclude(content='legacy')
+        if exclusions and 'p' in exclusions :
+            results = results.models(Detonations)
+        results = results.filter(content=query)[:30]
+
+    # Format the query so it look nicer to the user
+    if exclusions and 'p' in exclusions :
+        query += '(no plots)'
+    if exclusions and 'l' in exclusions :
+        query += '(no legacy data)'
     context = {
         'query' : query,
+        'original_query' : original_query,
         'results' : results,
         'advanced' : advanced,
         'malformed' : malformed
     }
     return render(request, 'pages/search_results.html', context)
+
+def getExclusions(q) :
+    exclusions = set()
+    malformed = False
+    remainder = len(q)
+    for i in range(0,len(q)) :
+        if q[i] == '!' :
+            remainder = i
+            if i+1 >= len(q) :
+                return None,True,q
+            elif q[i+1] == 'p' :
+                exclusions.add('p') # plots
+            elif q[i+1] == 'l' :
+                exclusions.add('l') # legacy
+    remainder = q[:remainder]# Truncate query up to first '!'
+    return exclusions,malformed,remainder
 
 def advancedSearch(q) :
     # Users can search with specific key-value pairs
@@ -87,9 +125,9 @@ def advancedSearch(q) :
     elif prev in gt or prev in gte :
         stack += ',9999999]'
     unpacked[prev] = stack
-    print(unpacked)
     if not advanced :
         return None,False
+    print(unpacked)
     # Validation
     unpacked_valid = {}
     for i in unpacked :
