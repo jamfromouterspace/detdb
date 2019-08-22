@@ -2,7 +2,7 @@
   <table class="table">
     {% for i in items %}
       <tr>
-        <td class="align-middle">
+        <td id="result-icon-{{ i.index }}" class="align-middle">
           <div class="material-icons">{{ i.icon|safe }}</div>
         </td>
         <td id="result-title-{{ i.index }}" class="align-middle">
@@ -10,7 +10,20 @@
         </td>
         <td id="result-preview-{{ i.index }}"
           class="align-middle result-preview plot">
-          <a class="expandable">{{ i.preview|safe }}</a>
+          <a class="">{{ i.preview|safe }}</a>
+        </td>
+        <td colspan=3 id="result-table-{{ i.index }}" hidden>
+          {% if i.detonation %}
+            {% include "./detonation_table.html" with data=i.data %}
+          {% elif i.plot %}
+            {% include "./plot_preview.html" with plot=i.data %}
+          {% endif %}
+        </td>
+        <td id="result-expand-{{ i.index }}"
+          class="align-middle result-preview plot">
+          <button class="btn btn-sm btn-outline-secondary expand">
+            Expand
+          </button>
         </td>
       </tr>
     {% endfor %}

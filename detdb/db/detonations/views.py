@@ -251,19 +251,7 @@ def detonation(request,detonation,category,subcats,fuel) :
         'next' : (base_url+next_det) if next_det else None,
     }
 
-    table_data = {
-        'category' : detonation.category.name,
-        'category_link' : detonation.categoryLink(),
-        'subcategory' : detonation.subcatString(),
-        'subcategory_link' : detonation.subcatLink(),
-        'fuel' : str(detonation.fuel),
-        'oxidizer' : str(detonation.oxidizer),
-        'diluent' : str(detonation.diluent),
-        'pressure' : str(detonation.pressure),
-        'temperature' : str(detonation.temperature),
-        'er' : str(detonation.er),
-        'i' : 0
-    }
+    table_data = tools.getTableData(detonation,base_url=base_url,include_title=False)
 
     citation = {
         'id' : detonation.citation_id,
@@ -295,22 +283,28 @@ def detonation(request,detonation,category,subcats,fuel) :
         related_plots.append({
             'link' : base_plot_url + str(p.id),
             'name' : p.brief(),
-            'preview' : p.preview()
+            'preview' : p.preview(),
+            'plot' : True,
+            'data' : tools.getPlotPreview(p,base_url=base_plot_url)
         })
 
     # Find other detonations from the same
     same_citation = None
     if detonation.citation.detonations.count() > 1 :
         same_citation = []
+        i = 0
         for d in detonation.citation.detonations.exclude(id=detonation.id) :
+            base_link = '/db/detonations/%s/%s/'%(d.category.name.replace(' ','-'),
+                tools.getFuelType(d).lower()+'-fuel')
             same_citation.append({
                 'name' : d.name,
                 'preview' : d.preview(),
-                'link' : '/db/detonations/%s/%s/%s/'%
-                (d.category.name.replace(' ','-'),
-                 d.fuel.value.lower()+'-fuel',
-                 d.name)
+                'link' : base_link + d.name,
+                'index': i,
+                'detonation' : True,
+                'data' : tools.getTableData(d,i=i,base_url=base_link)
             })
+            i += 1
 
     authors = []
     for a in detonation.citation.authors.all() :

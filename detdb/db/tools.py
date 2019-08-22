@@ -1,4 +1,5 @@
 from db.models import Properties,Details,Detonations,Citations,Authors,CommonFuels,Plots,Journals
+from db.constants import *
 
 def createCategoryLink(d) :
     # E.g. /db/detonations/cell-size/
@@ -152,3 +153,35 @@ def getSimilarCitations(c) :
 
     # Return incomplete list if nothing more was found
     return similar
+
+def getTableData(d,i=0,base_url='/db/detonations/',include_title=True) :
+    data = {
+        'category' : d.category.name,
+        'category_link' : d.categoryLink(),
+        'subcategory' : d.subcatString(),
+        'subcategory_link' : d.subcatLink(),
+        'fuel' : str(d.fuel),
+        'oxidizer' : str(d.oxidizer),
+        'diluent' : str(d.diluent),
+        'pressure' : str(d.pressure),
+        'temperature' : str(d.temperature),
+        'er' : str(d.er),
+        'i' : i
+    }
+    if include_title :
+        data['include_title'] = True
+        data['name'] = d.name
+        data['link'] = base_url + d.name
+        data['txt_link'] = d.fileLocation('txt')
+        data['csv_link'] = d.fileLocation('csv')
+        data['citation']= d.citation.brief()
+        data['citation_id'] = d.citation_id
+        data['citation_link'] = CITATION_DIR + str(d.citation_id)
+    return data
+
+def getPlotPreview(p, base_url='/db/plots/') :
+    return {
+        'title' : p.title,
+        'link' : base_url + str(p.id),
+        'image_link' : PLOT_IMAGES_DIR + p.image_file + '.png'
+    }
