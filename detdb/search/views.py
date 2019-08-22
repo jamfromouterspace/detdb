@@ -95,19 +95,15 @@ def advancedSearch(q) :
             json_queries.add(stack)
             gt.add(stack)
             prev = stack
-            stack = '['
+            stack = ''
         elif c == '<' :
             advanced = True
             json_queries.add(stack)
             unpacked[stack] = None
             lt.add(stack)
             prev = stack
-            stack = '[-9999999,'
+            stack = ''
         elif c == ',' and not ignore_comma :
-            if prev in lt or prev in lte :
-                stack += ']'
-            elif prev in gt or prev in gte :
-                stack += ',9999999]'
             unpacked[prev] = stack
             prev = ''
             stack = ''
@@ -120,14 +116,12 @@ def advancedSearch(q) :
             stack += c
         else :
             stack += c
-    if prev in lt or prev in lte :
-        stack += ']'
-    elif prev in gt or prev in gte :
-        stack += ',9999999]'
+    # if prev in json_queries :
+    #     stack += ']'
     unpacked[prev] = stack
+    print(unpacked)
     if not advanced :
         return None,False
-    print(unpacked)
     # Validation
     unpacked_valid = {}
     for i in unpacked :
@@ -150,19 +144,42 @@ def advancedSearch(q) :
         if unpacked[j] in synonyms.values :
             unpacked_valid[synonyms.recognized_keys[i]] = synonyms.values[unpacked[j]]
 
-    # Convert keys in gt and lt to the proper versions
-    gte = set(gt)
-    lte = set(lt) # Reuse these variables for convenience
-    for i in gte :
+    # Convert keys in gt(e) and lt(e) to the proper versions
+    temp = set(gt)
+    for i in temp :
         gt.add(synonyms.recognized_keys[i.strip()])
-        gt.remove(i)
-    for i in lte :
+        try :
+            gt.remove(i)
+        except Exception :
+            return None, False
+    temp = set(lt)
+    for i in temp :
         lt.add(synonyms.recognized_keys[i.strip()])
-        lt.remove(i)
-    gte = set(json_queries) # Do the same for json_keys
-    for i in gte :
+        try :
+            lt.remove(i)
+        except Exception :
+            return None, False
+    temp = set(gte)
+    for i in temp :
+        gte.add(synonyms.recognized_keys[i.strip()])
+        try :
+            gte.remove(i)
+        except Exception :
+            return None, False
+    temp = set(lte)
+    for i in temp :
+        lte.add(synonyms.recognized_keys[i.strip()])
+        try :
+            lte.remove(i)
+        except Exception :
+            return None, False
+    temp = set(json_queries) # Do the same for json_keys
+    for i in temp :
         json_queries.add(synonyms.recognized_keys[i.strip()])
-        json_queries.remove(i)
+        try :
+            json_queries.remove(i)
+        except Exception :
+            return None, False
     # Convert JSON number ranges
     unpacked = {}
     try :
@@ -170,10 +187,17 @@ def advancedSearch(q) :
             if i in synonyms.json_keys and i in json_queries :
                 vals = json.loads(unpacked_valid[i])
                 if i in gt :
-                    vals[0] += 0.0001
+                    unpacked[i+'_min__gt'] = vals
                 elif i in lt :
-                    vals[1] -= 0.0001
-                unpacked[i+'__range'] = vals
+                    unpacked[i+'_max__lt'] = vals
+                elif i in gte :
+                    unpacked[i+'_min__gte'] = vals
+                elif i in lte :
+                    unpacked[i+'_max__lte'] = vals
+                else :
+                    # A range was given
+                    unpacked[i+'_min__gte'] = vals[0]
+                    unpacked[i+'_max__lte'] = vals[1]
             else :
                 unpacked[i] = unpacked_valid[i]
     except Exception :
