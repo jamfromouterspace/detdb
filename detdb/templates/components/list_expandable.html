@@ -3,7 +3,13 @@
     {% for i in items %}
       <tr>
         <td id="result-icon-{{ i.index }}" class="align-middle">
-          <div class="material-icons">{{ i.icon|safe }}</div>
+          <div>
+            {% if i.detonation %}
+              <i class = "ui fire extinguisher icon"></i>
+            {% elif i.plot %}
+              <i class = "ui chart area icon"></i>
+            {% endif %}
+          </div>
         </td>
         <td id="result-title-{{ i.index }}" class="align-middle">
           <a href="{{ i.link }}">{{ i.name|safe }}</a>

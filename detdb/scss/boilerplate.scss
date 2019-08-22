@@ -10,7 +10,8 @@
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4; }
+  line-height: 1.4;
+}
 
 /*
  * Remove text-shadow in selection highlight:
@@ -21,69 +22,85 @@ html {
  *
  * Customize the background color to match your design.
  */
+
 ::-moz-selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 ::selection {
   background: #b3d4fc;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 /*
  * A better looking default horizontal rule
  */
+
 hr {
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
+
 audio,
 canvas,
 iframe,
 img,
 svg,
 video {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 /*
  * Remove default fieldset styles.
  */
+
 fieldset {
   border: 0;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*
  * Allow only vertical resizing of textareas.
  */
+
 textarea {
-  resize: vertical; }
+  resize: vertical;
+}
 
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0; }
+  padding: 0.2em 0;
+}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 /*
  * Hide visually and from screen readers
  */
+
 .hidden {
-  display: none !important; }
+  display: none !important;
+}
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -93,6 +110,7 @@ textarea {
  *    causes content to wrap 1 word per line:
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
+
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -102,14 +120,15 @@ textarea {
   padding: 0;
   position: absolute;
   width: 1px;
-  white-space: nowrap;
-  /* 1 */ }
+  white-space: nowrap; /* 1 */
+}
 
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
+
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -118,13 +137,16 @@ textarea {
   overflow: visible;
   position: static;
   width: auto;
-  white-space: inherit; }
+  white-space: inherit;
+}
 
 /*
  * Hide visually and from screen readers, but maintain layout
  */
+
 .invisible {
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 /*
  * Clearfix: contain floats
@@ -137,76 +159,106 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
 
 .clearfix:after {
-  clear: both; }
+  clear: both;
+}
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */ }
 
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
 
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
+
 @media print {
   *,
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster */
+    color: #000 !important; /* Black prints faster */
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    text-shadow: none !important; }
+    text-shadow: none !important;
+  }
+
   a,
   a:visited {
-    text-decoration: underline; }
+    text-decoration: underline;
+  }
+
   a[href]:after {
-    content: " (" attr(href) ")"; }
+    content: " (" attr(href) ")";
+  }
+
   abbr[title]:after {
-    content: " (" attr(title) ")"; }
+    content: " (" attr(title) ")";
+  }
+
   /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
+
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
-    content: ""; }
+    content: "";
+  }
+
   pre {
-    white-space: pre-wrap !important; }
+    white-space: pre-wrap !important;
+  }
   pre,
   blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
+
   /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
+
   thead {
-    display: table-header-group; }
+    display: table-header-group;
+  }
+
   tr,
   img {
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
+
   p,
   h2,
   h3 {
     orphans: 3;
-    widows: 3; }
+    widows: 3;
+  }
+
   h2,
   h3 {
-    page-break-after: avoid; } }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3Njc3MvYm9pbGVycGxhdGUuc2NzcyIsImJvaWxlcnBsYXRlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSw0RUFBQTtBQUNBOzs7O0VDSUU7QURDRjs7K0VDRStFO0FEQy9FO0VBQ0UsV0FBVztFQUNYLGNBQWM7RUFDZCxnQkFBZ0IsRUFBQTs7QUFHbEI7Ozs7Ozs7O0VDT0U7QURHRjtFQUNFLG1CQUFtQjtFQUNuQixpQkFBaUIsRUFBQTs7QUFHbkI7RUFDRSxtQkFBbUI7RUFDbkIsaUJBQWlCLEVBQUE7O0FBR25COztFQ0ZFO0FETUY7RUFDRSxjQUFjO0VBQ2QsV0FBVztFQUNYLFNBQVM7RUFDVCwwQkFBMEI7RUFDMUIsYUFBYTtFQUNiLFVBQVUsRUFBQTs7QUFHWjs7OztFQ0ZFO0FEUUY7Ozs7OztFQU1FLHNCQUFzQixFQUFBOztBQUd4Qjs7RUNORTtBRFVGO0VBQ0UsU0FBUztFQUNULFNBQVM7RUFDVCxVQUFVLEVBQUE7O0FBR1o7O0VDUkU7QURZRjtFQUNFLGdCQUFnQixFQUFBOztBQUdsQjs7K0VDVitFO0FEYy9FO0VBQ0UsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsZ0JBQWdCLEVBQUE7O0FBR2xCOzsrRUNaK0U7QURnQi9FOztFQ2JFO0FEaUJGO0VBQ0Usd0JBQXdCLEVBQUE7O0FBRzFCOzs7Ozs7O0VDVkU7QURtQkY7RUFDRSxTQUFTO0VBQ1QsbUJBQW1CO0VBQ25CLFdBQVc7RUFDWCxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLFVBQVU7RUFDVixrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLG1CQUFtQjtFQUFFLE1BQUEsRUFBTzs7QUFHOUI7Ozs7RUNkRTtBRG9CRjs7RUFFRSxVQUFVO0VBQ1YsWUFBWTtFQUNaLFNBQVM7RUFDVCxpQkFBaUI7RUFDakIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxvQkFBb0IsRUFBQTs7QUFHdEI7O0VDbEJFO0FEc0JGO0VBQ0Usa0JBQWtCLEVBQUE7O0FBR3BCOzs7Ozs7Ozs7O0VDWkU7QUR3QkY7O0VBRUUsWUFBWTtFQUFFLE1BQUE7RUFDZCxjQUFjO0VBQUUsTUFBQSxFQUFPOztBQUd6QjtFQUNFLFdBQVcsRUFBQTs7QUFHYjs7OzsrRUNuQitFO0FEeUIvRTtFQUNFLDREQUFBLEVBQTZEOztBQUcvRDtFQUlFLGtEQUFBLEVBQW1EOztBQUdyRDs7OzsrRUN6QitFO0FEK0IvRTtFQUNFOzs7SUFHRSxrQ0FBa0M7SUFDbEMsc0JBQXNCO0lBQUUsd0JBQUE7SUFFeEIsMkJBQTJCO0lBQzNCLDRCQUE0QixFQUFBO0VBRzlCOztJQUVFLDBCQUEwQixFQUFBO0VBRzVCO0lBQ0UsNEJBQTRCLEVBQUE7RUFHOUI7SUFDRSw2QkFBNkIsRUFBQTtFQUcvQjs7O01DbENJO0VEdUNKOztJQUVFLFdBQVcsRUFBQTtFQUdiO0lBQ0UsZ0NBQWdDLEVBQUE7RUFFbEM7O0lBRUUsc0JBQXNCO0lBQ3RCLHdCQUF3QixFQUFBO0VBRzFCOzs7TUN4Q0k7RUQ2Q0o7SUFDRSwyQkFBMkIsRUFBQTtFQUc3Qjs7SUFFRSx3QkFBd0IsRUFBQTtFQUcxQjs7O0lBR0UsVUFBVTtJQUNWLFNBQVMsRUFBQTtFQUdYOztJQUVFLHVCQUF1QixFQUFBLEVBQ3hCIiwiZmlsZSI6ImJvaWxlcnBsYXRlLmNzcyJ9 */
+    page-break-after: avoid;
+  }
+}
