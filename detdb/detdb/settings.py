@@ -27,8 +27,8 @@ SECRET_KEY = config.get('settings', 'DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
-
+ALLOWED_HOSTS = ['157.230.133.152', 'detdb.jrahi.com', 'www.detdb.jrahi.com', 'detdb.com', 'www.detdb.com']
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
