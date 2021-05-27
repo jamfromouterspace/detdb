@@ -1,3 +1,3 @@
 # Detonation Database (Demo)
 
-I realize this isn't properly documented. Explanation/documentation can be provided by request (just email me).
+## [PROJECT OVERVIEW](https://github.com/closetothe/detdb/blob/dev/docs/project_overview.pdf)
