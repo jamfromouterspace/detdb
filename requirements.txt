@@ -38,7 +38,7 @@ dask==0.17.5
 datashape==0.5.4
 decorator==4.3.0
 distributed==1.21.8
-Django==2.2.1
+Django==2.2.21
 django-haystack==2.8.1
 django-mysql==3.2.0
 docutils==0.14
